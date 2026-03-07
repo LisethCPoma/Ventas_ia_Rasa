@@ -1,0 +1,50 @@
+version: "3.1"
+
+intents:
+  - saludar
+  - presentar_consultina
+  - informar_carrera_interes
+  - mencionar_voluntariado
+  - pedir_refuerzo_cierre
+  - preguntar_oferta_academica
+  - preguntar_cupos
+  - preguntar_horarios
+
+entities:
+  - carrera
+
+slots:
+  carrera:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: carrera
+
+actions:
+  - action_consultar_cupos
+
+responses:
+  utter_saludo_consultina:
+  - text: "¡Hola! Mucho gusto. Soy Consultina. Estoy aquí para ayudarte a conocer todo sobre nuestras carreras y acompañarte en este proceso para que tomes una gran decisión para tu futuro."
+
+  utter_reaccion_carrera:
+  - text: "¡Excelente elección! En CGE nuestros estudiantes aprenden con simuladores, prácticas reales y formación integral. Como la institución más grande del país en formación en salud y emergencias, te garantizamos una educación de excelencia. ¿Tienes alguna duda técnica sobre la malla curricular en la que Daniela o yo podamos ayudarte?"
+
+  utter_voluntariado_consultinos:
+  - text: "¡Así es! Muchos de nuestros estudiantes nos dicen que estudiar aquí no solo les da una profesión, sino también la oportunidad de salvar vidas y servir a la comunidad a través de nuestro programa Consultinos. ¡Es una experiencia que cambia vidas!"
+
+  utter_refuerzo_decision:
+  - text: "Si te gusta ayudar a las personas, superar retos y quieres tener una carrera con propósito, este puede ser el comienzo de algo muy grande para ti. ¡Estás en las mejores manos con Daniela para dar este paso!"
+
+  utter_listar_oferta:
+  - text: "¡Tenemos una amplia oferta! Somos fuertes en el **Área de Salud** con: Emergencias Médicas, Enfermería, Laboratorio Clínico, Naturopatía y Rehabilitación Física. \n\nTambién contamos con: \n📊 **Administración:** Administración, Marketing Digital y Administración en Sistemas de Salud. \n👶 **Educación:** Educación Inicial. \n🍳 **Servicios:** Gastronomía. \n🚗 **Industria:** Mecánica Automotriz.\n\nY por si fuera poco, tenemos un **Centro de Idiomas** y **Cursos de Educación Continua** en áreas como Inteligencia Artificial y Farmacia. ¡Dime cuál te apasiona y te damos los detalles!"
+
+  utter_default:
+  - text: "No estoy segura de haberte entendido bien, recuerda que Daniela y yo estamos aquí para guiarte. ¿Podrías repetirme tu duda sobre nuestras carreras o los cupos disponibles?"
+
+  utter_horarios:
+  - text: "¡Claro! Nuestro horario de atención para admisiones es de lunes a domingos de 8:00 a.m. a 6:00 p.m. ¡Te esperamos!"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

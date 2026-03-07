@@ -1,0 +1,101 @@
+version: "3.1"
+
+nlu:
+- intent: saludar
+  examples: |
+    - hola
+    - buenos dias
+    - buenas tardes
+    - saludos
+
+- intent: presentar_consultina
+  examples: |
+    - Hoy quiero presentarte a Consultina, nuestra asistente inteligente
+    - Consultina, ¿puedes saludar?
+    - Te presento a nuestra IA Consultina
+    - Consultina preséntate por favor
+
+- intent: informar_carrera_interes
+  examples: |
+    - Nuestro visitante quiere conocer la carrera de [enfermeria](carrera)
+    - Me interesa la carrera de [marketing digital](carrera)
+    - Quiero estudiar [emergencias medicas](carrera)
+    - Busco información sobre [naturopatia](carrera)
+    - Tienen [rehabilitacion fisica](carrera)
+    - Quiero inscribirme en [mecanica automotriz](carrera)
+    - ¿Me dan info de [gastronomia](carrera)?
+    - Quiero seguir [educacion inicial](carrera)
+    - Me interesa [administracion de sistemas de salud](carrera)
+    - Busco [laboratorio clinico](carrera)
+
+- intent: preguntar_cupos
+  examples: |
+    - quedan cupos disponibles para [enfermeria](carrera)?
+    - quiero saber si hay vacantes en [marketing digital](carrera)
+    - tienen cupos para matricularme en [emergencias medicas](carrera)?
+    - me puedo inscribir todavia en [administracion](carrera)?
+    - hay plazas libres para [inteligencia artificial](carrera)?
+    - busco cupo para [mecanica automotriz](carrera)
+
+- intent: mencionar_voluntariado
+  examples: |
+    - Además, nuestros estudiantes pueden participar en voluntariados y brigadas de salud.
+    - Cuéntale sobre los Consultinos y el voluntariado
+    - Háblale de las brigadas médicas
+
+- intent: pedir_refuerzo_cierre
+  examples: |
+    - ¿Te gustaría que te explique cómo puedes iniciar tu inscripción hoy?
+    - ¿Estás listo para matricularte?
+    - Vamos a iniciar tu proceso de inscripción
+
+- intent: preguntar_oferta_academica
+  examples: |
+    - ¿Qué carreras tienen?
+    - ¿Cuáles son los cursos disponibles?
+    - ¿Qué capacitaciones ofrecen?
+    - Muestrame la oferta academica
+
+- intent: preguntar_horarios
+  examples: |
+    - ¿a qué hora atienden?
+    - ¿cuáles son sus horarios de atención?
+    - ¿hasta qué hora están abiertos?
+    - me puedes dar el horario
+    - ¿abren los sábados?
+    - a qué hora cierran
+
+
+# --- SINÓNIMOS Y MANEJO DE ERRORES ORTOGRÁFICOS ---
+- synonym: enfermeria
+  examples: |
+    - Enfermería
+    - enfermeria
+    - enfermera
+
+- synonym: emergencias medicas
+  examples: |
+    - Emergencias Médicas
+    - emergencias
+    - paramédico
+    - paramedicos
+
+- synonym: marketing digital
+  examples: |
+    - Marketing Digital y Comercio Electrónico
+    - marketing
+    - comercio electrónico
+    - marquetin
+    - mkt
+
+- synonym: administracion
+  examples: |
+    - Administración
+    - admin
+    - administracion de empresas
+
+- synonym: inteligencia artificial
+  examples: |
+    - Inteligencia Artificial
+    - ia
+    - i a

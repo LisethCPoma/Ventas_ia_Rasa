@@ -1,0 +1,19 @@
+# Entorno virtual
+venv/
+.venv/
+env/
+
+# Archivos de Rasa (Modelos y logs)
+models/
+.rasa/
+results/
+graph.html
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Docker y Local
+.DS_Store
+.env
