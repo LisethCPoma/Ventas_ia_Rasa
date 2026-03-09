@@ -27,6 +27,13 @@ nlu:
     - Quiero seguir [educacion inicial](carrera)
     - Me interesa [administracion de sistemas de salud](carrera)
     - Busco [laboratorio clinico](carrera)
+    - [administracion](carrera)
+    - [inteligencia artificial](carrera)
+    - Me gustaría saber sobre la carrera de [marketing digital](carrera)
+    - quiero saber sobre [enfermeria](carrera)
+    - quiero seguir [educacion inicial](carrera)
+    - informacion sobre [mecanica automotriz](carrera)
+    - quiero la carrera de [educacion inicial](carrera)
 
 - intent: preguntar_cupos
   examples: |
@@ -36,6 +43,8 @@ nlu:
     - me puedo inscribir todavia en [administracion](carrera)?
     - hay plazas libres para [inteligencia artificial](carrera)?
     - busco cupo para [mecanica automotriz](carrera)
+    - ¿hay cupos?
+    - ¿aún tienen vacantes?
 
 - intent: mencionar_voluntariado
   examples: |
@@ -51,10 +60,16 @@ nlu:
 
 - intent: preguntar_oferta_academica
   examples: |
-    - ¿Qué carreras tienen?
-    - ¿Cuáles son los cursos disponibles?
-    - ¿Qué capacitaciones ofrecen?
-    - Muestrame la oferta academica
+    - ¿Qué carreras ofrecen en el instituto?
+    - ¿Qué puedo estudiar en el Instituto CGE?
+    - ¿Qué carreras tienen disponibles?
+    - ¿Qué tecnologías hay en el instituto?
+    - ¿Qué carreras puedo seguir ahí?
+    - ¿Qué especialidades ofrecen?
+    - ¿Qué carreras tecnológicas tienen?
+    - ¿Qué opciones de estudio hay en el instituto?
+    - ¿Qué puedo estudiar en Consulting Group Ecuador?
+    - ¿Me puede indicar qué carreras tienen?
 
 - intent: preguntar_horarios
   examples: |
@@ -64,6 +79,110 @@ nlu:
     - me puedes dar el horario
     - ¿abren los sábados?
     - a qué hora cierran
+
+- intent: preguntar_duracion_carreras
+  examples: |
+    - ¿Cuánto tiempo dura la carrera?
+    - ¿En cuántos años me gradúo?
+    - ¿Cuántos semestres dura la tecnología?
+    - ¿Cuál es la duración de las carreras?
+    - ¿Cuánto tiempo tengo que estudiar?
+    - ¿Las carreras son largas?
+    - ¿En cuánto tiempo termino la carrera de [enfermeria](carrera)?
+    - ¿Cuántos años dura estudiar [rehabilitacion fisica](carrera)?
+    - ¿Cuántos semestres son en [marketing digital](carrera)?
+    - ¿La carrera de [inteligencia artificial](carrera) también dura dos años?
+
+- intent: preguntar_costos
+  examples: |
+    - ¿Cuánto cuesta estudiar en el instituto?
+    - ¿Cuál es el costo de las carreras?
+    - ¿Cuánto tengo que pagar para estudiar?
+    - ¿Cuánto cuesta la matrícula?
+    - ¿Cuánto vale el semestre?
+    - ¿Cuánto cuesta estudiar [enfermeria](carrera)?
+    - ¿Cuáles son los valores de [educacion inicial](carrera)?
+    - ¿Cuánto cuesta [administracion](carrera) presencial?
+    - ¿Cuánto cuesta estudiar [marketing digital](carrera) en línea?
+    - ¿Cuál es el valor del semestre en [emergencias medicas](carrera)?
+
+- intent: preguntar_opciones_pago
+  examples: |
+    - ¿Se puede pagar en cuotas?
+    - ¿Cómo puedo pagar?
+    - ¿Cuáles son las formas de pago?
+    - ¿Aceptan pagos mensuales?
+    - ¿Se puede pagar semanal?
+    - ¿Hay facilidades de pago?
+
+- intent: preguntar_practicas
+  examples: |
+    - ¿Las carreras incluyen prácticas?
+    - ¿Dónde se realizan las prácticas preprofesionales?
+    - ¿Las prácticas son reales o solo simuladas?
+    - ¿Voy a tener contacto con pacientes reales?
+    - ¿En qué lugares hacen las prácticas de [enfermeria](carrera)?
+    - ¿Dónde hacen las prácticas de [emergencias medicas](carrera)?
+    - ¿En qué empresas se realizan las prácticas de [administracion](carrera)?
+    - ¿Cómo son las prácticas en [gastronomia](carrera)?
+    - ¿Las prácticas de [naturopatia](carrera) dónde son?
+    - ¿El instituto tiene convenios para las prácticas?
+
+- intent: preguntar_campo_laboral
+  examples: |
+    - ¿En qué puedo trabajar si estudio esa carrera?
+    - ¿Cuál es el campo laboral?
+    - ¿Dónde podría trabajar cuando me gradúe?
+    - ¿Qué salidas laborales tiene la carrera?
+    - ¿En qué lugares trabajan los graduados de [enfermeria](carrera)?
+    - ¿En qué empresas puedo trabajar si estudio [marketing digital](carrera)?
+    - ¿Qué oportunidades laborales tiene [emergencias medicas](carrera)?
+    - ¿Qué puedo hacer profesionalmente siendo tecnólogo en [mecanica automotriz](carrera)?
+    - ¿Dónde trabaja un graduado de [laboratorio clinico](carrera)?
+
+- intent: preguntar_validez_titulo
+  examples: |
+    - ¿Qué título obtengo al graduarme?
+    - ¿El título es reconocido?
+    - ¿El título está registrado en la SENESCYT?
+    - ¿Es un título de tercer nivel?
+    - ¿El título tiene validez en Ecuador?
+    - ¿Puedo abrir mi propio laboratorio con [laboratorio clinico](carrera)?
+    - ¿Con el título de [administracion en farmacias](carrera) puedo poner una farmacia?
+    - ¿Con el título puedo abrir mi propio negocio?
+
+- intent: preguntar_homologacion
+  examples: |
+    - ¿Puedo homologar materias si ya estudié antes?
+    - ¿Cómo funciona la homologación en el instituto?
+    - ¿Los consultores pueden homologar?
+    - ¿Qué necesito para homologar?
+    - ¿Cuánto cuesta la homologación?
+    - ¿Qué documentos debo presentar para homologar?
+
+- intent: preguntar_requisitos
+  examples: |
+    - ¿Qué requisitos necesito para inscribirme?
+    - ¿Qué documentos piden para matricularse?
+    - ¿Qué tengo que llevar para estudiar en el instituto?
+    - ¿Cuáles son los requisitos para ingresar?
+    - ¿Qué papeles necesito para la matrícula?
+
+- intent: preguntar_modalidad_estudio
+  examples: |
+    - ¿Qué modalidades de estudio tienen?
+    - ¿Las clases son presenciales o en línea?
+    - ¿Tienen carreras virtuales?
+    - ¿Cómo es la modalidad de estudio?
+    - ¿Es presencial?
+
+- intent: preguntar_lista_completa
+  examples: |
+    - ¿Me puedes dar toda la información?
+    - quiero ver todo completo
+    - dame la lista completa de precios
+    - muéstrame todas las opciones
+    - dime de todas las carreras a la vez
 
 
 # --- SINÓNIMOS Y MANEJO DE ERRORES ORTOGRÁFICOS ---
@@ -99,3 +218,64 @@ nlu:
     - Inteligencia Artificial
     - ia
     - i a
+
+- synonym: rehabilitacion fisica
+  examples: |
+    - rehabilitacion fisica
+    - rehabilitación física
+    - terapia fisica
+    - fisioterapia
+
+- synonym: laboratorio clinico
+  examples: |
+    - laboratorio clinico
+    - laboratorio clínico
+    - laboratorista
+
+- synonym: administracion en farmacias
+  examples: |
+    - administracion en farmacias
+    - administración en farmacias
+    - farmacia
+    - farmacias
+
+- synonym: administracion de sistemas de la salud
+  examples: |
+    - administracion de sistemas de la salud
+    - sistemas de salud
+    - administracion hospitalaria
+
+- synonym: educacion inicial
+  examples: |
+    - educacion inicial
+    - educación inicial
+    - educacion
+    - educación
+    - parvularia
+    - profesor de niños
+
+- synonym: desarrollo de contenidos y manejo de redes
+  examples: |
+    - desarrollo de contenidos y manejo de redes
+    - manejo de redes
+    - redes sociales
+    - community manager
+
+- synonym: mecanica automotriz
+  examples: |
+    - mecanica automotriz
+    - mecánica automotriz
+    - mecanica
+
+- synonym: gastronomia
+  examples: |
+    - gastronomia
+    - gastronomía
+    - chef
+    - cocina
+
+- synonym: naturopatia
+  examples: |
+    - naturopatia
+    - naturopatía
+    - medicina natural

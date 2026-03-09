@@ -15,45 +15,62 @@ const reconocimiento = new SpeechRecognition();
 reconocimiento.lang = 'es-ES';
 reconocimiento.interimResults = false;
 
-const voz = new SpeechSynthesisUtterance();
-voz.lang = 'es-ES';
-voz.rate = 1.0; // Velocidad normal (1.0) suele sonar más natural
-voz.pitch = 1.0; // Tono normal (1.0) evita el efecto robótico/ardilla
-
 // --- CONFIGURACIÓN DE VOZ FEMENINA Y NATURAL ---
-function configurarVozFemenina() {
-    const voces = window.speechSynthesis.getVoices();
-    // Filtramos voces que sean en español (España, México, Latinoamérica, etc.)
-    const vocesEsp = voces.filter(v => v.lang.startsWith('es'));
-    
-    // Buscamos nombres de voces femeninas conocidas por ser de mejor calidad
-    // Ej: "Google español" (Chrome/Android), "Microsoft Helena/Sabina/Laura" (Windows), "Monica/Paulina/Victoria" (macOS/iOS)
-    let vozSeleccionada = vocesEsp.find(v => 
-        v.name.includes('Google') || 
-        v.name.includes('Helena') || 
-        v.name.includes('Laura') || 
-        v.name.includes('Sabina') || 
-        v.name.includes('Paulina') || 
-        v.name.includes('Monica') || 
-        v.name.includes('Victoria')
-    );
+// Variable global para almacenar las voces una vez cargadas
+let vocesDisponibles = [];
 
-    // Si no encuentra las específicas, selecciona la primera en español
-    if (!vozSeleccionada && vocesEsp.length > 0) {
-        vozSeleccionada = vocesEsp[0];
-    }
-    
-    if (vozSeleccionada) {
-        voz.voice = vozSeleccionada;
-    }
+function cargarVoces() {
+    vocesDisponibles = window.speechSynthesis.getVoices();
 }
-
-// Algunos navegadores cargan las voces de manera asíncrona, por lo que esperamos a que estén listas
+// Escuchar cuando las voces se carguen en el navegador
 if (window.speechSynthesis.onvoiceschanged !== undefined) {
-    window.speechSynthesis.onvoiceschanged = configurarVozFemenina;
+    window.speechSynthesis.onvoiceschanged = cargarVoces;
 }
-// También lo ejecutamos de inmediato por si ya están cargadas (ej. Safari)
-configurarVozFemenina();
+cargarVoces();
+
+// Función dedicada para hablar con voz femenina asegurada
+function reproducirVozFemenina(texto) {
+    // Es importante crear un nuevo Onbjeto Utterance justo antes de hablar en Chrome 
+    // porque los globales a veces pierden sus propiedades o fallan
+    const nuevaVoz = new SpeechSynthesisUtterance(texto);
+    nuevaVoz.lang = 'es-ES';
+    nuevaVoz.rate = 1.0; 
+    nuevaVoz.pitch = 1.0;
+
+    let voces = vocesDisponibles.length > 0 ? vocesDisponibles : window.speechSynthesis.getVoices();
+    let vocesEsp = voces.filter(v => v.lang.includes('es'));
+
+    // Lista de nombres femeninos conocidos en Mac y Chrome
+    const nombresFemeninos = ['Monica', 'Paulina', 'Google español de Estados Unidos', 'Helena', 'Laura', 'Sabina', 'Victoria', 'Monica'];
+    
+    let vozInstanciada = null;
+    
+    // Buscar coincidencia exacta por ese orden de prioridad
+    for (const nombre of nombresFemeninos) {
+        vozInstanciada = vocesEsp.find(v => v.name.includes(nombre));
+        if (vozInstanciada) break;
+    }
+
+    // Si detectamos en su lugar a voces masculinas conocidas en mac/chrome, las evitamos
+    if (!vozInstanciada && vocesEsp.length > 0) {
+        vozInstanciada = vocesEsp.find(v => 
+            !v.name.includes('Jorge') && 
+            !v.name.includes('Diego') && 
+            !v.name.includes('Javier')
+        );
+        if (!vozInstanciada) {
+            vozInstanciada = vocesEsp[0]; // Último recurso absoluto
+        }
+    }
+
+    if (vozInstanciada) {
+        nuevaVoz.voice = vozInstanciada;
+    }
+
+    // Cancelar cualquier discurso actual para prevenir solapamiento o bloqueos robóticos
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(nuevaVoz);
+}
 // ------------------------------------------------
 
 let escuchando = false;
@@ -189,8 +206,7 @@ reconocimiento.onresult = async (event) => {
                 }
             });
             
-            voz.text = textoParaVoz;
-            window.speechSynthesis.speak(voz);
+            reproducirVozFemenina(textoParaVoz);
         }
     } catch (error) {
         agregarMensaje("Sistema", "Error de conexión con el servidor de IA.", false);

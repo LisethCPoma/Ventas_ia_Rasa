@@ -6,10 +6,15 @@ rules:
   - intent: presentar_consultina
   - action: utter_saludo_consultina
 
-- rule: Consultina enumera las carreras si el estudiante pregunta
+- rule: Consultina enumera las carreras si el estudiante pregunta de manera general
   steps:
   - intent: preguntar_oferta_academica
   - action: utter_listar_oferta
+
+- rule: Consultina reacciona a la carrera específica
+  steps:
+  - intent: informar_carrera_interes
+  - action: utter_reaccion_carrera
 
 - rule: Consultina refuerza el cierre de ventas
   steps:
@@ -30,3 +35,49 @@ rules:
   steps:
   - intent: preguntar_horarios
   - action: utter_horarios
+
+- rule: Consultina responde sobre la duracion de las carreras
+  steps:
+  - intent: preguntar_duracion_carreras
+  - action: utter_duracion_carreras
+
+- rule: Consultina responde sobre los costos
+  steps:
+  - intent: preguntar_costos
+  - action: utter_costos
+
+- rule: Consultina responde sobre las formas de pago
+  steps:
+  - intent: preguntar_opciones_pago
+  - action: utter_opciones_pago
+
+- rule: Consultina responde sobre las practicas preprofesionales
+  steps:
+  - intent: preguntar_practicas
+  - action: utter_practicas
+
+- rule: Consultina responde sobre el campo laboral
+  steps:
+  - intent: preguntar_campo_laboral
+  - action: utter_campo_laboral
+
+- rule: Consultina responde sobre la validez del titulo y SENESCYT
+  steps:
+  - intent: preguntar_validez_titulo
+  - action: utter_validez_titulo
+
+- rule: Consultina responde sobre homologacion de materias
+  steps:
+  - intent: preguntar_homologacion
+  - action: utter_homologacion
+
+- rule: Consultina responde sobre los requisitos de inscripcion
+  steps:
+  - intent: preguntar_requisitos
+  - action: utter_requisitos
+
+- rule: Consultina responde sobre la modalidad de estudio
+  steps:
+  - intent: preguntar_modalidad_estudio
+  - action: utter_modalidad_estudio
+

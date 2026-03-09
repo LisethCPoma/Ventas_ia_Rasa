@@ -9,6 +9,16 @@ intents:
   - preguntar_oferta_academica
   - preguntar_cupos
   - preguntar_horarios
+  - preguntar_duracion_carreras
+  - preguntar_costos
+  - preguntar_opciones_pago
+  - preguntar_practicas
+  - preguntar_campo_laboral
+  - preguntar_validez_titulo
+  - preguntar_homologacion
+  - preguntar_requisitos
+  - preguntar_modalidad_estudio
+  - preguntar_lista_completa
 
 entities:
   - carrera
@@ -28,7 +38,37 @@ responses:
   - text: "¡Hola! Mucho gusto. Soy Consultina. Estoy aquí para ayudarte a conocer todo sobre nuestras carreras y acompañarte en este proceso para que tomes una gran decisión para tu futuro."
 
   utter_reaccion_carrera:
-  - text: "¡Excelente elección! En CGE nuestros estudiantes aprenden con simuladores, prácticas reales y formación integral. Como la institución más grande del país en formación en salud y emergencias, te garantizamos una educación de excelencia. ¿Tienes alguna duda técnica sobre la malla curricular en la que Daniela o yo podamos ayudarte?"
+  - condition:
+    - type: slot
+      name: carrera
+      value: enfermeria
+    text: "¡Excelente elección! Como la institución más grande del país en formación en salud y emergencias, te garantizamos una educación de excelencia con simuladores y prácticas reales. ¿Qué información específica te gustaría conocer de la carrera de {carrera}? Puedes preguntarme por costos, duración, campo laboral o prácticas."
+  - condition:
+    - type: slot
+      name: carrera
+      value: emergencias medicas
+    text: "¡Excelente elección! Como la institución más grande del país en formación en salud y emergencias, te garantizamos una educación de excelencia con simuladores y prácticas reales. ¿Qué información específica te gustaría conocer de la carrera de {carrera}? Puedes preguntarme por costos, duración, campo laboral o prácticas."
+  - condition:
+    - type: slot
+      name: carrera
+      value: rehabilitacion fisica
+    text: "¡Excelente elección! Como la institución más grande del país en formación en salud y emergencias, te garantizamos una educación de excelencia con simuladores y prácticas reales. ¿Qué información específica te gustaría conocer de la carrera de {carrera}? Puedes preguntarme por costos, duración, campo laboral o prácticas."
+  - condition:
+    - type: slot
+      name: carrera
+      value: laboratorio clinico
+    text: "¡Excelente elección! Como la institución más grande del país en formación en salud y emergencias, te garantizamos una educación de excelencia con simuladores y prácticas reales. ¿Qué información específica te gustaría conocer de la carrera de {carrera}? Puedes preguntarme por costos, duración, campo laboral o prácticas."
+  - condition:
+    - type: slot
+      name: carrera
+      value: administracion en farmacias
+    text: "¡Excelente elección! Como la institución más grande del país en formación en salud y emergencias, te garantizamos una educación de excelencia con simuladores y prácticas reales. ¿Qué información específica te gustaría conocer de la carrera de {carrera}? Puedes preguntarme por costos, duración, campo laboral o prácticas."
+  - condition:
+    - type: slot
+      name: carrera
+      value: administracion de sistemas de la salud
+    text: "¡Excelente elección! Como la institución más grande del país en formación en salud y emergencias, te garantizamos una educación de excelencia con simuladores y prácticas reales. ¿Qué información específica te gustaría conocer de la carrera de {carrera}? Puedes preguntarme por costos, duración, campo laboral o prácticas."
+  - text: "¡Excelente elección! En CGE orientamos nuestra formación a la práctica. ¿De qué carrera en específico te gustaría conocer los detalles de costos, duración o campo laboral?"
 
   utter_voluntariado_consultinos:
   - text: "¡Así es! Muchos de nuestros estudiantes nos dicen que estudiar aquí no solo les da una profesión, sino también la oportunidad de salvar vidas y servir a la comunidad a través de nuestro programa Consultinos. ¡Es una experiencia que cambia vidas!"
@@ -37,13 +77,225 @@ responses:
   - text: "Si te gusta ayudar a las personas, superar retos y quieres tener una carrera con propósito, este puede ser el comienzo de algo muy grande para ti. ¡Estás en las mejores manos con Daniela para dar este paso!"
 
   utter_listar_oferta:
-  - text: "¡Tenemos una amplia oferta! Somos fuertes en el **Área de Salud** con: Emergencias Médicas, Enfermería, Laboratorio Clínico, Naturopatía y Rehabilitación Física. \n\nTambién contamos con: \n📊 **Administración:** Administración, Marketing Digital y Administración en Sistemas de Salud. \n👶 **Educación:** Educación Inicial. \n🍳 **Servicios:** Gastronomía. \n🚗 **Industria:** Mecánica Automotriz.\n\nY por si fuera poco, tenemos un **Centro de Idiomas** y **Cursos de Educación Continua** en áreas como Inteligencia Artificial y Farmacia. ¡Dime cuál te apasiona y te damos los detalles!"
-
+  - text: "Tenemos varias opciones para que empieces a construir tu futuro profesional.\n\nContamos con carreras en:\n- **Área de Salud:** Enfermería, Emergencias Médicas, Rehabilitación Física, Laboratorio Clínico, Administración en Farmacias, Administración de Sistemas de la Salud.\n- **Área Educativa:** Educación Inicial.\n- **Área Empresarial y Digital:** Administración, Marketing Digital y Comercio Electrónico, Desarrollo de Contenidos y Manejo de Redes.\n- **Área Técnica y Productiva:** Mecánica Automotriz, Gastronomía.\n- **Área de Bienestar y Terapias Naturales:** Naturopatía.\n- **Área Tecnológica:** Inteligencia Artificial.\n\n¿Cuál te llama más la atención para darte información más específica?"
+  
   utter_default:
   - text: "No estoy segura de haberte entendido bien, recuerda que Daniela y yo estamos aquí para guiarte. ¿Podrías repetirme tu duda sobre nuestras carreras o los cupos disponibles?"
 
   utter_horarios:
   - text: "¡Claro! Nuestro horario de atención para admisiones es de lunes a domingos de 8:00 a.m. a 6:00 p.m. ¡Te esperamos!"
+
+  utter_modalidad_estudio:
+  - condition:
+    - type: slot
+      name: carrera
+      value: "administracion"
+    text: "La carrera de Tecnología Superior en Administración se imparte en modalidad en línea (virtual)."
+  - condition:
+    - type: slot
+      name: carrera
+      value: "marketing digital"
+    text: "La carrera de Tecnología Superior en Marketing Digital y Comercio Electrónico se imparte en modalidad en línea (virtual)."
+  - text: "Ofrecemos carreras en modalidad **presencial** (como Enfermería, Emergencias Médicas, Gastronomía, etc.) y también **en línea** (como Administración y Marketing Digital).\n¿De qué carrera te interesa saber la modalidad?"
+
+  utter_duracion_carreras:
+  - condition:
+    - type: slot
+      name: carrera
+      value: "inteligencia artificial"
+    text: "La carrera de **Tecnología Superior en Inteligencia Artificial** tiene una duración de **1 año y medio** (es decir, 3 semestres).\nNuestro objetivo es que en un periodo relativamente corto puedas obtener tu título."
+  - text: "La mayoría de nuestras carreras tienen una duración de **2 años**, a excepción de **Inteligencia Artificial**, que dura **1 año y medio**.\n¿De qué carrera en específico te gustaría saber la duración o más detalles?"
+
+  utter_opciones_pago:
+  - text: "¡Sí! Puedes realizar los pagos por semestre completo, o diferirlos en cuotas **mensuales** (5 cuotas) o **semanales** (20 semanas).\n¿Para qué carrera te gustaría consultar los valores y cuotas exactas?"
+
+  utter_costos:
+  - condition:
+    - type: slot
+      name: carrera
+      value: enfermeria
+    text: "Los valores para **Técnico Superior en Enfermería** son:\n- Inscripción: $28 (pago único)\n- Matrícula: $57,50 por semestre\n- Semestre: $575\n- Opciones de pago: 5 cuotas mensuales de $115 o $28,75 semanales durante 20 semanas."
+  - condition:
+    - type: slot
+      name: carrera
+      value: emergencias medicas
+    text: "Los valores para **Tecnólogo Superior en Emergencias Médicas** son:\n- Inscripción: $25\n- Matrícula: $71\n- Semestre: $710\n- Opciones de pago: 5 cuotas mensuales de $142 o $35,50 semanales durante 20 semanas."
+  - condition:
+    - type: slot
+      name: carrera
+      value: administracion de sistemas de la salud
+    text: "Los valores para **Tecnólogo Superior en Administración de Sistemas de Salud** son:\n- Inscripción: $28\n- Matrícula: $57,50\n- Semestre: $575\n- Opciones de pago: 5 cuotas mensuales de $115 o $28,75 semanales durante 20 semanas."
+  - condition:
+    - type: slot
+      name: carrera
+      value: rehabilitacion fisica
+    text: "Los valores para **Tecnólogo Superior en Rehabilitación Física** son:\n- Inscripción: $28\n- Matrícula: $57,50\n- Semestre: $575\n- Opciones de pago: 5 cuotas mensuales de $115 o $28,75 semanales durante 20 semanas."
+  - condition:
+    - type: slot
+      name: carrera
+      value: laboratorio clinico
+    text: "Los valores para **Tecnología Superior en Laboratorio Clínico** son:\n- Inscripción: $28\n- Matrícula: $57,50\n- Semestre: $575\n- Opciones de pago: 5 cuotas mensuales de $115 o $28,75 semanales durante 20 semanas."
+  - condition:
+    - type: slot
+      name: carrera
+      value: educacion inicial
+    text: "Los valores para **Tecnología Superior en Educación Inicial** son:\n- Inscripción: $28\n- Matrícula: $57,50\n- Semestre: $575\n- Opciones de pago: 5 cuotas mensuales de $115 o $28,75 semanales durante 20 semanas."
+  - condition:
+    - type: slot
+      name: carrera
+      value: administracion en farmacias
+    text: "Los valores para **Tecnólogo Superior en Administración en Farmacias** son:\n- Inscripción: $28\n- Matrícula: $57,50\n- Semestre: $575\n- Opciones de pago: 5 cuotas mensuales de $115 o $28,75 semanales durante 20 semanas."
+  - condition:
+    - type: slot
+      name: carrera
+      value: naturopatia
+    text: "Los valores para **Tecnólogo Superior en Naturopatía** son:\n- Inscripción: $25\n- Matrícula: $88\n- Semestre: $880\n- Opciones de pago: 5 cuotas mensuales de $176 o $44 semanales durante 20 semanas."
+  - condition:
+    - type: slot
+      name: carrera
+      value: administracion
+    text: "Los valores para **Tecnólogo Superior en Administración** (Modalidad en Línea) son:\n- Inscripción: $25\n- Matrícula: $54,78\n- Semestre: $498\n- Opciones de pago: 5 cuotas mensuales de $99,60 o $24,90 semanales durante 20 semanas."
+  - condition:
+    - type: slot
+      name: carrera
+      value: marketing digital
+    text: "Los valores para **Tecnólogo Superior en Marketing Digital** (Modalidad en Línea) son:\n- Inscripción: $25\n- Matrícula: $54,78\n- Semestre: $498\n- Opciones de pago: 5 cuotas mensuales de $99,60 o $24,90 semanales durante 20 semanas."
+  - text: "Los valores de nuestras carreras varían según la especialidad y modalidad. En todas tenemos opciones de pago mensual y semanal.\n¿De qué carrera te interesa conocer el costo exacto?"
+
+  utter_practicas:
+  - condition:
+    - type: slot
+      name: carrera
+      value: enfermeria
+    text: "En la carrera de **Técnico Superior en Enfermería**, tus prácticas preprofesionales se realizarán en clínicas u hospitales, trabajando directamente con pacientes reales."
+  - condition:
+    - type: slot
+      name: carrera
+      value: emergencias medicas
+    text: "Para **Emergencias Médicas**, las prácticas se desarrollan en clínicas u hospitales. Además, somos el **único organismo que cuenta con ambulancias propias vinculadas al ECU 911**, por lo que participarás en escenarios reales de atención de emergencias."
+  - condition:
+    - type: slot
+      name: carrera
+      value: rehabilitacion fisica
+    text: "En **Rehabilitación Física**, realizarás prácticas en clínicas, hospitales y centros de rehabilitación. Incluso CGE cuenta con su **propio centro de rehabilitación** para que puedas aprender de manera práctica."
+  - condition:
+    - type: slot
+      name: carrera
+      value: naturopatia
+    text: "Las prácticas de **Naturopatía** se realizan en centros de naturopatía e instituciones de terapias alternativas con los que tenemos convenios establecidos."
+  - condition:
+    - type: slot
+      name: carrera
+      value: laboratorio clinico
+    text: "En **Laboratorio Clínico**, las prácticas preprofesionales se realizan en clínicas, hospitales y laboratorios médicos externos certificados."
+  - condition:
+    - type: slot
+      name: carrera
+      value: administracion en farmacias
+    text: "Las prácticas de **Administración en Farmacias** se desarrollan en el área administrativa de farmacias, clínicas, hospitales y grandes redes farmacéuticas."
+  - condition:
+    - type: slot
+      name: carrera
+      value: administracion de sistemas de la salud
+    text: "Las prácticas de **Administración de Sistemas de la Salud** se desarrollan en farmacias, clínicas, hospitales y redes de salud públicas o privadas."
+  - condition:
+    - type: slot
+      name: carrera
+      value: educacion inicial
+    text: "Las prácticas para **Educación Inicial** se realizan en unidades educativas y guarderías. Contamos con espacios propios como nuestro centro privado Rincón KitCGE y MASS."
+  - condition:
+    - type: slot
+      name: carrera
+      value: administracion
+    text: "Las prácticas de **Administración** se realizan en empresas públicas y privadas dentro del área administrativa, financiera o comercial."
+  - condition:
+    - type: slot
+      name: carrera
+      value: gastronomia
+    text: "En la carrera de **Gastronomía** (disponible en Quito), las prácticas se enfocan en cocina real, con convenios en restaurantes, hoteles y establecimientos turísticos y gastronómicos."
+  - text: "Nuestras prácticas preprofesionales se realizan en entornos reales dependiendo de la carrera elegida (hospitales, ambulancias ECU 911, empresas, guarderías, etc.).\n¿De qué carrera te interesa saber más sobre sus prácticas?"
+
+  utter_campo_laboral:
+  - condition:
+    - type: slot
+      name: carrera
+      value: enfermeria
+    text: "Como profesional en **Enfermería**, podrás trabajar en:\n- Asilos y casas de atención al adulto mayor.\n- Cuidado domiciliario y administración de medicamentos.\n- Instituciones de salud pública (IESS, MSP) y clínicas privadas.\n- Docencia y capacitación en salud."
+  - condition:
+    - type: slot
+      name: carrera
+      value: emergencias medicas
+    text: "El campo laboral en **Emergencias Médicas** incluye:\n- Atención prehospitalaria en instituciones públicas (IESS, MSP, SGR) y privadas.\n- Departamentos de salud ocupacional en empresas productivas.\n- Posibilidad de establecer una empresa propia de atención de emergencias."
+  - condition:
+    - type: slot
+      name: carrera
+      value: rehabilitacion fisica
+    text: "En **Rehabilitación Física** podrás trabajar en:\n- Instituciones de salud pública (IESS, MSP) y centros privados.\n- Centros deportivos y hogares para adultos mayores.\n- Puedes emprender y abrir tu propio centro de rehabilitación."
+  - condition:
+    - type: slot
+      name: carrera
+      value: naturopatia
+    text: "El campo laboral en **Naturopatía** incluye:\n- Trabajar como terapeuta en instituciones públicas o privadas.\n- Establecimientos de productos naturales y spas.\n- Elaboración de productos de medicina natural.\n- Puedes emprender montando tu consultorio propio."
+  - condition:
+    - type: slot
+      name: carrera
+      value: laboratorio clinico
+    text: "Con el título de **Laboratorio Clínico** podrás desempeñarte en:\n- Consultorios, clínicas y hospitales públicos y privados.\n- Puedes establecer tu propio emprendimiento."
+  - condition:
+    - type: slot
+      name: carrera
+      value: administracion en farmacias
+    text: "En **Administración en Farmacias** podrás trabajar en:\n- Área administrativa de farmacias públicas o privadas.\n- Empresas distribuidoras de medicamentos e insumos médicos.\n- Puedes establecer tu propia empresa del rubro."
+  - condition:
+    - type: slot
+      name: carrera
+      value: administracion de sistemas de la salud
+    text: "Con título en **Administración de Sistemas de Salud** podrás aplicar a:\n- Administración de hospitales, clínicas y dispensarios.\n- Dirección en empresas farmacéuticas y aseguradoras médicas.\n- Cargos en organizaciones gubernamentales del sistema nacional de salud."
+  - condition:
+    - type: slot
+      name: carrera
+      value: administracion
+    text: "En el área de **Administración** podrás:\n- Desempeñarte en áreas financieras y contables de empresas de todo nivel.\n- Formar parte de áreas gerenciales y logísticas.\n- Establecer tu propia empresa y aplicar tus conocimientos."
+  - condition:
+    - type: slot
+      name: carrera
+      value: educacion inicial
+    text: "Para **Educación Inicial**, las salidas laborales incluyen:\n- Docencia en unidades educativas, colegios y escuelas.\n- Gestión y dirección de centros de desarrollo infantil y guarderías.\n- Emprender tu propio centro educativo o de nivelación."
+  - condition:
+    - type: slot
+      name: carrera
+      value: marketing digital
+    text: "Al graduarte en **Marketing Digital** podrás desempeñarte como:\n- Líder de un departamento de ventas y ecosistema digital.\n- Community manager y gestor de tráfico pubilicitario.\n- Investigación y analista digital de mercados.\n- Establecer tu propia agencia de marketing y redes."
+  - condition:
+    - type: slot
+      name: carrera
+      value: gastronomia
+    text: "En la carrera de **Gastronomía**, podrás aplicar tus conocimientos trabajando en:\n- Restaurantes de primer nivel, cruceros y hoteles.\n- Empresas de catering y eventos.\n- O, por supuesto, emprender y consolidar tu propio restaurante."
+  - condition:
+    - type: slot
+      name: carrera
+      value: mecanica automotriz
+    text: "Para **Mecánica Automotriz**, tu campo laboral será en:\n- Concesionarias como mecánico.\n- Asesor técnico en empresas grandes de transporte.\n- Fábricas de ensamblaje y centros de revisión vehicular.\n- También la posibilidad de abrir tu propio taller o centro mecánico."
+  - text: "El campo laboral depende de la carrera que elijas. Por ejemplo, te preparamos para que puedas trabajar en hospitales (si eliges el área de la salud), en escuelas (en educación), desarrollar tu propia empresa, etc.\n¿De qué carrera quieres conocer el campo de trabajo?"
+
+  utter_validez_titulo:
+  - condition:
+    - type: slot
+      name: carrera
+      value: laboratorio clinico
+    text: "Al finalizar **Laboratorio Clínico**, obtendrás un **título de tercer nivel** registrado en la **SENESCYT**.\nComo emprendedor sí puedes establecer un laboratorio clínico propio; sin embargo, para su funcionamiento se requiere contar con la firma y aval de un bioquímico, que es el profesional autorizado para su habilitación legal."
+  - condition:
+    - type: slot
+      name: carrera
+      value: administracion en farmacias
+    text: "Al finalizar **Administración en Farmacias**, obtendrás un **título de tercer nivel** registrado en la **SENESCYT**.\nSi deseas establecer tu propia farmacia, sí es posible, pero para que pueda funcionar se debe de contar de manera obligatoria con la firma y regencia de un químico farmacéutico, quien es el responsable técnico."
+  - text: "Al graduarte del Instituto Superior Tecnológico Consulting Group Ecuador obtendrás un **título de tercer nivel**, cien por ciento validado y registrado en la **SENESCYT**.\n¿Hay alguna carrera en la que te interese saber esto o sus requisitos de emprendimiento?"
+
+  utter_homologacion:
+  - text: "Si ya eres parte de nuestra comunidad de Consultinos o estudiaste antes, puedes realizar una homologación.\n\nPara homologar necesitamos:\n- Copia a color de tu cédula.\n- Certificado del título de bachiller (impreso del Mineduc).\n- 2 fotos tamaño carnet.\n- Comprobante de depósito ($89,60 para consultinos).\n- Copia del certificado UTQ si aplica.\n\nDaniela puede indicarte exactamente qué materias puedes homologar y los pasos a seguir."
+
+  utter_requisitos:
+  - text: "¡Nos alegra que quieras formar parte del Instituto CGE!\nPara empezar tu proceso de inscripción, solo necesitas reunir:\n- Copia a color de tu cédula.\n- Certificado de tener registrado el título de bachiller (descarga obligatoria del Mineduc).\n- 2 fotos en tamaño carnet.\n- Tu comprobante de depósito de inscripción.\n\n¡Daniela te guiará durante todo tu proceso!"
 
 session_config:
   session_expiration_time: 60

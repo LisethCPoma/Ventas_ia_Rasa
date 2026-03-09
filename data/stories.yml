@@ -3,27 +3,19 @@ version: "3.1"
 stories:
 - story: Interacción principal de ventas - Trabajo en equipo Daniela y Consultina
   steps:
-  # 1. Daniela inicia y presenta a la IA
   - intent: presentar_consultina
   - action: utter_saludo_consultina
-  
-  # 2. Daniela o el estudiante mencionan la carrera de interés
   - intent: informar_carrera_interes
     entities:
     - carrera: "enfermería"
   - action: utter_reaccion_carrera
-  
-  # 3. Daniela menciona los beneficios extra (voluntariado)
   - intent: mencionar_voluntariado
   - action: utter_voluntariado_consultinos
-  
-  # 4. Daniela realiza la transición para el cierre de la inscripción
   - intent: pedir_refuerzo_cierre
   - action: utter_refuerzo_decision
 
-- story: Estudiante pregunta directamente por las carreras
+- story: Estudiante pregunta por carreras y luego da una específica
   steps:
-  - intent: saludar
   - intent: preguntar_oferta_academica
   - action: utter_listar_oferta
   - intent: informar_carrera_interes
