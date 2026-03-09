@@ -7,6 +7,10 @@ nlu:
     - buenos dias
     - buenas tardes
     - saludos
+    - Hola consulta
+    - hola consulta buenas tardes
+    - Hola con dulcina
+    - hola consultina
 
 - intent: preguntar_veracidad
   examples: |
@@ -120,10 +124,15 @@ nlu:
 
 - intent: preguntar_horarios
   examples: |
-    - ¿a qué hora atienden?
-    - ¿cuáles son sus horarios de atención?
-    - ¿hasta qué hora están abiertos?
-    - me puedes dar el horario
+    - ¿Qué horarios de atención tienen?
+    - ¿A qué hora abren?
+    - ¿A qué hora cierran?
+    - horarios de atención
+    - atención al cliente
+    - hasta que hora atienden
+    - está abierto hoy?
+    - en qué horario puedo ir a admisiones
+    - horario de secretaría
     - ¿abren los sábados?
     - a qué hora cierran
 
@@ -284,6 +293,11 @@ nlu:
     - ¿Qué días se estudia?
     - ¿Cuáles son los horarios de las carreras presenciales?
     - ¿Las carreras virtuales en qué horario son?
+    - ¿Cuál es el horario para la carrera de [rehabilitacion fisica](carrera)?
+    - ¿Cuáles son los horarios de clases para la carrera de [naturopatia](carrera)?
+    - horarios de [marketing digital](carrera)
+    - a qué hora recibo clases de [enfermeria](carrera)
+    - horario de [mecanica automotriz](carrera)
 
 # --- SINÓNIMOS Y MANEJO DE ERRORES ORTOGRÁFICOS ---
 - synonym: enfermeria
