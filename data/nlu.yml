@@ -62,6 +62,21 @@ nlu:
     - informacion sobre [mecanica automotriz](carrera)
     - quiero la carrera de [educacion inicial](carrera)
 
+- intent: informar_area_interes
+  examples: |
+    - de tema de áreas de [salud]{"entity": "area_academica"}
+    - Háblame sobre las carreras de [educacion]{"entity": "area_academica"}
+    - me interesa el área de [empresa]{"entity": "area_academica"}
+    - productividad
+    - quiero saber sobre [productividad]{"entity": "area_academica"}
+    - carreras de [tecnologia]{"entity": "area_academica"}
+    - áreas técnicas
+    - del área de [salud]{"entity": "area_academica"}
+    - sobre [educacion]{"entity": "area_academica"}
+    - [tecnologia]{"entity": "area_academica"}
+    - área [productiva]{"entity": "area_academica", "value":"productividad"}
+    - [bienestar]{"entity": "area_academica"}
+
 - intent: preguntar_cupos
   examples: |
     - quedan cupos disponibles para [enfermeria](carrera)?
@@ -141,8 +156,6 @@ nlu:
 - intent: preguntar_opciones_pago
   examples: |
     - ¿Se puede pagar en cuotas?
-    - ¿Cómo puedo pagar?
-    - ¿Cuáles son las formas de pago?
     - ¿Aceptan pagos mensuales?
     - ¿Se puede pagar semanal?
     - ¿Hay facilidades de pago?
@@ -234,6 +247,9 @@ nlu:
     - ¿A qué cuenta debe hacer el pago?
     - ¿Cómo hago el pago de la carrera?
     - ¿Dónde debo depositar?
+    - ¿Cómo realizo la transferencia para la matrícula?
+    - pagar la matrícula
+    - cuenta para depositar la matrícula
 
 - intent: preguntar_proceso_matricula
   examples: |
@@ -257,7 +273,17 @@ nlu:
     - ¿Dónde venden los uniformes del instituto?
     - ¿Cuándo debo comprar el uniforme para clases?
 
-
+- intent: preguntar_horarios_clases
+  examples: |
+    - ¿Qué horarios tienen las clases?
+    - ¿En qué horario se estudia?
+    - ¿Las clases son en la mañana o en la noche?
+    - ¿Qué horarios tienen las carreras?
+    - ¿A qué hora son las clases?
+    - ¿Hay clases en la noche?
+    - ¿Qué días se estudia?
+    - ¿Cuáles son los horarios de las carreras presenciales?
+    - ¿Las carreras virtuales en qué horario son?
 
 # --- SINÓNIMOS Y MANEJO DE ERRORES ORTOGRÁFICOS ---
 - synonym: enfermeria
@@ -357,3 +383,29 @@ nlu:
     - naturopatia
     - naturopatía
     - medicina natural
+
+- synonym: educacion
+  examples: |
+    - educación
+    - educacion
+    - educativa
+    - enseñanza
+
+- synonym: tecnologia
+  examples: |
+    - tecnología
+    - tecnologia
+    - tecnológica
+
+- synonym: productividad
+  examples: |
+    - técnica
+    - tecnica
+    - productividad
+    - productiva
+
+- synonym: salud
+  examples: |
+    - salud
+    - medicina
+    - medica

@@ -25,9 +25,12 @@ intents:
   - preguntar_formas_pago
   - preguntar_proceso_matricula
   - preguntar_uniformes
+  - informar_area_interes
+  - preguntar_horarios_clases
 
 entities:
   - carrera
+  - area_academica
 
 slots:
   carrera:
@@ -35,6 +38,11 @@ slots:
     mappings:
       - type: from_entity
         entity: carrera
+  area_academica:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: area_academica
 
 actions:
   - action_consultar_cupos
@@ -133,6 +141,40 @@ responses:
 
   utter_listar_oferta:
   - text: "Tenemos varias opciones para que empieces a construir tu futuro profesional.\n\nContamos con diferentes carreras diseñadas para prepararte y ayudarte a alcanzar tus metas.\nTe presentamos nuestras opciones disponibles:\n- **Área de Salud:** Técnico Superior en Enfermería, Técnico Superior en Emergencias Médicas, Técnico Superior en Rehabilitación Física, Técnico Superior en Laboratorio Clínico, Técnico Superior en Administración de Farmacias, Técnico Superior en Administración de Sistemas de la Salud.\n- **Área Educativa:** Técnico Superior en Educación Inicial.\n- **Área Empresarial y Digital:** Técnico Superior en Administración, Técnico Superior en Marketing Digital y Comercio Electrónico, Técnico Superior en Desarrollo de Contenidos y Manejo de Redes.\n- **Área Técnica y Productiva:** Técnico Superior en Mecánica Automotriz, Técnico Superior en Gastronomía.\n- **Área de Bienestar y Terapias Naturales:** Técnico Superior en Naturopatía.\n- **Área Tecnológica:** Técnico Superior en Inteligencia Artificial.\n\n¿Cuál te llama más la atención para darte información más específica?"
+
+  utter_listar_carreras_por_area:
+  - condition:
+    - type: slot
+      name: area_academica
+      value: salud
+    text: "En el área de **Salud** contamos con excelentes opciones: Técnico Superior en Enfermería, Emergencias Médicas, Rehabilitación Física, Laboratorio Clínico, Administración de Farmacias y Administración de Sistemas de la Salud.\n¿Te gustaría detalles de alguna en particular?"
+  - condition:
+    - type: slot
+      name: area_academica
+      value: educacion
+    text: "En el área **Educativa** destacamos con la carrera de Tecnología Superior en Educación Inicial, muy solicitada y práctica.\n¿Quisieras conocer sus costos, duración o campo laboral?"
+  - condition:
+    - type: slot
+      name: area_academica
+      value: empresa
+    text: "En el área **Empresarial y Digital** tenemos: Tecnología Superior en Administración, Marketing Digital y Comercio Electrónico, y Desarrollo de Contenidos y Manejo de Redes.\n¿De cuál te gustaría recibir más detalles?"
+  - condition:
+    - type: slot
+      name: area_academica
+      value: productividad
+    text: "En el área **Técnica y Productiva** ofrecemos carreras súper prácticas: Tecnología Superior en Mecánica Automotriz y Tecnología Superior en Gastronomía.\n¿Cuál llama tu atención?"
+  - condition:
+    - type: slot
+      name: area_academica
+      value: bienestar
+    text: "En el área de **Bienestar y Terapias Naturales** contamos con la Tecnología Superior en Naturopatía, perfecta si te interesa la salud alternativa.\n¿Te detallo sus costos y duración?"
+  - condition:
+    - type: slot
+      name: area_academica
+      value: tecnologia
+    text: "En el área **Tecnológica** ofrecemos Tecnología Superior en Inteligencia Artificial, la carrera del futuro y de menor duración.\n¿Te cuento más sobre ella?"
+  - text: "El Instituto CGE tiene muchísimas opciones agrupadas por áreas para tu comodidad. Cuéntame con tus propias palabras qué te gusta hacer o qué carrera tienes en mente para guiarte mejor."
+
 
   utter_lista_completa:
   - text: "Para darte la información exacta que necesitas, te comento que los costos, duración y modalidades varían dependiendo de la especialidad. ¿De qué carrera en particular quisieras que te dé todos los detalles?\nTenemos áreas de Salud, Educación, Empresa, Tecnología y Productividad."
@@ -494,14 +536,16 @@ responses:
   - text: "¡Nos alegra que quieras formar parte del Instituto CGE!\nPara empezar tu proceso de inscripción, solo necesitas reunir:\n- Copia a color de tu cédula.\n- Certificado de tener registrado el título de bachiller (descargado de la página del internet) OBLIGATORIO.\n- 2 fotos en tamaño carnet.\n- Tu comprobante de depósito de inscripción.\n\n¡Daniela te guiará durante todo tu proceso!"
 
   utter_formas_pago:
-  - text: "El pago se debe realizar directamente por **transferencia o depósito**.\n\nDependiendo de la carrera, el depósito debe realizarse a la cuenta correspondiente, por lo que es importante verificar cuál es la cuenta correcta antes de realizar el pago.\n\nPor esta razón, lo más recomendable es que te comuniques con **Daniela**, quien podrá indicarte la cuenta correspondiente para realizar el depósito o transferencia según la carrera que hayas elegido."
+  - text: "Sobre la modalidad de pago, este se realiza por **transferencia o depósito** a la cuenta oficial del Instituto.\nComo el número de cuenta y el convenio varían según tu carrera, **Daniela** te indicará por interno la cuenta exacta para que realices tu transacción de forma segura y validemos tu comprobante. ¡Te asesora en un momento!"
 
   utter_proceso_matricula:
-  - text: "El proceso de matrícula se realiza de manera **presencial**.\n\nDebes acercarte directamente al **Instituto Superior Tecnológico Consulting Group Ecuador**, donde la persona encargada te dará más información sobre la carrera o las carreras de tu interés.\n\nAdemás, te guiará oportunamente para que puedas realizar todo el proceso de matrícula de forma manual y presencial. ¡Te esperamos para dar el primer paso hacia tu futuro profesional!"
+  - text: "¡Estás a un paso de iniciar! El proceso oficial de matrícula es de forma **presencial** en el Instituto Superior Tecnológico Consulting Group Ecuador.\nAllí te recibiremos, te mostraremos las instalaciones y una persona encargada (como Daniela) te ayudará manualmente a llenar tus datos para dejar todo listo. ¿Te animas a visitarnos pronto?"
 
   utter_uniformes:
-  - text: "Los uniformes deben adquirirse cuando vas a iniciar clases.\n\nLa compra se realiza con los distribuidores que tienen convenio con Consulting Group Ecuador.\n\nPara recibir información más detallada sobre los distribuidores y los precios exactos, es recomendable comunicarse directamente con **Daniela**, quien podrá brindarte toda la orientación correspondiente."
+  - text: "Sí, usamos uniforme. Lo ideal es adquirirlo justo antes de iniciar tus clases formales.\nTrabajamos con distribuidores autorizados que tienen convenios con el Instituto.\nComo los precios y tallas varían un poco, **Daniela** te pasará los contactos de los proveedores para que lo consigas fácilmente."
 
+  utter_horarios_clases:
+  - text: "¡Claro! Te comparto los horarios disponibles según la modalidad de las carreras en el Instituto Superior Tecnológico Consulting Group Ecuador.\n\n**HORARIOS PARA LAS CARRERAS PRESENCIALES**\n\n**Enfermería y Emergencias Médicas**\n- Jornada Matutina: Lunes a Viernes de 08:00 a 13:00\n\n**Rehabilitación Física**\n- Jornada Especial\n\n**Laboratorio Clínico**\n- Recibirá tres días a la semana clases de forma virtual de 18:00 a 22:00\n\n**Naturopatía**\n- Sábados y Domingos Presencial\n\n**HORARIOS PARA CARRERAS HÍBRIDAS**\n\n**Administración de Sistemas de Salud (ADM.ISS)**\n- Jornada Híbrida\n\n**Administración en Farmacias**\n- Lunes a Viernes clases virtuales de 18:00 a 22:00\n\n**Educación Inicial**\n- Los días sábados presencial de 08:00 a 13:00\n\n**Gastronomía y Mecánica Automotriz**\n- *(Horarios por confirmar, puedes consultar con Daniela para más detalles)*\n\n**HORARIOS PARA CARRERAS EN LÍNEA**\n\n**Administración y Marketing Digital**\n- Clases virtuales de Lunes a Viernes de 18:00 a 22:00\n\nSi te interesa una en particular, puedo ayudarte a revisar cuál se ajusta mejor a tu disponibilidad de tiempo."
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

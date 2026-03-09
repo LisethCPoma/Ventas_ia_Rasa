@@ -31,6 +31,11 @@ rules:
   - intent: preguntar_instituto_premiado
   - action: utter_instituto_premiado
 
+- rule: Consultina enlista las carreras al preguntar un area
+  steps:
+  - intent: informar_area_interes
+  - action: utter_listar_carreras_por_area
+
 - rule: Consultina refuerza el cierre de ventas
   steps:
   - intent: pedir_refuerzo_cierre
@@ -116,3 +121,7 @@ rules:
   - intent: preguntar_uniformes
   - action: utter_uniformes
 
+- rule: Consultina responde sobre los horarios de clases
+  steps:
+  - intent: preguntar_horarios_clases
+  - action: utter_horarios_clases
