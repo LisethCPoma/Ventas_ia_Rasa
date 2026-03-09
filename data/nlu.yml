@@ -8,6 +8,33 @@ nlu:
     - buenas tardes
     - saludos
 
+- intent: preguntar_veracidad
+  examples: |
+    - consultina me estas mintiendo??
+    - me estas mintiendo?
+    - es verdad lo que dices?
+    - asegurame que no me mientes
+    - esto es verdad?
+    - es cierto todo eso?
+    - me dices la verdad?
+    - no me estas mintiendo verdad?
+    - eso es mentira
+    - de verdad es asi?
+    - estas engañando
+    - es puro invento
+    - mientes
+
+- intent: preguntar_instituto_premiado
+  examples: |
+    - Cual es el instituto de educación superior a nivel nacional mas premiado y reconocido del ecuador
+    - cuál es el instituto mas premiado del ecuador
+    - quien es el instituto mas reconocido
+    - cual es el mejor instituto del ecuador
+    - que instituto superior es el mas premiado
+    - cuál es la institución tecnológica más reconocida del país
+    - quien es el instituto mas reconocido a nivel nacional
+    - el mejor instituto de educacion superior
+
 - intent: presentar_consultina
   examples: |
     - Hoy quiero presentarte a Consultina, nuestra asistente inteligente
@@ -45,6 +72,8 @@ nlu:
     - busco cupo para [mecanica automotriz](carrera)
     - ¿hay cupos?
     - ¿aún tienen vacantes?
+    - Qué bancos disponibles para [marketing digital](carrera)
+    - quedan bancos disponibles
 
 - intent: mencionar_voluntariado
   examples: |
@@ -70,6 +99,9 @@ nlu:
     - ¿Qué opciones de estudio hay en el instituto?
     - ¿Qué puedo estudiar en Consulting Group Ecuador?
     - ¿Me puede indicar qué carreras tienen?
+    - Quisiera saber cuáles son sus carreras
+    - Cuáles son las carreras que hay en el instituto
+    - qué carreras ofrece el Instituto
 
 - intent: preguntar_horarios
   examples: |
@@ -147,9 +179,17 @@ nlu:
     - ¿El título está registrado en la SENESCYT?
     - ¿Es un título de tercer nivel?
     - ¿El título tiene validez en Ecuador?
+    - dime sobre el titulo
+    - con que titulo salgo
+
+- intent: preguntar_emprendimiento
+  examples: |
     - ¿Puedo abrir mi propio laboratorio con [laboratorio clinico](carrera)?
     - ¿Con el título de [administracion en farmacias](carrera) puedo poner una farmacia?
     - ¿Con el título puedo abrir mi propio negocio?
+    - quiero poner un negocio
+    - Emprender mi propia clinica
+    - ¿Permite poner consultorio?
 
 - intent: preguntar_homologacion
   examples: |
@@ -184,6 +224,40 @@ nlu:
     - muéstrame todas las opciones
     - dime de todas las carreras a la vez
 
+- intent: preguntar_formas_pago
+  examples: |
+    - ¿Cómo puedo pagar la matrícula?
+    - ¿Cuáles son las formas de pago?
+    - ¿Dónde debo hacer el pago?
+    - ¿Puedo pagar por transferencia?
+    - ¿Aceptan depósito bancario?
+    - ¿A qué cuenta debe hacer el pago?
+    - ¿Cómo hago el pago de la carrera?
+    - ¿Dónde debo depositar?
+
+- intent: preguntar_proceso_matricula
+  examples: |
+    - ¿Cómo puedo matricularme?
+    - ¿Cómo es el proceso de matrícula?
+    - ¿La matrícula se hace en línea o presencial?
+    - ¿Dónde puedo matricularme?
+    - ¿Cómo hago para inscribirme en el instituto?
+    - ¿Tengo que ir al instituto para matricularme?
+    - ¿Dónde realizo la matrícula?
+    - ¿Cómo empiezo el proceso de inscripción?
+
+- intent: preguntar_uniformes
+  examples: |
+    - ¿El instituto tiene uniforme?
+    - ¿Dónde puedo comprar el uniforme?
+    - ¿Cuándo deberías adquirir el uniforme?
+    - ¿Es obligatorio usar uniforme?
+    - ¿Con quién puedo comprar el uniforme?
+    - ¿Cuánto cuesta el uniforme?
+    - ¿Dónde venden los uniformes del instituto?
+    - ¿Cuándo debo comprar el uniforme para clases?
+
+
 
 # --- SINÓNIMOS Y MANEJO DE ERRORES ORTOGRÁFICOS ---
 - synonym: enfermeria
@@ -196,6 +270,8 @@ nlu:
   examples: |
     - Emergencias Médicas
     - emergencias
+    - emergencia médicas
+    - emergencia medicas
     - paramédico
     - paramedicos
 
@@ -238,6 +314,8 @@ nlu:
     - administración en farmacias
     - farmacia
     - farmacias
+    - técnico superior en farmacia
+    - tecnico superior en farmacia
 
 - synonym: administracion de sistemas de la salud
   examples: |

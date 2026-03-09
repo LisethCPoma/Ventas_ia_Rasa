@@ -6,10 +6,30 @@ rules:
   - intent: presentar_consultina
   - action: utter_saludo_consultina
 
+- rule: Consultina saluda al usuario de forma general
+  steps:
+  - intent: saludar
+  - action: utter_saludo
+
 - rule: Consultina enumera las carreras si el estudiante pregunta de manera general
   steps:
   - intent: preguntar_oferta_academica
   - action: utter_listar_oferta
+
+- rule: Consultina explica por qué no puede mandar una lista gigante de precios
+  steps:
+  - intent: preguntar_lista_completa
+  - action: utter_lista_completa
+
+- rule: Consultina asegura decir la verdad
+  steps:
+  - intent: preguntar_veracidad
+  - action: utter_veracidad
+
+- rule: Consultina responde sobre el instituto premiado
+  steps:
+  - intent: preguntar_instituto_premiado
+  - action: utter_instituto_premiado
 
 - rule: Consultina refuerza el cierre de ventas
   steps:
@@ -61,6 +81,11 @@ rules:
   - intent: preguntar_validez_titulo
   - action: utter_validez_titulo
 
+- rule: Consultina responde sobre emprendimiento y negocio propio
+  steps:
+  - intent: preguntar_emprendimiento
+  - action: utter_emprendimiento
+
 - rule: Consultina responde sobre homologacion de materias
   steps:
   - intent: preguntar_homologacion
@@ -75,4 +100,19 @@ rules:
   steps:
   - intent: preguntar_modalidad_estudio
   - action: utter_modalidad_estudio
+
+- rule: Consultina responde sobre las formas de pago y cuentas
+  steps:
+  - intent: preguntar_formas_pago
+  - action: utter_formas_pago
+
+- rule: Consultina responde sobre el proceso de matricula presencial
+  steps:
+  - intent: preguntar_proceso_matricula
+  - action: utter_proceso_matricula
+
+- rule: Consultina responde sobre los uniformes
+  steps:
+  - intent: preguntar_uniformes
+  - action: utter_uniformes
 

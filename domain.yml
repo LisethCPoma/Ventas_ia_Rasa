@@ -15,10 +15,16 @@ intents:
   - preguntar_practicas
   - preguntar_campo_laboral
   - preguntar_validez_titulo
+  - preguntar_emprendimiento
   - preguntar_homologacion
   - preguntar_requisitos
   - preguntar_modalidad_estudio
   - preguntar_lista_completa
+  - preguntar_veracidad
+  - preguntar_instituto_premiado
+  - preguntar_formas_pago
+  - preguntar_proceso_matricula
+  - preguntar_uniformes
 
 entities:
   - carrera
@@ -36,6 +42,15 @@ actions:
 responses:
   utter_saludo_consultina:
   - text: "¡Hola! Mucho gusto. Soy Consultina. Estoy aquí para ayudarte a conocer todo sobre nuestras carreras y acompañarte en este proceso para que tomes una gran decisión para tu futuro."
+
+  utter_saludo:
+  - text: "¡Hola! Mucho gusto. Soy Consultina. Estoy aquí para ayudarte a conocer todo sobre nuestras carreras y acompañarte en este proceso para que tomes una gran decisión para tu futuro. ¿Qué información te gustaría conocer hoy?"
+
+  utter_veracidad:
+  - text: "¡Para nada! Como asistente oficial del Instituto, te garantizo que toda la información que te proporciono es completamente verídica y verificable. Mi objetivo es darte datos reales para que tomes la mejor decisión para tu futuro."
+
+  utter_instituto_premiado:
+  - text: "A nivel nacional, sacando el grupo de las universidades, el **Instituto Superior Tecnológico Consulting Group Ecuador (ISTCGE)** es la institución de educación superior técnica y tecnológica más reconocida y premiada del país.\n\nContamos con aval oficial de las autoridades, el respaldo del holding educativo Consulting Group Ecuador con más de dos décadas de trayectoria y 32 sedes a nivel nacional, y somos referentes de excelencia institucional con los más altos estándares desde nuestra fundación."
 
   utter_reaccion_carrera:
   - condition:
@@ -118,6 +133,9 @@ responses:
 
   utter_listar_oferta:
   - text: "Tenemos varias opciones para que empieces a construir tu futuro profesional.\n\nContamos con diferentes carreras diseñadas para prepararte y ayudarte a alcanzar tus metas.\nTe presentamos nuestras opciones disponibles:\n- **Área de Salud:** Técnico Superior en Enfermería, Técnico Superior en Emergencias Médicas, Técnico Superior en Rehabilitación Física, Técnico Superior en Laboratorio Clínico, Técnico Superior en Administración de Farmacias, Técnico Superior en Administración de Sistemas de la Salud.\n- **Área Educativa:** Técnico Superior en Educación Inicial.\n- **Área Empresarial y Digital:** Técnico Superior en Administración, Técnico Superior en Marketing Digital y Comercio Electrónico, Técnico Superior en Desarrollo de Contenidos y Manejo de Redes.\n- **Área Técnica y Productiva:** Técnico Superior en Mecánica Automotriz, Técnico Superior en Gastronomía.\n- **Área de Bienestar y Terapias Naturales:** Técnico Superior en Naturopatía.\n- **Área Tecnológica:** Técnico Superior en Inteligencia Artificial.\n\n¿Cuál te llama más la atención para darte información más específica?"
+
+  utter_lista_completa:
+  - text: "Para darte la información exacta que necesitas, te comento que los costos, duración y modalidades varían dependiendo de la especialidad. ¿De qué carrera en particular quisieras que te dé todos los detalles?\nTenemos áreas de Salud, Educación, Empresa, Tecnología y Productividad."
   
   utter_default:
   - text: "No estoy segura de haberte entendido bien, recuerda que Daniela y yo estamos aquí para guiarte. ¿Podrías repetirme tu duda sobre nuestras carreras o los cupos disponibles?"
@@ -265,7 +283,7 @@ responses:
       name: carrera
       value: marketing digital
     text: "Los valores para **Tecnólogo Superior en Marketing Digital** (Modalidad en Línea) son:\n- Inscripción: $25\n- Matrícula: $54,78\n- Semestre: $498\n- Opciones de pago: 5 cuotas mensuales de $99,60 o $24,90 semanales durante 20 semanas."
-  - text: "Los valores de nuestras carreras varían según la especialidad y modalidad. En todas tenemos opciones de pago mensual y semanal.\n¿De qué carrera te interesa conocer el costo exacto?"
+  - text: "Los valores de nuestras carreras varían según la especialidad y modalidad.\nSi ya me comentaste la carrera que te interesa y no te di el valor exacto, ¡no te preocupes! **Daniela** te enviará la tabla de costos específica en un momento.\nSi aún no tienes una carrera en mente, ¿cuál te gustaría consultar?"
 
   utter_practicas:
   - condition:
@@ -307,7 +325,7 @@ responses:
     - type: slot
       name: carrera
       value: educacion inicial
-    text: "Las prácticas para **Educación Inicial** se realizan en unidades educativas y guarderías. Contamos con espacios propios como nuestro centro privado Rincón KitCGE y MASS."
+    text: "Las prácticas para **Educación Inicial** se realizan en unidades educativas y guarderías. Contamos con espacios propios como nuestro centro privado Rincón KitCGE y mas."
   - condition:
     - type: slot
       name: carrera
@@ -318,7 +336,7 @@ responses:
       name: carrera
       value: gastronomia
     text: "En la carrera de **Gastronomía** (disponible en Quito), las prácticas se enfocan en cocina real, con convenios en restaurantes, hoteles y establecimientos turísticos y gastronómicos."
-  - text: "Nuestras prácticas preprofesionales se realizan en entornos reales dependiendo de la carrera elegida (hospitales, ambulancias ECU 911, empresas, guarderías, etc.).\n¿De qué carrera te interesa saber más sobre sus prácticas?"
+  - text: "Nuestras prácticas preprofesionales se realizan en entornos reales dependiendo de la carrera elegida (hospitales, ambulancias ECU 911, empresas, guarderías, etc.).\nSi la carrera que te interesa tiene convenios muy específicos, **Daniela** te compartirá enseguida el listado de instituciones donde podrías realizar tus prácticas."
 
   utter_campo_laboral:
   - condition:
@@ -381,26 +399,108 @@ responses:
       name: carrera
       value: mecanica automotriz
     text: "Para **Mecánica Automotriz**, tu campo laboral será en:\n- Concesionarias como mecánico.\n- Asesor técnico en empresas grandes de transporte.\n- Fábricas de ensamblaje y centros de revisión vehicular.\n- También la posibilidad de abrir tu propio taller o centro mecánico."
-  - text: "El campo laboral depende de la carrera que elijas. Por ejemplo, te preparamos para que puedas trabajar en hospitales (si eliges el área de la salud), en escuelas (en educación), desarrollar tu propia empresa, etc.\n¿De qué carrera quieres conocer el campo de trabajo?"
+  - text: "El campo laboral depende de la carrera que elijas. Por ejemplo, te preparamos para que puedas trabajar en hospitales, en escuelas, o desarrollar tu propia empresa.\nPara los detalles exactos y salidas laborales de la carrera que buscas, **Daniela** te enviará la información completa en un instante."
 
   utter_validez_titulo:
   - condition:
     - type: slot
       name: carrera
+      value: enfermeria
+    text: "Al finalizar obtendrás el título de tercer nivel como **Técnico Superior en Enfermería** debidamente registrado en la SENESCYT."
+  - condition:
+    - type: slot
+      name: carrera
+      value: emergencias medicas
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Emergencias Médicas** debidamente registrado en la SENESCYT."
+  - condition:
+    - type: slot
+      name: carrera
+      value: rehabilitacion fisica
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Rehabilitación Física** debidamente registrado en la SENESCYT."
+  - condition:
+    - type: slot
+      name: carrera
       value: laboratorio clinico
-    text: "Al finalizar **Laboratorio Clínico**, obtendrás un **título de tercer nivel** registrado en la **SENESCYT**.\nComo emprendedor sí puedes establecer un laboratorio clínico propio; sin embargo, para su funcionamiento se requiere contar con la firma y aval de un bioquímico, que es el profesional autorizado para su habilitación legal."
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Laboratorio Clínico** debidamente registrado en la SENESCYT."
   - condition:
     - type: slot
       name: carrera
       value: administracion en farmacias
-    text: "Al finalizar **Administración en Farmacias**, obtendrás un **título de tercer nivel** registrado en la **SENESCYT**.\nSi deseas establecer tu propia farmacia, sí es posible, pero para que pueda funcionar se debe de contar de manera obligatoria con la firma y regencia de un químico farmacéutico, quien es el responsable técnico."
-  - text: "Al graduarte del Instituto Superior Tecnológico Consulting Group Ecuador obtendrás un **título de tercer nivel**, cien por ciento validado y registrado en la **SENESCYT**.\n¿Hay alguna carrera en la que te interese saber esto o sus requisitos de emprendimiento?"
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Administración en Farmacias** debidamente registrado en la SENESCYT."
+  - condition:
+    - type: slot
+      name: carrera
+      value: administracion de sistemas de la salud
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Administración de Sistemas de Salud** debidamente registrado en la SENESCYT."
+  - condition:
+    - type: slot
+      name: carrera
+      value: educacion inicial
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Educación Inicial** debidamente registrado en la SENESCYT."
+  - condition:
+    - type: slot
+      name: carrera
+      value: administracion
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Administración** debidamente registrado en la SENESCYT."
+  - condition:
+    - type: slot
+      name: carrera
+      value: marketing digital
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Marketing Digital y Comercio Electrónico** debidamente registrado en la SENESCYT."
+  - condition:
+    - type: slot
+      name: carrera
+      value: desarrollo de contenidos y manejo de redes
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Desarrollo de Contenidos y Manejo de Redes** debidamente registrado en la SENESCYT."
+  - condition:
+    - type: slot
+      name: carrera
+      value: mecanica automotriz
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Mecánica Automotriz** debidamente registrado en la SENESCYT."
+  - condition:
+    - type: slot
+      name: carrera
+      value: gastronomia
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Gastronomía** debidamente registrado en la SENESCYT."
+  - condition:
+    - type: slot
+      name: carrera
+      value: naturopatia
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Naturopatía** debidamente registrado en la SENESCYT."
+  - condition:
+    - type: slot
+      name: carrera
+      value: inteligencia artificial
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Inteligencia Artificial** debidamente registrado en la SENESCYT."
+  - text: "Al graduarte del Instituto Superior Tecnológico Consulting Group Ecuador obtendrás un **título de tercer nivel**, cien por ciento validado y registrado en la **SENESCYT**. ¿De qué carrera en específico te gustaría saber el grado exacto que recibes?"
+
+  utter_emprendimiento:
+  - condition:
+    - type: slot
+      name: carrera
+      value: laboratorio clinico
+    text: "Como emprendedor sí puedes establecer un laboratorio clínico propio; sin embargo, para su funcionamiento se requiere contar con la firma y aval de un bioquímico, que es el profesional autorizado para su habilitación legal."
+  - condition:
+    - type: slot
+      name: carrera
+      value: administracion en farmacias
+    text: "Si deseas establecer tu propia farmacia, sí es posible, pero para que pueda funcionar se debe de contar de manera obligatoria con la firma y regencia de un químico farmacéutico, quien es el responsable técnico."
+  - text: "La gran mayoría de nuestras carreras te ofrecen los conocimientos prácticos y técnicos para emprender y establecer tu propio negocio o servicio. ¿Tienes en mente alguna carrera de la que quisieras confirmar opciones de negocio propio?"
 
   utter_homologacion:
   - text: "Si ya eres parte de nuestra comunidad de Consultinos o estudiaste antes, puedes realizar una homologación.\n\nPara homologar necesitamos:\n- Copia a color de tu cédula.\n- Certificado del título de bachiller (descargado de la página de internet).\n- 2 fotos tamaño carnet.\n- Comprobante de depósito ($89,60 para consultinos).\n- Copia del certificado UTQ si aplica.\n\n Si eres estudiante externo, Daniela puede indicarte exactamente qué materias puedes homologar y los pasos a seguir."
 
   utter_requisitos:
   - text: "¡Nos alegra que quieras formar parte del Instituto CGE!\nPara empezar tu proceso de inscripción, solo necesitas reunir:\n- Copia a color de tu cédula.\n- Certificado de tener registrado el título de bachiller (descargado de la página del internet) OBLIGATORIO.\n- 2 fotos en tamaño carnet.\n- Tu comprobante de depósito de inscripción.\n\n¡Daniela te guiará durante todo tu proceso!"
+
+  utter_formas_pago:
+  - text: "El pago se debe realizar directamente por **transferencia o depósito**.\n\nDependiendo de la carrera, el depósito debe realizarse a la cuenta correspondiente, por lo que es importante verificar cuál es la cuenta correcta antes de realizar el pago.\n\nPor esta razón, lo más recomendable es que te comuniques con **Daniela**, quien podrá indicarte la cuenta correspondiente para realizar el depósito o transferencia según la carrera que hayas elegido."
+
+  utter_proceso_matricula:
+  - text: "El proceso de matrícula se realiza de manera **presencial**.\n\nDebes acercarte directamente al **Instituto Superior Tecnológico Consulting Group Ecuador**, donde la persona encargada te dará más información sobre la carrera o las carreras de tu interés.\n\nAdemás, te guiará oportunamente para que puedas realizar todo el proceso de matrícula de forma manual y presencial. ¡Te esperamos para dar el primer paso hacia tu futuro profesional!"
+
+  utter_uniformes:
+  - text: "Los uniformes deben adquirirse cuando vas a iniciar clases.\n\nLa compra se realiza con los distribuidores que tienen convenio con Consulting Group Ecuador.\n\nPara recibir información más detallada sobre los distribuidores y los precios exactos, es recomendable comunicarse directamente con **Daniela**, quien podrá brindarte toda la orientación correspondiente."
 
 session_config:
   session_expiration_time: 60

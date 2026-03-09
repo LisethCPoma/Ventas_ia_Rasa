@@ -63,7 +63,21 @@ stories:
   - intent: informar_carrera_interes
   - action: utter_campo_laboral
 
+- story: Validez titulo follow-up
+  steps:
+  - intent: preguntar_validez_titulo
+  - action: utter_validez_titulo
+  - intent: informar_carrera_interes
+  - action: utter_validez_titulo
+
 - story: Reaccion carrera fallback general
   steps:
   - intent: informar_carrera_interes
   - action: utter_reaccion_carrera
+
+- story: Emprendimiento follow-up
+  steps:
+  - intent: preguntar_emprendimiento
+  - action: utter_emprendimiento
+  - intent: informar_carrera_interes
+  - action: utter_emprendimiento
