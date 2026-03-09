@@ -20,3 +20,50 @@ stories:
   - action: utter_listar_oferta
   - intent: informar_carrera_interes
   - action: utter_reaccion_carrera
+
+- story: Opciones pago follow-up
+  steps:
+  - intent: preguntar_opciones_pago
+  - action: utter_opciones_pago
+  - intent: informar_carrera_interes
+  - action: utter_costos
+
+- story: Costos follow-up
+  steps:
+  - intent: preguntar_costos
+  - action: utter_costos
+  - intent: informar_carrera_interes
+  - action: utter_costos
+
+- story: Modalidad follow-up
+  steps:
+  - intent: preguntar_modalidad_estudio
+  - action: utter_modalidad_estudio
+  - intent: informar_carrera_interes
+  - action: utter_modalidad_estudio
+
+- story: Duracion follow-up
+  steps:
+  - intent: preguntar_duracion_carreras
+  - action: utter_duracion_carreras
+  - intent: informar_carrera_interes
+  - action: utter_duracion_carreras
+
+- story: Practicas follow-up
+  steps:
+  - intent: preguntar_practicas
+  - action: utter_practicas
+  - intent: informar_carrera_interes
+  - action: utter_practicas
+
+- story: Campo laboral follow-up
+  steps:
+  - intent: preguntar_campo_laboral
+  - action: utter_campo_laboral
+  - intent: informar_carrera_interes
+  - action: utter_campo_laboral
+
+- story: Reaccion carrera fallback general
+  steps:
+  - intent: informar_carrera_interes
+  - action: utter_reaccion_carrera

@@ -11,11 +11,6 @@ rules:
   - intent: preguntar_oferta_academica
   - action: utter_listar_oferta
 
-- rule: Consultina reacciona a la carrera específica
-  steps:
-  - intent: informar_carrera_interes
-  - action: utter_reaccion_carrera
-
 - rule: Consultina refuerza el cierre de ventas
   steps:
   - intent: pedir_refuerzo_cierre

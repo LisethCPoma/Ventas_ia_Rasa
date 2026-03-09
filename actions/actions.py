@@ -25,18 +25,19 @@ class ActionConsultarCupos(Action):
         try:
             # 1. Configurar la conexión a MySQL
             conexion = mysql.connector.connect(
-                host='localhost', # o la IP de tu servidor MySQL
-                database='istcge_admisiones', # Nombre de tu base de datos
-                user='asesor_ia', # Tu usuario
-                password='admin123' # Tu contraseña
+                host='127.0.0.1', # Forzamos la red TCP para Docker
+                database='istcge_admisiones',
+                user='asesor_ia',
+                password='admin123'
             )
-
             if conexion.is_connected():
                 # dictionary=True hace que el resultado vuelva como un array asociativo
-                cursor = conexion.cursor(dictionary=True) 
+                # buffered=True soluciona el error "Unread result found"
+                cursor = conexion.cursor(dictionary=True, buffered=True) 
                 
-                # 2. Ejecutar la consulta preparada (segura)
-                query = "SELECT cupos FROM carreras WHERE nombre = %s"
+                # 2. Ejecutar la consulta preparada (segura) usando LOWER para ignorar mayúsculas
+                query = "SELECT cupos FROM carreras WHERE LOWER(nombre) = LOWER(%s)"
+                # Pasamos la carrera consultada (Rasa suele enviarlo en minúsculas por los sinónimos)
                 cursor.execute(query, (carrera_consultada,))
                 
                 # 3. Obtener el primer registro

@@ -131,6 +131,11 @@ function agregarMensaje(remitente, texto, esUsuario) {
 
 // 3. Control del micrófono
 btnHablar.onclick = () => {
+    // Si la agente está hablando y el usuario la interrumpe presionando el micrófono, silenciar inmediatamente
+    if (window.speechSynthesis.speaking) {
+        window.speechSynthesis.cancel();
+    }
+
     if (!escuchando) {
         try { reconocimiento.start(); } catch(e) {}
     } else {
