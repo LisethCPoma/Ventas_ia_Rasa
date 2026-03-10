@@ -36,7 +36,7 @@ class ActionConsultarCupos(Action):
                 cursor = conexion.cursor(dictionary=True, buffered=True) 
                 
                 # 2. Ejecutar la consulta preparada (segura) usando LOWER para ignorar mayúsculas
-                query = "SELECT cupos FROM carreras WHERE LOWER(nombre) = LOWER(%s)"
+                query = "SELECT cupos, imagen_url FROM carreras WHERE LOWER(nombre) = LOWER(%s)"
                 # Pasamos la carrera consultada (Rasa suele enviarlo en minúsculas por los sinónimos)
                 cursor.execute(query, (carrera_consultada,))
                 
@@ -45,9 +45,46 @@ class ActionConsultarCupos(Action):
                 
                 if registro:
                     cupos_disponibles = registro['cupos']
-                    mensaje = f"¡Excelente! Revisando nuestra base de datos en vivo, para {carrera_consultada} nos quedan {cupos_disponibles} cupos."
+                    imagen_url = registro.get('imagen_url')
+                    
+                    # Diccionario para corregir ortografía y mejorar la pronunciación TTS de la IA
+                    nombres_formateados = {
+                        "enfermeria": "Enfermería",
+                        "emergencias medicas": "Emergencias Médicas",
+                        "rehabilitacion fisica": "Rehabilitación Física",
+                        "laboratorio clinico": "Laboratorio Clínico",
+                        "administracion de farmacias": "Administración de Farmacias",
+                        "administracion de sistemas de la salud": "Administración de Sistemas de la Salud",
+                        "educacion inicial": "Educación Inicial",
+                        "administracion": "Administración",
+                        "marketing digital": "Marketing Digital",
+                        "desarrollo de contenidos y manejo de redes": "Desarrollo de Contenidos y Manejo de Redes",
+                        "mecanica automotriz": "Mecánica Automotriz",
+                        "gastronomia": "Gastronomía",
+                        "naturopatia": "Naturopatía",
+                        "inteligencia artificial": "Inteligencia Artificial"
+                    }
+                    
+                    # Obtenemos el nombre formateado. Si por algún motivo no está en el diccionario, usamos title()
+                    nombre_presentacion = nombres_formateados.get(carrera_consultada.lower(), carrera_consultada.title())
+
+                    mensaje = f"¡Excelente! Revisando nuestra base de datos en vivo, para {nombre_presentacion} nos quedan {cupos_disponibles} cupos."
+                    
+                    if imagen_url:
+                        dispatcher.utter_message(text=mensaje, image=imagen_url)
+                        return []
+                    else:
+                        dispatcher.utter_message(text=mensaje)
+                        return []
                 else:
-                    mensaje = f"He buscado {carrera_consultada} en el sistema, pero no encontré registros de cupos en este momento."
+                    nombre_presentacion = carrera_consultada.title()
+                    # Mismo trato para el mensaje de error "no encontré registros"
+                    if carrera_consultada.lower() == "enfermeria": nombre_presentacion = "Enfermería"
+                    if carrera_consultada.lower() == "mecanica automotriz": nombre_presentacion = "Mecánica Automotriz"
+                    if carrera_consultada.lower() == "naturopatia": nombre_presentacion = "Naturopatía"
+                    # etc.
+                    
+                    mensaje = f"He buscado {nombre_presentacion} en el sistema, pero no encontré registros de cupos en este momento."
 
         except Error as e:
             # Si se cae la base de datos, el bot no explota, simplemente avisa
@@ -60,7 +97,10 @@ class ActionConsultarCupos(Action):
                 cursor.close()
                 conexion.close()
 
-        # 5. Enviar la respuesta final al usuario en el chat
-        dispatcher.utter_message(text=mensaje)
+        # 5. Enviar la respuesta final si no se despachó antes (ej. cuando no hay registros o hay error)
+        try:
+            dispatcher.utter_message(text=mensaje)
+        except UnboundLocalError:
+            pass
 
         return []

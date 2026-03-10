@@ -101,20 +101,20 @@ function agregarMensaje(remitente, texto, esUsuario) {
     let htmlContent = '';
     
     if (esUsuario) {
-        // Estilo Usuario: Burbuja gris claro a la derecha
+        // Estilo Usuario: Burbuja azul corporativa a la derecha
         htmlContent = `
-            <div class="bg-[#f0f4f9] text-gray-800 px-6 py-3.5 rounded-3xl max-w-[85%] md:max-w-[75%] text-[15px] leading-relaxed">
+            <div class="bg-primary text-white shadow-md px-5 py-3.5 rounded-3xl rounded-br-sm max-w-[85%] md:max-w-[70%] text-[15px] font-medium leading-relaxed tracking-wide shadow-primary/20">
                 ${texto}
             </div>
         `;
     } else {
-        // Estilo Consultina: Avatar con destello a la izquierda, sin burbuja
+        // Estilo Consultina: Tarjeta limpia y moderna a la izquierda
         htmlContent = `
-            <div class="flex gap-4 w-full md:max-w-[90%]">
-                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0 mt-1">
-                    <span class="text-white text-[15px] font-bold">✦</span>
+            <div class="flex gap-4 w-full md:max-w-[85%]">
+                <div class="w-9 h-9 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0 mt-0.5 shadow-md shadow-accent/20">
+                    <span class="text-white text-[16px] font-bold">✦</span>
                 </div>
-                <div class="text-gray-800 text-[15px] leading-relaxed w-full">
+                <div class="bg-white border border-gray-100 shadow-sm rounded-3xl rounded-tl-sm px-6 py-4 text-gray-800 text-[15px] leading-relaxed w-full">
                     ${texto}
                 </div>
             </div>
@@ -242,20 +242,41 @@ async function enviarMensajeServidor(textoUsuario) {
         const data = await respuesta.json();
         
         if(data && data.length > 0) {
-            let textoParaVoz = ""; 
+            let textoParaVoz = "";
+            let textoParaChat = "";
             
-            data.forEach(mensaje => {
+            data.forEach((mensaje, index) => {
+                // Si no es el primer mensaje, agregar un salto de párrafo
+                if (index > 0 && (mensaje.text || mensaje.image)) {
+                    textoParaChat += '<br><br>'; 
+                }
+                
                 if(mensaje.text) {
-                    let textoHTML = mensaje.text
+                    let textoCapa = mensaje.text
                         .replace(/\*\*(.*?)\*\*/g, '<strong class="text-primary font-semibold">$1</strong>')
                         .replace(/\n/g, '<br>');
                     
-                    agregarMensaje("Consultina", textoHTML, false);
+                    textoParaChat += textoCapa;
+                    
                     textoParaVoz += mensaje.text.replace(/\*/g, '') + ". ";
+                }
+                
+                if(mensaje.image) {
+                    let imgCapa = `<img src="${mensaje.image}" alt="Imagen adjunta" class="max-w-full h-auto rounded-xl mt-3 shadow-sm border border-gray-100">`;
+                    // Si ya había texto en este iterador, damos un margin top extra asegurando espacio
+                    textoParaChat += imgCapa;
                 }
             });
             
-            reproducirVozFemenina(textoParaVoz);
+            // Inyectar una sola tarjeta al DOM unificada
+            if(textoParaChat.trim().length > 0) {
+                agregarMensaje("Consultina", textoParaChat, false);
+            }
+            
+            // Hablar toda la cadena consolidada
+            if(textoParaVoz.trim().length > 0) {
+                reproducirVozFemenina(textoParaVoz);
+            }
         }
     } catch (error) {
         agregarMensaje("Sistema", "Error de conexión con el servidor de IA.", false);

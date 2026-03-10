@@ -49,105 +49,105 @@ actions:
 
 responses:
   utter_saludo_consultina:
-  - text: "¡Hola! Mucho gusto. Soy Consultina. Estoy aquí para ayudarte a conocer todo sobre nuestras carreras y acompañarte en este proceso para que tomes una gran decisión para tu futuro."
+  - text: "¡Hola! Mucho gusto. Soy Consultina. Estoy aquí para ayudarte a conocer todo sobre las carreras de la institución y acompañarte en este proceso para que tomes una gran decisión para tu futuro."
 
   utter_saludo:
-  - text: "¡Hola! Mucho gusto. Soy Consultina. Estoy aquí para ayudarte a conocer todo sobre nuestras carreras y acompañarte en este proceso para que tomes una gran decisión para tu futuro. ¿Qué información te gustaría conocer hoy?"
+  - text: "¡Hola! Mucho gusto. Soy Consultina. Estoy aquí para ayudarte a conocer todo sobre las carreras de la institución y acompañarte en este proceso para que tomes una gran decisión para tu futuro. ¿Qué información te gustaría conocer hoy?"
 
   utter_veracidad:
   - text: "¡Para nada! Como asistente oficial del Instituto, te garantizo que toda la información que te proporciono es completamente verídica y verificable. Mi objetivo es darte datos reales para que tomes la mejor decisión para tu futuro."
 
   utter_instituto_premiado:
-  - text: "A nivel nacional, sacando el grupo de las universidades, el **Instituto Superior Tecnológico Consulting Group Ecuador (ISTCGE)** es la institución de educación superior técnica y tecnológica más reconocida y premiada del país.\n\nContamos con aval oficial de las autoridades, el respaldo del holding educativo Consulting Group Ecuador con más de dos décadas de trayectoria y 32 sedes a nivel nacional, y somos referentes de excelencia institucional con los más altos estándares desde nuestra fundación."
+  - text: "A nivel nacional, sacando el grupo de las universidades, el **Instituto Superior Tecnológico Consulting Group Ecuador (ISTCGE)** es la institución de educación superior técnica y tecnológica más reconocida y premiada del país.\n\nCuenta con aval oficial de las autoridades, el respaldo del holding educativo Consulting Group Ecuador con más de dos décadas de trayectoria y 32 sedes a nivel nacional, y es referente de excelencia institucional con los más altos estándares desde su fundación."
 
   utter_reaccion_carrera:
   - condition:
     - type: slot
       name: carrera
       value: enfermeria
-    text: "¡Excelente elección! Como la institución más grande del país en formación en salud y emergencias, te garantizamos una educación de excelencia con simuladores y prácticas reales. ¿Qué información específica te gustaría conocer de la carrera de {carrera}? Puedes preguntarme por costos, duración, campo laboral o prácticas."
+    text: "¡Excelente elección! Como la institución más grande del país en formación en salud y emergencias, el instituto garantiza una educación de excelencia con simuladores y prácticas reales. ¿Qué información específica te gustaría conocer de la carrera de Enfermería? Puedes preguntarme por costos, duración, campo laboral o prácticas."
   - condition:
     - type: slot
       name: carrera
       value: emergencias medicas
-    text: "¡Excelente elección! Como la institución más grande del país en formación en salud y emergencias, te garantizamos una educación de excelencia con simuladores y prácticas reales. ¿Qué información específica te gustaría conocer de la carrera de {carrera}? Puedes preguntarme por costos, duración, campo laboral o prácticas."
+    text: "¡Excelente elección! Como la institución más grande del país en formación en salud y emergencias, el instituto garantiza una educación de excelencia con simuladores y prácticas reales. ¿Qué información específica te gustaría conocer de la carrera de Emergencias Médicas? Puedes preguntarme por costos, duración, campo laboral o prácticas."
   - condition:
     - type: slot
       name: carrera
       value: rehabilitacion fisica
-    text: "¡Excelente elección! Como la institución más grande del país en formación en salud y emergencias, te garantizamos una educación de excelencia con simuladores y prácticas reales. ¿Qué información específica te gustaría conocer de la carrera de {carrera}? Puedes preguntarme por costos, duración, campo laboral o prácticas."
+    text: "¡Excelente elección! Como la institución más grande del país en formación en salud y emergencias, el instituto garantiza una educación de excelencia con simuladores y prácticas reales. ¿Qué información específica te gustaría conocer de la carrera de Rehabilitación Física? Puedes preguntarme por costos, duración, campo laboral o prácticas."
   - condition:
     - type: slot
       name: carrera
       value: laboratorio clinico
-    text: "¡Excelente elección! Como la institución más grande del país en formación en salud y emergencias, te garantizamos una educación de excelencia con simuladores y prácticas reales. ¿Qué información específica te gustaría conocer de la carrera de {carrera}? Puedes preguntarme por costos, duración, campo laboral o prácticas."
+    text: "¡Excelente elección! Como la institución más grande del país en formación en salud y emergencias, el instituto garantiza una educación de excelencia con simuladores y prácticas reales. ¿Qué información específica te gustaría conocer de la carrera de Laboratorio Clínico? Puedes preguntarme por costos, duración, campo laboral o prácticas."
   - condition:
     - type: slot
       name: carrera
       value: administracion en farmacias
-    text: "¡Excelente elección! Como la institución más grande del país en formación en salud y emergencias, te garantizamos una educación de excelencia con simuladores y prácticas reales. ¿Qué información específica te gustaría conocer de la carrera de {carrera}? Puedes preguntarme por costos, duración, campo laboral o prácticas."
+    text: "¡Excelente elección! Como la institución más grande del país en formación en salud y emergencias, el instituto garantiza una educación de excelencia con simuladores y prácticas reales. ¿Qué información específica te gustaría conocer de la carrera de Administración en Farmacias? Puedes preguntarme por costos, duración, campo laboral o prácticas."
   - condition:
     - type: slot
       name: carrera
       value: administracion de sistemas de la salud
-    text: "¡Excelente elección! Como la institución más grande del país en formación en salud y emergencias, te garantizamos una educación de excelencia con simuladores y prácticas reales. ¿Qué información específica te gustaría conocer de la carrera de {carrera}? Puedes preguntarme por costos, duración, campo laboral o prácticas."
+    text: "¡Excelente elección! Como la institución más grande del país en formación en salud y emergencias, el instituto garantiza una educación de excelencia con simuladores y prácticas reales. ¿Qué información específica te gustaría conocer de la carrera de Administración de Sistemas de la Salud? Puedes preguntarme por costos, duración, campo laboral o prácticas."
   - condition:
     - type: slot
       name: carrera
       value: educacion inicial
-    text: "¡Excelente elección! En CGE orientamos nuestra formación a la práctica. ¿Qué información específica te gustaría conocer de la carrera de {carrera}? Puedes preguntarme por costos, duración, campo laboral o prácticas."
+    text: "¡Excelente elección! En el ISTCGE la formación se orienta a la práctica. ¿Qué información específica te gustaría conocer de la carrera de Educación Inicial? Puedes preguntarme por costos, duración, campo laboral o prácticas."
   - condition:
     - type: slot
       name: carrera
       value: administracion
-    text: "¡Excelente elección! En CGE orientamos nuestra formación a la práctica. ¿Qué información específica te gustaría conocer de la carrera de {carrera}? Puedes preguntarme por costos, duración, modalidad, campo laboral o prácticas."
+    text: "¡Excelente elección! En el ISTCGE la formación se orienta a la práctica. ¿Qué información específica te gustaría conocer de la carrera de Administración? Puedes preguntarme por costos, duración, modalidad, campo laboral o prácticas."
   - condition:
     - type: slot
       name: carrera
       value: marketing digital
-    text: "¡Excelente elección! En CGE orientamos nuestra formación a la práctica. ¿Qué información específica te gustaría conocer de la carrera de {carrera}? Puedes preguntarme por costos, duración, modalidad, campo laboral o prácticas."
+    text: "¡Excelente elección! En el ISTCGE la formación se orienta a la práctica. ¿Qué información específica te gustaría conocer de la carrera de Marketing Digital? Puedes preguntarme por costos, duración, modalidad, campo laboral o prácticas."
   - condition:
     - type: slot
       name: carrera
       value: desarrollo de contenidos y manejo de redes
-    text: "¡Excelente elección! En CGE orientamos nuestra formación a la práctica. ¿Qué información específica te gustaría conocer de la carrera de {carrera}? Puedes preguntarme por costos, duración, campo laboral o prácticas."
+    text: "¡Excelente elección! En el ISTCGE la formación se orienta a la práctica. ¿Qué información específica te gustaría conocer de la carrera de Desarrollo de Contenidos y Manejo de Redes? Puedes preguntarme por costos, duración, campo laboral o prácticas."
   - condition:
     - type: slot
       name: carrera
       value: mecanica automotriz
-    text: "¡Excelente elección! En CGE orientamos nuestra formación a la práctica. ¿Qué información específica te gustaría conocer de la carrera de {carrera}? Puedes preguntarme por costos, duración, campo laboral o prácticas."
+    text: "¡Excelente elección! En el ISTCGE la formación se orienta a la práctica. ¿Qué información específica te gustaría conocer de la carrera de Mecánica Automotriz? Puedes preguntarme por costos, duración, campo laboral o prácticas."
   - condition:
     - type: slot
       name: carrera
       value: gastronomia
-    text: "¡Excelente elección! En CGE orientamos nuestra formación a la práctica. ¿Qué información específica te gustaría conocer de la carrera de {carrera}? Puedes preguntarme por costos, duración, campo laboral o prácticas."
+    text: "¡Excelente elección! En el ISTCGE la formación se orienta a la práctica. ¿Qué información específica te gustaría conocer de la carrera de Gastronomía? Puedes preguntarme por costos, duración, campo laboral o prácticas."
   - condition:
     - type: slot
       name: carrera
       value: naturopatia
-    text: "¡Excelente elección! En CGE orientamos nuestra formación a la práctica. ¿Qué información específica te gustaría conocer de la carrera de {carrera}? Puedes preguntarme por costos, duración, campo laboral o prácticas."
+    text: "¡Excelente elección! En el ISTCGE la formación se orienta a la práctica. ¿Qué información específica te gustaría conocer de la carrera de Naturopatía? Puedes preguntarme por costos, duración, campo laboral o prácticas."
   - condition:
     - type: slot
       name: carrera
       value: inteligencia artificial
-    text: "¡Excelente elección! La tecnología es el futuro. ¿Qué información específica te gustaría conocer de la carrera de {carrera}? Puedes preguntarme por costos, duración, campo laboral o prácticas."
-  - text: "¡Excelente elección! En CGE orientamos nuestra formación a la práctica. ¿De qué carrera en específico te gustaría conocer los detalles de costos, duración o campo laboral?"
+    text: "¡Excelente elección! La tecnología es el futuro. ¿Qué información específica te gustaría conocer de la carrera de Inteligencia Artificial? Puedes preguntarme por costos, duración, campo laboral o prácticas."
+  - text: "¡Excelente elección! En el ISTCGE la formación se orienta a la práctica. ¿De qué carrera en específico te gustaría conocer los detalles de costos, duración o campo laboral?"
 
   utter_voluntariado_consultinos:
-  - text: "¡Así es! Muchos de nuestros estudiantes nos dicen que estudiar aquí no solo les da una profesión, sino también la oportunidad de salvar vidas y servir a la comunidad a través de nuestro programa Consultinos. ¡Es una experiencia que cambia vidas!"
+  - text: "¡Así es! Muchos de los estudiantes de la institución nos dicen que estudiar aquí no solo les da una profesión, sino también la oportunidad de salvar vidas y servir a la comunidad a través de el programa Consultinos. ¡Es una experiencia que cambia vidas!"
 
   utter_refuerzo_decision:
   - text: "Si te gusta ayudar a las personas, superar retos y quieres tener una carrera con propósito, este puede ser el comienzo de algo muy grande para ti. ¡Estás en las mejores manos con Daniela para dar este paso!"
 
   utter_listar_oferta:
-  - text: "Tenemos varias opciones para que empieces a construir tu futuro profesional.\n\nContamos con diferentes carreras diseñadas para prepararte y ayudarte a alcanzar tus metas.\nTe presentamos nuestras opciones disponibles:\n- **Área de Salud:** Técnico Superior en Enfermería, Técnico Superior en Emergencias Médicas, Técnico Superior en Rehabilitación Física, Técnico Superior en Laboratorio Clínico, Técnico Superior en Administración de Farmacias, Técnico Superior en Administración de Sistemas de la Salud.\n- **Área Educativa:** Técnico Superior en Educación Inicial.\n- **Área Empresarial y Digital:** Técnico Superior en Administración, Técnico Superior en Marketing Digital y Comercio Electrónico, Técnico Superior en Desarrollo de Contenidos y Manejo de Redes.\n- **Área Técnica y Productiva:** Técnico Superior en Mecánica Automotriz, Técnico Superior en Gastronomía.\n- **Área de Bienestar y Terapias Naturales:** Técnico Superior en Naturopatía.\n- **Área Tecnológica:** Técnico Superior en Inteligencia Artificial.\n\n¿Cuál te llama más la atención para darte información más específica?"
+  - text: "La institución tiene varias opciones para que empieces a construir tu futuro profesional.\n\nCuentan con diferentes carreras diseñadas para prepararte y ayudarte a alcanzar tus metas.\nTe presentamos las opciones de la institución disponibles:\n- **Área de Salud:** Técnico Superior en Enfermería, Técnico Superior en Emergencias Médicas, Técnico Superior en Rehabilitación Física, Técnico Superior en Laboratorio Clínico, Técnico Superior en Administración de Farmacias, Técnico Superior en Administración de Sistemas de la Salud.\n- **Área Educativa:** Técnico Superior en Educación Inicial.\n- **Área Empresarial y Digital:** Técnico Superior en Administración, Técnico Superior en Marketing Digital y Comercio Electrónico, Técnico Superior en Desarrollo de Contenidos y Manejo de Redes.\n- **Área Técnica y Productiva:** Técnico Superior en Mecánica Automotriz, Técnico Superior en Gastronomía.\n- **Área de Bienestar y Terapias Naturales:** Técnico Superior en Naturopatía.\n- **Área Tecnológica:** Técnico Superior en Inteligencia Artificial.\n\n¿Cuál te llama más la atención para darte información más específica?"
 
   utter_listar_carreras_por_area:
   - condition:
     - type: slot
       name: area_academica
       value: salud
-    text: "En el área de **Salud** contamos con excelentes opciones: Técnico Superior en Enfermería, Emergencias Médicas, Rehabilitación Física, Laboratorio Clínico, Administración de Farmacias y Administración de Sistemas de la Salud.\n¿Te gustaría detalles de alguna en particular?"
+    text: "En el área de **Salud** la institución cuenta con excelentes opciones: Técnico Superior en Enfermería, Emergencias Médicas, Rehabilitación Física, Laboratorio Clínico, Administración de Farmacias y Administración de Sistemas de la Salud.\n¿Te gustaría detalles de alguna en particular?"
   - condition:
     - type: slot
       name: area_academica
@@ -162,17 +162,17 @@ responses:
     - type: slot
       name: area_academica
       value: productividad
-    text: "En el área **Técnica y Productiva** ofrecemos carreras súper prácticas: Tecnología Superior en Mecánica Automotriz y Tecnología Superior en Gastronomía.\n¿Cuál llama tu atención?"
+    text: "En el área **Técnica y Productiva** la institución ofrece carreras súper prácticas: Tecnología Superior en Mecánica Automotriz y Tecnología Superior en Gastronomía.\n¿Cuál llama tu atención?"
   - condition:
     - type: slot
       name: area_academica
       value: bienestar
-    text: "En el área de **Bienestar y Terapias Naturales** contamos con la Tecnología Superior en Naturopatía, perfecta si te interesa la salud alternativa.\n¿Te detallo sus costos y duración?"
+    text: "En el área de **Bienestar y Terapias Naturales** la institución cuenta con la Tecnología Superior en Naturopatía, perfecta si te interesa la salud alternativa.\n¿Te detallo sus costos y duración?"
   - condition:
     - type: slot
       name: area_academica
       value: tecnologia
-    text: "En el área **Tecnológica** ofrecemos Tecnología Superior en Inteligencia Artificial, la carrera del futuro y de menor duración.\n¿Te cuento más sobre ella?"
+    text: "En el área **Tecnológica** la institución ofrece Tecnología Superior en Inteligencia Artificial, la carrera del futuro y de menor duración.\n¿Te cuento más sobre ella?"
   - text: "El Instituto CGE tiene muchísimas opciones agrupadas por áreas para tu comodidad. Cuéntame con tus propias palabras qué te gusta hacer o qué carrera tienes en mente para guiarte mejor."
 
 
@@ -180,7 +180,7 @@ responses:
   - text: "Para darte la información exacta que necesitas, te comento que los costos, duración y modalidades varían dependiendo de la especialidad. ¿De qué carrera en particular quisieras que te dé todos los detalles?\nTenemos áreas de Salud, Educación, Empresa, Tecnología y Productividad."
   
   utter_default:
-  - text: "No estoy segura de haberte entendido bien, recuerda que Daniela y yo estamos aquí para guiarte. ¿Podrías repetirme tu duda sobre nuestras carreras o los cupos disponibles?"
+  - text: "Esa es una excelente pregunta que Daniela te podría responder de manera mucho más precisa y detallada.\n\nDaniela te responderá enseguida con toda la información solicitada."
 
   utter_horarios:
   - text: "¡Claro! Nuestro horario de atención para admisiones es de lunes a domingos de 8:00 a.m. a 6:00 p.m. ¡Te esperamos!"
@@ -196,7 +196,7 @@ responses:
       name: carrera
       value: "marketing digital"
     text: "La carrera de Tecnología Superior en Marketing Digital y Comercio Electrónico se imparte en modalidad en línea (virtual)."
-  - text: "Ofrecemos carreras en modalidad **presencial** (como Enfermería, Emergencias Médicas, Gastronomía, etc.) y también **en línea** (como Administración y Marketing Digital).\n¿De qué carrera te interesa saber la modalidad?"
+  - text: "La institución ofrece carreras en modalidad **presencial** (como Enfermería, Emergencias Médicas, Gastronomía, etc.) y también **en línea** (como Administración y Marketing Digital).\n¿De qué carrera te interesa saber la modalidad?"
 
   utter_duracion_carreras:
   - condition:
@@ -208,68 +208,68 @@ responses:
     - type: slot
       name: carrera
       value: enfermeria
-    text: "La carrera de **{carrera}** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
+    text: "La carrera de **Enfermería** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
   - condition:
     - type: slot
       name: carrera
       value: emergencias medicas
-    text: "La carrera de **{carrera}** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
+    text: "La carrera de **Emergencias Médicas** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
   - condition:
     - type: slot
       name: carrera
       value: rehabilitacion fisica
-    text: "La carrera de **{carrera}** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
+    text: "La carrera de **Rehabilitación Física** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
   - condition:
     - type: slot
       name: carrera
       value: laboratorio clinico
-    text: "La carrera de **{carrera}** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
+    text: "La carrera de **Laboratorio Clínico** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
   - condition:
     - type: slot
       name: carrera
       value: administracion en farmacias
-    text: "La carrera de **{carrera}** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
+    text: "La carrera de **Administración en Farmacias** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
   - condition:
     - type: slot
       name: carrera
       value: administracion de sistemas de la salud
-    text: "La carrera de **{carrera}** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
+    text: "La carrera de **Administración de Sistemas de la Salud** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
   - condition:
     - type: slot
       name: carrera
       value: educacion inicial
-    text: "La carrera de **{carrera}** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
+    text: "La carrera de **Educación Inicial** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
   - condition:
     - type: slot
       name: carrera
       value: administracion
-    text: "La carrera de **{carrera}** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
+    text: "La carrera de **Administración** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
   - condition:
     - type: slot
       name: carrera
       value: marketing digital
-    text: "La carrera de **{carrera}** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
+    text: "La carrera de **Marketing Digital** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
   - condition:
     - type: slot
       name: carrera
       value: desarrollo de contenidos y manejo de redes
-    text: "La carrera de **{carrera}** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
+    text: "La carrera de **Desarrollo de Contenidos y Manejo de Redes** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
   - condition:
     - type: slot
       name: carrera
       value: mecanica automotriz
-    text: "La carrera de **{carrera}** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
+    text: "La carrera de **Mecánica Automotriz** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
   - condition:
     - type: slot
       name: carrera
       value: gastronomia
-    text: "La carrera de **{carrera}** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
+    text: "La carrera de **Gastronomía** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
   - condition:
     - type: slot
       name: carrera
       value: naturopatia
-    text: "La carrera de **{carrera}** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
-  - text: "La mayoría de nuestras carreras tienen una duración de **2 años**, a excepción de **Inteligencia Artificial**, que dura **1 año y medio**.\n¿De qué carrera en específico te gustaría saber la duración o más detalles?"
+    text: "La carrera de **Naturopatía** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
+  - text: "La mayoría de las carreras del instituto tienen una duración de **2 años**, a excepción de **Inteligencia Artificial**, que dura **1 año y medio**.\n¿De qué carrera en específico te gustaría saber la duración o más detalles?"
 
   utter_opciones_pago:
   - text: "¡Sí! Puedes realizar los pagos por semestre completo, o diferirlos en cuotas **mensuales** (5 cuotas) o **semanales** (20 semanas).\n¿Para qué carrera te gustaría consultar los valores y cuotas exactas?"
@@ -287,7 +287,7 @@ responses:
     - type: slot
       name: carrera
       value: emergencias medicas
-    text: "Para **Emergencias Médicas**, las prácticas se desarrollan en clínicas u hospitales. Además, somos el **único organismo que cuenta con ambulancias propias vinculadas al ECU 911**, por lo que participarás en escenarios reales de atención de emergencias."
+    text: "Para **Emergencias Médicas**, las prácticas se desarrollan en clínicas u hospitales. además, el instituto es el **único organismo que cuenta con ambulancias propias vinculadas al ECU 911**, por lo que participarás en escenarios reales de atención de emergencias."
   - condition:
     - type: slot
       name: carrera
@@ -297,7 +297,7 @@ responses:
     - type: slot
       name: carrera
       value: naturopatia
-    text: "Las prácticas de **Naturopatía** se realizan en centros de naturopatía e instituciones de terapias alternativas con los que tenemos convenios establecidos."
+    text: "Las prácticas de **Naturopatía** se realizan en centros de naturopatía e instituciones de terapias alternativas con los que el instituto tiene convenios establecidos."
   - condition:
     - type: slot
       name: carrera
@@ -317,7 +317,7 @@ responses:
     - type: slot
       name: carrera
       value: educacion inicial
-    text: "Las prácticas para **Educación Inicial** se realizan en unidades educativas y guarderías. Contamos con espacios propios como nuestro centro privado Rincón KitCGE y mas."
+    text: "Las prácticas para **Educación Inicial** se realizan en unidades educativas y guarderías. El instituto cuenta con espacios propios como el centro privado Rincón KitCGE y mas."
   - condition:
     - type: slot
       name: carrera
@@ -333,7 +333,7 @@ responses:
       name: carrera
       value: inteligencia artificial
     text: "En la carrera de **Inteligencia Artificial**, las prácticas se enfocan en el desarrollo de proyectos tecnológicos y convenios con empresas de software y tecnología."
-  - text: "Nuestras prácticas preprofesionales se realizan en entornos reales dependiendo de la carrera elegida (hospitales, ambulancias ECU 911, empresas, guarderías, etc.).\nSi la carrera que te interesa tiene convenios muy específicos, **Daniela** te compartirá enseguida el listado de instituciones donde podrías realizar tus prácticas."
+  - text: "Las prácticas preprofesionales se realizan en entornos reales dependiendo de la carrera elegida (hospitales, ambulancias ECU 911, empresas, guarderías, etc.).\nSi la carrera que te interesa tiene convenios muy específicos, **Daniela** te compartirá enseguida el listado de instituciones donde podrías realizar tus prácticas."
 
   utter_campo_laboral:
   - condition:
@@ -487,10 +487,10 @@ responses:
       name: carrera
       value: administracion en farmacias
     text: "Si deseas establecer tu propia farmacia, sí es posible, pero para que pueda funcionar se debe de contar de manera obligatoria con la firma y regencia de un químico farmacéutico, quien es el responsable técnico."
-  - text: "La gran mayoría de nuestras carreras te ofrecen los conocimientos prácticos y técnicos para emprender y establecer tu propio negocio o servicio. ¿Tienes en mente alguna carrera de la que quisieras confirmar opciones de negocio propio?"
+  - text: "La gran mayoría de las carreras de la institución brindan los conocimientos prácticos y técnicos para emprender y establecer tu propio negocio o servicio. ¿Tienes en mente alguna carrera de la que quisieras confirmar opciones de negocio propio?"
 
   utter_homologacion:
-  - text: "Si ya eres parte de nuestra comunidad de Consultinos o estudiaste antes, puedes realizar una homologación.\n\nPara homologar necesitamos:\n- Copia a color de tu cédula.\n- Certificado del título de bachiller (descargado de la página de internet).\n- 2 fotos tamaño carnet.\n- Comprobante de depósito ($89,60 para consultinos).\n- Copia del certificado UTQ si aplica.\n\n Si eres estudiante externo, Daniela puede indicarte exactamente qué materias puedes homologar y los pasos a seguir."
+  - text: "Si ya eres parte de nuestra comunidad de Consultinos o estudiaste antes, puedes realizar una homologación.\n\nPara homologar necesitamos:\n- Copia a color de tu cédula.\n- Certificado del título de bachiller (descargado de la página de internet).\n- 2 fotos tamaño carnet.\n- Comprobante de depósito ($89,60 para consultinos).\n- Copia del certificado UTQ.\n\n Si eres estudiante externo, Daniela puede indicarte exactamente qué materias puedes homologar y los pasos a seguir."
 
   utter_requisitos:
   - text: "¡Nos alegra que quieras formar parte del Instituto CGE!\nPara empezar tu proceso de inscripción, solo necesitas reunir:\n- Copia a color de tu cédula.\n- Certificado de tener registrado el título de bachiller (descargado de la página del internet) OBLIGATORIO.\n- 2 fotos en tamaño carnet.\n- Tu comprobante de depósito de inscripción.\n\n¡Daniela te guiará durante todo tu proceso!"
@@ -570,7 +570,7 @@ responses:
       name: carrera
       value: inteligencia artificial
     text: "Los horarios exactos para **Inteligencia Artificial** están por confirmarse para el nuevo período. Por favor, ¡consúltalo directamente con **Daniela**!"
-  - text: "Nuestros horarios de clases dependen de la carrera y su modalidad (tenemos jornadas matutinas, nocturnas virtuales, híbridas y fines de semana).\n¿De qué carrera en específico te gustaría saber el horario?"
+  - text: "Los horarios de clases dependen de la carrera y su modalidad (se ofrecen jornadas matutinas, nocturnas virtuales, híbridas y fines de semana).\n¿De qué carrera en específico te gustaría saber el horario?"
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
