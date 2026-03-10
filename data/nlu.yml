@@ -68,6 +68,18 @@ nlu:
     - Me gustaría saber de la carrera de [educacion inicial](carrera)
     - la carrera de [marketing digital](carrera)
     - de la carrera de [rehabilitacion fisica](carrera)
+    - Okay háblame acerca de la carrera de [desarrollo de contenidos y manejo de redes](carrera)
+    - Quiero saber sobre la carrera de [desarrollo de contenidos y manejo de redes](carrera)
+    - me interesa la de [redes](carrera)
+    - quiero [desarrollo de contenidos](carrera)
+    - Háblame sobre la carrera de [administracion de farmacias](carrera)
+    - tecnico superior en farmacia
+    - la carrera de [administracion en farmacias](carrera)
+    - quiero estudiar [administracion de farmacias](carrera)
+    - sobre la carrera de [farmacia](carrera)
+    - de la carrera de [farmacia](carrera)
+    - informame sobre [farmacias](carrera)
+    - quiero [educacion en linea](carrera)
 
 - intent: informar_area_interes
   examples: |
@@ -83,6 +95,18 @@ nlu:
     - [tecnologia]{"entity": "area_academica"}
     - área [productiva]{"entity": "area_academica", "value":"productividad"}
     - [bienestar]{"entity": "area_academica"}
+    - Quiero una carrera sobre el área de [salud]{"entity": "area_academica"}
+    - Okay háblame de las carreras del área [empresarial y digital]{"entity": "area_academica", "value":"empresa"}
+    - Quiero saber sobre las carreras de área [empresarial y digital]{"entity": "area_academica", "value":"empresa"}
+    - Quiero saber sobre las carreras del área [educativa]{"entity": "area_academica", "value":"educacion"}
+    - Quiero saber cuáles son las carreras del área [educativa]{"entity": "area_academica", "value":"educacion"}
+    - Okay y de las carreras del área [técnica y productiva]{"entity": "area_academica", "value":"productividad"}
+    - que tienen en el area [digital]{"entity": "area_academica", "value":"empresa"}
+    - carreras [comerciales]{"entity": "area_academica", "value":"empresa"}
+    - quiero del area de negocios y [empresa]{"entity": "area_academica"}
+    - de ciencias de la [salud]{"entity": "area_academica"}
+    - las tecnologicas del instituto
+    - Quiero de el área [tecnologica]{"entity": "area_academica", "value":"tecnologia"}
 
 - intent: preguntar_cupos
   examples: |

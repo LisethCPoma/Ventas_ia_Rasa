@@ -84,8 +84,8 @@ responses:
   - condition:
     - type: slot
       name: carrera
-      value: administracion en farmacias
-    text: "¡Excelente elección! Como la institución más grande del país en formación en salud y emergencias, el instituto garantiza una educación de excelencia con simuladores y prácticas reales. ¿Qué información específica te gustaría conocer de la carrera de Administración en Farmacias? Puedes preguntarme por costos, duración, campo laboral o prácticas."
+      value: administracion de farmacias
+    text: "¡Excelente elección! Como la institución más grande del país en formación en salud y emergencias, el instituto garantiza una educación de excelencia con simuladores y prácticas reales. ¿Qué información específica te gustaría conocer de la carrera de Administración de Farmacias? Puedes preguntarme por costos, duración, campo laboral o prácticas."
   - condition:
     - type: slot
       name: carrera
@@ -189,115 +189,175 @@ responses:
   - condition:
     - type: slot
       name: carrera
+      value: "enfermeria"
+    text: "La carrera de **Enfermería** es 100% presencial. ¿Te gustaría saber en qué horarios puedes estudiarla?"
+  - condition:
+    - type: slot
+      name: carrera
+      value: "emergencias medicas"
+    text: "La carrera de **Emergencias Médicas** es 100% presencial. ¿Quisieras conocer los horarios disponibles?"
+  - condition:
+    - type: slot
+      name: carrera
+      value: "rehabilitacion fisica"
+    text: "La carrera de **Rehabilitación Física** es presencial. ¿Te gustaría saber cuáles son los horarios?"
+  - condition:
+    - type: slot
+      name: carrera
+      value: "naturopatia"
+    text: "La carrera de **Naturopatía** es presencial de fines de semana. ¿Quisieras conocer los costos?"
+  - condition:
+    - type: slot
+      name: carrera
+      value: "gastronomia"
+    text: "La carrera de **Gastronomía** es totalmente presencial y muy práctica. ¿Te interesa saber los métodos de pago?"
+  - condition:
+    - type: slot
+      name: carrera
+      value: "mecanica automotriz"
+    text: "La carrera de **Mecánica Automotriz** es 100% presencial. ¿Quisieras que te cuente en qué puedes laborar al graduarte?"
+  - condition:
+    - type: slot
+      name: carrera
+      value: "educacion inicial"
+    text: "La carrera de **Educación Inicial** es presencial. ¿Deseas saber más acerca de cómo matricularte?"
+  - condition:
+    - type: slot
+      name: carrera
+      value: "administracion de sistemas de la salud"
+    text: "La carrera de **Administración de Sistemas de la Salud** se maneja bajo una modalidad Híbrida. ¿Te gustaría conocer los horarios específicos?"
+  - condition:
+    - type: slot
+      name: carrera
+      value: "laboratorio clinico"
+    text: "La carrera de **Laboratorio Clínico** tiene clases virtuales en la noche y prácticas presenciales. ¿Quieres saber cómo inscribirte hoy mismo?"
+  - condition:
+    - type: slot
+      name: carrera
       value: "administracion"
-    text: "La carrera de Tecnología Superior en Administración se imparte en modalidad en línea (virtual)."
+    text: "La carrera de **Administración** se imparte **100% en línea** (virtual). ¿Deseas conocer cómo es el pensum de estudios?"
   - condition:
     - type: slot
       name: carrera
       value: "marketing digital"
-    text: "La carrera de Tecnología Superior en Marketing Digital y Comercio Electrónico se imparte en modalidad en línea (virtual)."
-  - text: "La institución ofrece carreras en modalidad **presencial** (como Enfermería, Emergencias Médicas, Gastronomía, etc.) y también **en línea** (como Administración y Marketing Digital).\n¿De qué carrera te interesa saber la modalidad?"
+    text: "La carrera de **Marketing Digital** se imparte **100% en línea** (virtual). ¿Deseas conocer el campo laboral?"
+  - condition:
+    - type: slot
+      name: carrera
+      value: "desarrollo de contenidos y manejo de redes"
+    text: "La carrera de **Desarrollo de Contenidos y Manejo de Redes** se imparte **100% en línea** (virtual). ¿Te interesa conocer los horarios de las tutorías?"
+  - condition:
+    - type: slot
+      name: carrera
+      value: "administracion de farmacias"
+    text: "La carrera de **Administración de Farmacias** se maneja de forma virtual. ¿Te gustaría tener información de los costos?"
+  - condition:
+    - type: slot
+      name: carrera
+      value: "inteligencia artificial"
+    text: "La carrera de **Inteligencia Artificial** se maneja en modalidad virtual o híbrida dependiendo del nivel. ¿Quisieras hablar con Daniela para apartar un cupo?"
+  - text: "La institución ofrece carreras en modalidad **presencial** (como Enfermería, Gastronomía, etc.) y también **en línea** (como Administración y Marketing Digital).\n¿De qué carrera exactamente te interesa saber la modalidad?"
 
   utter_duracion_carreras:
   - condition:
     - type: slot
       name: carrera
       value: "inteligencia artificial"
-    text: "La carrera de **Tecnología Superior en Inteligencia Artificial** tiene una duración de **1 año y medio** (es decir, 3 semestres).\nNuestro objetivo es que en un periodo relativamente corto puedas obtener tu título."
+    text: "La carrera de **Tecnología Superior en Inteligencia Artificial** tiene una duración de **1 año y medio** (es decir, 3 semestres).\nNuestro objetivo es que en un periodo relativamente corto puedas obtener tu título. ¿Quisieras conocer las opciones de campo laboral de esta carrera?"
   - condition:
     - type: slot
       name: carrera
       value: enfermeria
-    text: "La carrera de **Enfermería** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
+    text: "La carrera de **Enfermería** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo. ¿Te gustaría saber en qué campos podrías trabajar al graduarte?"
   - condition:
     - type: slot
       name: carrera
       value: emergencias medicas
-    text: "La carrera de **Emergencias Médicas** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
+    text: "La carrera de **Emergencias Médicas** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo. ¿Te gustaría saber en qué campos podrías trabajar al graduarte?"
   - condition:
     - type: slot
       name: carrera
       value: rehabilitacion fisica
-    text: "La carrera de **Rehabilitación Física** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
+    text: "La carrera de **Rehabilitación Física** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo. ¿Te gustaría saber en qué campos podrías trabajar al graduarte?"
   - condition:
     - type: slot
       name: carrera
       value: laboratorio clinico
-    text: "La carrera de **Laboratorio Clínico** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
+    text: "La carrera de **Laboratorio Clínico** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo. ¿Te gustaría saber en qué campos podrías trabajar al graduarte?"
   - condition:
     - type: slot
       name: carrera
-      value: administracion en farmacias
-    text: "La carrera de **Administración en Farmacias** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
+      value: administracion de farmacias
+    text: "La carrera de **Administración de Farmacias** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo. ¿Te gustaría saber en qué campos podrías trabajar al graduarte?"
   - condition:
     - type: slot
       name: carrera
       value: administracion de sistemas de la salud
-    text: "La carrera de **Administración de Sistemas de la Salud** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
+    text: "La carrera de **Administración de Sistemas de la Salud** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo. ¿Te gustaría saber en qué campos podrías trabajar al graduarte?"
   - condition:
     - type: slot
       name: carrera
       value: educacion inicial
-    text: "La carrera de **Educación Inicial** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
+    text: "La carrera de **Educación Inicial** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo. ¿Te gustaría saber en qué campos podrías trabajar al graduarte?"
   - condition:
     - type: slot
       name: carrera
       value: administracion
-    text: "La carrera de **Administración** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
+    text: "La carrera de **Administración** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo. ¿Te gustaría saber en qué campos podrías trabajar al graduarte?"
   - condition:
     - type: slot
       name: carrera
       value: marketing digital
-    text: "La carrera de **Marketing Digital** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
+    text: "La carrera de **Marketing Digital** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo. ¿Te gustaría saber en qué campos podrías trabajar al graduarte?"
   - condition:
     - type: slot
       name: carrera
       value: desarrollo de contenidos y manejo de redes
-    text: "La carrera de **Desarrollo de Contenidos y Manejo de Redes** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
+    text: "La carrera de **Desarrollo de Contenidos y Manejo de Redes** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo. ¿Te gustaría saber en qué campos podrías trabajar al graduarte?"
   - condition:
     - type: slot
       name: carrera
       value: mecanica automotriz
-    text: "La carrera de **Mecánica Automotriz** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
+    text: "La carrera de **Mecánica Automotriz** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo. ¿Te gustaría saber en qué campos podrías trabajar al graduarte?"
   - condition:
     - type: slot
       name: carrera
       value: gastronomia
-    text: "La carrera de **Gastronomía** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
+    text: "La carrera de **Gastronomía** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo. ¿Te gustaría saber en qué campos podrías trabajar al graduarte?"
   - condition:
     - type: slot
       name: carrera
       value: naturopatia
-    text: "La carrera de **Naturopatía** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo."
+    text: "La carrera de **Naturopatía** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo. ¿Te gustaría saber en qué campos podrías trabajar al graduarte?"
   - text: "La mayoría de las carreras del instituto tienen una duración de **2 años**, a excepción de **Inteligencia Artificial**, que dura **1 año y medio**.\n¿De qué carrera en específico te gustaría saber la duración o más detalles?"
 
   utter_opciones_pago:
   - text: "¡Sí! Puedes realizar los pagos por semestre completo, o diferirlos en cuotas **mensuales** (5 cuotas) o **semanales** (20 semanas).\n¿Para qué carrera te gustaría consultar los valores y cuotas exactas?"
 
   utter_costos:
-  - text: "Manejamos costos muy accesibles para que puedas formarte, si necesitas saber el costo de una carrera específica no dudes en consultarlo con Daniela, ella te dará toda la información y las posibles promociones vigentes."
+  - text: "Manejamos costos muy accesibles para que puedas formarte, si necesitas saber el costo de una carrera específica no dudes en consultarlo con Daniela, ella te dará toda la información y las posibles promociones vigentes. ¿Hay alguna otra carrera de la que te gustaría saber información general?"
 
   utter_practicas:
   - condition:
     - type: slot
       name: carrera
       value: enfermeria
-    text: "En la carrera de **Técnico Superior en Enfermería**, tus prácticas preprofesionales se realizarán en clínicas u hospitales, trabajando directamente con pacientes reales."
+    text: "En la carrera de **Técnico Superior en Enfermería**, tus prácticas preprofesionales se realizarán en clínicas u hospitales, trabajando directamente con pacientes reales. ¿Deseas saber más acerca del campo laboral?"
   - condition:
     - type: slot
       name: carrera
       value: emergencias medicas
-    text: "Para **Emergencias Médicas**, las prácticas se desarrollan en clínicas u hospitales. además, el instituto es el **único organismo que cuenta con ambulancias propias vinculadas al ECU 911**, por lo que participarás en escenarios reales de atención de emergencias."
+    text: "Para **Emergencias Médicas**, las prácticas se desarrollan en clínicas u hospitales. además, el instituto es el **único organismo que cuenta con ambulancias propias vinculadas al ECU 911**, por lo que participarás en escenarios reales de atención de emergencias. ¿Deseas saber más acerca del campo laboral al graduarte?"
   - condition:
     - type: slot
       name: carrera
       value: rehabilitacion fisica
-    text: "En **Rehabilitación Física**, realizarás prácticas en clínicas, hospitales y centros de rehabilitación. Incluso CGE cuenta con su **propio centro de rehabilitación** para que puedas aprender de manera práctica."
+    text: "En **Rehabilitación Física**, realizarás prácticas en clínicas, hospitales y centros de rehabilitación. Incluso CGE cuenta con su **propio centro de rehabilitación** para que puedas aprender de manera práctica. ¿Deseas que te cuente sobre el campo laboral?"
   - condition:
     - type: slot
       name: carrera
       value: naturopatia
-    text: "Las prácticas de **Naturopatía** se realizan en centros de naturopatía e instituciones de terapias alternativas con los que el instituto tiene convenios establecidos."
+    text: "Las prácticas de **Naturopatía** se realizan en centros de naturopatía e instituciones de terapias alternativas con los que el instituto tiene convenios establecidos. ¿Te gustaría conocer el campo laboral de Naturopatía?"
   - condition:
     - type: slot
       name: carrera
@@ -306,8 +366,8 @@ responses:
   - condition:
     - type: slot
       name: carrera
-      value: administracion en farmacias
-    text: "Las prácticas de **Administración en Farmacias** se desarrollan en el área administrativa de farmacias, clínicas, hospitales y grandes redes farmacéuticas."
+      value: administracion de farmacias
+    text: "Las prácticas de **Administración de Farmacias** se desarrollan en el área administrativa de farmacias, clínicas, hospitales y grandes redes farmacéuticas."
   - condition:
     - type: slot
       name: carrera
@@ -350,57 +410,57 @@ responses:
     - type: slot
       name: carrera
       value: rehabilitacion fisica
-    text: "En **Rehabilitación Física** podrás trabajar en:\n- Instituciones de salud pública (IESS, MSP) y centros privados.\n- Centros deportivos y hogares para adultos mayores.\n- Puedes emprender y abrir tu propio centro de rehabilitación."
+    text: "En **Rehabilitación Física** podrás trabajar en:\n- Instituciones de salud pública (IESS, MSP) y centros privados.\n- Centros deportivos y hogares para adultos mayores.\n- Puedes emprender y abrir tu propio centro de rehabilitación. ¿Te gustaría que te cuente sobre los costos y formas de pago?"
   - condition:
     - type: slot
       name: carrera
       value: naturopatia
-    text: "El campo laboral en **Naturopatía** incluye:\n- Trabajar como terapeuta en instituciones públicas o privadas.\n- Establecimientos de productos naturales y spas.\n- Elaboración de productos de medicina natural.\n- Puedes emprender montando tu consultorio propio."
+    text: "El campo laboral en **Naturopatía** incluye:\n- Trabajar como terapeuta en instituciones públicas o privadas.\n- Establecimientos de productos naturales y spas.\n- Elaboración de productos de medicina natural.\n- Puedes emprender montando tu consultorio propio. ¿Te gustaría conocer los costos y formas de pago?"
   - condition:
     - type: slot
       name: carrera
       value: laboratorio clinico
-    text: "Con el título de **Laboratorio Clínico** podrás desempeñarte en:\n- Consultorios, clínicas y hospitales públicos y privados.\n- Puedes establecer tu propio emprendimiento."
+    text: "Con el título de **Laboratorio Clínico** podrás desempeñarte en:\n- Consultorios, clínicas y hospitales públicos y privados.\n- Puedes establecer tu propio emprendimiento. ¿Quisieras saber los costos y opciones de financiamiento?"
   - condition:
     - type: slot
       name: carrera
-      value: administracion en farmacias
-    text: "En **Administración en Farmacias** podrás trabajar en:\n- Área administrativa de farmacias públicas o privadas.\n- Empresas distribuidoras de medicamentos e insumos médicos.\n- Puedes establecer tu propia empresa del rubro."
+      value: administracion de farmacias
+    text: "En **Administración de Farmacias** podrás trabajar en:\n- Área administrativa de farmacias públicas o privadas.\n- Empresas distribuidoras de medicamentos e insumos médicos.\n- Puedes establecer tu propia empresa del rubro. ¿Te gustaría que te cuente sobre los costos y formas de pago?"
   - condition:
     - type: slot
       name: carrera
       value: administracion de sistemas de la salud
-    text: "Con título en **Administración de Sistemas de Salud** podrás aplicar a:\n- Administración de hospitales, clínicas y dispensarios.\n- Dirección en empresas farmacéuticas y aseguradoras médicas.\n- Cargos en organizaciones gubernamentales del sistema nacional de salud."
+    text: "Con título en **Administración de Sistemas de Salud** podrás aplicar a:\n- Administración de hospitales, clínicas y dispensarios.\n- Dirección en empresas farmacéuticas y aseguradoras médicas.\n- Cargos en organizaciones gubernamentales del sistema nacional de salud. ¿Quieres conocer los costos y formas de pago?"
   - condition:
     - type: slot
       name: carrera
       value: administracion
-    text: "En el área de **Administración** podrás:\n- Desempeñarte en áreas financieras y contables de empresas de todo nivel.\n- Formar parte de áreas gerenciales y logísticas.\n- Establecer tu propia empresa y aplicar tus conocimientos."
+    text: "En el área de **Administración** podrás:\n- Desempeñarte en áreas financieras y contables de empresas de todo nivel.\n- Formar parte de áreas gerenciales y logísticas.\n- Establecer tu propia empresa y aplicar tus conocimientos. ¿Te gustaría conocer los costos de la carrera?"
   - condition:
     - type: slot
       name: carrera
       value: educacion inicial
-    text: "Para **Educación Inicial**, las salidas laborales incluyen:\n- Docencia en unidades educativas, colegios y escuelas.\n- Gestión y dirección de centros de desarrollo infantil y guarderías.\n- Emprender tu propio centro educativo o de nivelación."
+    text: "Para **Educación Inicial**, las salidas laborales incluyen:\n- Docencia en unidades educativas, colegios y escuelas.\n- Gestión y dirección de centros de desarrollo infantil y guarderías.\n- Emprender tu propio centro educativo o de nivelación. ¿Quisieras conocer los costos y cuotas?"
   - condition:
     - type: slot
       name: carrera
       value: marketing digital
-    text: "Al graduarte en **Marketing Digital** podrás desempeñarte como:\n- Líder de un departamento de ventas y ecosistema digital.\n- Community manager y gestor de tráfico pubilicitario.\n- Investigación y analista digital de mercados.\n- Establecer tu propia agencia de marketing y redes."
+    text: "Al graduarte en **Marketing Digital** podrás desempeñarte como:\n- Líder de un departamento de ventas y ecosistema digital.\n- Community manager y gestor de tráfico pubilicitario.\n- Investigación y analista digital de mercados.\n- Establecer tu propia agencia de marketing y redes. ¿Deseas saber los costos y métodos de pago?"
   - condition:
     - type: slot
       name: carrera
       value: gastronomia
-    text: "En la carrera de **Gastronomía**, podrás aplicar tus conocimientos trabajando en:\n- Restaurantes de primer nivel, cruceros y hoteles.\n- Empresas de catering y eventos.\n- O, por supuesto, emprender y consolidar tu propio restaurante."
+    text: "En la carrera de **Gastronomía**, podrás aplicar tus conocimientos trabajando en:\n- Restaurantes de primer nivel, cruceros y hoteles.\n- Empresas de catering y eventos.\n- O, por supuesto, emprender y consolidar tu propio restaurante. ¿Quisieras saber los costos de Gastronomía?"
   - condition:
     - type: slot
       name: carrera
       value: mecanica automotriz
-    text: "Para **Mecánica Automotriz**, tu campo laboral será en:\n- Concesionarias como mecánico.\n- Asesor técnico en empresas grandes de transporte.\n- Fábricas de ensamblaje y centros de revisión vehicular.\n- También la posibilidad de abrir tu propio taller o centro mecánico."
+    text: "Para **Mecánica Automotriz**, tu campo laboral será en:\n- Concesionarias como mecánico.\n- Asesor técnico en empresas grandes de transporte.\n- Fábricas de ensamblaje y centros de revisión vehicular.\n- También la posibilidad de abrir tu propio taller o centro mecánico. ¿Te gustaría saber cuánto cuesta esta carrera?"
   - condition:
     - type: slot
       name: carrera
       value: inteligencia artificial
-    text: "Al graduarte en **Inteligencia Artificial** podrás desempeñarte como:\n- Desarrollador de soluciones de IA.\n- Analista de datos y automatización.\n- Consultor tecnológico.\n- O emprender tu propia agencia de tecnología."
+    text: "Al graduarte en **Inteligencia Artificial** podrás desempeñarte como:\n- Desarrollador de soluciones de IA.\n- Analista de datos y automatización.\n- Consultor tecnológico.\n- O emprender tu propia agencia de tecnología. ¿Deseas conocer los costos y facilidades de pago?"
   - text: "El campo laboral depende de la carrera que elijas. Por ejemplo, te preparamos para que puedas trabajar en hospitales, en escuelas, o desarrollar tu propia empresa."
 
   utter_validez_titulo:
@@ -408,72 +468,72 @@ responses:
     - type: slot
       name: carrera
       value: enfermeria
-    text: "Al finalizar obtendrás el título de tercer nivel como **Técnico Superior en Enfermería** debidamente registrado en la SENESCYT."
+    text: "Al finalizar obtendrás el título de tercer nivel como **Técnico Superior en Enfermería** debidamente registrado en la SENESCYT. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
   - condition:
     - type: slot
       name: carrera
       value: emergencias medicas
-    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Emergencias Médicas** debidamente registrado en la SENESCYT."
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Emergencias Médicas** debidamente registrado en la SENESCYT. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
   - condition:
     - type: slot
       name: carrera
       value: rehabilitacion fisica
-    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Rehabilitación Física** debidamente registrado en la SENESCYT."
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Rehabilitación Física** debidamente registrado en la SENESCYT. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
   - condition:
     - type: slot
       name: carrera
       value: laboratorio clinico
-    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Laboratorio Clínico** debidamente registrado en la SENESCYT."
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Laboratorio Clínico** debidamente registrado en la SENESCYT. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
   - condition:
     - type: slot
       name: carrera
-      value: administracion en farmacias
-    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Administración en Farmacias** debidamente registrado en la SENESCYT."
+      value: administracion de farmacias
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Administración de Farmacias** debidamente registrado en la SENESCYT. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
   - condition:
     - type: slot
       name: carrera
       value: administracion de sistemas de la salud
-    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Administración de Sistemas de Salud** debidamente registrado en la SENESCYT."
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Administración de Sistemas de Salud** debidamente registrado en la SENESCYT. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
   - condition:
     - type: slot
       name: carrera
       value: educacion inicial
-    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Educación Inicial** debidamente registrado en la SENESCYT."
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Educación Inicial** debidamente registrado en la SENESCYT. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
   - condition:
     - type: slot
       name: carrera
       value: administracion
-    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Administración** debidamente registrado en la SENESCYT."
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Administración** debidamente registrado en la SENESCYT. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
   - condition:
     - type: slot
       name: carrera
       value: marketing digital
-    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Marketing Digital y Comercio Electrónico** debidamente registrado en la SENESCYT."
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Marketing Digital y Comercio Electrónico** debidamente registrado en la SENESCYT. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
   - condition:
     - type: slot
       name: carrera
       value: desarrollo de contenidos y manejo de redes
-    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Desarrollo de Contenidos y Manejo de Redes** debidamente registrado en la SENESCYT."
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Desarrollo de Contenidos y Manejo de Redes** debidamente registrado en la SENESCYT. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
   - condition:
     - type: slot
       name: carrera
       value: mecanica automotriz
-    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Mecánica Automotriz** debidamente registrado en la SENESCYT."
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Mecánica Automotriz** debidamente registrado en la SENESCYT. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
   - condition:
     - type: slot
       name: carrera
       value: gastronomia
-    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Gastronomía** debidamente registrado en la SENESCYT."
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Gastronomía** debidamente registrado en la SENESCYT. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
   - condition:
     - type: slot
       name: carrera
       value: naturopatia
-    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Naturopatía** debidamente registrado en la SENESCYT."
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Naturopatía** debidamente registrado en la SENESCYT. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
   - condition:
     - type: slot
       name: carrera
       value: inteligencia artificial
-    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Inteligencia Artificial** debidamente registrado en la SENESCYT."
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Inteligencia Artificial** debidamente registrado en la SENESCYT. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
   - text: "Al graduarte del Instituto Superior Tecnológico Consulting Group Ecuador obtendrás un **título de tercer nivel**, cien por ciento validado y registrado en la **SENESCYT**. ¿De qué carrera en específico te gustaría saber el grado exacto que recibes?"
 
   utter_emprendimiento:
@@ -485,7 +545,7 @@ responses:
   - condition:
     - type: slot
       name: carrera
-      value: administracion en farmacias
+      value: administracion de farmacias
     text: "Si deseas establecer tu propia farmacia, sí es posible, pero para que pueda funcionar se debe de contar de manera obligatoria con la firma y regencia de un químico farmacéutico, quien es el responsable técnico."
   - text: "La gran mayoría de las carreras de la institución brindan los conocimientos prácticos y técnicos para emprender y establecer tu propio negocio o servicio. ¿Tienes en mente alguna carrera de la que quisieras confirmar opciones de negocio propio?"
 
@@ -509,52 +569,52 @@ responses:
     - type: slot
       name: carrera
       value: enfermeria
-    text: "El horario para **Enfermería** es Presencial, en Jornada Matutina, de Lunes a Viernes de 08:00 a 13:00."
+    text: "El horario para **Enfermería** es Presencial, en Jornada Matutina, de Lunes a Viernes de 08:00 a 13:00. ¿Te gustaría que Daniela te envíe la tabla de costos correspondiente al horario?"
   - condition:
     - type: slot
       name: carrera
       value: emergencias medicas
-    text: "El horario para **Emergencias Médicas** es Presencial, en Jornada Matutina, de Lunes a Viernes de 08:00 a 13:00."
+    text: "El horario para **Emergencias Médicas** es Presencial, en Jornada Matutina, de Lunes a Viernes de 08:00 a 13:00. ¿Te gustaría que Daniela te envíe la tabla de costos correspondiente al horario?"
   - condition:
     - type: slot
       name: carrera
       value: rehabilitacion fisica
-    text: "El horario para **Rehabilitación Física** se maneja bajo una Jornada Especial Presencial."
+    text: "El horario para **Rehabilitación Física** se maneja bajo una Jornada Especial Presencial. ¿Deseas que Daniela te brinde los costos exactos por semestre?"
   - condition:
     - type: slot
       name: carrera
       value: laboratorio clinico
-    text: "Para **Laboratorio Clínico**, el horario incluye clases de forma virtual 3 días a la semana, de 18:00 a 22:00."
+    text: "Para **Laboratorio Clínico**, el horario incluye clases de forma virtual 3 días a la semana, de 18:00 a 22:00. ¿Quisieras contactar a Daniela ahora para consultar los valores y matricularte?"
   - condition:
     - type: slot
       name: carrera
       value: naturopatia
-    text: "Las clases de **Naturopatía** son Presenciales y se dictan los días Sábados y Domingos."
+    text: "Las clases de **Naturopatía** son Presenciales y se dictan los días Sábados y Domingos. ¿Te comunico con Daniela para revisar costos y promociones?"
   - condition:
     - type: slot
       name: carrera
       value: administracion de sistemas de la salud
-    text: "La carrera de **Administración de Sistemas de la Salud** se imparte en modalidad de Jornada Híbrida."
+    text: "La carrera de **Administración de Sistemas de la Salud** se imparte en modalidad de Jornada Híbrida. ¿Quieres que Daniela te asesore sobre los costos y formas de pago?"
   - condition:
     - type: slot
       name: carrera
-      value: administracion en farmacias
-    text: "El horario para **Administración en Farmacias** es en modalidad virtual, de Lunes a Viernes de 18:00 a 22:00."
+      value: administracion de farmacias
+    text: "El horario para **Administración de Farmacias** es en modalidad virtual, de Lunes a Viernes de 18:00 a 22:00. ¿Quisieras contactar a Daniela ahora para consultar los valores y matricularte?"
   - condition:
     - type: slot
       name: carrera
       value: educacion inicial
-    text: "Para **Educación Inicial**, las clases son Presenciales, los días sábados de 08:00 a 13:00."
+    text: "Para **Educación Inicial**, las clases son Presenciales, los días sábados de 08:00 a 13:00. ¿Te gustaría que Daniela te envíe la tabla de costos correspondiente al horario?"
   - condition:
     - type: slot
       name: carrera
       value: administracion
-    text: "El horario de la carrera en línea de **Administración** consta de clases virtuales de Lunes a Viernes, de 18:00 a 22:00."
+    text: "El horario de la carrera en línea de **Administración** consta de clases virtuales de Lunes a Viernes, de 18:00 a 22:00. ¿Quisieras contactar a Daniela ahora para consultar los valores y matricularte?"
   - condition:
     - type: slot
       name: carrera
       value: marketing digital
-    text: "El horario de la carrera en línea de **Marketing Digital** consta de clases virtuales de Lunes a Viernes, de 18:00 a 22:00."
+    text: "El horario de la carrera en línea de **Marketing Digital** consta de clases virtuales de Lunes a Viernes, de 18:00 a 22:00. ¿Quisieras contactar a Daniela ahora para consultar los valores y matricularte?"
   - condition:
     - type: slot
       name: carrera
