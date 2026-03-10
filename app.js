@@ -111,8 +111,8 @@ function agregarMensaje(remitente, texto, esUsuario) {
         // Estilo Consultina: Tarjeta limpia y moderna a la izquierda
         htmlContent = `
             <div class="flex gap-4 w-full md:max-w-[85%]">
-                <div class="w-9 h-9 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0 mt-0.5 shadow-md shadow-accent/20">
-                    <span class="text-white text-[16px] font-bold">✦</span>
+                <div class="w-9 h-9 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <img src="assets/images/Logo.png" alt="Avatar Consultina" class="w-full h-full object-contain drop-shadow-sm">
                 </div>
                 <div class="bg-white border border-gray-100 shadow-sm rounded-3xl rounded-tl-sm px-6 py-4 text-gray-800 text-[15px] leading-relaxed w-full">
                     ${texto}
