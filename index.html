@@ -63,8 +63,18 @@
         
         <div id="center-input-container" class="w-full max-w-3xl">
             <div id="the-input-box" class="bg-inputBg rounded-3xl p-3 md:p-4 flex items-center gap-3 border border-transparent focus-within:bg-white focus-within:shadow-[0_4px_20px_rgba(0,0,0,0.08)] transition-all duration-300">
-                <p id="status-text" class="text-gray-500 text-[15px] flex-1 pl-3 select-none">Toca el micrófono y haz tu pregunta a Consultina...</p>
+                <!-- Input de texto -->
+                <input type="text" id="text-input" placeholder="Escribe o habla tu pregunta a Consultina..." class="bg-transparent text-gray-800 text-[15px] flex-1 pl-3 font-medium outline-none placeholder-gray-400 w-full" autocomplete="off">
                 
+                <!-- Botón de Enviar Texto (Oculto por defecto si el input está vacío) -->
+                <button id="btn-enviar-texto" class="hidden bg-transparent text-gray-400 hover:text-primary p-3 rounded-full cursor-pointer transition-colors duration-200 outline-none flex-shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+
+                <!-- Botón de Micrófono -->
                 <button id="btn-hablar" class="bg-transparent text-gray-600 hover:bg-gray-200 hover:text-primary p-3 rounded-full cursor-pointer transition-colors duration-200 outline-none flex-shrink-0">
                     <svg id="icon-mic" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>

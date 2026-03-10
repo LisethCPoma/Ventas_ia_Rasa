@@ -275,57 +275,7 @@ responses:
   - text: "¡Sí! Puedes realizar los pagos por semestre completo, o diferirlos en cuotas **mensuales** (5 cuotas) o **semanales** (20 semanas).\n¿Para qué carrera te gustaría consultar los valores y cuotas exactas?"
 
   utter_costos:
-  - condition:
-    - type: slot
-      name: carrera
-      value: enfermeria
-    text: "Los valores para **Técnico Superior en Enfermería** son:\n- Inscripción: $28 (pago único)\n- Matrícula: $57,50 por semestre\n- Semestre: $575\n- Opciones de pago: 5 cuotas mensuales de $115 o $28,75 semanales durante 20 semanas."
-  - condition:
-    - type: slot
-      name: carrera
-      value: emergencias medicas
-    text: "Los valores para **Tecnólogo Superior en Emergencias Médicas** son:\n- Inscripción: $25\n- Matrícula: $71\n- Semestre: $710\n- Opciones de pago: 5 cuotas mensuales de $142 o $35,50 semanales durante 20 semanas."
-  - condition:
-    - type: slot
-      name: carrera
-      value: administracion de sistemas de la salud
-    text: "Los valores para **Tecnólogo Superior en Administración de Sistemas de Salud** son:\n- Inscripción: $28\n- Matrícula: $57,50\n- Semestre: $575\n- Opciones de pago: 5 cuotas mensuales de $115 o $28,75 semanales durante 20 semanas."
-  - condition:
-    - type: slot
-      name: carrera
-      value: rehabilitacion fisica
-    text: "Los valores para **Tecnólogo Superior en Rehabilitación Física** son:\n- Inscripción: $28\n- Matrícula: $57,50\n- Semestre: $575\n- Opciones de pago: 5 cuotas mensuales de $115 o $28,75 semanales durante 20 semanas."
-  - condition:
-    - type: slot
-      name: carrera
-      value: laboratorio clinico
-    text: "Los valores para **Tecnología Superior en Laboratorio Clínico** son:\n- Inscripción: $28\n- Matrícula: $57,50\n- Semestre: $575\n- Opciones de pago: 5 cuotas mensuales de $115 o $28,75 semanales durante 20 semanas."
-  - condition:
-    - type: slot
-      name: carrera
-      value: educacion inicial
-    text: "Los valores para **Tecnología Superior en Educación Inicial** son:\n- Inscripción: $28\n- Matrícula: $57,50\n- Semestre: $575\n- Opciones de pago: 5 cuotas mensuales de $115 o $28,75 semanales durante 20 semanas."
-  - condition:
-    - type: slot
-      name: carrera
-      value: administracion en farmacias
-    text: "Los valores para **Tecnólogo Superior en Administración en Farmacias** son:\n- Inscripción: $28\n- Matrícula: $57,50\n- Semestre: $575\n- Opciones de pago: 5 cuotas mensuales de $115 o $28,75 semanales durante 20 semanas."
-  - condition:
-    - type: slot
-      name: carrera
-      value: naturopatia
-    text: "Los valores para **Tecnólogo Superior en Naturopatía** son:\n- Inscripción: $25\n- Matrícula: $88\n- Semestre: $880\n- Opciones de pago: 5 cuotas mensuales de $176 o $44 semanales durante 20 semanas."
-  - condition:
-    - type: slot
-      name: carrera
-      value: administracion
-    text: "Los valores para **Tecnólogo Superior en Administración** (Modalidad en Línea) son:\n- Inscripción: $25\n- Matrícula: $54,78\n- Semestre: $498\n- Opciones de pago: 5 cuotas mensuales de $99,60 o $24,90 semanales durante 20 semanas."
-  - condition:
-    - type: slot
-      name: carrera
-      value: marketing digital
-    text: "Los valores para **Tecnólogo Superior en Marketing Digital** (Modalidad en Línea) son:\n- Inscripción: $25\n- Matrícula: $54,78\n- Semestre: $498\n- Opciones de pago: 5 cuotas mensuales de $99,60 o $24,90 semanales durante 20 semanas."
-  - text: "Los valores de nuestras carreras varían según la especialidad y modalidad.\nSi ya me comentaste la carrera que te interesa y no te di el valor exacto, ¡no te preocupes! **Daniela** te enviará la tabla de costos específica en un momento.\nSi aún no tienes una carrera en mente, ¿cuál te gustaría consultar?"
+  - text: "Manejamos costos muy accesibles para que puedas formarte, si necesitas saber el costo de una carrera específica no dudes en consultarlo con Daniela, ella te dará toda la información y las posibles promociones vigentes."
 
   utter_practicas:
   - condition:
@@ -378,6 +328,11 @@ responses:
       name: carrera
       value: gastronomia
     text: "En la carrera de **Gastronomía** (disponible en Quito), las prácticas se enfocan en cocina real, con convenios en restaurantes, hoteles y establecimientos turísticos y gastronómicos."
+  - condition:
+    - type: slot
+      name: carrera
+      value: inteligencia artificial
+    text: "En la carrera de **Inteligencia Artificial**, las prácticas se enfocan en el desarrollo de proyectos tecnológicos y convenios con empresas de software y tecnología."
   - text: "Nuestras prácticas preprofesionales se realizan en entornos reales dependiendo de la carrera elegida (hospitales, ambulancias ECU 911, empresas, guarderías, etc.).\nSi la carrera que te interesa tiene convenios muy específicos, **Daniela** te compartirá enseguida el listado de instituciones donde podrías realizar tus prácticas."
 
   utter_campo_laboral:
@@ -441,7 +396,12 @@ responses:
       name: carrera
       value: mecanica automotriz
     text: "Para **Mecánica Automotriz**, tu campo laboral será en:\n- Concesionarias como mecánico.\n- Asesor técnico en empresas grandes de transporte.\n- Fábricas de ensamblaje y centros de revisión vehicular.\n- También la posibilidad de abrir tu propio taller o centro mecánico."
-  - text: "El campo laboral depende de la carrera que elijas. Por ejemplo, te preparamos para que puedas trabajar en hospitales, en escuelas, o desarrollar tu propia empresa.\nPara los detalles exactos y salidas laborales de la carrera que buscas, **Daniela** te enviará la información completa en un instante."
+  - condition:
+    - type: slot
+      name: carrera
+      value: inteligencia artificial
+    text: "Al graduarte en **Inteligencia Artificial** podrás desempeñarte como:\n- Desarrollador de soluciones de IA.\n- Analista de datos y automatización.\n- Consultor tecnológico.\n- O emprender tu propia agencia de tecnología."
+  - text: "El campo laboral depende de la carrera que elijas. Por ejemplo, te preparamos para que puedas trabajar en hospitales, en escuelas, o desarrollar tu propia empresa."
 
   utter_validez_titulo:
   - condition:
@@ -605,6 +565,11 @@ responses:
       name: carrera
       value: mecanica automotriz
     text: "Los horarios exactos para **Mecánica Automotriz** están por confirmarse para el nuevo período. Por favor, ¡consúltalo directamente con **Daniela**!"
+  - condition:
+    - type: slot
+      name: carrera
+      value: inteligencia artificial
+    text: "Los horarios exactos para **Inteligencia Artificial** están por confirmarse para el nuevo período. Por favor, ¡consúltalo directamente con **Daniela**!"
   - text: "Nuestros horarios de clases dependen de la carrera y su modalidad (tenemos jornadas matutinas, nocturnas virtuales, híbridas y fines de semana).\n¿De qué carrera en específico te gustaría saber el horario?"
 session_config:
   session_expiration_time: 60

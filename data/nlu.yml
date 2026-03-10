@@ -65,6 +65,9 @@ nlu:
     - quiero seguir [educacion inicial](carrera)
     - informacion sobre [mecanica automotriz](carrera)
     - quiero la carrera de [educacion inicial](carrera)
+    - Me gustaría saber de la carrera de [educacion inicial](carrera)
+    - la carrera de [marketing digital](carrera)
+    - de la carrera de [rehabilitacion fisica](carrera)
 
 - intent: informar_area_interes
   examples: |
@@ -121,6 +124,8 @@ nlu:
     - Quisiera saber cuáles son sus carreras
     - Cuáles son las carreras que hay en el instituto
     - qué carreras ofrece el Instituto
+    - Dame información sobre las carreras
+    - quiero informacion de las carreras
 
 - intent: preguntar_horarios
   examples: |
@@ -161,6 +166,10 @@ nlu:
     - ¿Cuánto cuesta [administracion](carrera) presencial?
     - ¿Cuánto cuesta estudiar [marketing digital](carrera) en línea?
     - ¿Cuál es el valor del semestre en [emergencias medicas](carrera)?
+    - Cuáles son los costos de la carrera de [enfermeria](carrera)
+    - Cuáles son los costos de [marketing digital](carrera)
+    - Cuáles son los costos de la carrera de [educacion inicial](carrera)
+    - Cuáles son los costos
 
 - intent: preguntar_opciones_pago
   examples: |
@@ -298,6 +307,9 @@ nlu:
     - horarios de [marketing digital](carrera)
     - a qué hora recibo clases de [enfermeria](carrera)
     - horario de [mecanica automotriz](carrera)
+    - Cuáles son los horarios para la carrera de [educacion inicial](carrera)
+    - Cuáles son los horarios para la carrera de [rehabilitacion fisica](carrera)
+    - horario de [marketing digital](carrera)
 
 # --- SINÓNIMOS Y MANEJO DE ERRORES ORTOGRÁFICOS ---
 - synonym: enfermeria
@@ -334,6 +346,8 @@ nlu:
     - Inteligencia Artificial
     - ia
     - i a
+    - inteligencia
+    - carrera de inteligencia
 
 - synonym: rehabilitacion fisica
   examples: |

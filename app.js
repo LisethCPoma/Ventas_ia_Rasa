@@ -1,7 +1,8 @@
 const btnHablar = document.getElementById('btn-hablar');
 const chatBox = document.getElementById('chat-box');
-const statusText = document.getElementById('status-text');
 const iconMic = document.getElementById('icon-mic');
+const textInput = document.getElementById('text-input');
+const btnEnviarTexto = document.getElementById('btn-enviar-texto');
 
 // Elementos para la transición de interfaz
 const welcomeArea = document.getElementById('welcome-area');
@@ -156,7 +157,7 @@ reconocimiento.onstart = () => {
     btnHablar.classList.add('bg-primary', 'text-white');
     btnHablar.classList.remove('bg-transparent', 'text-gray-600', 'hover:bg-gray-200');
     
-    statusText.innerHTML = '<span class="text-primary font-medium">Te estoy escuchando...</span>';
+    textInput.placeholder = 'Te estoy escuchando...';
     
     // Ícono de Stop
     iconMic.innerHTML = '<rect x="6" y="6" width="12" height="12" rx="2" ry="2"></rect>';
@@ -173,20 +174,63 @@ reconocimiento.onend = () => {
     btnHablar.classList.remove('bg-primary', 'text-white');
     btnHablar.classList.add('bg-transparent', 'text-gray-600', 'hover:bg-gray-200');
     
-    statusText.innerHTML = 'Consultina está analizando...';
+    textInput.placeholder = 'Consultina está analizando...';
     
     // Ícono de Micrófono
     iconMic.innerHTML = '<path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" x2="12" y1="19" y2="22"></line>';
 };
 
 reconocimiento.onerror = () => {
-    statusText.innerText = 'Toca el micrófono y haz tu pregunta a Consultina...';
+    textInput.placeholder = 'Escribe o habla tu pregunta a Consultina...';
 };
 
-// 5. Enviar a Rasa y leer respuesta
-reconocimiento.onresult = async (event) => {
+// 6. Lógica de Input de Texto
+textInput.addEventListener('input', () => {
+    if (textInput.value.trim().length > 0) {
+        btnHablar.classList.add('hidden');
+        btnEnviarTexto.classList.remove('hidden');
+    } else {
+        btnHablar.classList.remove('hidden');
+        btnEnviarTexto.classList.add('hidden');
+    }
+});
+
+textInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        enviarTextoLibre();
+    }
+});
+
+btnEnviarTexto.onclick = () => {
+    enviarTextoLibre();
+};
+
+function enviarTextoLibre() {
+    const textoUsuario = textInput.value.trim();
+    if (textoUsuario === '') return;
+    
+    textInput.value = '';
+    btnHablar.classList.remove('hidden');
+    btnEnviarTexto.classList.add('hidden');
+    
+    // Si la agente está hablando, silenciar
+    if (window.speechSynthesis.speaking) {
+        window.speechSynthesis.cancel();
+    }
+    
+    enviarMensajeServidor(textoUsuario);
+}
+
+// 5. Enviar a Rasa y leer respuesta (Común para voz y texto)
+reconocimiento.onresult = (event) => {
     const textoUsuario = event.results[0][0].transcript;
+    enviarMensajeServidor(textoUsuario);
+};
+
+async function enviarMensajeServidor(textoUsuario) {
     agregarMensaje("Tú", textoUsuario, true);
+    textInput.placeholder = 'Consultina está analizando...';
+    textInput.disabled = true;
 
     try {
         const respuesta = await fetch("http://localhost:5005/webhooks/rest/webhook", {
@@ -216,6 +260,8 @@ reconocimiento.onresult = async (event) => {
     } catch (error) {
         agregarMensaje("Sistema", "Error de conexión con el servidor de IA.", false);
     } finally {
-        statusText.innerText = 'Toca el micrófono y haz tu pregunta a Consultina...';
+        textInput.placeholder = 'Escribe o habla tu pregunta a Consultina...';
+        textInput.disabled = false;
+        textInput.focus();
     }
-};
+}
