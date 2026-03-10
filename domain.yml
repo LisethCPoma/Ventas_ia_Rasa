@@ -27,6 +27,8 @@ intents:
   - preguntar_uniformes
   - informar_area_interes
   - preguntar_horarios_clases
+  - preguntar_malla_curricular
+  - preguntar_ubicacion
 
 entities:
   - carrera
@@ -180,7 +182,7 @@ responses:
   - text: "Para darte la información exacta que necesitas, te comento que los costos, duración y modalidades varían dependiendo de la especialidad. ¿De qué carrera en particular quisieras que te dé todos los detalles?\nTenemos áreas de Salud, Educación, Empresa, Tecnología y Productividad."
   
   utter_default:
-  - text: "Esa es una excelente pregunta que Daniela te podría responder de manera mucho más precisa y detallada.\n\nDaniela te responderá enseguida con toda la información solicitada."
+  - text: "Esa es una excelente pregunta que Daniela te podría responder de manera más precisa y detallada.\n\nDaniela te responderá enseguida con toda la información solicitada."
 
   utter_horarios:
   - text: "¡Claro! Nuestro horario de atención para admisiones es de lunes a domingos de 8:00 a.m. a 6:00 p.m. ¡Te esperamos!"
@@ -550,7 +552,19 @@ responses:
   - text: "La gran mayoría de las carreras de la institución brindan los conocimientos prácticos y técnicos para emprender y establecer tu propio negocio o servicio. ¿Tienes en mente alguna carrera de la que quisieras confirmar opciones de negocio propio?"
 
   utter_homologacion:
-  - text: "Si ya eres parte de nuestra comunidad de Consultinos o estudiaste antes, puedes realizar una homologación.\n\nPara homologar necesitamos:\n- Copia a color de tu cédula.\n- Certificado del título de bachiller (descargado de la página de internet).\n- 2 fotos tamaño carnet.\n- Comprobante de depósito ($89,60 para consultinos).\n- Copia del certificado UTQ.\n\n Si eres estudiante externo, Daniela puede indicarte exactamente qué materias puedes homologar y los pasos a seguir."
+  - condition:
+    - type: slot
+      name: carrera
+      value: emergencias medicas
+    text: "Si estudiaste en una capacitadora y quieres homologar para la carrera de Emergencias Médicas, Daniela te indicará exactamente cuáles materias se te pueden validar y el proceso a seguir.
+
+El proceso general requiere:
+- Copia de cédula
+- Título de bachiller
+- Certificado de la capacitadora
+
+  ¿Te comunico con Daniela para revisar tu malla curricular ahora mismo?"
+  - text: "Si ya tienes conocimientos previos o estudiaste en una capacitadora u otra institución, puedes aplicar a una homologación de materias.\n\nEl proceso general requiere:\n- Copia a color de tu cédula.\n- Certificado del título de bachiller.\n- Certificado de estudios previos, récord académico o UTQ.\n\nCada caso (como las capacitadoras) se analiza de forma individual. ¿Quieres que Daniela revise tus certificados para decirte exactamente qué materias se te pueden homologar?"
 
   utter_requisitos:
   - text: "¡Nos alegra que quieras formar parte del Instituto CGE!\nPara empezar tu proceso de inscripción, solo necesitas reunir:\n- Copia a color de tu cédula.\n- Certificado de tener registrado el título de bachiller (descargado de la página del internet) OBLIGATORIO.\n- 2 fotos en tamaño carnet.\n- Tu comprobante de depósito de inscripción.\n\n¡Daniela te guiará durante todo tu proceso!"
@@ -562,7 +576,7 @@ responses:
   - text: "¡Estás a un paso de iniciar! El proceso oficial de matrícula es de forma **presencial** en el Instituto Superior Tecnológico Consulting Group Ecuador.\nAllí te recibiremos, te mostraremos las instalaciones y una persona encargada (como Daniela) te ayudará manualmente a llenar tus datos para dejar todo listo. ¿Te animas a visitarnos pronto?"
 
   utter_uniformes:
-  - text: "Sí, usamos uniforme. Lo ideal es adquirirlo justo antes de iniciar tus clases formales.\nTrabajamos con distribuidores autorizados que tienen convenios con el Instituto.\nComo los precios y tallas varían un poco, **Daniela** te pasará los contactos de los proveedores para que lo consigas fácilmente."
+  - text: "Sí, usamos uniforme. Lo ideal es adquirirlo  en el segundo modulo de tus clases.\nTrabajamos con distribuidores autorizados que tienen convenios con el Instituto.\nComo los precios y tallas varían un poco dependiendo del uniforme de cada carrera, **Daniela** te puede facilitar los contactos de los proveedores para que lo consigas fácilmente."
 
   utter_horarios_clases:
   - condition:
@@ -630,7 +644,12 @@ responses:
       name: carrera
       value: inteligencia artificial
     text: "Los horarios exactos para **Inteligencia Artificial** están por confirmarse para el nuevo período. Por favor, ¡consúltalo directamente con **Daniela**!"
-  - text: "Los horarios de clases dependen de la carrera y su modalidad (se ofrecen jornadas matutinas, nocturnas virtuales, híbridas y fines de semana).\n¿De qué carrera en específico te gustaría saber el horario?"
+  utter_malla_curricular:
+  - text: "Esa es una excelente pregunta que Daniela te podría responder de manera mucho más precisa y detallada entregándote el pensum oficial de la carrera.\n\nLe he notificado tu consulta para que te envíe las materias exactas de estudio enseguida."
+
+  utter_ubicacion:
+  - text: "El Instituto Superior Tecnológico Consulting Group Ecuador cuenta con **32 sedes a nivel nacional**.\n\nPara indicarte la sede más cercana a tu domicilio o provincia, Daniela se pondrá en contacto contigo enseguida con todas las direcciones oficiales."
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

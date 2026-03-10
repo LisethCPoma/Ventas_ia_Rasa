@@ -81,3 +81,22 @@ stories:
   - action: utter_emprendimiento
   - intent: informar_carrera_interes
   - action: utter_emprendimiento
+
+- story: Flujo largo de Sandy con follow-up de modalidad
+  steps:
+  - intent: preguntar_oferta_academica
+  - action: utter_listar_oferta
+  - intent: informar_carrera_interes
+  - action: utter_reaccion_carrera
+  - intent: preguntar_costos
+  - action: utter_costos
+  - intent: mencionar_voluntariado
+  - action: utter_voluntariado_consultinos
+  - intent: preguntar_practicas
+  - action: utter_practicas
+  - intent: preguntar_modalidad_estudio
+  - action: utter_modalidad_estudio
+  - intent: informar_carrera_interes
+  - action: utter_modalidad_estudio
+  - intent: preguntar_homologacion
+  - action: utter_homologacion

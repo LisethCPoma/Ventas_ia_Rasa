@@ -125,3 +125,13 @@ rules:
   steps:
   - intent: preguntar_horarios_clases
   - action: utter_horarios_clases
+
+- rule: Consultina Responde Malla Curricular
+  steps:
+  - intent: preguntar_malla_curricular
+  - action: utter_malla_curricular
+
+- rule: Consultina Responde Ubicacion Sedes
+  steps:
+  - intent: preguntar_ubicacion
+  - action: utter_ubicacion

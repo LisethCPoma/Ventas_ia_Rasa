@@ -36,9 +36,10 @@ class ActionConsultarCupos(Action):
                 cursor = conexion.cursor(dictionary=True, buffered=True) 
                 
                 # 2. Ejecutar la consulta preparada (segura) usando LOWER para ignorar mayúsculas
-                query = "SELECT cupos, imagen_url FROM carreras WHERE LOWER(nombre) = LOWER(%s)"
-                # Pasamos la carrera consultada (Rasa suele enviarlo en minúsculas por los sinónimos)
-                cursor.execute(query, (carrera_consultada,))
+                # Usamos LIKE con comodines '%' a ambos lados para coincidencias parciales (ej. 'Inicial' buscará '%Inicial%')
+                query = "SELECT cupos, imagen_url FROM carreras WHERE LOWER(nombre) LIKE LOWER(%s)"
+                carrera_comodin = f"%{carrera_consultada}%"
+                cursor.execute(query, (carrera_comodin,))
                 
                 # 3. Obtener el primer registro
                 registro = cursor.fetchone()
@@ -89,7 +90,7 @@ class ActionConsultarCupos(Action):
         except Error as e:
             # Si se cae la base de datos, el bot no explota, simplemente avisa
             print(f"Error conectando a MySQL: {e}")
-            mensaje = "Lo siento, en este momento nuestro sistema de admisiones está en mantenimiento. ¿Te puedo ayudar con algo más?"
+            mensaje = "Esa es una excelente pregunta que Daniela te podría responder de manera mucho más precisa y detallada.\n\nLe he notificado tu consulta para que revise el sistema y pueda confirmar directamente los cupos contigo enseguida."
 
         finally:
             # 4. Cerrar la conexión siempre para no saturar el servidor
