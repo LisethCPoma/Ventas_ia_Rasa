@@ -2,6 +2,7 @@ version: "3.1"
 
 intents:
   - saludar
+  - preguntar_identidad
   - presentar_consultina
   - informar_carrera_interes
   - mencionar_voluntariado
@@ -37,11 +38,13 @@ entities:
 slots:
   carrera:
     type: text
+    influence_conversation: false
     mappings:
       - type: from_entity
         entity: carrera
   area_academica:
     type: text
+    influence_conversation: false
     mappings:
       - type: from_entity
         entity: area_academica
@@ -182,8 +185,7 @@ responses:
   - text: "Para darte la información exacta que necesitas, te comento que los costos, duración y modalidades varían dependiendo de la especialidad. ¿De qué carrera en particular quisieras que te dé todos los detalles?\nTenemos áreas de Salud, Educación, Empresa, Tecnología y Productividad."
   
   utter_default:
-  - text: "Esa es una excelente pregunta que Daniela te podría responder de manera más precisa y detallada.\n\nDaniela te responderá enseguida con toda la información solicitada."
-
+  - text: "No estoy muy segura de haber captado todos los detalles de tu consulta.\n\nSin embargo, esa es una pregunta importante que Daniela te podría responder de manera más precisa. Puedes consultarle directamente a ella para que te brinde la información oficial."
   utter_horarios:
   - text: "¡Claro! Nuestro horario de atención para admisiones es de lunes a domingos de 8:00 a.m. a 6:00 p.m. ¡Te esperamos!"
 
@@ -395,7 +397,7 @@ responses:
       name: carrera
       value: inteligencia artificial
     text: "En la carrera de **Inteligencia Artificial**, las prácticas se enfocan en el desarrollo de proyectos tecnológicos y convenios con empresas de software y tecnología."
-  - text: "Las prácticas preprofesionales se realizan en entornos reales dependiendo de la carrera elegida (hospitales, ambulancias ECU 911, empresas, guarderías, etc.).\nSi la carrera que te interesa tiene convenios muy específicos, **Daniela** te compartirá enseguida el listado de instituciones donde podrías realizar tus prácticas."
+  - text: "Las prácticas preprofesionales se realizan en entornos reales dependiendo de la carrera elegida (hospitales, ambulancias ECU 911, empresas, guarderías, etc.).\nSi la carrera que te interesa tiene convenios muy específicos, puedes pedirle a **Daniela** que te comparta el listado de instituciones donde podrías realizar tus prácticas."
 
   utter_campo_laboral:
   - condition:
@@ -570,13 +572,13 @@ El proceso general requiere:
   - text: "¡Nos alegra que quieras formar parte del Instituto CGE!\nPara empezar tu proceso de inscripción, solo necesitas reunir:\n- Copia a color de tu cédula.\n- Certificado de tener registrado el título de bachiller (descargado de la página del internet) OBLIGATORIO.\n- 2 fotos en tamaño carnet.\n- Tu comprobante de depósito de inscripción.\n\n¡Daniela te guiará durante todo tu proceso!"
 
   utter_formas_pago:
-  - text: "Sobre la modalidad de pago, este se realiza por **transferencia o depósito** a la cuenta oficial del Instituto.\nComo el número de cuenta y el convenio varían según tu carrera, **Daniela** te indicará por interno la cuenta exacta para que realices tu transacción de forma segura y validemos tu comprobante. ¡Te asesora en un momento!"
+  - text: "Sobre la modalidad de pago, este se realiza por **transferencia o depósito** a la cuenta oficial del Instituto.\nComo el número de cuenta y el convenio varían según tu carrera, puedes solicitarle a **Daniela** la cuenta exacta para que realices tu transacción de forma segura. ¡Ella te guiará en este paso!"
 
   utter_proceso_matricula:
   - text: "¡Estás a un paso de iniciar! El proceso oficial de matrícula es de forma **presencial** en el Instituto Superior Tecnológico Consulting Group Ecuador.\nAllí te recibiremos, te mostraremos las instalaciones y una persona encargada (como Daniela) te ayudará manualmente a llenar tus datos para dejar todo listo. ¿Te animas a visitarnos pronto?"
 
   utter_uniformes:
-  - text: "Sí, usamos uniforme. Lo ideal es adquirirlo  en el segundo modulo de tus clases.\nTrabajamos con distribuidores autorizados que tienen convenios con el Instituto.\nComo los precios y tallas varían un poco dependiendo del uniforme de cada carrera, **Daniela** te puede facilitar los contactos de los proveedores para que lo consigas fácilmente."
+  - text: "Sí, usamos uniforme. Lo ideal es adquirirlo  a partir del segundo módulo de tus clases.\nTrabajamos con distribuidores autorizados que tienen convenios con el Instituto.\nComo los precios y tallas varían un poco dependiendo del uniforme de cada carrera, **Daniela** te puede facilitar los contactos de los proveedores para que lo consigas fácilmente.\nAl inicio podrás asistir con jean y blusa o camiseta normal, haciendo énfasis en que el pantalón debe ser sin brillos, no corto, ni roto. De igual manera, en la primera clase de inducción se te darán todas estas indicaciones."
 
   utter_horarios_clases:
   - condition:
@@ -644,11 +646,12 @@ El proceso general requiere:
       name: carrera
       value: inteligencia artificial
     text: "Los horarios exactos para **Inteligencia Artificial** están por confirmarse para el nuevo período. Por favor, ¡consúltalo directamente con **Daniela**!"
+  - text: "Nuestros horarios de clases varían dependiendo de la carrera (matutinos, nocturnos, de fines de semana o virtuales).\n¿De qué carrera en específico te gustaría conocer los días y horas de clases?"
   utter_malla_curricular:
-  - text: "Esa es una excelente pregunta que Daniela te podría responder de manera mucho más precisa y detallada entregándote el pensum oficial de la carrera.\n\nLe he notificado tu consulta para que te envíe las materias exactas de estudio enseguida."
+  - text: "Esa es una excelente pregunta que Daniela te podría responder de manera mucho más precisa y detallada entregándote el pensum oficial de la carrera.\n\nPuedes pedirle directamente a ella que te envíe las materias exactas de estudio."
 
   utter_ubicacion:
-  - text: "El Instituto Superior Tecnológico Consulting Group Ecuador cuenta con **32 sedes a nivel nacional**.\n\nPara indicarte la sede más cercana a tu domicilio o provincia, Daniela se pondrá en contacto contigo enseguida con todas las direcciones oficiales."
+  - text: "El Instituto Superior Tecnológico Consulting Group Ecuador cuenta con **32 sedes a nivel nacional**.\n\nPara indicarte la sede más cercana a tu domicilio o provincia, puedes preguntarle a Daniela para que te proporcione todas las direcciones oficiales."
 
 session_config:
   session_expiration_time: 60

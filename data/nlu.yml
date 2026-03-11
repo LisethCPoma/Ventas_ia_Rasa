@@ -11,6 +11,19 @@ nlu:
     - hola consulta buenas tardes
     - Hola con dulcina
     - hola consultina
+    - Hola, ¿cómo me puedes ayudar?
+    - holaa
+    - Holaa
+    
+- intent: preguntar_identidad
+  examples: |
+    - ¿Quién eres?
+    - Quien eres tu
+    - cual es tu nombre
+    - como te llamas
+    - que eres
+    - eres un bot
+    - eres inteligencia artificial
 
 - intent: preguntar_veracidad
   examples: |
@@ -240,6 +253,9 @@ nlu:
     - dónde realizó mis prácticas
     - y las practicas donde son
     - dónde hago las prácticas
+    - Entiendo lo de los convenios generales, pero hablemos solo de la carrera de [Emergencias Médicas](carrera).
+    - ¿Es verdad que tienen ambulancias propias para las prácticas de [emergencias medicas](carrera)?
+    - me daría miedo graduarme de [enfermeria](carrera) sin haber visto un paciente real, ¿dónde son las prácticas?
 
 - intent: preguntar_campo_laboral
   examples: |
@@ -262,6 +278,9 @@ nlu:
     - ¿El título tiene validez en Ecuador?
     - dime sobre el titulo
     - con que titulo salgo
+    - ¿cuál es el nombre del título que recibo si me gradúo de la carrera de [emergencias medicas](carrera)?
+    - ¿Y qué título me dan al graduarme de [emergencias medicas](carrera)? ¿Está registrado en la SENESCYT?
+    - Mi carrera de interés es [emergencias medicas](carrera). ¿Cuál es el nombre del título registrado en la SENESCYT para esa carrera de [emergencias medicas](carrera)?
 
 - intent: preguntar_emprendimiento
   examples: |
@@ -344,6 +363,9 @@ nlu:
     - ¿Tengo que ir al instituto para matricularme?
     - ¿Dónde realizo la matrícula?
     - ¿Cómo empiezo el proceso de inscripción?
+    - una vez que haga el depósito, ¿tengo que ir presencialmente al Instituto para terminar la matrícula?
+    - ¿puedo enviar las fotos de mis documentos por WhatsApp y quedar listo?
+    - ¿tengo que ir a alguna oficina en particular o todo el proceso se puede terminar por internet?
 
 - intent: preguntar_uniformes
   examples: |
@@ -375,6 +397,9 @@ nlu:
     - Cuáles son los horarios para la carrera de [educacion inicial](carrera)
     - Cuáles son los horarios para la carrera de [rehabilitacion fisica](carrera)
     - horario de [marketing digital](carrera)
+    - Entiendo que Daniela tiene los precios, pero necesito organizarme. ¿En qué horario son las clases de [Emergencias Médicas](carrera)?
+    - ¿Tienen jornada en la mañana o solo en la noche para [enfermeria](carrera)?
+    - antes de hablar con ella, ¿a qué hora recibo clases de [marketing digital](carrera)?
 
 # --- SINÓNIMOS Y MANEJO DE ERRORES ORTOGRÁFICOS ---
 - synonym: enfermeria
@@ -502,6 +527,22 @@ nlu:
     - salud
     - medicina
     - medica
+    
+- synonym: emergencias medicas
+  examples: |
+    - Emergencias Médicas
+    - emergencias medicas
+    - emergencias
+    - emergencia médicas
+    - emergencia medicas
+    - Emergencias Medicas
+
+- synonym: enfermeria
+  examples: |
+    - Enfermería
+    - enfermeria
+    - Enfermeria
+    - enfermera
 
 - intent: preguntar_malla_curricular
   examples: |
@@ -525,3 +566,5 @@ nlu:
     - dónde quedan
     - cómo llego al instituto
     - están en guayaquil
+
+  

@@ -11,6 +11,11 @@ rules:
   - intent: saludar
   - action: utter_saludo
 
+- rule: Consultina se presenta cuando le preguntan quién es
+  steps:
+  - intent: preguntar_identidad
+  - action: utter_saludo
+
 - rule: Consultina enumera las carreras si el estudiante pregunta de manera general
   steps:
   - intent: preguntar_oferta_academica
