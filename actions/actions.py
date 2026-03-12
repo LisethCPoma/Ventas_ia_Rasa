@@ -105,3 +105,79 @@ class ActionConsultarCupos(Action):
             pass
 
         return []
+
+
+class ActionConsultarCuposCapacitadora(Action):
+    """Consulta la tabla cursos_capacitadora y lista todos los cupos disponibles en tiempo real."""
+
+    def name(self) -> Text:
+        return "action_consultar_cupos_capacitadora"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        # Diccionario para presentar nombres con tildes correctas
+        nombres_formateados = {
+            "veterinaria": "Veterinaria",
+            "enfermeria": "Enfermería",
+            "rehabilitacion fisica": "Rehabilitación Física",
+            "farmacia": "Farmacia",
+            "educacion inicial": "Educación Inicial",
+            "naturopatia": "Naturopatía",
+            "emergencias medicas": "Emergencias Médicas",
+            "odontologia": "Odontología",
+            "laboratorio clinico": "Laboratorio Clínico",
+            "flores de bach": "Flores de Bach",
+            "mecanica motos mujeres": "Mecánica básica de motos para mujeres",
+            "mecanica vehiculos salud": "Mecánica básica de vehículos (Personal de salud)",
+            "taller inyectologia": "Taller de Inyectología",
+        }
+
+        conexion = None
+        try:
+            conexion = mysql.connector.connect(
+                host='127.0.0.1',
+                database='istcge_admisiones',
+                user='asesor_ia',
+                password='admin123'
+            )
+            if conexion.is_connected():
+                cursor = conexion.cursor(dictionary=True, buffered=True)
+                cursor.execute("SELECT nombre, cupos FROM cursos_capacitadora ORDER BY nombre")
+                filas = cursor.fetchall()
+
+                if filas:
+                    lineas = []
+                    for fila in filas:
+                        nombre_bd = fila["nombre"].lower().strip()
+                        nombre_bonito = nombres_formateados.get(nombre_bd, fila["nombre"].title())
+                        lineas.append(f"- {nombre_bonito}: **{fila['cupos']} cupos disponibles**")
+
+                    lista_cupos = "\n".join(lineas)
+                    mensaje = (
+                        "¡Sí! Nuestros cursos manejan cupos limitados, ya que buscamos mantener grupos adecuados "
+                        "para que cada estudiante pueda aprender de manera práctica y con el acompañamiento necesario.\n\n"
+                        f"Actualmente la disponibilidad de cupos es la siguiente:\n{lista_cupos}\n\n"
+                        "Si alguno de estos cursos te interesa, lo ideal es asegurar tu cupo lo antes posible, ya que "
+                        "cuando se completan los espacios disponibles debemos esperar a la apertura del siguiente grupo.\n\n"
+                        "¿Te gustaría iniciar el proceso de inscripción o que ponga en contacto con mi asistente Daniela para reservar tu cupo?"
+                    )
+                else:
+                    mensaje = (
+                        "En este momento mi asistente Daniela puede confirmarte los cupos exactos disponibles para cada curso. "
+                        "¡Le he notificado para que te responda enseguida!"
+                    )
+        except Error as e:
+            print(f"Error conectando a MySQL (cursos_capacitadora): {e}")
+            mensaje = (
+                "Esa es una excelente pregunta que mi asistente Daniela te podría responder de manera mucho más precisa.\n\n"
+                "Le he notificado tu consulta para que revise el sistema y confirme directamente los cupos contigo enseguida."
+            )
+        finally:
+            if conexion is not None and conexion.is_connected():
+                cursor.close()
+                conexion.close()
+
+        dispatcher.utter_message(text=mensaje)
+        return []

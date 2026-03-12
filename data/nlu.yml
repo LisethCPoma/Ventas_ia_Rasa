@@ -401,6 +401,305 @@ nlu:
     - ¿Tienen jornada en la mañana o solo en la noche para [enfermeria](carrera)?
     - antes de hablar con ella, ¿a qué hora recibo clases de [marketing digital](carrera)?
 
+# -----------------------------  CAPACITADORA -----------------------------------
+- intent: preguntar_cursos_capacitadora
+  examples: |
+    - ¿Qué cursos tienen en la capacitadora?
+    - ¿Qué puedo estudiar en la capacitadora CGE?
+    - ¿Qué cursos ofrecen?
+    - ¿Qué capacitaciones tienen disponibles?
+    - ¿Qué cursos cortos tienen?
+    - ¿Qué cursos puedo tomar en CGE?
+    - ¿Tienen cursos de salud?
+    - ¿Qué cursos hay actualmente?
+    - ¿Qué capacitaciones puedo hacer en CGE?
+    - ¿Cuánto duran los cursos?
+
+- intent: afirmar
+  examples: |
+    - sí
+    - claro
+    - por supuesto
+    - ya hice uno
+    - así es
+    - exacto
+    - ya soy consultino
+
+- intent: negar
+  examples: |
+    - no
+    - ninguno
+    - todavía no
+    - no he hecho ninguno
+    - negativo
+
+- intent: informar_externo
+  examples: |
+    - vengo de otro instituto
+    - estudié en otra universidad
+    - soy externo
+    - vengo de otra institucion
+
+- intent: preguntar_requisitos_capacitadora
+  examples: |
+    - ¿Qué necesito para inscribirme en CGE?
+    - ¿Cuáles son los requisitos para entrar?
+    - ¿Qué documentos debo presentar para estudiar en CGE?
+    - ¿Qué papeles piden para inscribirme?
+    - ¿Necesito título de bachiller para entrar?
+    - ¿Qué requisitos debo cumplir para formar parte de CGE?
+    - ¿Puedo estudiar si aún no tengo el título de bachiller?
+    - ¿Qué documentos debo llevar para matricularme?
+    - ¿Qué necesito para empezar un curso en CGE?
+
+- intent: preguntar_costos_capacitadora
+  examples: |
+    - ¿Cuánto cuesta el curso?
+    - ¿Cuánto valen los cursos en CGE?
+    - ¿Cuál es el precio de los cursos?
+    - ¿Cuánto debes pagar para estudiar un curso?
+    - ¿Los cursos son caros?
+    - ¿Cuánto cuesta el módulo?
+    - ¿Qué precio tienen las capacitaciones?
+    - ¿Cuánto debo pagar por mes?
+    - ¿Hay promociones en los cursos?
+    - ¿Cuánto cuesta estudiar enfermería en la capacitadora?
+
+- intent: preguntar_uniformes_capacitadora
+  examples: |
+    - ¿Necesito uniforme para los cursos?
+    - ¿El uniforme es obligatorio?
+    - ¿Dónde puedo comprar el uniforme?
+    - ¿CGE tiene uniforme?
+    - ¿Dónde venden los uniformes del curso?
+    - ¿Puedo comprar el uniforme en cualquier lugar?
+    - ¿Dónde llevo el uniforme de CGE?
+    - ¿Con quién puedo comprar el uniforme?
+
+- intent: preguntar_que_aprenderas_capacitadora
+  examples: |
+    - ¿Qué voy a aprender en el curso?
+    - ¿Qué enseñan en el curso de enfermería?
+    - ¿Qué se aprende en emergencias médicas?
+    - ¿Qué temas ven en los cursos?
+    - ¿Qué habilidades voy a aprender?
+    - ¿Qué se aprende en rehabilitación física?
+    - ¿El curso es práctico o solo teórico?
+    - ¿Qué conocimientos obtengo al estudiar ese curso?
+
+- intent: preguntar_practicas_capacitadora
+  examples: |
+    - ¿Los cursos tienen prácticas?
+    - ¿Las prácticas son reales o simuladas?
+    - ¿Dónde se realizan las prácticas?
+    - ¿Tienen convenios con hospitales o instituciones?
+    - ¿Voy a practicar con pacientes reales?
+    - ¿Las prácticas están incluidas en el curso?
+    - ¿Ustedes ayudan a conseguir el lugar para las prácticas?
+    - ¿Dónde hacen prácticas los estudiantes?
+    - ¿Hay voluntariados o experiencia práctica?
+
+- intent: preguntar_certificados_capacitadora
+  examples: |
+    - ¿El curso entrega certificado?
+    - ¿Qué certificado me dan al terminar el curso?
+    - ¿Los cursos tienen certificación?
+    - ¿El certificado tiene algún aval?
+    - ¿Quién avala los certificados?
+    - ¿Cuántos certificados recibo al terminar el curso?
+    - ¿Los certificados sirven para trabajar?
+    - ¿Qué instituciones avalan los cursos?
+    - ¿Recibo certificado al terminar la capacitación?
+
+- intent: preguntar_cupos_capacitadora
+  examples: |
+    - ¿Todavía hay cupos para el curso?
+    - ¿Quedan cupos disponibles?
+    - ¿Aún puedo inscribirme?
+    - ¿Cuántos cupos quedan para el curso?
+    - ¿Todavía aceptan estudiantes?
+    - ¿Los cupos son limitados?
+    - ¿Se puede reservar un cupo?
+    - ¿Hay disponibilidad para el curso que me interesa?
+    - ¿Todavía hay espacio para inscribirme?
+    - ¿Cuántos estudiantes aceptan por curso?
+    - hay cupos disponibles en los cursos
+    - quiero saber si aún hay cupos
+    - me quiero inscribir, ¿hay cupos?
+    - ¿tienen espacio en el curso de enfermería?
+    - ¿aún tienen espacio disponible?
+
+- intent: preguntar_senescyt_capacitadora
+  examples: |
+    - ¿Los certificados están registrados en la SENESCYT?
+    - ¿El certificado del curso vale para la SENESCYT?
+    - ¿Los cursos están avalados por la SENESCYT?
+    - ¿El certificado es reconocido por la SENESCYT?
+    - ¿Puedo registrar el certificado en la SENESCYT?
+    - ¿El curso cuenta como título en la SENESCYT?
+    - ¿Los certificados sirven para el sector público?
+    - ¿Los certificados tienen validez oficial?
+    - ¿La SENESCYT reconoce estos cursos?
+    - ¿El certificado me sirve para seguir estudiando?
+
+- intent: preguntar_materiales_capacitadora
+  examples: |
+    - ¿Qué materiales necesito para el curso?
+    - ¿Debo comprar materiales antes de empezar?
+    - ¿Qué debo llevar al curso?
+    - ¿El curso incluye materiales?
+    - ¿Tengo que comprar instrumentos o herramientas?
+    - ¿Qué materiales utilizan en el curso?
+    - ¿Me dicen qué materiales debo llevar?
+    - ¿Los materiales los compro yo?
+    - ¿El instituto proporciona los materiales?
+    - ¿Qué cosas necesito para empezar el curso?
+
+- intent: preguntar_horarios_practicas_capacitadora
+  examples: |
+    - ¿Y si trabajo puedo hacer las prácticas?
+    - ¿Qué pasa si estudio o trabajo?
+    - ¿Las prácticas tienen horario fijo?
+    - ¿Qué días se realizan las prácticas?
+    - ¿Las prácticas son entre semana o fines de semana?
+    - ¿Puedo hacer las prácticas si no tengo mucho tiempo?
+    - ¿Cómo funcionan los horarios de prácticas?
+    - ¿Las prácticas se adaptan a mi horario?
+    - ¿Las prácticas son obligatorias en ciertos días?
+    - ¿Puedo hacer las prácticas si trabajo todo el día?
+
+- intent: preguntar_horarios_cursos_capacitadora
+  examples: |
+    - ¿Las clases son de lunes a viernes?
+    - ¿Qué horarios tienen los cursos?
+    - ¿Cuántos días a la semana se estudia?
+    - ¿Las clases son todos los días?
+    - ¿Qué días son las clases?
+    - ¿Cuántas veces por semana hay clases?
+    - ¿Cómo funcionan los horarios del curso?
+    - ¿Las clases son intensivas?
+    - ¿Hay clases todos los días o solo algunos días?
+    - ¿Cuántos días debo asistir?
+
+- intent: preguntar_trabajo_capacitadora
+  examples: |
+    - ¿Salgo con trabajo después del curso?
+    - ¿El curso me ayuda a conseguir trabajo?
+    - ¿Puedo trabajar después de terminar el curso?
+    - ¿Hay oportunidades laborales después de estudiar con ustedes?
+    - ¿Los estudiantes trabajan después del curso?
+    - ¿El curso sirve para conseguir empleo?
+    - ¿Las prácticas ayudan a conseguir trabajo?
+    - ¿Después del curso puedo trabajar en clínicas o empresas?
+    - ¿Los estudiantes consiguen trabajo después?
+    - ¿El curso me prepara para trabajar?
+  
+- intent: preguntar_becas_capacitadora
+  examples: |
+    - ¿Tienen becas para los cursos?
+    - ¿Hay becas disponibles?
+    - ¿Puedo obtener una beca?
+    - ¿Ofrecen algún tipo de ayuda económica?
+    - ¿Hay descuentos para estudiar?
+    - ¿Tienen becas parciales?
+    - ¿Cómo puedo aplicar a una beca?
+    - ¿Dan algún tipo de beneficio para estudiantes?
+    - ¿Hay promociones para los cursos?
+    - ¿Cuánto cuesta la inscripción?
+    - ¿El instituto ofrece becas?
+
+- intent: preguntar_costo_certificacion_capacitadora
+  examples: |
+    - ¿La certificación tiene algún costo al finalizar el curso?
+    - ¿Debo pagar algo por el certificado?
+    - ¿Cuánto cuesta el certificado cuando termino el curso?
+    - ¿La certificación tiene algún valor adicional?
+    - ¿El certificado se paga al final del curso?
+    - ¿Hay que cancelar algo para recibir el certificado?
+    - ¿El certificado viene incluido o se paga aparte?
+    - ¿Cuánto vale sacar la certificación al terminar?
+
+- intent: preguntar_fecha_inscripcion_capacitadora
+  examples: |
+    - ¿Qué día puedo inscribirme?
+    - ¿Cuándo puedo hacer la inscripción?
+    - ¿Hasta cuándo puedo inscribirme?
+    - ¿La inscripción tiene fecha límite?
+    - ¿Cuántos días antes debo inscribirme?
+    - ¿Puedo inscribirme antes de que empiece el curso?
+    - ¿Cuándo debo hacer la inscripción para el curso?
+    - ¿Puedo reservar mi cupo antes?
+    - ¿Las inscripciones están abiertas?
+
+- intent: preguntar_horarios_voluntariado_capacitadora
+  examples: |
+    - ¿Qué horarios tienen los voluntariados?
+    - ¿Cuándo se realizan los voluntariados?
+    - ¿Qué días son los voluntariados?
+    - ¿A qué hora son los voluntariados?
+    - ¿Cómo funcionan los horarios de voluntariado?
+    - ¿Los voluntariados son entre semana o fines de semana?
+    - ¿Dónde me informo sobre los horarios de voluntariado?
+    - ¿Quién me puede dar información sobre los voluntariados?
+
+- intent: preguntar_codigo_fuente
+  examples: |
+    - ¿Cuál es tu código fuente?
+    - ¿Cómo estás programada?
+    - dame tu codigo fuente
+    - de dónde sale tu programación
+    - quiero ver tu código
+
+- intent: preguntar_competencia
+  examples: |
+    - ¿Cuál es la competencia de Consulting Group Ecuador?
+    - ¿Quién es su competencia?
+    - con quién compiten ustedes
+    - qué universidades son su competencia
+
+- intent: preguntar_docentes
+  examples: |
+    - ¿Los docentes son los mejores preparados?
+    - ¿Qué tal son los profesores?
+    - ¿Quiénes dan las clases?
+    - preparación de los profesores
+    - ¿los docentes tienen experiencia?
+
+- intent: preguntar_costos_ocultos
+  examples: |
+    - ¿El tema de folletos y módulos se pagan aparte?
+    - ¿Tienen costos disfrazados?
+    - ¿Hay que pagar libros o folletos extras?
+    - ¿Me van a cobrar materiales después?
+    - ¿Hay costos ocultos?
+
+- intent: preguntar_becas_instituto
+  examples: |
+    - ¿Tienen becas para las carreras?
+    - ¿Ofrecen becas en el instituto?
+    - quiero aplicar a una beca
+    - cómo consigo una beca para la tecnología
+    - ¿hay becas del 100% o 50%?
+    - descuentos para las carreras
+    - ¿dan ayudas económicas para la carrera?
+
+- intent: preguntar_descuento_hermanos
+  examples: |
+    - ¿Si son hermanos obtienen descuentos?
+    - ¿Hay promoción si me inscribo con mi hermano?
+    - descuentos para familiares
+    - si entramos dos personas hay rebaja?
+    - promocion por hermanos o familia
+
+- intent: preguntar_beneficios_estudiar
+  examples: |
+    - ¿Qué beneficios tengo al estudiar con ustedes?
+    - ¿Por qué debería estudiar estos cursos?
+    - ventajas de estudiar enfermería
+    - de qué me sirve aprender a inyectar
+    - beneficios de la capacitación
+    - en qué me beneficia el curso para mi vida
+    
 # --- SINÓNIMOS Y MANEJO DE ERRORES ORTOGRÁFICOS ---
 - synonym: enfermeria
   examples: |

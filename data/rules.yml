@@ -99,7 +99,7 @@ rules:
 - rule: Consultina responde sobre homologacion de materias
   steps:
   - intent: preguntar_homologacion
-  - action: utter_homologacion
+  - action: utter_preguntar_homologacion_inicial
 
 - rule: Consultina responde sobre los requisitos de inscripcion
   steps:
@@ -140,3 +140,122 @@ rules:
   steps:
   - intent: preguntar_ubicacion
   - action: utter_ubicacion
+
+- rule: Consultina responde sobre los cursos de la capacitadora
+  steps:
+  - intent: preguntar_cursos_capacitadora
+  - action: utter_cursos_capacitadora
+
+- rule: Consultina responde sobre los requisitos de la capacitadora
+  steps:
+  - intent: preguntar_requisitos_capacitadora
+  - action: utter_requisitos_capacitadora
+
+- rule: Consultina responde sobre los costos de la capacitadora
+  steps:
+  - intent: preguntar_costos_capacitadora
+  - action: utter_costos_capacitadora
+
+- rule: Consultina responde sobre los uniformes de la capacitadora
+  steps:
+  - intent: preguntar_uniformes_capacitadora
+  - action: utter_uniformes_capacitadora
+
+- rule: Consultina responde sobre lo que aprenderan en los cursos
+  steps:
+  - intent: preguntar_que_aprenderas_capacitadora
+  - action: utter_que_aprenderas_capacitadora
+
+- rule: Consultina responde sobre las practicas de la capacitadora
+  steps:
+  - intent: preguntar_practicas_capacitadora
+  - action: utter_practicas_capacitadora
+
+- rule: Consultina responde sobre los certificados de la capacitadora
+  steps:
+  - intent: preguntar_certificados_capacitadora
+  - action: utter_certificados_capacitadora
+- rule: Consultina consulta cupos disponibles en la capacitadora desde la base de datos
+  steps:
+  - intent: preguntar_cupos_capacitadora
+  - action: action_consultar_cupos_capacitadora
+
+- rule: Consultina responde sobre los certificados y la SENESCYT para la capacitadora
+  steps:
+  - intent: preguntar_senescyt_capacitadora
+  - action: utter_senescyt_capacitadora
+
+- rule: Consultina responde sobre los materiales de los cursos de la capacitadora
+  steps:
+  - intent: preguntar_materiales_capacitadora
+  - action: utter_materiales_capacitadora
+
+- rule: Consultina responde sobre los horarios de practicas de la capacitadora
+  steps:
+  - intent: preguntar_horarios_practicas_capacitadora
+  - action: utter_horarios_practicas_capacitadora
+
+- rule: Consultina responde sobre los horarios de clases de la capacitadora
+  steps:
+  - intent: preguntar_horarios_cursos_capacitadora
+  - action: utter_horarios_cursos_capacitadora
+
+- rule: Consultina responde sobre las oportunidades laborales post curso
+  steps:
+  - intent: preguntar_trabajo_capacitadora
+  - action: utter_trabajo_capacitadora
+
+- rule: Consultina responde sobre becas y descuentos de la capacitadora
+  steps:
+  - intent: preguntar_becas_capacitadora
+  - action: utter_becas_capacitadora
+
+- rule: Consultina responde sobre el costo de la certificacion final
+  steps:
+  - intent: preguntar_costo_certificacion_capacitadora
+  - action: utter_costo_certificacion_capacitadora
+
+- rule: Consultina responde sobre las fechas limite de inscripcion de la capacitadora
+  steps:
+  - intent: preguntar_fecha_inscripcion_capacitadora
+  - action: utter_fecha_inscripcion_capacitadora
+
+- rule: Consultina responde sobre los horarios de voluntariado de la capacitadora
+  steps:
+  - intent: preguntar_horarios_voluntariado_capacitadora
+  - action: utter_horarios_voluntariado_capacitadora
+
+- rule: Consultina responde sobre su codigo fuente
+  steps:
+  - intent: preguntar_codigo_fuente
+  - action: utter_codigo_fuente
+
+- rule: Consultina responde sobre la competencia de CGE
+  steps:
+  - intent: preguntar_competencia
+  - action: utter_competencia
+
+- rule: Consultina responde sobre la calidad de los docentes
+  steps:
+  - intent: preguntar_docentes
+  - action: utter_docentes
+
+- rule: Consultina aclara que no hay costos ocultos de folletos
+  steps:
+  - intent: preguntar_costos_ocultos
+  - action: utter_costos_ocultos
+
+- rule: Consultina responde sobre becas de las carreras
+  steps:
+  - intent: preguntar_becas_instituto
+  - action: utter_becas_instituto
+
+- rule: Consultina responde sobre descuentos para hermanos
+  steps:
+  - intent: preguntar_descuento_hermanos
+  - action: utter_descuento_hermanos
+
+- rule: Consultina responde sobre los beneficios practicos de estudiar
+  steps:
+  - intent: preguntar_beneficios_estudiar
+  - action: utter_beneficios_estudiar

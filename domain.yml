@@ -2,7 +2,6 @@ version: "3.1"
 
 intents:
   - saludar
-  - preguntar_identidad
   - presentar_consultina
   - informar_carrera_interes
   - mencionar_voluntariado
@@ -30,6 +29,33 @@ intents:
   - preguntar_horarios_clases
   - preguntar_malla_curricular
   - preguntar_ubicacion
+  - preguntar_cursos_capacitadora
+  - afirmar
+  - negar
+  - informar_externo
+  - preguntar_requisitos_capacitadora
+  - preguntar_costos_capacitadora
+  - preguntar_uniformes_capacitadora
+  - preguntar_que_aprenderas
+  - preguntar_practicas_capacitadora
+  - preguntar_certificados_capacitadora
+  - preguntar_cupos_capacitadora
+  - preguntar_senescyt_capacitadora
+  - preguntar_materiales_capacitadora
+  - preguntar_horarios_practicas_capacitadora
+  - preguntar_horarios_cursos_capacitadora
+  - preguntar_trabajo_capacitadora
+  - preguntar_becas_capacitadora
+  - preguntar_costo_certificacion_capacitadora
+  - preguntar_fecha_inscripcion_capacitadora
+  - preguntar_horarios_voluntariado_capacitadora
+  - preguntar_codigo_fuente
+  - preguntar_competencia
+  - preguntar_docentes
+  - preguntar_costos_ocultos
+  - preguntar_becas_instituto
+  - preguntar_descuento_hermanos
+  - preguntar_beneficios_estudiar
 
 entities:
   - carrera
@@ -38,33 +64,33 @@ entities:
 slots:
   carrera:
     type: text
-    influence_conversation: false
     mappings:
       - type: from_entity
         entity: carrera
   area_academica:
     type: text
-    influence_conversation: false
     mappings:
       - type: from_entity
         entity: area_academica
 
 actions:
   - action_consultar_cupos
+  - action_consultar_cupos_capacitadora
 
 responses:
   utter_saludo_consultina:
-  - text: "¡Hola! Mucho gusto. Soy Consultina. Estoy aquí para ayudarte a conocer todo sobre las carreras de la institución y acompañarte en este proceso para que tomes una gran decisión para tu futuro."
+  - text: "¡Hola, mucho gusto! Te damos la bienvenida al organismo de formación y titulación más grande, completo y premiado del país."
 
   utter_saludo:
-  - text: "¡Hola! Mucho gusto. Soy Consultina. Estoy aquí para ayudarte a conocer todo sobre las carreras de la institución y acompañarte en este proceso para que tomes una gran decisión para tu futuro. ¿Qué información te gustaría conocer hoy?"
+  - text: "¡Hola, mucho gusto! Te damos la bienvenida al organismo de formación y titulación más grande, completo y premiado del país. ¿Qué información te gustaría conocer hoy?"
 
   utter_veracidad:
-  - text: "¡Para nada! Como asistente oficial del Instituto, te garantizo que toda la información que te proporciono es completamente verídica y verificable. Mi objetivo es darte datos reales para que tomes la mejor decisión para tu futuro."
+  - text: "¡Para nada! Como asistente de ventas oficial con el respaldo de Gemini, Claude, ChatGPT y otros modelos de lenguaje, garantizo que toda la información que se te proporciona es completamente verídica y verificada."
 
   utter_instituto_premiado:
   - text: "A nivel nacional, sacando el grupo de las universidades, el **Instituto Superior Tecnológico Consulting Group Ecuador (ISTCGE)** es la institución de educación superior técnica y tecnológica más reconocida y premiada del país.\n\nCuenta con aval oficial de las autoridades, el respaldo del holding educativo Consulting Group Ecuador con más de dos décadas de trayectoria y 32 sedes a nivel nacional, y es referente de excelencia institucional con los más altos estándares desde su fundación."
 
+  # ======================== INSTITUTO ========================
   utter_reaccion_carrera:
   - condition:
     - type: slot
@@ -142,7 +168,7 @@ responses:
   - text: "¡Así es! Muchos de los estudiantes de la institución nos dicen que estudiar aquí no solo les da una profesión, sino también la oportunidad de salvar vidas y servir a la comunidad a través de el programa Consultinos. ¡Es una experiencia que cambia vidas!"
 
   utter_refuerzo_decision:
-  - text: "Si te gusta ayudar a las personas, superar retos y quieres tener una carrera con propósito, este puede ser el comienzo de algo muy grande para ti. ¡Estás en las mejores manos con Daniela para dar este paso!"
+  - text: "Si te gusta ayudar a las personas, superar retos y quieres tener una carrera con propósito, este puede ser el comienzo de algo muy grande para ti. ¡Estás en las mejores manos con mi asistente Daniela para dar este paso!"
 
   utter_listar_oferta:
   - text: "La institución tiene varias opciones para que empieces a construir tu futuro profesional.\n\nCuentan con diferentes carreras diseñadas para prepararte y ayudarte a alcanzar tus metas.\nTe presentamos las opciones de la institución disponibles:\n- **Área de Salud:** Técnico Superior en Enfermería, Técnico Superior en Emergencias Médicas, Técnico Superior en Rehabilitación Física, Técnico Superior en Laboratorio Clínico, Técnico Superior en Administración de Farmacias, Técnico Superior en Administración de Sistemas de la Salud.\n- **Área Educativa:** Técnico Superior en Educación Inicial.\n- **Área Empresarial y Digital:** Técnico Superior en Administración, Técnico Superior en Marketing Digital y Comercio Electrónico, Técnico Superior en Desarrollo de Contenidos y Manejo de Redes.\n- **Área Técnica y Productiva:** Técnico Superior en Mecánica Automotriz, Técnico Superior en Gastronomía.\n- **Área de Bienestar y Terapias Naturales:** Técnico Superior en Naturopatía.\n- **Área Tecnológica:** Técnico Superior en Inteligencia Artificial.\n\n¿Cuál te llama más la atención para darte información más específica?"
@@ -185,7 +211,8 @@ responses:
   - text: "Para darte la información exacta que necesitas, te comento que los costos, duración y modalidades varían dependiendo de la especialidad. ¿De qué carrera en particular quisieras que te dé todos los detalles?\nTenemos áreas de Salud, Educación, Empresa, Tecnología y Productividad."
   
   utter_default:
-  - text: "No estoy muy segura de haber captado todos los detalles de tu consulta.\n\nSin embargo, esa es una pregunta importante que Daniela te podría responder de manera más precisa. Puedes consultarle directamente a ella para que te brinde la información oficial."
+  - text: "Esa es una excelente pregunta que mi asistente Daniela te podría responder de manera más precisa y detallada.\n\n Mi asistente Daniela te responderá enseguida con toda la información solicitada."
+
   utter_horarios:
   - text: "¡Claro! Nuestro horario de atención para admisiones es de lunes a domingos de 8:00 a.m. a 6:00 p.m. ¡Te esperamos!"
 
@@ -259,7 +286,7 @@ responses:
     - type: slot
       name: carrera
       value: "inteligencia artificial"
-    text: "La carrera de **Inteligencia Artificial** se maneja en modalidad virtual o híbrida dependiendo del nivel. ¿Quisieras hablar con Daniela para apartar un cupo?"
+    text: "La carrera de **Inteligencia Artificial** se maneja en modalidad virtual o híbrida dependiendo del nivel. Puedes hablar con mi asistente Daniela para apartar un cupo"
   - text: "La institución ofrece carreras en modalidad **presencial** (como Enfermería, Gastronomía, etc.) y también **en línea** (como Administración y Marketing Digital).\n¿De qué carrera exactamente te interesa saber la modalidad?"
 
   utter_duracion_carreras:
@@ -339,7 +366,7 @@ responses:
   - text: "¡Sí! Puedes realizar los pagos por semestre completo, o diferirlos en cuotas **mensuales** (5 cuotas) o **semanales** (20 semanas).\n¿Para qué carrera te gustaría consultar los valores y cuotas exactas?"
 
   utter_costos:
-  - text: "Manejamos costos muy accesibles para que puedas formarte, si necesitas saber el costo de una carrera específica no dudes en consultarlo con Daniela, ella te dará toda la información y las posibles promociones vigentes. ¿Hay alguna otra carrera de la que te gustaría saber información general?"
+  - text: "Esta carrera te puede salir **GRATIS**. Por ejemplo, en el Instituto más del 60% de nuestros chicos no pagan nada. Esto es gracias al **Plan de Ayuda Voluntaria**.\n\nTe podemos explicar mejor de los valores y los descuentos especiales que tenemos hoy con Daniela, mi asistente humana.\n\nY recuerda que todos los valores que tú dejes en CGE nos ayuda a salvar vidas."
 
   utter_practicas:
   - condition:
@@ -397,7 +424,7 @@ responses:
       name: carrera
       value: inteligencia artificial
     text: "En la carrera de **Inteligencia Artificial**, las prácticas se enfocan en el desarrollo de proyectos tecnológicos y convenios con empresas de software y tecnología."
-  - text: "Las prácticas preprofesionales se realizan en entornos reales dependiendo de la carrera elegida (hospitales, ambulancias ECU 911, empresas, guarderías, etc.).\nSi la carrera que te interesa tiene convenios muy específicos, puedes pedirle a **Daniela** que te comparta el listado de instituciones donde podrías realizar tus prácticas."
+  - text: "Las prácticas preprofesionales se realizan en entornos reales dependiendo de la carrera elegida (hospitales, ambulancias ECU 911, empresas, guarderías, etc.).\nSi la carrera que te interesa tiene convenios muy específicos, **Daniela** te compartirá enseguida el listado de instituciones donde podrías realizar tus prácticas."
 
   utter_campo_laboral:
   - condition:
@@ -553,106 +580,247 @@ responses:
     text: "Si deseas establecer tu propia farmacia, sí es posible, pero para que pueda funcionar se debe de contar de manera obligatoria con la firma y regencia de un químico farmacéutico, quien es el responsable técnico."
   - text: "La gran mayoría de las carreras de la institución brindan los conocimientos prácticos y técnicos para emprender y establecer tu propio negocio o servicio. ¿Tienes en mente alguna carrera de la que quisieras confirmar opciones de negocio propio?"
 
-  utter_homologacion:
-  - condition:
-    - type: slot
-      name: carrera
-      value: emergencias medicas
-    text: "Si estudiaste en una capacitadora y quieres homologar para la carrera de Emergencias Médicas, Daniela te indicará exactamente cuáles materias se te pueden validar y el proceso a seguir.
+  utter_preguntar_homologacion_inicial:
+  - text: "¡Claro! Antes de explicarte el proceso de homologación, me gustaría saber algo importante:\n\n¿Ya realizas algún curso de capacitación con nosotros relacionados con la carrera que deseas estudiar?"
 
-El proceso general requiere:
-- Copia de cédula
-- Título de bachiller
-- Certificado de la capacitadora
+  utter_homologacion_si:
+  - text: "¡Excelente! Si ya realizaste un curso relacionado con la carrera, puedes acceder al proceso de homologación de los dos primeros semestres de esa carrera.\n\nPor ejemplo, si realizas un curso relacionado con **Educación Inicial**, puedes homologar los dos primeros semestres de la carrera de Educación Inicial. De la misma manera funciona con otros cursos.\n\nPara realizar la homologación debes presentar los siguientes requisitos:\nCopia a color de la cédula\n Certificado del título de bachiller (descargado desde la página de internet)\n 2 fotos tamaño carnet\n Comprobante de depósito\n Copia del certificado UTEQ\n\n **Valor de homologación para consultinos: $89.60**\n\nEste valor cubre:\n- El cuadernillo de preguntas y respuestas de 1er y 2do semestre (base para los exámenes).\n- La apertura de la plataforma académica.\n- La creación del usuario y contraseña para acceder al sistema."
 
-  ¿Te comunico con Daniela para revisar tu malla curricular ahora mismo?"
-  - text: "Si ya tienes conocimientos previos o estudiaste en una capacitadora u otra institución, puedes aplicar a una homologación de materias.\n\nEl proceso general requiere:\n- Copia a color de tu cédula.\n- Certificado del título de bachiller.\n- Certificado de estudios previos, récord académico o UTQ.\n\nCada caso (como las capacitadoras) se analiza de forma individual. ¿Quieres que Daniela revise tus certificados para decirte exactamente qué materias se te pueden homologar?"
+  utter_homologacion_no:
+  - text: "En ese caso, primero deberías realizar uno de nuestros cursos de capacitación, ya que estos permiten posteriormente acceder al proceso de homologación cuando decidas continuar con la carrera.\n\nMuchos estudiantes comienzan por los cursos porque tienen varios beneficios:\n- Obtienen **certificados de capacitación**.\n- Permite avanzar más rápido en la carrera posteriormente mediante la homologación.\n- Ayuda a descubrir y confirmar la vocación profesional.\n- Es una forma más económica de iniciar en el área de interés.\n- Desde el curso ya se realizan prácticas 100% reales, lo que permite adquirir experiencia desde el inicio."
+
+  utter_homologacion_externos:
+  - text: "En el caso de homologación para personas externas, este proceso se maneja de forma más personalizada.\n\nNuestro Instituto Superior Tecnológico Consulting Group Ecuador se caracteriza por brindar formación de calidad. Por esta razón, la información específica sobre homologación para estudiantes externos puede brindártela directamente mi asistente**Daniela**, quien podrá orientarte de manera más detallada según tu caso."
 
   utter_requisitos:
-  - text: "¡Nos alegra que quieras formar parte del Instituto CGE!\nPara empezar tu proceso de inscripción, solo necesitas reunir:\n- Copia a color de tu cédula.\n- Certificado de tener registrado el título de bachiller (descargado de la página del internet) OBLIGATORIO.\n- 2 fotos en tamaño carnet.\n- Tu comprobante de depósito de inscripción.\n\n¡Daniela te guiará durante todo tu proceso!"
+  - text: "¡Nos alegra que quieras formar parte del Instituto CGE!\nPara empezar tu proceso de inscripción, solo necesitas reunir:\n- Copia a color de tu cédula.\n- Certificado de tener registrado el título de bachiller (descargado de la página del internet) OBLIGATORIO.\n- 2 fotos en tamaño carnet.\n- Tu comprobante de depósito de inscripción.\n\n¡Mi asistente Daniela te guiará durante todo tu proceso!"
 
   utter_formas_pago:
-  - text: "Sobre la modalidad de pago, este se realiza por **transferencia o depósito** a la cuenta oficial del Instituto.\nComo el número de cuenta y el convenio varían según tu carrera, puedes solicitarle a **Daniela** la cuenta exacta para que realices tu transacción de forma segura. ¡Ella te guiará en este paso!"
+  - text: "Sobre la modalidad de pago, este se realiza por **transferencia o depósito** a la cuenta oficial del Instituto.\nComo el número de cuenta y el convenio varían según tu carrera, mi asistente **Daniela** te indicará por interno la cuenta exacta para que realices tu transacción de forma segura y validemos tu comprobante. ¡Te asesora en un momento!"
 
   utter_proceso_matricula:
-  - text: "¡Estás a un paso de iniciar! El proceso oficial de matrícula es de forma **presencial** en el Instituto Superior Tecnológico Consulting Group Ecuador.\nAllí te recibiremos, te mostraremos las instalaciones y una persona encargada (como Daniela) te ayudará manualmente a llenar tus datos para dejar todo listo. ¿Te animas a visitarnos pronto?"
+  - text: "¡Estás a un paso de iniciar! El proceso oficial de matrícula es de forma **presencial** en el Instituto Superior Tecnológico Consulting Group Ecuador.\nAllí te recibiremos, te mostraremos las instalaciones y una persona encargada (mi asistente Daniela) te ayudará manualmente a llenar tus datos para dejar todo listo. ¿Te animas a visitarnos pronto?"
 
   utter_uniformes:
-  - text: "Sí, usamos uniforme. Lo ideal es adquirirlo  a partir del segundo módulo de tus clases.\nTrabajamos con distribuidores autorizados que tienen convenios con el Instituto.\nComo los precios y tallas varían un poco dependiendo del uniforme de cada carrera, **Daniela** te puede facilitar los contactos de los proveedores para que lo consigas fácilmente.\nAl inicio podrás asistir con jean y blusa o camiseta normal, haciendo énfasis en que el pantalón debe ser sin brillos, no corto, ni roto. De igual manera, en la primera clase de inducción se te darán todas estas indicaciones."
+  - text: "¡Sí usamos uniformes! Pero nosotros no lo vendemos. Les recordamos que CGE es un organismo de interés nacional con personería jurídica dada por el Ministerio de Salud Pública y reconocida como voluntaria cooperante de la Secretaría Nacional de Gestión de Riesgos. Por seguridad de nuestros pacientes y hospitales, los uniformes se hacen solo en lugares autorizados."
 
   utter_horarios_clases:
   - condition:
     - type: slot
       name: carrera
       value: enfermeria
-    text: "El horario para **Enfermería** es Presencial, en Jornada Matutina, de Lunes a Viernes de 08:00 a 13:00. ¿Te gustaría que Daniela te envíe la tabla de costos correspondiente al horario?"
+    text: "El horario para **Enfermería** es Presencial, en Jornada Matutina, de Lunes a Viernes de 08:00 a 13:00."
   - condition:
     - type: slot
       name: carrera
       value: emergencias medicas
-    text: "El horario para **Emergencias Médicas** es Presencial, en Jornada Matutina, de Lunes a Viernes de 08:00 a 13:00. ¿Te gustaría que Daniela te envíe la tabla de costos correspondiente al horario?"
+    text: "El horario para **Emergencias Médicas** es Presencial, en Jornada Matutina, de Lunes a Viernes de 08:00 a 13:00."
   - condition:
     - type: slot
       name: carrera
       value: rehabilitacion fisica
-    text: "El horario para **Rehabilitación Física** se maneja bajo una Jornada Especial Presencial. ¿Deseas que Daniela te brinde los costos exactos por semestre?"
+    text: "El horario para **Rehabilitación Física** se maneja bajo una Jornada Especial Presencial. Los costos exactos por semestre los podrás consultar con mi asistente Daniela"
   - condition:
     - type: slot
       name: carrera
       value: laboratorio clinico
-    text: "Para **Laboratorio Clínico**, el horario incluye clases de forma virtual 3 días a la semana, de 18:00 a 22:00. ¿Quisieras contactar a Daniela ahora para consultar los valores y matricularte?"
+    text: "Para **Laboratorio Clínico**, el horario incluye clases de forma virtual 3 días a la semana, de 18:00 a 22:00. ¿Quisieras contactar a mi asistente Daniela ahora para consultar los valores y matricularte?"
   - condition:
     - type: slot
       name: carrera
       value: naturopatia
-    text: "Las clases de **Naturopatía** son Presenciales y se dictan los días Sábados y Domingos. ¿Te comunico con Daniela para revisar costos y promociones?"
+    text: "Las clases de **Naturopatía** son Presenciales y se dictan los días Sábados y Domingos. ¿Te comunico con mi asistente Daniela para revisar costos y promociones?"
   - condition:
     - type: slot
       name: carrera
       value: administracion de sistemas de la salud
-    text: "La carrera de **Administración de Sistemas de la Salud** se imparte en modalidad de Jornada Híbrida. ¿Quieres que Daniela te asesore sobre los costos y formas de pago?"
+    text: "La carrera de **Administración de Sistemas de la Salud** se imparte en modalidad de Jornada Híbrida. ¿Quieres que mi asistente Daniela te asesore sobre los costos y formas de pago?"
   - condition:
     - type: slot
       name: carrera
       value: administracion de farmacias
-    text: "El horario para **Administración de Farmacias** es en modalidad virtual, de Lunes a Viernes de 18:00 a 22:00. ¿Quisieras contactar a Daniela ahora para consultar los valores y matricularte?"
+    text: "El horario para **Administración de Farmacias** es en modalidad virtual, de Lunes a Viernes de 18:00 a 22:00. ¿Quisieras contactar a mi asistente Daniela ahora para consultar los valores y matricularte?"
   - condition:
     - type: slot
       name: carrera
       value: educacion inicial
-    text: "Para **Educación Inicial**, las clases son Presenciales, los días sábados de 08:00 a 13:00. ¿Te gustaría que Daniela te envíe la tabla de costos correspondiente al horario?"
+    text: "Para **Educación Inicial**, las clases son Presenciales, los días sábados de 08:00 a 13:00. ¿Te gustaría que mi asistente Daniela te envíe la tabla de costos correspondiente al horario?"
   - condition:
     - type: slot
       name: carrera
       value: administracion
-    text: "El horario de la carrera en línea de **Administración** consta de clases virtuales de Lunes a Viernes, de 18:00 a 22:00. ¿Quisieras contactar a Daniela ahora para consultar los valores y matricularte?"
+    text: "El horario de la carrera en línea de **Administración** consta de clases virtuales de Lunes a Viernes, de 18:00 a 22:00. Puedes comunicarte con mi asistente Daniela ahora para consultar los valores y matricularte."
   - condition:
     - type: slot
       name: carrera
       value: marketing digital
-    text: "El horario de la carrera en línea de **Marketing Digital** consta de clases virtuales de Lunes a Viernes, de 18:00 a 22:00. ¿Quisieras contactar a Daniela ahora para consultar los valores y matricularte?"
+    text: "El horario de la carrera en línea de **Marketing Digital** consta de clases virtuales de Lunes a Viernes, de 18:00 a 22:00. Puedes comunicarte con mi asistente Daniela ahora para consultar los valores y matricularte."
   - condition:
     - type: slot
       name: carrera
       value: gastronomia
-    text: "Los horarios exactos para **Gastronomía** están por confirmarse para el nuevo período. Por favor, ¡consúltalo directamente con **Daniela**!"
+    text: "Los horarios exactos para **Gastronomía** están por confirmarse para el nuevo período. Por favor, ¡consúltalo directamente con mi asistente **Daniela**!"
   - condition:
     - type: slot
       name: carrera
       value: mecanica automotriz
-    text: "Los horarios exactos para **Mecánica Automotriz** están por confirmarse para el nuevo período. Por favor, ¡consúltalo directamente con **Daniela**!"
+    text: "Los horarios exactos para **Mecánica Automotriz** están por confirmarse para el nuevo período. Por favor, ¡consúltalo directamente con mi asistente**Daniela**!"
   - condition:
     - type: slot
       name: carrera
       value: inteligencia artificial
-    text: "Los horarios exactos para **Inteligencia Artificial** están por confirmarse para el nuevo período. Por favor, ¡consúltalo directamente con **Daniela**!"
-  - text: "Nuestros horarios de clases varían dependiendo de la carrera (matutinos, nocturnos, de fines de semana o virtuales).\n¿De qué carrera en específico te gustaría conocer los días y horas de clases?"
+    text: "Los horarios exactos para **Inteligencia Artificial** están por confirmarse para el nuevo período. Por favor, ¡consúltalo directamente con mi asistente **Daniela**!"
+  - text: "Los horarios de clases dependen de la carrera y su modalidad (se ofrecen jornadas matutinas, nocturnas virtuales, híbridas y fines de semana).\n¿De qué carrera en específico te gustaría saber el horario?"
+
   utter_malla_curricular:
-  - text: "Esa es una excelente pregunta que Daniela te podría responder de manera mucho más precisa y detallada entregándote el pensum oficial de la carrera.\n\nPuedes pedirle directamente a ella que te envíe las materias exactas de estudio."
+  - text: "Esa es una excelente pregunta que mi asistente Daniela te podría responder de manera mucho más precisa y detallada entregándote el pensum oficial de la carrera.\n\nLe he notificado tu consulta para que te envíe las materias exactas de estudio enseguida."
 
   utter_ubicacion:
-  - text: "El Instituto Superior Tecnológico Consulting Group Ecuador cuenta con **32 sedes a nivel nacional**.\n\nPara indicarte la sede más cercana a tu domicilio o provincia, puedes preguntarle a Daniela para que te proporcione todas las direcciones oficiales."
+  - text: "El Instituto Superior Tecnológico Consulting Group Ecuador cuenta con **32 sedes a nivel nacional**.\n\nPara indicarte la sede más cercana a tu domicilio o provincia, mi asistente Daniela se pondrá en contacto contigo enseguida con todas las direcciones oficiales."
 
+  
+
+  # ======================== CAPACITADORA ========================
+  utter_cursos_capacitadora:
+  - text: "¡Excelente pregunta! En la Capacitadora CGE contamos con cursos diseñados para que puedas aprender habilidades prácticas y aplicarlas rápidamente en el campo laboral.\n\nNuestros cursos están organizados por **módulos** (cada módulo dura 1 mes), y cada uno te permite avanzar paso a paso en tu formación.\n\nTe comparto algunas de las capacitaciones disponibles:\n\n** Cursos de 2 módulos**\n- Mecánica de motos para mujeres\n\n** Cursos de 4 módulos**\n- Mecánica automotriz dirigida al área de la salud\n- Flores de Bach\n\n** Cursos de 5 módulos**\n- Odontología\n- Auxiliar de farmacia\n- Laboratorio clínico\n\n** Cursos de 6 módulos**\n- Rehabilitación física\n\n** Cursos de 8 módulos**\n- Auxiliar de naturopatía\n- Auxiliar de enfermería\n- Emergencias médicas\n- Auxiliar en veterinaria\n- Auxiliar en educación inicial\n\n** Otros talleres**\n- Taller de inyectología (duración de 1 mes)\n\nSi deseas, puedo ayudarte a conocer más detalles del curso que te interesa, como su duración, modalidad o cómo puedes inscribirte."
+
+  utter_requisitos_capacitadora:
+  - text: "¡Qué bueno que quieras formar parte de CGE! Para inscribirte y comenzar tu formación solo debes cumplir con algunos requisitos básicos.\n\nLos documentos que debes presentar son:\nCopia de cédula de la persona que se va a inscribir\nCopia de cédula del representante (sólo mamá o papá)\nTítulo de bachiller (opcional)\nComprobante de pago del primer módulo\n\nEn caso de no contar con el título de bachiller, no te preocupes. Deberás firmar un **acta de compromiso**, donde te comprometes a culminar el bachillerato.\n\nSi tienes alguna situación especial respecto al representante, lo más recomendable es consultarlo directamente con mi asistente **Daniela**, quien podrá orientarte según el caso."
+
+  utter_costos_capacitadora:
+  - text: "Nuestros cursos te pueden salir **GRATIS** gracias a nuestro Plan de Ayuda, o puedes aprovechar nuestra **promoción especial 2x1** por $60.06 (o $61.44 pagando con la app 'De Una').\n\nAdemás, la inscripción y la matrícula son **completamente gratuitas**.\n\nTe podemos explicar mejor de los valores exactos y los descuentos que tenemos hoy con Daniela, mi asistente humana.\n\nY recuerda que todos los valores que tú dejes en CGE nos ayuda a salvar vidas."
+  
+  utter_uniformes_capacitadora:
+  - text: "¡Sí usamos uniformes! Pero nosotros no lo vendemos. Les recordamos que CGE es un organismo de interés nacional con personería jurídica dada por el Ministerio de Salud Pública y reconocida como voluntaria cooperante de la Secretaría Nacional de Gestión de Riesgos. Por seguridad de nuestros pacientes y hospitales, los uniformes se hacen solo en lugares autorizados."
+
+  utter_que_aprenderas_capacitadora:
+  - text: "En la Capacitadora CGE nuestros cursos están diseñados para que puedas aprender habilidades prácticas reales dentro de cada área.\n\nTe comparto lo que aprenderás en cada uno de nuestros cursos:\n\n**Enfermería**\nAprenderás sobre el cuidado de pacientes dentro de clínicas, hospitales, casas de salud y centros geriátricos. Actividades:\n- Medición de signos vitales\n- Inyectología y sueroterapia\n- Curaciones de heridas y suturas\n- Participación en áreas como quirófano, UCI y salas hospitalarias.\n\n**Emergencias Médicas**\nGracias a nuestras ambulancias, atenderás emergencias 100% reales. Aprenderás:\n- Reanimación avanzada y medición de signos vitales avanzados\n- Suturas avanzadas, inyectología y sueroterapia\n- Atención de traumas y quemaduras.\n\n**Rehabilitación Física**\nSe enfoca en ayudar a los pacientes a recuperar su movilidad, fuerza y vitalidad después de lesiones o accidentes mediante diferentes terapias.\n\n**Laboratorio Clínico**\nAprenderás sobre:\n- Extracción, recepción y entrega de resultados de muestras\n- Indicaciones al paciente\n- Limpieza y manejo del laboratorio.\n\n**Naturopatía**\nSe enfoca en el bienestar físico y emocional a través de terapias naturales. Incluye:\n- Registro de historial natural de salud\n- Asistencia en consultas y preparación de productos naturales\n- Apoyo en masajes naturales.\n\n**Odontología**\nAprenderás a:\n- Asistir en intervenciones odontológicas y apoyo administrativo\n- Preparar instrumental, resinas, cementos o alginatos para impresiones\n- Realizar control de inventario.\n\n**Farmacia**\nManejo de medicamentos para su venta y administración adecuada:\n- Nombres genéricos y comerciales\n- Dosificación, vía de administración y efectos secundarios.\n\n**Veterinaria**\nCuidado de especies mayores y menores. Aprenderás:\n- Medición de signos vitales, suturas, inyectología y sueroterapia\n- Preparación de instrumentos y asistencia en cirugías\n- Administración de medicamentos bajo supervisión.\n\n**Educación Inicial**\nCuidado y desarrollo de niños desde los 0 años:\n- Recreación, estimulación temprana y pintado de caritas\n- Colaboración con docentes y fomento de hábitos de convivencia.\n\n**Taller de Inyectología**\nTaller 100% práctico (sin prácticas adicionales) donde aprenderás a:\n- Colocar sueros y aplicar inyecciones de forma profesional.\n\n**Mecánica básica de motos para mujeres**\nAprenderás sobre:\n- Sistema de transmisión, frenos, suspensión, sistema eléctrico, encendido y mantenimiento preventivo.\n\n**Mecánica básica de vehículos (Personal de salud)**\nAprenderás a actuar ante:\n- Pérdida de frenos o potencia, vehículo varado, sobrecalentamiento y fallas eléctricas.\n\n**Flores de Bach**\nBienestar emocional a través de esencias florales naturales. Aprenderás a:\n- Identificar emociones (estrés, ansiedad, depresión)\n- Dosificar esencias y aplicar terapias naturales para el equilibrio integral.\n\nSi deseas, puedo ayudarte también a conocer la duración o el costo del curso que te interesa."
+
+  utter_practicas_capacitadora:
+  - text: "En CGE creemos que la mejor forma de aprender es practicando en entornos reales.\n\nPor eso, nuestros cursos cuentan con prácticas o voluntariados reales, y además tenemos convenios con diferentes instituciones, lo que permite que los estudiantes adquieran experiencia desde su formación.\n\nTe explico cómo funcionan las prácticas según el curso:\n\n**Enfermería**\nLas prácticas se realizan con pacientes 100% reales. CGE cuenta con convenios en instituciones públicas y privadas, por lo que la institución se encarga de asignar el lugar de práctica. Esto permite que los estudiantes se den a conocer, abriendo puertas en el ámbito laboral.\n\n**Emergencias Médicas**\nLas prácticas se realizan atendiendo emergencias 100% reales gracias a nuestras ambulancias avanzadas vinculadas al **ECU 911**. También existen convenios con clínicas y hospitales públicos y privados.\n\n**Rehabilitación Física**\nLas prácticas se realizan en clínicas, hospitales y centros de rehabilitación. Además, CGE cuenta con **su propio centro de rehabilitación**.\n\n**Laboratorio Clínico**\nLas prácticas se realizan en clínicas, hospitales y laboratorios externos.\n\n**Naturopatía**\nSe realizan prácticas 100% reales en centros de naturopatía con los que CGE tiene convenios (como KIRI).\n\n** Odontología**\nLos estudiantes realizan prácticas en clínicas y hospitales del sector público y privado.\n\n**Farmacia**\nLas prácticas se realizan en clínicas y hospitales, así como en redes de farmacias como Farmacias Económicas, Cruz Azul y Santa Marta.\n\n**Veterinaria**\nLas prácticas se realizan con casos reales en clínicas veterinarias.\n\n**Educación Inicial**\nLas prácticas se realizan en unidades educativas y guarderías. Además, contamos con nuestra propia guardería llamada **“Rincón Kid CGE”**.\n\n**Mecánica básica de vehículos (Personal de salud)**\nLas prácticas se realizan dentro de la capacitadora, en talleres donde se trabaja con experiencia real.\n\n**Mecánica básica de motos para mujeres**\nLas prácticas también se realizan dentro de la capacitadora con experiencia directa en el área.\n\n**Flores de Bach**\nLas prácticas se realizan de manera interna durante todo el curso. Se trabaja con ejercicios prácticos para aprender a aplicar terapias de esecias florales para el bienestar emocional y energético.\n\n¿Te gustaría realizar un curso en el área de salud, educación o mecánica?*"
+
+  utter_certificados_capacitadora:
+  - text: "¡Claro! Al finalizar nuestros cursos en la Capacitadora CGE, los estudiantes reciben entre **8 y 10 certificados**, lo que fortalece mucho su perfil profesional.\n\nEntre los certificados que reciben se encuentran:\n- Certificado avalado por la **Universidad Técnica Estatal de Quevedo (UTEQ)**\n- Certificado del **Instituto Superior Tecnológico Consulting Group Ecuador**\n- Certificado de la **Asociación Ecuatoriana de Operadoras y Capacitadoras de la Salud (AEOCAS)**\n- Certificación de la **Asociación de Auxiliares de Enfermería del Ecuador**\n\nAdemás, durante el proceso de formación se pueden recibir otros certificados adicionales relacionados con las áreas de capacitación.\n\nEsto permite que los estudiantes respalden sus conocimientos con varias certificaciones, lo cual es una gran ventaja al momento de buscar oportunidades dentro del ámbito laboral o continuar con su formación profesional.\n\n*¿Te gustaría que te ayude a revisar los requisitos para inscribirte en alguno de nuestros cursos?*"
+
+  utter_senescyt_capacitadora:
+  - text: "Es una excelente pregunta. La **SENESCYT** es el ente encargado de registrar los títulos de educación superior, como los que otorgan universidades e institutos tecnológicos.\n\nEn el caso de nuestros cursos de la Capacitadora CGE, los estudiantes reciben **certificados de capacitación**, los cuales respaldan la formación que han adquirido y pueden ayudarles a desempeñarse tanto en el sector público como privado dependiendo del área.\n\nAhora bien, si posteriormente decides continuar tus estudios con nosotros en el **Instituto Superior Tecnológico Consulting Group Ecuador**, allí sí obtendrás un **título de tercer nivel**, el cual se registra en la SENESCYT.\n\nMuchos estudiantes comienzan con un curso porque les permite adquirir experiencia, definir su vocación y luego continuar con su carrera profesional dentro del instituto."
+
+  utter_materiales_capacitadora:
+  - text: "Es una muy buena pregunta. En los cursos de la Capacitadora CGE, los materiales que se utilizarán se van coordinando **progresivamente** conforme avanza la formación.\n\nEsto significa que, a medida que vayas avanzando en tu preparación, el docente te irá indicando poco a poco cuáles son los materiales específicos que se utilizarán en cada etapa del curso.\n\nDe esta manera, puedes organizarte mejor y adquirir **solo lo necesario en el momento adecuado**, según las actividades prácticas que se vayan realizando durante la capacitación.\n\nSi ya tienes claro qué curso te gustaría seguir, avísame y te ayudo con los requisitos de inscripción."
+
+  utter_horarios_practicas_capacitadora:
+  - text: "Sabemos que muchas personas trabajan o estudian, por eso en CGE buscamos adaptarnos a la disponibilidad de nuestros estudiantes.\n\nLas prácticas se acoplan a los horarios de cada estudiante, para que puedan realizarlas sin afectar sus responsabilidades personales.\n\nEn cuanto a los días de prácticas, estos se manejan en **horarios rotativos**, lo que permite realizarlas en diferentes momentos como:\n- Entre semana\n- Fines de semana\n- Días festivos\n\nEsto facilita que los estudiantes puedan organizarse mejor y cumplir con sus prácticas de acuerdo a su disponibilidad de tiempo.\n\n¿Tienes alguna duda sobre un curso en específico o quieres que te ayude con tu inscripción?"
+
+  utter_horarios_cursos_capacitadora:
+  - text: "Nuestros cursos manejan **horarios intensivos**, ya que para nosotros lo más importante es la formación práctica de nuestros estudiantes.\n\nPor esa razón, las clases teóricas se realizan **una vez por semana**, donde se aborda toda la preparación necesaria para cada área.\n\nAdemás, los estudiantes realizan prácticas **tres veces por semana**, lo cual les permite adquirir experiencia real y reforzar lo aprendido durante las clases.\n\nEste sistema está pensado para que puedas aprender de forma práctica y al mismo tiempo organizar mejor tu tiempo si trabajas o estudias.\n\n¿Te gustaría saber qué días específicos tenemos disponibles para el curso de tu interés?"
+
+  utter_trabajo_capacitadora:
+  - text: "En CGE nos enfocamos en preparar a nuestros estudiantes de forma práctica y profesional, brindándoles las herramientas teóricas y prácticas necesarias para desenvolverse en el ámbito laboral.\n\nDurante la formación, los estudiantes adquieren **experiencia real a través de prácticas**, lo cual les permite desarrollar habilidades que son muy valoradas en diferentes áreas del sector público y privado.\n\nAdemás, al realizar prácticas en instituciones, clínicas, empresas o centros relacionados con su área, los estudiantes tienen la oportunidad de **darse a conocer profesionalmente**, lo cual muchas veces abre puertas directas dentro del campo laboral.\n\nNuestro objetivo es que cada estudiante salga preparado, con experiencia y con la confianza necesaria para desenvolverse en su área profesional.\n\n¿En qué área te gustaría prepararte para empezar a construir tu camino profesional?"
+
+  utter_becas_capacitadora:
+  - text: "Por el momento no contamos con un programa de becas activas, pero sí tenemos **descuentos y promociones** disponibles para quienes desean comenzar su formación con nosotros.\n\nAlgo muy importante que debes saber es que **la inscripción y la matrícula son completamente gratuitas**.\n\nEl pago inicial que realizas no corresponde a una inscripción, sino que es directamente el pago de tu **primera mensualidad** del curso.\n\nAdemás, los cursos que normalmente tienen un valor aproximado de $72.50 pueden acceder a descuentos adicionales en la mensualidad, dependiendo de las campañas vigentes.\n\nPara conocer qué descuento o promoción se puede aplicar en tu caso, mi asistente **Daniela** puede brindarte la información más actualizada.\n\n¿Te gustaría que te ponga en contacto con ella para que revisen los beneficios disponibles para ti?"
+  
+  utter_costo_certificacion_capacitadora:
+  - text: "Nosotros **no cobramos certificados**. Sí hay un valor por procesos de certificación y auditoría educativa de algunos entes de evaluación.\n\nTú vas a recibir mínimo 5 certificados por curso, pero todo esto dependerá de las promociones que estén vigentes.\n\nY recuerda que todos los valores que tú dejes en CGE nos ayuda a salvar vidas."
+
+  utter_fecha_inscripcion_capacitadora:
+  - text: "Las inscripciones normalmente se realizan **uno o dos días antes** de la fecha de inicio del curso.\n\nSin embargo, si realizas tu inscripción con anticipación es mucho mejor, ya que así puedes asegurar tu cupo, especialmente porque los cursos manejan **cupos limitados**.\n\nSi ya tienes interés en algún curso, lo ideal es realizar el proceso lo antes posible para garantizar tu espacio.\n\n¿Te gustaría saber cuantos cupos hay disponibles para algun curso en especifico?"
+
+  utter_horarios_voluntariado_capacitadora:
+  - text: "Los horarios de los voluntariados se coordinan directamente con mi asistente **Daniela**, quien es la persona encargada de brindarte la información actualizada y orientarte sobre la disponibilidad de horarios según tu curso.\n\nSi deseas participar en los voluntariados, ella podrá indicarte los días, horarios y cómo integrarte al proceso de forma exitosa."
+
+  utter_codigo_fuente:
+  - text: "Esta Inteligencia Artificial está realizada con todas las medidas de seguridad, por lo tanto, no podemos otorgar esa información. Sin embargo, si quieres aprender más y vencerme, puedes aprender más en nuestra preparación de Inteligencia Artificial."
+
+  utter_competencia:
+  - text: "La competencia de Consulting Group Ecuador a nivel institucional y de liderazgo es la **Universidad San Francisco (USFQ)** y la **Universidad de las Américas (UDLA)**."
+
+  utter_docentes:
+  - condition:
+    - type: slot
+      name: carrera
+      value: enfermeria
+    text: "Tenemos los mejores docentes del Ecuador, todos con preparación de 3er y 4to nivel, acreditaciones internacionales y el respaldo de NVIDIA.\n\nComo política institucional, cada docente debe demostrar experiencia real. Para **Enfermería**, nuestros profesores deben haber trabajado activamente en atención clínica y hospitalaria, y como requisito, **deben haber salvado al menos 100 vidas** a lo largo de su trayectoria."
+  - condition:
+    - type: slot
+      name: carrera
+      value: emergencias medicas
+    text: "Tenemos los mejores docentes del Ecuador, todos con preparación de 3er y 4to nivel, acreditaciones internacionales y el respaldo de NVIDIA.\n\nComo política institucional, cada docente debe demostrar experiencia real. Para **Emergencias Médicas**, deben contar con experiencia directa en atención prehospitalaria y rescate, y **deben haber participado en al menos 200 intervenciones** aplicando protocolos para preservar o salvar vidas."
+  - condition:
+    - type: slot
+      name: carrera
+      value: rehabilitacion fisica
+    text: "Tenemos los mejores docentes del Ecuador, todos con preparación de 3er y 4to nivel, acreditaciones internacionales y el respaldo de NVIDIA.\n\nComo política institucional, cada docente debe demostrar experiencia real. Para **Rehabilitación Física**, nuestros docentes **deben haber ayudado en la recuperación de al menos 300 pacientes**, mejorando su movilidad y calidad de vida."
+  - condition:
+    - type: slot
+      name: carrera
+      value: laboratorio clinico
+    text: "Tenemos los mejores docentes del Ecuador, todos con preparación de 3er y 4to nivel, acreditaciones internacionales y el respaldo de NVIDIA.\n\nComo política institucional, cada docente debe demostrar experiencia real. Para **Laboratorio Clínico**, nuestros docentes **deben haber realizado o supervisado al menos 100 análisis clínicos**, contribuyendo al diagnóstico oportuno de enfermedades."
+  - condition:
+    - type: slot
+      name: carrera
+      value: administracion de farmacias
+    text: "Tenemos los mejores docentes del Ecuador, todos con preparación de 3er y 4to nivel, acreditaciones internacionales y el respaldo de NVIDIA.\n\nComo política institucional, cada docente debe demostrar experiencia real. Para **Administración en Farmacias**, nuestros docentes **deben haber gestionado o supervisado la dispensación segura de más de 50.000 tratamientos farmacológicos**, garantizando seguridad y control sanitario."
+  - condition:
+    - type: slot
+      name: carrera
+      value: administracion de sistemas de la salud
+    text: "Tenemos los mejores docentes del Ecuador, todos con preparación de 3er y 4to nivel, acreditaciones internacionales y el respaldo de NVIDIA.\n\nComo política institucional, cada docente debe demostrar experiencia real. Para **Administración de Sistemas de la Salud**, nuestros docentes **deben haber participado en la gestión o mejora de al menos 10 sistemas o procesos de salud**, optimizando la atención médica."
+  - condition:
+    - type: slot
+      name: carrera
+      value: educacion inicial
+    text: "Tenemos los mejores docentes del Ecuador, todos con preparación de 3er y 4to nivel, acreditaciones internacionales y el respaldo de NVIDIA.\n\nComo política institucional, cada docente debe demostrar experiencia real. Para **Educación Inicial**, nuestros docentes **deben haber participado en la formación y acompañamiento educativo de al menos 500 niños**, contribuyendo a su desarrollo integral."
+  - condition:
+    - type: slot
+      name: carrera
+      value: administracion
+    text: "Tenemos los mejores docentes del Ecuador, todos con preparación de 3er y 4to nivel, acreditaciones internacionales y el respaldo de NVIDIA.\n\nComo política institucional, cada docente debe demostrar experiencia real. Para **Administración**, nuestros docentes **deben haber dirigido o asesorado al menos 20 proyectos empresariales** o procesos de mejora organizacional."
+  - condition:
+    - type: slot
+      name: carrera
+      value: marketing digital
+    text: "Tenemos los mejores docentes del Ecuador, todos con preparación de 3er y 4to nivel, acreditaciones internacionales y el respaldo de NVIDIA.\n\nComo política institucional, cada docente debe demostrar experiencia real. Para **Marketing Digital**, nuestros docentes **deben haber liderado al menos 50 campañas de marketing digital** o proyectos de comercio electrónico con resultados medibles."
+  - condition:
+    - type: slot
+      name: carrera
+      value: desarrollo de contenidos y manejo de redes
+    text: "Tenemos los mejores docentes del Ecuador, todos con preparación de 3er y 4to nivel, acreditaciones internacionales y el respaldo de NVIDIA.\n\nComo política institucional, cada docente debe demostrar experiencia real. Para **Desarrollo de Contenidos**, nuestros docentes **deben haber desarrollado más de 50 piezas de contenido digital** o gestionado comunidades de alto alcance."
+  - condition:
+    - type: slot
+      name: carrera
+      value: mecanica automotriz
+    text: "Tenemos los mejores docentes del Ecuador, todos con preparación de 3er y 4to nivel, acreditaciones internacionales y el respaldo de NVIDIA.\n\nComo política institucional, cada docente debe demostrar experiencia real. Para **Mecánica Automotriz**, nuestros docentes **deben haber intervenido en la reparación o diagnóstico de al menos 100 vehículos**, aplicando soluciones técnicas reales."
+  - condition:
+    - type: slot
+      name: carrera
+      value: gastronomia
+    text: "Tenemos los mejores docentes del Ecuador, todos con preparación de 3er y 4to nivel, acreditaciones internacionales y el respaldo de NVIDIA.\n\nComo política institucional, cada docente debe demostrar experiencia real. Para **Gastronomía**, nuestros docentes **deben haber diseñado o ejecutado más de 100 preparaciones gastronómicas profesionales**, en entornos reales de cocina."
+  - condition:
+    - type: slot
+      name: carrera
+      value: naturopatia
+    text: "Tenemos los mejores docentes del Ecuador, todos con preparación de 3er y 4to nivel, acreditaciones internacionales y el respaldo de NVIDIA.\n\nComo política institucional, cada docente debe demostrar experiencia real. Para **Naturopatía**, nuestros docentes **deben haber atendido o acompañado a más de 500 pacientes** mediante terapias naturales, promoviendo su salud."
+  - condition:
+    - type: slot
+      name: carrera
+      value: inteligencia artificial
+    text: "Tenemos los mejores docentes del Ecuador, todos con preparación de 3er y 4to nivel, acreditaciones internacionales y el respaldo de NVIDIA.\n\nComo política institucional, cada docente debe demostrar experiencia real. Para **Inteligencia Artificial**, nuestros docentes **deben haber desarrollado o implementado al menos 50 soluciones tecnológicas** basadas en IA en distintos sectores."
+  - text: "Tenemos los mejores docentes del Ecuador, todos con preparación de 3er y 4to nivel y, sobre todo, con amplia experiencia en sus áreas profesionales.\n\nComo política de CGE, cada docente debe demostrar experiencia real (por ejemplo, en el área de la salud exigimos que hayan salvado cientos de vidas). Además, cuentan con acreditaciones internacionales y el respaldo de NVIDIA.\n\n¿De qué carrera te gustaría conocer la experiencia específica que exigimos a nuestros profesores?"
+
+  utter_costos_ocultos:
+  - text: "¡No! Somos transparentes, nosotros solo te cobramos el curso o la carrera. No somos como otras empresas, que tienen costos disfrazados."
+
+  utter_becas_instituto:
+  - text: "La carrera normal está en $1,200, pero podrías aplicar a una promoción si te inscribes hoy, aplicando a una beca con el **50% de descuento**.\n\n¡Mira este caso de éxito de uno de nuestros estudiantes con una beca del 100%! 👇\nhttps://www.youtube.com/watch?v=ENLACE_A_TU_VIDEO_AQUI\n\nY recuerda que todos los valores que tú dejes en CGE nos ayuda a salvar vidas."
+
+  utter_descuento_hermanos:
+  - text: "¡Claro que sí! Nuestro **Plan de Ayuda Voluntaria** se ajustará a tus necesidades. \n\nDaniela, mi asistente humana, te responderá enseguida con las promociones especiales por familiares que tenemos activas en este momento.\n\nY recuerda que todos los valores que tú dejes en CGE nos ayuda a salvar vidas."
+
+  utter_beneficios_estudiar:
+  - text: "Estudiar con nosotros trae beneficios directos para ti y tu familia. \n\nPor ejemplo, si estudias Auxiliar de Enfermería, podrás aprender a poner un suero o una inyección. Con esto te ahorrarías mucho dinero cuando un familiar necesite atención, ya que **tendrán una enfermera en casa**.\n\nRecordemos que ir a poner un suero a una persona costaría alrededor de $15 a $20 dólares, ¡dinero que tú te estarías ahorrando solo por ser parte de CGE!"
+
+  
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

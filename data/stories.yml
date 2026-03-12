@@ -99,4 +99,25 @@ stories:
   - intent: informar_carrera_interes
   - action: utter_modalidad_estudio
   - intent: preguntar_homologacion
-  - action: utter_homologacion
+  - action: utter_preguntar_homologacion_inicial
+  
+
+
+- story: Flujo Homologacion - Estudiante dice que SI
+  steps:
+  - intent: preguntar_homologacion
+  - action: utter_preguntar_homologacion_inicial
+  - intent: afirmar
+  - action: utter_homologacion_si
+
+- story: Flujo Homologacion - Estudiante dice que NO
+  steps:
+  - intent: preguntar_homologacion
+  - action: utter_preguntar_homologacion_inicial
+  - intent: negar
+  - action: utter_homologacion_no
+
+- story: Flujo Homologacion - Estudiante viene de otro instituto
+  steps:
+  - intent: informar_externo
+  - action: utter_homologacion_externos

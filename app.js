@@ -252,13 +252,25 @@ async function enviarMensajeServidor(textoUsuario) {
                 }
                 
                 if(mensaje.text) {
+                    // 1. Preparamos el texto visual para el Chat
                     let textoCapa = mensaje.text
                         .replace(/\*\*(.*?)\*\*/g, '<strong class="text-primary font-semibold">$1</strong>')
                         .replace(/\n/g, '<br>');
                     
                     textoParaChat += textoCapa;
                     
-                    textoParaVoz += mensaje.text.replace(/\*/g, '') + ". ";
+                    // 2. Preparamos y limpiamos el texto para la Voz (Diccionario Fonético)
+                    let textoLimpioVoz = mensaje.text.replace(/\*/g, '');
+                    
+                    // Correcciones de pronunciación (Solo afectan al audio)
+                    textoLimpioVoz = textoLimpioVoz.replace(/NVIDIA/g, 'Envidia');
+                    textoLimpioVoz = textoLimpioVoz.replace(/USFQ/g, 'U S F Q');
+                    textoLimpioVoz = textoLimpioVoz.replace(/UDLA/g, 'Udla');
+                    textoLimpioVoz = textoLimpioVoz.replace(/IESS/g, 'Íes');
+                    textoLimpioVoz = textoLimpioVoz.replace(/MSP/g, 'Eme Ese Pe');
+                    textoLimpioVoz = textoLimpioVoz.replace(/CGE/g, 'C G E'); // Para que no diga "cje"
+                    
+                    textoParaVoz += textoLimpioVoz + ". ";
                 }
                 
                 if(mensaje.image) {
