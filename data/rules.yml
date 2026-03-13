@@ -259,3 +259,23 @@ rules:
   steps:
   - intent: preguntar_beneficios_estudiar
   - action: utter_beneficios_estudiar
+
+- rule: Consultina responde sobre la convalidacion de practicas
+  steps:
+  - intent: preguntar_convalidacion_practicas
+  - action: utter_convalidacion_practicas
+
+- rule: Consultina responde sobre practicas cerca de casa
+  steps:
+  - intent: preguntar_practicas_cerca
+  - action: utter_practicas_cerca
+
+- rule: Consultina explica que es un voluntariado
+  steps:
+  - intent: preguntar_diferencia_voluntariado
+  - action: utter_diferencia_voluntariado
+
+- rule: Consultina responde sobre las menciones de la capacitadora
+  steps:
+  - intent: preguntar_menciones_capacitadora
+  - action: utter_menciones_capacitadora

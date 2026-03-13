@@ -56,6 +56,10 @@ intents:
   - preguntar_becas_instituto
   - preguntar_descuento_hermanos
   - preguntar_beneficios_estudiar
+  - preguntar_convalidacion_practicas
+  - preguntar_practicas_cerca
+  - preguntar_diferencia_voluntariado
+  - preguntar_menciones_capacitadora
 
 entities:
   - carrera
@@ -92,77 +96,7 @@ responses:
 
   # ======================== INSTITUTO ========================
   utter_reaccion_carrera:
-  - condition:
-    - type: slot
-      name: carrera
-      value: enfermeria
-    text: "¡Excelente elección! Como la institución más grande del país en formación en salud y emergencias, el instituto garantiza una educación de excelencia con simuladores y prácticas reales. ¿Qué información específica te gustaría conocer de la carrera de Enfermería? Puedes preguntarme por costos, duración, campo laboral o prácticas."
-  - condition:
-    - type: slot
-      name: carrera
-      value: emergencias medicas
-    text: "¡Excelente elección! Como la institución más grande del país en formación en salud y emergencias, el instituto garantiza una educación de excelencia con simuladores y prácticas reales. ¿Qué información específica te gustaría conocer de la carrera de Emergencias Médicas? Puedes preguntarme por costos, duración, campo laboral o prácticas."
-  - condition:
-    - type: slot
-      name: carrera
-      value: rehabilitacion fisica
-    text: "¡Excelente elección! Como la institución más grande del país en formación en salud y emergencias, el instituto garantiza una educación de excelencia con simuladores y prácticas reales. ¿Qué información específica te gustaría conocer de la carrera de Rehabilitación Física? Puedes preguntarme por costos, duración, campo laboral o prácticas."
-  - condition:
-    - type: slot
-      name: carrera
-      value: laboratorio clinico
-    text: "¡Excelente elección! Como la institución más grande del país en formación en salud y emergencias, el instituto garantiza una educación de excelencia con simuladores y prácticas reales. ¿Qué información específica te gustaría conocer de la carrera de Laboratorio Clínico? Puedes preguntarme por costos, duración, campo laboral o prácticas."
-  - condition:
-    - type: slot
-      name: carrera
-      value: administracion de farmacias
-    text: "¡Excelente elección! Como la institución más grande del país en formación en salud y emergencias, el instituto garantiza una educación de excelencia con simuladores y prácticas reales. ¿Qué información específica te gustaría conocer de la carrera de Administración de Farmacias? Puedes preguntarme por costos, duración, campo laboral o prácticas."
-  - condition:
-    - type: slot
-      name: carrera
-      value: administracion de sistemas de la salud
-    text: "¡Excelente elección! Como la institución más grande del país en formación en salud y emergencias, el instituto garantiza una educación de excelencia con simuladores y prácticas reales. ¿Qué información específica te gustaría conocer de la carrera de Administración de Sistemas de la Salud? Puedes preguntarme por costos, duración, campo laboral o prácticas."
-  - condition:
-    - type: slot
-      name: carrera
-      value: educacion inicial
-    text: "¡Excelente elección! En el ISTCGE la formación se orienta a la práctica. ¿Qué información específica te gustaría conocer de la carrera de Educación Inicial? Puedes preguntarme por costos, duración, campo laboral o prácticas."
-  - condition:
-    - type: slot
-      name: carrera
-      value: administracion
-    text: "¡Excelente elección! En el ISTCGE la formación se orienta a la práctica. ¿Qué información específica te gustaría conocer de la carrera de Administración? Puedes preguntarme por costos, duración, modalidad, campo laboral o prácticas."
-  - condition:
-    - type: slot
-      name: carrera
-      value: marketing digital
-    text: "¡Excelente elección! En el ISTCGE la formación se orienta a la práctica. ¿Qué información específica te gustaría conocer de la carrera de Marketing Digital? Puedes preguntarme por costos, duración, modalidad, campo laboral o prácticas."
-  - condition:
-    - type: slot
-      name: carrera
-      value: desarrollo de contenidos y manejo de redes
-    text: "¡Excelente elección! En el ISTCGE la formación se orienta a la práctica. ¿Qué información específica te gustaría conocer de la carrera de Desarrollo de Contenidos y Manejo de Redes? Puedes preguntarme por costos, duración, campo laboral o prácticas."
-  - condition:
-    - type: slot
-      name: carrera
-      value: mecanica automotriz
-    text: "¡Excelente elección! En el ISTCGE la formación se orienta a la práctica. ¿Qué información específica te gustaría conocer de la carrera de Mecánica Automotriz? Puedes preguntarme por costos, duración, campo laboral o prácticas."
-  - condition:
-    - type: slot
-      name: carrera
-      value: gastronomia
-    text: "¡Excelente elección! En el ISTCGE la formación se orienta a la práctica. ¿Qué información específica te gustaría conocer de la carrera de Gastronomía? Puedes preguntarme por costos, duración, campo laboral o prácticas."
-  - condition:
-    - type: slot
-      name: carrera
-      value: naturopatia
-    text: "¡Excelente elección! En el ISTCGE la formación se orienta a la práctica. ¿Qué información específica te gustaría conocer de la carrera de Naturopatía? Puedes preguntarme por costos, duración, campo laboral o prácticas."
-  - condition:
-    - type: slot
-      name: carrera
-      value: inteligencia artificial
-    text: "¡Excelente elección! La tecnología es el futuro. ¿Qué información específica te gustaría conocer de la carrera de Inteligencia Artificial? Puedes preguntarme por costos, duración, campo laboral o prácticas."
-  - text: "¡Excelente elección! En el ISTCGE la formación se orienta a la práctica. ¿De qué carrera en específico te gustaría conocer los detalles de costos, duración o campo laboral?"
+  - text: "¡Excelente elección! Esa es una de nuestras áreas más solicitadas.\n\nPara esta especialidad tenemos dos opciones distintas de estudio:\n**La Carrera de Tecnología Superior:** Dura 2 años y te otorga un título de tercer nivel registrado en la SENESCYT.\n**El Curso de Capacitación:** Es más corto, 100% práctico y te otorga certificaciones.\n\n¿Cuál de las dos opciones te interesa más: **La Carrera** o **el Curso**?"
 
   utter_voluntariado_consultinos:
   - text: "¡Así es! Muchos de los estudiantes de la institución nos dicen que estudiar aquí no solo les da una profesión, sino también la oportunidad de salvar vidas y servir a la comunidad a través de el programa Consultinos. ¡Es una experiencia que cambia vidas!"
@@ -171,7 +105,7 @@ responses:
   - text: "Si te gusta ayudar a las personas, superar retos y quieres tener una carrera con propósito, este puede ser el comienzo de algo muy grande para ti. ¡Estás en las mejores manos con mi asistente Daniela para dar este paso!"
 
   utter_listar_oferta:
-  - text: "La institución tiene varias opciones para que empieces a construir tu futuro profesional.\n\nCuentan con diferentes carreras diseñadas para prepararte y ayudarte a alcanzar tus metas.\nTe presentamos las opciones de la institución disponibles:\n- **Área de Salud:** Técnico Superior en Enfermería, Técnico Superior en Emergencias Médicas, Técnico Superior en Rehabilitación Física, Técnico Superior en Laboratorio Clínico, Técnico Superior en Administración de Farmacias, Técnico Superior en Administración de Sistemas de la Salud.\n- **Área Educativa:** Técnico Superior en Educación Inicial.\n- **Área Empresarial y Digital:** Técnico Superior en Administración, Técnico Superior en Marketing Digital y Comercio Electrónico, Técnico Superior en Desarrollo de Contenidos y Manejo de Redes.\n- **Área Técnica y Productiva:** Técnico Superior en Mecánica Automotriz, Técnico Superior en Gastronomía.\n- **Área de Bienestar y Terapias Naturales:** Técnico Superior en Naturopatía.\n- **Área Tecnológica:** Técnico Superior en Inteligencia Artificial.\n\n¿Cuál te llama más la atención para darte información más específica?"
+  - text: "¡Qué emoción que quieras prepararte con nosotros! Antes de mostrarte todo lo que tenemos, me gustaría saber algo sobre ti:\n\n**¿Dónde te gustaría estar trabajando en el futuro?**\n¿Te gustaría estar en un hospital salvando vidas, en una ambulancia atendiendo emergencias, en un laboratorio, en una farmacia, enseñando a niños, o tal vez administrando una empresa?\n\nCuéntame qué te apasiona para guiarte mejor. *(O si prefieres, simplemente dime 'quiero ver todas las carreras' y te daré la lista completa)*."
 
   utter_listar_carreras_por_area:
   - condition:
@@ -208,7 +142,7 @@ responses:
 
 
   utter_lista_completa:
-  - text: "Para darte la información exacta que necesitas, te comento que los costos, duración y modalidades varían dependiendo de la especialidad. ¿De qué carrera en particular quisieras que te dé todos los detalles?\nTenemos áreas de Salud, Educación, Empresa, Tecnología y Productividad."
+  - text: "¡Claro que sí! Aquí tienes nuestra oferta completa para que elijas tu mejor opción:\n\n**ÁREA DE SALUD:**\n- Enfermería\n- Emergencias Médicas\n- Rehabilitación Física\n- Laboratorio Clínico\n- Administración de Farmacias\n- Administración de Sistemas de la Salud\n- Odontología (Curso)\n\n**OTRAS ÁREAS:**\n- Educación Inicial\n- Administración\n- Marketing Digital y Redes\n- Mecánica Automotriz\n- Gastronomía\n- Naturopatía\n- Inteligencia Artificial\n- Veterinaria (Curso)\n\n¿Cuál de todas estas opciones llama más tu atención para darte los detalles?"
   
   utter_default:
   - text: "Esa es una excelente pregunta que mi asistente Daniela te podría responder de manera más precisa y detallada.\n\n Mi asistente Daniela te responderá enseguida con toda la información solicitada."
@@ -431,12 +365,13 @@ responses:
     - type: slot
       name: carrera
       value: enfermeria
-    text: "Como profesional en **Enfermería**, podrás trabajar en:\n- Asilos y casas de atención al adulto mayor.\n- Cuidado domiciliario y administración de medicamentos.\n- Instituciones de salud pública (IESS, MSP) y clínicas privadas.\n- Docencia y capacitación en salud."
+    text: "¡El campo laboral es inmenso y hermoso! Podrás trabajar **salvando vidas** en clínicas privadas o instituciones de salud pública (IESS, MSP y otros). O si lo prefieres, puedes crear tu propia empresa de cuidados de enfermería y servir no solo en el Ecuador, ¡sino a todo el mundo!\n\nImagina el impacto que tendrás al mejorar la vida de tantas personas. ¡Mira a nuestros estudiantes en acción!\n\nhttps://www.tusitioweb.com/ENLACE_A_TU_FOTO_AQUI.jpg"
   - condition:
     - type: slot
       name: carrera
       value: emergencias medicas
-    text: "El campo laboral en **Emergencias Médicas** incluye:\n- Atención prehospitalaria en instituciones públicas (IESS, MSP, SGR) y privadas.\n- Departamentos de salud ocupacional en empresas productivas.\n- Posibilidad de establecer una empresa propia de atención de emergencias."
+    text: "¡Tendrás una profesión llena de adrenalina y propósito! Podrás trabajar **salvando vidas** en atención prehospitalaria, rescates y el sistema ECU 911, o puedes crear tu propia empresa de atención de emergencias sirviendo en Ecuador y el mundo.\n\n¡Mira a nuestros héroes en acción!\n\nhttps://www.tusitioweb.com/ENLACE_A_TU_FOTO_AQUI.jpg"
+  - text: "¡Tu campo laboral será gigante! Te preparamos para que puedas trabajar en las instituciones más grandes del país (públicas y privadas) o para que crees tu propia empresa y puedas brindar tus servicios no solo en Ecuador, ¡sino a todo el mundo!"
   - condition:
     - type: slot
       name: carrera
@@ -605,72 +540,7 @@ responses:
   - text: "¡Sí usamos uniformes! Pero nosotros no lo vendemos. Les recordamos que CGE es un organismo de interés nacional con personería jurídica dada por el Ministerio de Salud Pública y reconocida como voluntaria cooperante de la Secretaría Nacional de Gestión de Riesgos. Por seguridad de nuestros pacientes y hospitales, los uniformes se hacen solo en lugares autorizados."
 
   utter_horarios_clases:
-  - condition:
-    - type: slot
-      name: carrera
-      value: enfermeria
-    text: "El horario para **Enfermería** es Presencial, en Jornada Matutina, de Lunes a Viernes de 08:00 a 13:00."
-  - condition:
-    - type: slot
-      name: carrera
-      value: emergencias medicas
-    text: "El horario para **Emergencias Médicas** es Presencial, en Jornada Matutina, de Lunes a Viernes de 08:00 a 13:00."
-  - condition:
-    - type: slot
-      name: carrera
-      value: rehabilitacion fisica
-    text: "El horario para **Rehabilitación Física** se maneja bajo una Jornada Especial Presencial. Los costos exactos por semestre los podrás consultar con mi asistente Daniela"
-  - condition:
-    - type: slot
-      name: carrera
-      value: laboratorio clinico
-    text: "Para **Laboratorio Clínico**, el horario incluye clases de forma virtual 3 días a la semana, de 18:00 a 22:00. ¿Quisieras contactar a mi asistente Daniela ahora para consultar los valores y matricularte?"
-  - condition:
-    - type: slot
-      name: carrera
-      value: naturopatia
-    text: "Las clases de **Naturopatía** son Presenciales y se dictan los días Sábados y Domingos. ¿Te comunico con mi asistente Daniela para revisar costos y promociones?"
-  - condition:
-    - type: slot
-      name: carrera
-      value: administracion de sistemas de la salud
-    text: "La carrera de **Administración de Sistemas de la Salud** se imparte en modalidad de Jornada Híbrida. ¿Quieres que mi asistente Daniela te asesore sobre los costos y formas de pago?"
-  - condition:
-    - type: slot
-      name: carrera
-      value: administracion de farmacias
-    text: "El horario para **Administración de Farmacias** es en modalidad virtual, de Lunes a Viernes de 18:00 a 22:00. ¿Quisieras contactar a mi asistente Daniela ahora para consultar los valores y matricularte?"
-  - condition:
-    - type: slot
-      name: carrera
-      value: educacion inicial
-    text: "Para **Educación Inicial**, las clases son Presenciales, los días sábados de 08:00 a 13:00. ¿Te gustaría que mi asistente Daniela te envíe la tabla de costos correspondiente al horario?"
-  - condition:
-    - type: slot
-      name: carrera
-      value: administracion
-    text: "El horario de la carrera en línea de **Administración** consta de clases virtuales de Lunes a Viernes, de 18:00 a 22:00. Puedes comunicarte con mi asistente Daniela ahora para consultar los valores y matricularte."
-  - condition:
-    - type: slot
-      name: carrera
-      value: marketing digital
-    text: "El horario de la carrera en línea de **Marketing Digital** consta de clases virtuales de Lunes a Viernes, de 18:00 a 22:00. Puedes comunicarte con mi asistente Daniela ahora para consultar los valores y matricularte."
-  - condition:
-    - type: slot
-      name: carrera
-      value: gastronomia
-    text: "Los horarios exactos para **Gastronomía** están por confirmarse para el nuevo período. Por favor, ¡consúltalo directamente con mi asistente **Daniela**!"
-  - condition:
-    - type: slot
-      name: carrera
-      value: mecanica automotriz
-    text: "Los horarios exactos para **Mecánica Automotriz** están por confirmarse para el nuevo período. Por favor, ¡consúltalo directamente con mi asistente**Daniela**!"
-  - condition:
-    - type: slot
-      name: carrera
-      value: inteligencia artificial
-    text: "Los horarios exactos para **Inteligencia Artificial** están por confirmarse para el nuevo período. Por favor, ¡consúltalo directamente con mi asistente **Daniela**!"
-  - text: "Los horarios de clases dependen de la carrera y su modalidad (se ofrecen jornadas matutinas, nocturnas virtuales, híbridas y fines de semana).\n¿De qué carrera en específico te gustaría saber el horario?"
+  - text: "Tenemos varios horarios a escoger (matutinos, nocturnos, fines de semana, etc.), pero te recordamos que los cupos son limitados.\n\nPor procesos de calidad internacionales, **solo recibimos hasta 25 personas por curso**.\n\nSi quieres saber qué horarios tenemos disponibles, esta información privada te la puede entregar **Daniela**, mi asistente humana."
 
   utter_malla_curricular:
   - text: "Esa es una excelente pregunta que mi asistente Daniela te podría responder de manera mucho más precisa y detallada entregándote el pensum oficial de la carrera.\n\nLe he notificado tu consulta para que te envíe las materias exactas de estudio enseguida."
@@ -678,7 +548,7 @@ responses:
   utter_ubicacion:
   - text: "El Instituto Superior Tecnológico Consulting Group Ecuador cuenta con **32 sedes a nivel nacional**.\n\nPara indicarte la sede más cercana a tu domicilio o provincia, mi asistente Daniela se pondrá en contacto contigo enseguida con todas las direcciones oficiales."
 
-  
+
 
   # ======================== CAPACITADORA ========================
   utter_cursos_capacitadora:
@@ -709,10 +579,10 @@ responses:
   - text: "Es una muy buena pregunta. En los cursos de la Capacitadora CGE, los materiales que se utilizarán se van coordinando **progresivamente** conforme avanza la formación.\n\nEsto significa que, a medida que vayas avanzando en tu preparación, el docente te irá indicando poco a poco cuáles son los materiales específicos que se utilizarán en cada etapa del curso.\n\nDe esta manera, puedes organizarte mejor y adquirir **solo lo necesario en el momento adecuado**, según las actividades prácticas que se vayan realizando durante la capacitación.\n\nSi ya tienes claro qué curso te gustaría seguir, avísame y te ayudo con los requisitos de inscripción."
 
   utter_horarios_practicas_capacitadora:
-  - text: "Sabemos que muchas personas trabajan o estudian, por eso en CGE buscamos adaptarnos a la disponibilidad de nuestros estudiantes.\n\nLas prácticas se acoplan a los horarios de cada estudiante, para que puedan realizarlas sin afectar sus responsabilidades personales.\n\nEn cuanto a los días de prácticas, estos se manejan en **horarios rotativos**, lo que permite realizarlas en diferentes momentos como:\n- Entre semana\n- Fines de semana\n- Días festivos\n\nEsto facilita que los estudiantes puedan organizarse mejor y cumplir con sus prácticas de acuerdo a su disponibilidad de tiempo.\n\n¿Tienes alguna duda sobre un curso en específico o quieres que te ayude con tu inscripción?"
+  - text: "¡No te preocupes por tus prácticas! Nosotros **respetamos tu tiempo**.\n\nSi estás estudiando o trabajando, en tu tiempo libre te podemos ubicar tus prácticas. CGE, al ser el organismo de formación más grande y premiado del país, tiene convenios con las instituciones más importantes del Ecuador, por ende, hay muchos lugares con horarios flexibles donde tú podrás realizarlas."
 
   utter_horarios_cursos_capacitadora:
-  - text: "Nuestros cursos manejan **horarios intensivos**, ya que para nosotros lo más importante es la formación práctica de nuestros estudiantes.\n\nPor esa razón, las clases teóricas se realizan **una vez por semana**, donde se aborda toda la preparación necesaria para cada área.\n\nAdemás, los estudiantes realizan prácticas **tres veces por semana**, lo cual les permite adquirir experiencia real y reforzar lo aprendido durante las clases.\n\nEste sistema está pensado para que puedas aprender de forma práctica y al mismo tiempo organizar mejor tu tiempo si trabajas o estudias.\n\n¿Te gustaría saber qué días específicos tenemos disponibles para el curso de tu interés?"
+  - text: "Tenemos varios horarios a escoger (clases teóricas y prácticas), pero te recordamos que los cupos son sumamente limitados.\n\nPor procesos de calidad internacionales, **solo recibimos hasta 25 personas por curso**.\n\nSi quieres saber qué horarios exactos tenemos disponibles, esta información privada te la puede entregar **Daniela**, mi asistente humana."
 
   utter_trabajo_capacitadora:
   - text: "En CGE nos enfocamos en preparar a nuestros estudiantes de forma práctica y profesional, brindándoles las herramientas teóricas y prácticas necesarias para desenvolverse en el ámbito laboral.\n\nDurante la formación, los estudiantes adquieren **experiencia real a través de prácticas**, lo cual les permite desarrollar habilidades que son muy valoradas en diferentes áreas del sector público y privado.\n\nAdemás, al realizar prácticas en instituciones, clínicas, empresas o centros relacionados con su área, los estudiantes tienen la oportunidad de **darse a conocer profesionalmente**, lo cual muchas veces abre puertas directas dentro del campo laboral.\n\nNuestro objetivo es que cada estudiante salga preparado, con experiencia y con la confianza necesaria para desenvolverse en su área profesional.\n\n¿En qué área te gustaría prepararte para empezar a construir tu camino profesional?"
@@ -819,6 +689,18 @@ responses:
 
   utter_beneficios_estudiar:
   - text: "Estudiar con nosotros trae beneficios directos para ti y tu familia. \n\nPor ejemplo, si estudias Auxiliar de Enfermería, podrás aprender a poner un suero o una inyección. Con esto te ahorrarías mucho dinero cuando un familiar necesite atención, ya que **tendrán una enfermera en casa**.\n\nRecordemos que ir a poner un suero a una persona costaría alrededor de $15 a $20 dólares, ¡dinero que tú te estarías ahorrando solo por ser parte de CGE!"
+
+  utter_convalidacion_practicas:
+  - text: "¡Claro que sí! Puedes convalidar tus prácticas siempre y cuando nos presentes información que valide tu experiencia laboral y que esta se ajuste a nuestras mallas curriculares, previo a un análisis del director de carrera."
+
+  utter_practicas_cerca:
+  - text: "CGE mantiene convenios con el Ministerio de Salud Pública (MSP), el Instituto Ecuatoriano de Seguridad Social (IESS) y con los hospitales y clínicas más grandes del país.\n\nTu ubicación exacta va a estar bajo control de los directores de carrera, los cuales **garantizarán tu lugar de prácticas** (buscando tu comodidad) junto al cumplimiento de la malla educativa."
+
+  utter_diferencia_voluntariado:
+  - text: "Es muy sencillo: en las carreras del Instituto les decimos 'Prácticas', y en la Capacitadora les llamamos 'Voluntarios' o también 'Prácticas'.\n\nSer un voluntario significa tener la vocación de ayudar y servir a la comunidad desde tu primer día de formación, aplicando todo lo aprendido en escenarios 100% reales para salvar vidas."
+
+  utter_menciones_capacitadora:
+  - text: "¡Las menciones son como una especialización para tu curso!\n\nTodos los cursos tienen una mención que dura **2 meses adicionales**. La excelente noticia es que ingresas con la misma promoción del curso que ya realizaste (por ejemplo, si pagaste $60 por tu curso, la mención te sale exactamente al mismo valor).\n\nAquí tienes las menciones disponibles:\n- **Farmacia:** Visitador médico.\n- **Laboratorio Clínico:** Imagenología.\n- **Rehabilitación Física:** Terapia enfocada al deporte.\n- **Educación Inicial:** Cuidado de párvulos con capacidades diferentes.\n- **Enfermería:** Puedes elegir entre UCI, Nefrología o Instrumentista quirúrgico.\n- **Emergencias Médicas:** Gestión de riesgos.\n\n¿Te gustaría añadir una mención a tu formación para potenciar tu perfil?"
 
   
 session_config:

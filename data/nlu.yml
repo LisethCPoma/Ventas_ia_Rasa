@@ -699,6 +699,42 @@ nlu:
     - de qué me sirve aprender a inyectar
     - beneficios de la capacitación
     - en qué me beneficia el curso para mi vida
+
+- intent: preguntar_convalidacion_practicas
+  examples: |
+    - ¿Puedo convalidar las prácticas si ya trabajo?
+    - ¿Me hacen valer mis horas de trabajo como prácticas?
+    - ¿Si ya soy enfermera puedo homologar mis prácticas?
+    - convalidar practicas
+    - ya tengo experiencia, tengo que hacer prácticas?
+
+- intent: preguntar_practicas_cerca
+  examples: |
+    - ¿Puedo hacer las prácticas cerca de mi casa?
+    - ¿Tienen hospitales por mi barrio para practicar?
+    - ¿Dónde me tocaría hacer las prácticas?
+    - ¿Me ubican en un lugar cerca de mi vivienda?
+    - ¿Yo elijo dónde hacer las prácticas?
+
+- intent: preguntar_diferencia_voluntariado
+  examples: |
+    - ¿Qué es un voluntariado?
+    - ¿Cuál es la diferencia entre prácticas y voluntariado?
+    - ¿Por qué le dicen voluntariados?
+    - ¿Qué significa ser voluntario en CGE?
+    - explícame lo de los voluntarios
+
+- intent: preguntar_menciones_capacitadora
+  examples: |
+    - ¿Tienen especializaciones?
+    - ¿Qué es una mención?
+    - ¿Cuánto dura la mención?
+    - ¿Qué menciones tienen?
+    - ¿Hay especialidad en farmacia?
+    - quiero hacer una mencion
+    - de que son las menciones
+    - en que me puedo especializar
+    - tienen mencion para enfermeria?
     
 # --- SINÓNIMOS Y MANEJO DE ERRORES ORTOGRÁFICOS ---
 - synonym: enfermeria
