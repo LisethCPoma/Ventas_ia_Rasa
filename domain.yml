@@ -87,6 +87,7 @@ slots:
 actions:
   - action_consultar_cupos
   - action_consultar_cupos_capacitadora
+  - action_gemini_fallback
 
 responses:
   utter_saludo_consultina:
@@ -627,7 +628,7 @@ responses:
   - text: "Tenemos varios horarios a escoger (matutinos, nocturnos, fines de semana, etc.), pero te recordamos que los cupos son limitados.\n\nPor procesos de calidad internacionales, **solo recibimos hasta 25 personas por curso**.\n\nSi quieres saber qué horarios tenemos disponibles, esta información privada te la puede entregar **Daniela**, mi asistente humana."
 
   utter_malla_curricular:
-  - text: "Esa es una excelente pregunta que mi asistente Daniela te podría responder de manera mucho más precisa y detallada entregándote el pensum oficial de la carrera.\n\nLe he notificado tu consulta para que te envíe las materias exactas de estudio enseguida."
+  - text: "¡Excelente pregunta! Lo que vas a aprender depende de la opción que elijas:\n\n **Si eliges la Carrera de 2 años:** El pensum es avanzado y súper completo.\n\n**Si eliges el Curso Corto:** Aprenderás habilidades 100% prácticas desde el primer día (como inyectología, curaciones, o manejo de niños según tu área).\n\n¿Te interesa conocer que aprenderás?"
 
   utter_ubicacion:
   - text: "El Instituto Superior Tecnológico Consulting Group Ecuador cuenta con **32 sedes a nivel nacional**.\n\nPara indicarte la sede más cercana a tu domicilio o provincia, mi asistente Daniela se pondrá en contacto contigo enseguida con todas las direcciones oficiales."

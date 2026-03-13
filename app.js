@@ -229,6 +229,7 @@ reconocimiento.onresult = (event) => {
     // Corrige palabras que el navegador suele escuchar mal
     textoUsuario = textoUsuario.replace(/consultiva/gi, "Consultina");
     textoUsuario = textoUsuario.replace(/con dulcina/gi, "Consultina");
+    textoUsuario = textoUsuario.replace(/concertina/gi, "Consultina");
     textoUsuario = textoUsuario.replace(/consulta/gi, "Consultina");
     textoUsuario = textoUsuario.replace(/mancillar/gi, "mención");
     textoUsuario = textoUsuario.replace(/medición/gi, "mención");

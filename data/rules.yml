@@ -54,7 +54,7 @@ rules:
 - rule: Red de seguridad (Fallback) cuando no entiende algo
   steps:
   - intent: nlu_fallback
-  - action: utter_default
+  - action: action_gemini_fallback
 
 - rule: Consultina responde los horarios de atencion
   steps:
@@ -161,10 +161,10 @@ rules:
   - intent: preguntar_uniformes_capacitadora
   - action: utter_uniformes_capacitadora
 
-- rule: Consultina responde sobre lo que aprenderan en los cursos
+- rule: Consultina responde con Gemini sobre lo que aprenderan en el curso especifico
   steps:
   - intent: preguntar_que_aprenderas_capacitadora
-  - action: utter_que_aprenderas_capacitadora
+  - action: action_gemini_fallback
 
 - rule: Consultina responde sobre las practicas de la capacitadora
   steps:

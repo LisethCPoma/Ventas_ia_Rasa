@@ -118,6 +118,10 @@ nlu:
     - trabajando en una [farmacia]{"entity": "carrera", "value": "administracion de farmacias"}
     - del área de [inteligencia artificial]{"entity": "carrera", "value": "inteligencia artificial"}
     - del área de [enfermería]{"entity": "carrera", "value": "enfermeria"}
+    - Quisiera saber sobre el curso de [enfermería]{"entity": "carrera", "value": "enfermeria"}
+    - me gustaría estar [enseñándole a niños]{"entity": "carrera", "value": "educacion inicial"}
+    - [enseñándole a niños]{"entity": "carrera", "value": "educacion inicial"}
+    - qué cursos hay en [enfermería]{"entity": "carrera", "value": "enfermeria"}
 
 - intent: informar_area_interes
   examples: |
@@ -280,6 +284,21 @@ nlu:
     - ¿Qué oportunidades laborales tiene [emergencias medicas](carrera)?
     - ¿Qué puedo hacer profesionalmente siendo tecnólogo en [mecanica automotriz](carrera)?
     - ¿Dónde trabaja un graduado de [laboratorio clinico](carrera)?
+    - qué hacen en [administracion de farmacias](carrera)
+    - qué hacen en [enfermeria](carrera)
+    - qué hacen en [emergencias medicas](carrera)
+    - qué hacen en [educacion inicial](carrera)
+    - qué hacen en [marketing digital](carrera)
+    - qué hacen en [naturopatia](carrera)
+    - qué se hace en [laboratorio clinico](carrera)
+    - para qué sirve la carrera de [administracion](carrera)
+    - qué trabajo consigo con [rehabilitacion fisica](carrera)
+    - dónde puedo trabajar con [inteligencia artificial](carrera)
+    - para qué sirve [mecanica automotriz](carrera)
+    - en qué trabajan los de [enfermeria](carrera)
+    - qué hace un egresado de [emergencias medicas](carrera)
+    - campo laboral de [educacion inicial](carrera)
+    - qué trabajo hay para [gastronomia](carrera)
 
 - intent: preguntar_validez_titulo
   examples: |
@@ -423,12 +442,10 @@ nlu:
     - me gustaría la carrera
     - sí, quiero saber sobre la carrera
     - la carrera de tecnología superior
-    - Háblame sobre la carrera de emergencias médicas
-    - quiero la carrera de enfermería
-    - la carrera de farmacia
     - de la carrera
     - saber de la carrera
     - sobre la carrera
+    - la carrera por favor
 
 - intent: elegir_curso
   examples: |
@@ -440,16 +457,9 @@ nlu:
     - información del curso
     - el curso de capacitación
     - me interesa el curso
-    - el curso de farmacia
-    - Háblame sobre el curso de emergencias médicas
-    - quiero el curso de enfermería
     - del curso
     - saber del curso
     - sobre el curso
-    - el curso Dime qué curso tienen
-    - el curso dime que cursos
-    - quiero el curso cuales son
-    - el curso qué cursos hay
 
 # -----------------------------  CAPACITADORA -----------------------------------
 - intent: preguntar_cursos_capacitadora
