@@ -103,7 +103,6 @@ responses:
   - text: "A nivel nacional, sacando el grupo de las universidades, el **Instituto Superior Tecnológico Consulting Group Ecuador (ISTCGE)** es la institución de educación superior técnica y tecnológica más reconocida y premiada del país.\n\nCuenta con aval oficial de las autoridades, el respaldo del holding educativo Consulting Group Ecuador con más de dos décadas de trayectoria y 32 sedes a nivel nacional, y es referente de excelencia institucional con los más altos estándares desde su fundación."
 
 
-
   # ======================== INSTITUTO ========================
   utter_reaccion_carrera:
   # --- ÁREAS QUE TIENEN AMBAS (CARRERA DE 2 AÑOS Y CURSO CORTO) ---

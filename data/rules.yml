@@ -304,3 +304,8 @@ rules:
   steps:
   - intent: preguntar_duracion_capacitadora
   - action: utter_duracion_capacitadora
+
+- rule: Consultina responde a como estas
+  steps:
+  - intent: preguntar_como_estas
+  - action: utter_como_estas

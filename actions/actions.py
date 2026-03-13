@@ -4,6 +4,7 @@ from mysql.connector import Error
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+from google.generativeai.types import HarmCategory, HarmBlockThreshold
 
 class ActionConsultarCuposCapacitadora(Action):
     def name(self) -> Text:
@@ -13,58 +14,70 @@ class ActionConsultarCuposCapacitadora(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        # Obtenemos la carrera/curso de la memoria de la IA
+        # Obtenemos el curso de la memoria de la IA
         carrera_slot = tracker.get_slot("carrera")
         
-        # Simulador de Base de Datos de Cupos (Asegúrate de que coincida con tus datos)
-        cupos_db = {
-            "educacion inicial": 2,
-            "emergencias medicas": 3,
-            "enfermeria": 4,
-            "administracion de farmacias": 5,
-            "flores de bach": 2,
-            "laboratorio clinico": 3,
-            "mecanica de motos": 3,
-            "mecanica automotriz": 4,
-            "naturopatia": 2,
-            "odontologia": 3,
-            "rehabilitacion fisica": 3,
-            "inyectologia": 2,
-            "veterinaria": 2,
-            "inteligencia artificial": 5,
-            "gastronomia": 4
-        }
-
-        # Nombres formateados para que se vean profesionales en el chat
-        nombres_bonitos = {
-            "educacion inicial": "Educación Inicial",
-            "emergencias medicas": "Emergencias Médicas",
+        # Diccionario para presentar los nombres de forma profesional
+        nombres_formateados = {
+            "veterinaria": "Veterinaria",
             "enfermeria": "Enfermería",
+            "rehabilitacion fisica": "Rehabilitación Física",
             "administracion de farmacias": "Farmacia",
-            "flores de bach": "Flores de Bach",
+            "educacion inicial": "Educación Inicial",
+            "naturopatia": "Naturopatía",
+            "emergencias medicas": "Emergencias Médicas",
+            "odontologia": "Odontología",
             "laboratorio clinico": "Laboratorio Clínico",
+            "flores de bach": "Flores de Bach",
             "mecanica de motos": "Mecánica básica de motos para mujeres",
             "mecanica automotriz": "Mecánica básica de vehículos",
-            "naturopatia": "Naturopatía",
-            "odontologia": "Odontología",
-            "rehabilitacion fisica": "Rehabilitación Física",
-            "inyectologia": "Taller de Inyectología",
-            "veterinaria": "Veterinaria",
-            "inteligencia artificial": "Inteligencia Artificial",
-            "gastronomia": "Gastronomía"
+            "inyectologia": "Taller de Inyectología"
         }
 
-        # ESCENARIO 1: El usuario SÍ mencionó el curso o ya venían hablando de él
-        if carrera_slot and carrera_slot.lower() in cupos_db:
-            cupos = cupos_db[carrera_slot.lower()]
-            nombre_curso = nombres_bonitos.get(carrera_slot.lower(), carrera_slot.title())
+        # ESCENARIO 1: El usuario SÍ mencionó el curso
+        if carrera_slot:
+            carrera_normalizada = carrera_slot.lower().strip()
+            nombre_bonito = nombres_formateados.get(carrera_normalizada, carrera_slot.title())
+            cupos_disponibles = None
+            conexion = None
+
+            # Conexión a la Base de Datos
+            try:
+                conexion = mysql.connector.connect(
+                    host='127.0.0.1',
+                    database='istcge_admisiones',
+                    user='asesor_ia',
+                    password='admin123'
+                )
+                if conexion.is_connected():
+                    cursor = conexion.cursor(dictionary=True, buffered=True)
+                    
+                    # Consulta a tu tabla cursos_capacitadora
+                    query = "SELECT cupos FROM cursos_capacitadora WHERE nombre LIKE %s"
+                    cursor.execute(query, (f"%{carrera_normalizada}%",))
+                    resultado = cursor.fetchone()
+
+                    if resultado:
+                        cupos_disponibles = resultado["cupos"]
+
+            except Error as e:
+                print(f"Error conectando a MySQL (cursos): {e}")
+            finally:
+                if conexion is not None and conexion.is_connected():
+                    cursor.close()
+                    conexion.close()
+
+            # Responder si encontró los cupos en la BDD
+            if cupos_disponibles is not None:
+                mensaje = f"¡Sí! Aún contamos con cupos disponibles para el curso de **{nombre_bonito}**.\n\nActualmente nos quedan **{cupos_disponibles} cupos disponibles**.\n\nSi te interesa, lo ideal es asegurar tu espacio lo antes posible. ¿Te gustaría que te ponga en contacto con mi asistente Daniela para reservar tu lugar?"
+            else:
+                mensaje = f"En este momento mi asistente Daniela puede confirmarte los cupos exactos para el curso de **{nombre_bonito}**.\n\n¡Le he notificado para que revise el sistema y te responda enseguida!"
             
-            mensaje = f"¡Sí! Nuestros cursos manejan cupos limitados para garantizar una enseñanza 100% práctica.\n\nPara el curso de **{nombre_curso}**, actualmente nos quedan **{cupos} cupos disponibles**.\n\nSi te interesa, lo ideal es asegurar tu espacio lo antes posible. ¿Te gustaría que te ponga en contacto con mi asistente Daniela para reservar tu lugar?"
             dispatcher.utter_message(text=mensaje)
-            
-        # ESCENARIO 2: El usuario NO mencionó el curso ("¿Tienen cupos?")
+
+        # ESCENARIO 2: El usuario NO mencionó el curso o el micrófono lo cortó ("hay cupos disponibles para...")
         else:
-            mensaje = "¡Sí! Nuestros cursos manejan cupos limitados, ya que buscamos mantener grupos pequeños de máximo 25 personas para que cada estudiante aprenda de manera práctica.\n\n**¿De qué curso en específico te gustaría saber si aún tenemos cupos disponibles?** (Ej: Flores de Bach, Veterinaria, Farmacia...)"
+            mensaje = "¡Sí! Nuestros cursos manejan cupos limitados, ya que buscamos mantener grupos pequeños para que cada estudiante aprenda de manera práctica.\n\n**¿De qué curso en específico te gustaría saber si aún tenemos cupos disponibles?** (Ej: Flores de Bach, Veterinaria, Farmacia...)"
             dispatcher.utter_message(text=mensaje)
 
         return []
@@ -124,7 +137,6 @@ class ActionConsultarCuposCapacitadora(Action):
                         f"Actualmente la disponibilidad de cupos es la siguiente:\n{lista_cupos}\n\n"
                         "Si alguno de estos cursos te interesa, lo ideal es asegurar tu cupo lo antes posible, ya que "
                         "cuando se completan los espacios disponibles debemos esperar a la apertura del siguiente grupo.\n\n"
-                        "¿Te gustaría iniciar el proceso de inscripción o que ponga en contacto con mi asistente Daniela para reservar tu cupo?"
                     )
                 else:
                     mensaje = (
@@ -143,6 +155,84 @@ class ActionConsultarCuposCapacitadora(Action):
                 conexion.close()
 
         dispatcher.utter_message(text=mensaje)
+        return []
+
+class ActionConsultarCupos(Action):
+    def name(self) -> Text:
+        return "action_consultar_cupos"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        # Obtenemos la carrera de la memoria de la IA
+        carrera_slot = tracker.get_slot("carrera")
+        
+        # Diccionario para presentar los nombres de forma profesional
+        nombres_formateados = {
+            "enfermeria": "Enfermería",
+            "emergencias medicas": "Emergencias Médicas",
+            "rehabilitacion fisica": "Rehabilitación Física",
+            "laboratorio clinico": "Laboratorio Clínico",
+            "administracion de farmacias": "Administración en Farmacias",
+            "administracion de sistemas de la salud": "Administración de Sistemas de la Salud",
+            "educacion inicial": "Educación Inicial",
+            "administracion": "Administración",
+            "marketing digital": "Marketing Digital y Comercio Electrónico",
+            "desarrollo de contenidos y manejo de redes": "Desarrollo de Contenidos y Manejo de Redes",
+            "mecanica automotriz": "Mecánica Automotriz",
+            "gastronomia": "Gastronomía",
+            "naturopatia": "Naturopatía",
+            "inteligencia artificial": "Inteligencia Artificial"
+        }
+
+        # ESCENARIO 1: El usuario SÍ mencionó la carrera
+        if carrera_slot:
+            carrera_normalizada = carrera_slot.lower().strip()
+            nombre_bonito = nombres_formateados.get(carrera_normalizada, carrera_slot.title())
+            cupos_disponibles = None
+            conexion = None
+
+            # Conexión a la Base de Datos
+            try:
+                conexion = mysql.connector.connect(
+                    host='127.0.0.1',
+                    database='istcge_admisiones',
+                    user='asesor_ia',
+                    password='admin123'
+                )
+                if conexion.is_connected():
+                    cursor = conexion.cursor(dictionary=True, buffered=True)
+                    
+                    # Consulta exacta a tu tabla 'carreras'
+                    query = "SELECT cupos FROM carreras WHERE nombre LIKE %s"
+                    cursor.execute(query, (f"%{carrera_normalizada}%",))
+                    resultado = cursor.fetchone()
+
+                    if resultado:
+                        cupos_disponibles = resultado["cupos"]
+
+            except Error as e:
+                print(f"Error conectando a MySQL (carreras): {e}")
+            finally:
+                if conexion is not None and conexion.is_connected():
+                    cursor.close()
+                    conexion.close()
+
+            # Responder si encontró los cupos en la BDD
+            if cupos_disponibles is not None:
+                mensaje = f"¡Sí! Aún contamos con cupos disponibles para la carrera de **{nombre_bonito}**.\n\nActualmente nos quedan **{cupos_disponibles} cupos disponibles**.\n\nTe recordamos que por procesos de calidad internacionales, solo recibimos hasta 25 personas por aula para garantizar tu aprendizaje.\n\n¿Te gustaría que te ponga en contacto con mi asistente Daniela para que te ayude a asegurar tu cupo antes de que se agoten?"
+            else:
+                # Si la carrera no está en la BDD
+                mensaje = f"En este momento mi asistente Daniela puede confirmarte los cupos exactos disponibles para la carrera de **{nombre_bonito}**.\n\n¡Le he notificado para que revise el sistema y te responda enseguida!"
+            
+            dispatcher.utter_message(text=mensaje)
+
+        # ESCENARIO 2: El usuario NO mencionó la carrera ("¿Tienen cupos?")
+        else:
+            mensaje = "¡Sí! Aún contamos con cupos disponibles para nuestras carreras de Tecnología Superior. Sin embargo, por procesos de calidad internacionales, solo recibimos hasta 25 personas por aula.\n\n**¿De qué carrera en específico te gustaría saber la disponibilidad para revisar el sistema?**"
+            dispatcher.utter_message(text=mensaje)
+
         return []
 
 class ActionGeminiFallback(Action):
@@ -216,12 +306,18 @@ Responde como Consultina siguiendo estrictamente las instrucciones del sistema."
 
         try:
             model = genai.GenerativeModel(
-                'gemini-1.5-flash',
-                system_instruction=instrucciones_sistema
+                'gemini-2.5-flash',
+                system_instruction=instrucciones_sistema,
+                safety_settings={
+                    HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_NONE,
+                    HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_NONE,
+                    HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: HarmBlockThreshold.BLOCK_NONE,
+                    HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_NONE,
+                }
             )
             respuesta_gemini = model.generate_content(prompt_completo)
             dispatcher.utter_message(text=respuesta_gemini.text)
-
+            
         except Exception as e:
             print(f"Error con Gemini API: {e}")
             dispatcher.utter_message(

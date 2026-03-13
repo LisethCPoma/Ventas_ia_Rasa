@@ -122,6 +122,11 @@ nlu:
     - me gustaría estar [enseñándole a niños]{"entity": "carrera", "value": "educacion inicial"}
     - [enseñándole a niños]{"entity": "carrera", "value": "educacion inicial"}
     - qué cursos hay en [enfermería]{"entity": "carrera", "value": "enfermeria"}
+    - trabajando con [ motores ]{ "entity": "carrera" , "valor": "mecanica automotriz" }
+    - me visualizo trabajando con [ motores ]{ "entity": "carrera" , "value": "mecanica automotriz" }
+    - quisiera atender [ emergencias ]{ "entity": "carrera" , "value": "emergencias medicas" }
+    - para atender [ emergencias médicas ]{ "entity": "carrera" , "value": "emergencias médicas" }
+    - quiero aprender para trabajar en [ ambulancia ]{ "entity": "carrera" , "value": "emergencias medicas" }
 
 - intent: informar_area_interes
   examples: |
@@ -162,6 +167,11 @@ nlu:
     - ¿aún tienen vacantes?
     - Qué bancos disponibles para [marketing digital](carrera)
     - quedan bancos disponibles
+    - cuántos cupos hay disponibles para la carrera de [marketing digital](carrera)
+    - Dime qué cupos hay para la carrera de [marketing digital](carrera)
+    - hay cupos para la carrera de [inteligencia artificial](carrera)
+    - quedan cupos disponibles para la carrera de [enfermeria](carrera)
+
 
 - intent: mencionar_voluntariado
   examples: |
@@ -446,6 +456,14 @@ nlu:
     - saber de la carrera
     - sobre la carrera
     - la carrera por favor
+    - la carrera de [naturopatía]{"entity": "carrera", "value": "naturopatia"}
+    - la carrera de [mecánica automotriz]{"entity": "carrera", "value": "mecanica automotriz"}
+    - quiero la carrera de [enfermería]{"entity": "carrera", "value": "enfermeria"}
+    - la carrera de [marketing digital](carrera)
+    - de la carrera de [rehabilitacion fisica](carrera)
+    - Háblame sobre la carrera de [administracion de farmacias]{"entity": "carrera", "value": "administracion de farmacias"}
+    - la carrera de [gastronomía]{"entity": "carrera", "value": "gastronomia"}
+    - info de la carrera de [educación inicial]{"entity": "carrera", "value": "educacion inicial"}
 
 - intent: elegir_curso
   examples: |
@@ -460,7 +478,14 @@ nlu:
     - del curso
     - saber del curso
     - sobre el curso
-
+    - el curso de [enfermería]{"entity": "carrera", "value": "enfermeria"}
+    - quisiera saber sobre el curso de [enfermería]{"entity": "carrera", "value": "enfermeria"}
+    - me interesa el curso de [farmacia]{"entity": "carrera", "value": "administracion de farmacias"}
+    - info del curso de [emergencias medicas](carrera)
+    - el curso de [veterinaria](carrera)
+    - del curso de [odontologia](carrera)
+    - quiero el curso de [mecánica de motos]{"entity": "carrera", "value": "mecanica de motos"}
+    - sobre el curso de [flores de bach]{"entity": "carrera", "value": "flores de bach"}
 # -----------------------------  CAPACITADORA -----------------------------------
 - intent: preguntar_cursos_capacitadora
   examples: |
@@ -561,6 +586,11 @@ nlu:
     - ¿Qué se aprende en rehabilitación física?
     - ¿El curso es práctico o solo teórico?
     - ¿Qué conocimientos obtengo al estudiar ese curso?
+    - qué voy a aprender en [veterinaria]{"entity": "carrera", "value": "veterinaria"}
+    - quisiera aprender sobre [emergencias médicas]{"entity": "carrera", "value": "emergencias médicas"}
+    - que enseñan en [farmacia]{"entity": "carrera", "value": "administracion de farmacias"}
+    - que se aprende en [laboratorio clínico]{"entity": "carrera", "value": "laboratorio clínico"}
+    - qué se aprende en [enfermería]{"entity": "carrera", "value": "enfermería"}
 
 - intent: preguntar_practicas_capacitadora
   examples: |
@@ -847,6 +877,12 @@ nlu:
     - todos los cursos
     - cuales son todos los cursos
     - quiero saber de todos los cursos
+    - muéstrame todos los cursos
+    - enséñame la lista completa de cursos
+    - Cuáles son esos cursos
+    - me puedes decir cuáles son esos cursos
+    - dime cuáles son esos cursos
+
 
 - intent: preguntar_duracion_capacitadora
   examples: |
