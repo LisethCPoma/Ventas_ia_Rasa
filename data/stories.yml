@@ -101,8 +101,6 @@ stories:
   - intent: preguntar_homologacion
   - action: utter_preguntar_homologacion_inicial
   
-
-
 - story: Flujo Homologacion - Estudiante dice que SI
   steps:
   - intent: preguntar_homologacion
@@ -121,3 +119,10 @@ stories:
   steps:
   - intent: informar_externo
   - action: utter_homologacion_externos
+
+- story: Docentes follow-up
+  steps:
+  - intent: preguntar_docentes
+  - action: utter_docentes
+  - intent: informar_carrera_interes
+  - action: utter_docentes

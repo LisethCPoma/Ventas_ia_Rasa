@@ -4,105 +4,67 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 
-class ActionConsultarCupos(Action):
+class ActionConsultarCuposCapacitadora(Action):
     def name(self) -> Text:
-        return "action_consultar_cupos"
+        return "action_consultar_cupos_capacitadora"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
         
-        # Capturamos dinámicamente lo que el usuario pidió
-        carrera_consultada = tracker.get_slot("carrera")
+        # Obtenemos la carrera/curso de la memoria de la IA
+        carrera_slot = tracker.get_slot("carrera")
+        
+        # Simulador de Base de Datos de Cupos (Asegúrate de que coincida con tus datos)
+        cupos_db = {
+            "educacion inicial": 2,
+            "emergencias medicas": 3,
+            "enfermeria": 4,
+            "administracion de farmacias": 5,
+            "flores de bach": 2,
+            "laboratorio clinico": 3,
+            "mecanica de motos": 3,
+            "mecanica automotriz": 4,
+            "naturopatia": 2,
+            "odontologia": 3,
+            "rehabilitacion fisica": 3,
+            "inyectologia": 2,
+            "veterinaria": 2,
+            "inteligencia artificial": 5,
+            "gastronomia": 4
+        }
 
-        if not carrera_consultada:
-            dispatcher.utter_message(text="Para revisar los cupos, ¿podrías decirme qué carrera te interesa (Inteligencia Artificial, Marketing Digital o Administración)?")
-            return []
+        # Nombres formateados para que se vean profesionales en el chat
+        nombres_bonitos = {
+            "educacion inicial": "Educación Inicial",
+            "emergencias medicas": "Emergencias Médicas",
+            "enfermeria": "Enfermería",
+            "administracion de farmacias": "Farmacia",
+            "flores de bach": "Flores de Bach",
+            "laboratorio clinico": "Laboratorio Clínico",
+            "mecanica de motos": "Mecánica básica de motos para mujeres",
+            "mecanica automotriz": "Mecánica básica de vehículos",
+            "naturopatia": "Naturopatía",
+            "odontologia": "Odontología",
+            "rehabilitacion fisica": "Rehabilitación Física",
+            "inyectologia": "Taller de Inyectología",
+            "veterinaria": "Veterinaria",
+            "inteligencia artificial": "Inteligencia Artificial",
+            "gastronomia": "Gastronomía"
+        }
+
+        # ESCENARIO 1: El usuario SÍ mencionó el curso o ya venían hablando de él
+        if carrera_slot and carrera_slot.lower() in cupos_db:
+            cupos = cupos_db[carrera_slot.lower()]
+            nombre_curso = nombres_bonitos.get(carrera_slot.lower(), carrera_slot.title())
             
-        conexion = None
-
-        try:
-            # 1. Configurar la conexión a MySQL
-            conexion = mysql.connector.connect(
-                host='127.0.0.1', # Forzamos la red TCP para Docker
-                database='istcge_admisiones',
-                user='asesor_ia',
-                password='admin123'
-            )
-            if conexion.is_connected():
-                # dictionary=True hace que el resultado vuelva como un array asociativo
-                # buffered=True soluciona el error "Unread result found"
-                cursor = conexion.cursor(dictionary=True, buffered=True) 
-                
-                # 2. Ejecutar la consulta preparada (segura) usando LOWER para ignorar mayúsculas
-                # Usamos LIKE con comodines '%' a ambos lados para coincidencias parciales (ej. 'Inicial' buscará '%Inicial%')
-                query = "SELECT cupos, imagen_url FROM carreras WHERE LOWER(nombre) LIKE LOWER(%s)"
-                carrera_comodin = f"%{carrera_consultada}%"
-                cursor.execute(query, (carrera_comodin,))
-                
-                # 3. Obtener el primer registro
-                registro = cursor.fetchone()
-                
-                if registro:
-                    cupos_disponibles = registro['cupos']
-                    imagen_url = registro.get('imagen_url')
-                    
-                    # Diccionario para corregir ortografía y mejorar la pronunciación TTS de la IA
-                    nombres_formateados = {
-                        "enfermeria": "Enfermería",
-                        "emergencias medicas": "Emergencias Médicas",
-                        "rehabilitacion fisica": "Rehabilitación Física",
-                        "laboratorio clinico": "Laboratorio Clínico",
-                        "administracion de farmacias": "Administración de Farmacias",
-                        "administracion de sistemas de la salud": "Administración de Sistemas de la Salud",
-                        "educacion inicial": "Educación Inicial",
-                        "administracion": "Administración",
-                        "marketing digital": "Marketing Digital",
-                        "desarrollo de contenidos y manejo de redes": "Desarrollo de Contenidos y Manejo de Redes",
-                        "mecanica automotriz": "Mecánica Automotriz",
-                        "gastronomia": "Gastronomía",
-                        "naturopatia": "Naturopatía",
-                        "inteligencia artificial": "Inteligencia Artificial"
-                    }
-                    
-                    # Obtenemos el nombre formateado. Si por algún motivo no está en el diccionario, usamos title()
-                    nombre_presentacion = nombres_formateados.get(carrera_consultada.lower(), carrera_consultada.title())
-
-                    mensaje = f"¡Excelente! Revisando nuestra base de datos en vivo, para {nombre_presentacion} nos quedan {cupos_disponibles} cupos."
-                    
-                    if imagen_url:
-                        dispatcher.utter_message(text=mensaje, image=imagen_url)
-                        return []
-                    else:
-                        dispatcher.utter_message(text=mensaje)
-                        return []
-                else:
-                    nombre_presentacion = carrera_consultada.title()
-                    # Mismo trato para el mensaje de error "no encontré registros"
-                    if carrera_consultada.lower() == "enfermeria": nombre_presentacion = "Enfermería"
-                    if carrera_consultada.lower() == "mecanica automotriz": nombre_presentacion = "Mecánica Automotriz"
-                    if carrera_consultada.lower() == "naturopatia": nombre_presentacion = "Naturopatía"
-                    # etc.
-                    
-                    mensaje = f"He buscado {nombre_presentacion} en el sistema, pero no encontré registros de cupos en este momento."
-
-        except Error as e:
-            # Si se cae la base de datos, el bot no explota, simplemente avisa
-            print(f"Error conectando a MySQL: {e}")
-            mensaje = "Esa es una excelente pregunta que Daniela te podría responder de manera mucho más precisa y detallada.\n\nLe he notificado tu consulta para que revise el sistema y pueda confirmar directamente los cupos contigo enseguida."
-
-        finally:
-            # 4. Cerrar la conexión siempre para no saturar el servidor
-            if conexion is not None and conexion.is_connected():
-                cursor.close()
-                conexion.close()
-
-        # 5. Enviar la respuesta final si no se despachó antes (ej. cuando no hay registros o hay error)
-        try:
+            mensaje = f"¡Sí! Nuestros cursos manejan cupos limitados para garantizar una enseñanza 100% práctica.\n\nPara el curso de **{nombre_curso}**, actualmente nos quedan **{cupos} cupos disponibles**.\n\nSi te interesa, lo ideal es asegurar tu espacio lo antes posible. ¿Te gustaría que te ponga en contacto con mi asistente Daniela para reservar tu lugar?"
             dispatcher.utter_message(text=mensaje)
-        except UnboundLocalError:
-            pass
+            
+        # ESCENARIO 2: El usuario NO mencionó el curso ("¿Tienen cupos?")
+        else:
+            mensaje = "¡Sí! Nuestros cursos manejan cupos limitados, ya que buscamos mantener grupos pequeños de máximo 25 personas para que cada estudiante aprenda de manera práctica.\n\n**¿De qué curso en específico te gustaría saber si aún tenemos cupos disponibles?** (Ej: Flores de Bach, Veterinaria, Farmacia...)"
+            dispatcher.utter_message(text=mensaje)
 
         return []
 

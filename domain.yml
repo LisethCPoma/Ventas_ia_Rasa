@@ -60,6 +60,13 @@ intents:
   - preguntar_practicas_cerca
   - preguntar_diferencia_voluntariado
   - preguntar_menciones_capacitadora
+  - preguntar_requisitos_mencion
+  - preguntar_todos_los_cursos
+  - elegir_carrera
+  - elegir_curso
+  - preguntar_como_estas
+  - preguntar_duracion_capacitadora
+  
 
 entities:
   - carrera
@@ -94,9 +101,86 @@ responses:
   utter_instituto_premiado:
   - text: "A nivel nacional, sacando el grupo de las universidades, el **Instituto Superior Tecnológico Consulting Group Ecuador (ISTCGE)** es la institución de educación superior técnica y tecnológica más reconocida y premiada del país.\n\nCuenta con aval oficial de las autoridades, el respaldo del holding educativo Consulting Group Ecuador con más de dos décadas de trayectoria y 32 sedes a nivel nacional, y es referente de excelencia institucional con los más altos estándares desde su fundación."
 
+
+
   # ======================== INSTITUTO ========================
   utter_reaccion_carrera:
-  - text: "¡Excelente elección! Esa es una de nuestras áreas más solicitadas.\n\nPara esta especialidad tenemos dos opciones distintas de estudio:\n**La Carrera de Tecnología Superior:** Dura 2 años y te otorga un título de tercer nivel registrado en la SENESCYT.\n**El Curso de Capacitación:** Es más corto, 100% práctico y te otorga certificaciones.\n\n¿Cuál de las dos opciones te interesa más: **La Carrera** o **el Curso**?"
+  # --- ÁREAS QUE TIENEN AMBAS (CARRERA DE 2 AÑOS Y CURSO CORTO) ---
+  - condition:
+    - type: slot
+      name: carrera
+      value: enfermeria
+    text: "¡Excelente elección! Esa es una de nuestras áreas más solicitadas en Salud.\n\nPara **Enfermería** tenemos dos opciones:\n **La Carrera de Tecnología Superior:** Dura 2 años y te otorga un título de tercer nivel (SENESCYT).\n **El Curso de Capacitación:** Es más corto, 100% práctico y te otorga certificaciones.\n\n¿Cuál te interesa más: **La Carrera** o **el Curso**?"
+  - condition:
+    - type: slot
+      name: carrera
+      value: emergencias medicas
+    text: "¡Excelente elección! Esa es una de nuestras áreas más solicitadas en Salud.\n\nPara **Emergencias Médicas** tenemos dos opciones:\n **La Carrera de Tecnología Superior:** Dura 2 años y te otorga un título de tercer nivel (SENESCYT).\n **El Curso de Capacitación:** Es más corto, 100% práctico y te otorga certificaciones.\n\n¿Cuál te interesa más: **La Carrera** o **el Curso**?"
+  - condition:
+    - type: slot
+      name: carrera
+      value: rehabilitacion fisica
+    text: "¡Excelente elección! Esa es una de nuestras áreas más solicitadas en Salud.\n\nPara **Rehabilitación Física** tenemos dos opciones:\n **La Carrera de Tecnología Superior:** Dura 2 años y te otorga un título de tercer nivel (SENESCYT).\n**El Curso de Capacitación:** Es más corto, 100% práctico y te otorga certificaciones.\n\n¿Cuál te interesa más: **La Carrera** o **el Curso**?"
+  - condition:
+    - type: slot
+      name: carrera
+      value: laboratorio clinico
+    text: "¡Excelente elección! Esa es una de nuestras áreas más solicitadas en Salud.\n\nPara **Laboratorio Clínico** tenemos dos opciones:\n **La Carrera de Tecnología Superior:** Dura 2 años y te otorga un título de tercer nivel (SENESCYT).\n**El Curso de Capacitación:** Es más corto, 100% práctico y te otorga certificaciones.\n\n¿Cuál te interesa más: **La Carrera** o **el Curso**?"
+  - condition:
+    - type: slot
+      name: carrera
+      value: administracion de farmacias
+    text: "¡Excelente elección! Esa es una de nuestras áreas más solicitadas en Salud.\n\nPara **Farmacia** tenemos dos opciones:\n**La Carrera de Tecnología Superior:** Dura 2 años y te otorga un título de tercer nivel (SENESCYT).\n**El Curso de Capacitación:** Es más corto, 100% práctico y te otorga certificaciones.\n\n¿Cuál te interesa más: **La Carrera** o **el Curso**?"
+  - condition:
+    - type: slot
+      name: carrera
+      value: educacion inicial
+    text: "¡Excelente elección! Esa es una de nuestras áreas más solicitadas.\n\nPara **Educación Inicial** tenemos dos opciones:\n**La Carrera de Tecnología Superior:** Dura 2 años y te otorga un título de tercer nivel (SENESCYT).\n**El Curso de Capacitación:** Es más corto, 100% práctico y te otorga certificaciones.\n\n¿Cuál te interesa más: **La Carrera** o **el Curso**?"
+  - condition:
+    - type: slot
+      name: carrera
+      value: mecanica automotriz
+    text: "¡Excelente elección! Esa es una de nuestras áreas más solicitadas.\n\nPara **Mecánica Automotriz** tenemos dos opciones:\n**La Carrera de Tecnología Superior:** Dura 2 años y te otorga un título de tercer nivel (SENESCYT).\n**El Curso de Capacitación:** Es enfocado al área de salud o motos, 100% práctico y te otorga certificaciones.\n\n¿Cuál te interesa más: **La Carrera** o **el Curso**?"
+  - condition:
+    - type: slot
+      name: carrera
+      value: naturopatia
+    text: "¡Excelente elección! Esa es una de nuestras áreas más solicitadas.\n\nPara **Naturopatía** tenemos dos opciones:\n**La Carrera de Tecnología Superior:** Dura 2 años y te otorga un título de tercer nivel (SENESCYT).\n**El Curso de Capacitación:** Es más corto, 100% práctico y te otorga certificaciones.\n\n¿Cuál te interesa más: **La Carrera** o **el Curso**?"
+
+  # --- ÁREAS QUE SON EXCLUSIVAMENTE CARRERAS (NO HAY CURSO) ---
+  - condition:
+    - type: slot
+      name: carrera
+      value: administracion
+    text: "¡Excelente elección! La formación en **Administración** es clave en el mundo empresarial y se imparte de manera virtual como Carrera de Tecnología Superior (2 años).\n¿Qué información te gustaría conocer? Puedes preguntarme por costos, duración o campo laboral."
+  - condition:
+    - type: slot
+      name: carrera
+      value: marketing digital
+    text: "¡Excelente elección! El **Marketing Digital** es una de las carreras con más futuro hoy en día. Se imparte de manera virtual como Tecnología Superior (2 años).\n¿Qué información específica te gustaría conocer? Puedes preguntarme por costos, duración o campo laboral."
+  - condition:
+    - type: slot
+      name: carrera
+      value: desarrollo de contenidos y manejo de redes
+    text: "¡Excelente elección! El **Desarrollo de Contenidos y Manejo de Redes** es vital para las empresas actualmente. Se imparte en línea como Tecnología Superior (2 años).\n¿Qué información te gustaría conocer? Puedes preguntarme por costos, duración o campo laboral."
+  - condition:
+    - type: slot
+      name: carrera
+      value: inteligencia artificial
+    text: "¡Excelente elección! La **Inteligencia Artificial** es la carrera del futuro (Tecnología Superior de 1 año y medio).\n¿Qué información específica te gustaría conocer? Puedes preguntarme por costos, duración o campo laboral."
+  - condition:
+    - type: slot
+      name: carrera
+      value: gastronomia
+    text: "¡Excelente elección! La **Gastronomía** es una carrera 100% práctica y apasionante (Tecnología Superior de 2 años).\n¿Qué información específica te gustaría conocer? Puedes preguntarme por costos, duración o campo laboral."
+  - condition:
+    - type: slot
+      name: carrera
+      value: administracion de sistemas de la salud
+    text: "¡Excelente elección! La **Administración de Sistemas de la Salud** es una Carrera de Tecnología Superior (2 años) súper demandada.\n¿Qué información específica te gustaría conocer? Puedes preguntarme por costos, duración o campo laboral."
+  
+  # --- FALLBACK ---
+  - text: "¡Excelente elección! Esa es una de nuestras áreas más solicitadas. Tenemos opciones de Carreras (2 años) y Cursos cortos 100% prácticos dependiendo de la especialidad.\n¿Te interesa más la información de **la Carrera** o **el Curso**?"
 
   utter_voluntariado_consultinos:
   - text: "¡Así es! Muchos de los estudiantes de la institución nos dicen que estudiar aquí no solo les da una profesión, sino también la oportunidad de salvar vidas y servir a la comunidad a través de el programa Consultinos. ¡Es una experiencia que cambia vidas!"
@@ -105,7 +189,7 @@ responses:
   - text: "Si te gusta ayudar a las personas, superar retos y quieres tener una carrera con propósito, este puede ser el comienzo de algo muy grande para ti. ¡Estás en las mejores manos con mi asistente Daniela para dar este paso!"
 
   utter_listar_oferta:
-  - text: "¡Qué emoción que quieras prepararte con nosotros! Antes de mostrarte todo lo que tenemos, me gustaría saber algo sobre ti:\n\n**¿Dónde te gustaría estar trabajando en el futuro?**\n¿Te gustaría estar en un hospital salvando vidas, en una ambulancia atendiendo emergencias, en un laboratorio, en una farmacia, enseñando a niños, o tal vez administrando una empresa?\n\nCuéntame qué te apasiona para guiarte mejor. *(O si prefieres, simplemente dime 'quiero ver todas las carreras' y te daré la lista completa)*."
+  - text: "¡Qué emoción que quieras prepararte con nosotros! Antes de mostrarte todo lo que tenemos, me gustaría saber algo sobre ti:\n\n**¿Dónde te gustaría estar trabajando en el futuro?**\n¿Te gustaría estar en un hospital salvando vidas, en una ambulancia atendiendo emergencias, en un laboratorio, en una farmacia, enseñando a niños, o tal vez administrando una empresa?\n\nCuéntame qué te apasiona para guiarte mejor. (O si prefieres, simplemente dime 'quiero ver todas las carreras' y te daré la lista completa)."
 
   utter_listar_carreras_por_area:
   - condition:
@@ -142,7 +226,7 @@ responses:
 
 
   utter_lista_completa:
-  - text: "¡Claro que sí! Aquí tienes nuestra oferta completa para que elijas tu mejor opción:\n\n**ÁREA DE SALUD:**\n- Enfermería\n- Emergencias Médicas\n- Rehabilitación Física\n- Laboratorio Clínico\n- Administración de Farmacias\n- Administración de Sistemas de la Salud\n- Odontología (Curso)\n\n**OTRAS ÁREAS:**\n- Educación Inicial\n- Administración\n- Marketing Digital y Redes\n- Mecánica Automotriz\n- Gastronomía\n- Naturopatía\n- Inteligencia Artificial\n- Veterinaria (Curso)\n\n¿Cuál de todas estas opciones llama más tu atención para darte los detalles?"
+  - text: "¡Claro que sí! Aquí tienes nuestra oferta completa de **Carreras (Tecnologías de 2 años)** para que elijas tu mejor opción:\n\n**ÁREA DE SALUD:**\n- Enfermería\n- Emergencias Médicas\n- Rehabilitación Física\n- Laboratorio Clínico\n- Administración en Farmacias\n- Administración de Sistemas de la Salud\n\n**OTRAS ÁREAS:**\n- Educación Inicial\n- Administración\n- Marketing Digital y Comercio Electrónico\n- Desarrollo de Contenidos y Manejo de Redes\n- Mecánica Automotriz\n- Gastronomía\n- Naturopatía\n- Inteligencia Artificial\n\n¿Cuál de todas estas carreras llama más tu atención para darte los detalles?"
   
   utter_default:
   - text: "Esa es una excelente pregunta que mi asistente Daniela te podría responder de manera más precisa y detallada.\n\n Mi asistente Daniela te responderá enseguida con toda la información solicitada."
@@ -391,7 +475,7 @@ responses:
     - type: slot
       name: carrera
       value: administracion de farmacias
-    text: "En **Administración de Farmacias** podrás trabajar en:\n- Área administrativa de farmacias públicas o privadas.\n- Empresas distribuidoras de medicamentos e insumos médicos.\n- Puedes establecer tu propia empresa del rubro. ¿Te gustaría que te cuente sobre los costos y formas de pago?"
+    text: "En **Administración de Farmacias** podrás trabajar en:\n- Área administrativa de farmacias públicas o privadas.\n- Empresas distribuidoras de medicamentos e insumos médicos.\n- Puedes establecer tu propia empresa del rubro. ¿Te gustaría conocer los costos y formas de pago?"
   - condition:
     - type: slot
       name: carrera
@@ -549,10 +633,9 @@ responses:
   - text: "El Instituto Superior Tecnológico Consulting Group Ecuador cuenta con **32 sedes a nivel nacional**.\n\nPara indicarte la sede más cercana a tu domicilio o provincia, mi asistente Daniela se pondrá en contacto contigo enseguida con todas las direcciones oficiales."
 
 
-
   # ======================== CAPACITADORA ========================
   utter_cursos_capacitadora:
-  - text: "¡Excelente pregunta! En la Capacitadora CGE contamos con cursos diseñados para que puedas aprender habilidades prácticas y aplicarlas rápidamente en el campo laboral.\n\nNuestros cursos están organizados por **módulos** (cada módulo dura 1 mes), y cada uno te permite avanzar paso a paso en tu formación.\n\nTe comparto algunas de las capacitaciones disponibles:\n\n** Cursos de 2 módulos**\n- Mecánica de motos para mujeres\n\n** Cursos de 4 módulos**\n- Mecánica automotriz dirigida al área de la salud\n- Flores de Bach\n\n** Cursos de 5 módulos**\n- Odontología\n- Auxiliar de farmacia\n- Laboratorio clínico\n\n** Cursos de 6 módulos**\n- Rehabilitación física\n\n** Cursos de 8 módulos**\n- Auxiliar de naturopatía\n- Auxiliar de enfermería\n- Emergencias médicas\n- Auxiliar en veterinaria\n- Auxiliar en educación inicial\n\n** Otros talleres**\n- Taller de inyectología (duración de 1 mes)\n\nSi deseas, puedo ayudarte a conocer más detalles del curso que te interesa, como su duración, modalidad o cómo puedes inscribirte."
+  - text: "¡Excelente! En la Capacitadora CGE contamos con cursos diseñados para que aprendas habilidades 100% prácticas y las apliques de inmediato en el mundo real.\n\nAntes de mostrarte todas las opciones, me encantaría saber un poco más de ti: **¿Dónde te visualizas en el futuro?**\n\n¿Te imaginas **salvando vidas** en un hospital, atendiendo emergencias llenas de adrenalina en una **ambulancia**, llenando de alegría y enseñando a **niños**, o tal vez trabajando con la fuerza de los motores en un taller mecánico?\n\n¡Cuéntame qué te apasiona para guiarte hacia el curso perfecto para ti! \n(O si prefieres ver todo los cursos que CGE ofrece, simplemente dime 'quiero ver todos los cursos' y te mostrare todas las opciones que tenemos disponibles para ti!)."
 
   utter_requisitos_capacitadora:
   - text: "¡Qué bueno que quieras formar parte de CGE! Para inscribirte y comenzar tu formación solo debes cumplir con algunos requisitos básicos.\n\nLos documentos que debes presentar son:\nCopia de cédula de la persona que se va a inscribir\nCopia de cédula del representante (sólo mamá o papá)\nTítulo de bachiller (opcional)\nComprobante de pago del primer módulo\n\nEn caso de no contar con el título de bachiller, no te preocupes. Deberás firmar un **acta de compromiso**, donde te comprometes a culminar el bachillerato.\n\nSi tienes alguna situación especial respecto al representante, lo más recomendable es consultarlo directamente con mi asistente **Daniela**, quien podrá orientarte según el caso."
@@ -630,7 +713,7 @@ responses:
     - type: slot
       name: carrera
       value: administracion de farmacias
-    text: "Tenemos los mejores docentes del Ecuador, todos con preparación de 3er y 4to nivel, acreditaciones internacionales y el respaldo de NVIDIA.\n\nComo política institucional, cada docente debe demostrar experiencia real. Para **Administración en Farmacias**, nuestros docentes **deben haber gestionado o supervisado la dispensación segura de más de 50.000 tratamientos farmacológicos**, garantizando seguridad y control sanitario."
+    text: "Tenemos los mejores docentes del Ecuador, todos con preparación de 3er y 4to nivel, acreditaciones internacionales y el respaldo de NVIDIA.\n\nComo política institucional, cada docente debe demostrar experiencia real. Para **Administración en Farmacias**, nuestros docentes **deben haber gestionado o supervisado la dispensación segura de más de 100 tratamientos farmacológicos**, garantizando seguridad y control sanitario."
   - condition:
     - type: slot
       name: carrera
@@ -676,13 +759,13 @@ responses:
       name: carrera
       value: inteligencia artificial
     text: "Tenemos los mejores docentes del Ecuador, todos con preparación de 3er y 4to nivel, acreditaciones internacionales y el respaldo de NVIDIA.\n\nComo política institucional, cada docente debe demostrar experiencia real. Para **Inteligencia Artificial**, nuestros docentes **deben haber desarrollado o implementado al menos 50 soluciones tecnológicas** basadas en IA en distintos sectores."
-  - text: "Tenemos los mejores docentes del Ecuador, todos con preparación de 3er y 4to nivel y, sobre todo, con amplia experiencia en sus áreas profesionales.\n\nComo política de CGE, cada docente debe demostrar experiencia real (por ejemplo, en el área de la salud exigimos que hayan salvado cientos de vidas). Además, cuentan con acreditaciones internacionales y el respaldo de NVIDIA.\n\n¿De qué carrera te gustaría conocer la experiencia específica que exigimos a nuestros profesores?"
+  - text: "Preparación de Nuestros Docentes\n\nTenemos los mejores docentes del Ecuador, todos con preparación de 3er y 4to nivel y, sobre todo, con amplia experiencia en sus áreas profesionales.\n\nComo política institucional de CGE, cada docente debe demostrar experiencia real y logros concretos dentro de su campo profesional antes de formar a nuestros estudiantes. Además, todos nuestros profesores cuentan con acreditaciones multicompetentes de reconocidas universidades del mundo y el respaldo académico de NVIDIA.\n\nPor ejemplo:\n**En el Área de Salud (Enfermería):** Deben haber salvado al menos 100 vidas a lo largo de su trayectoria.\n**En el Área Educativa (Educación Inicial):** Deben haber participado en la formación y acompañamiento educativo de al menos 200 niños.\n**En el Área Técnica (Mecánica Automotriz):** Deben haber intervenido en la reparación o diagnóstico de al menos 100 vehículos, aplicando soluciones técnicas reales.\n\n*¿De qué área específica te gustaría conocer la experiencia que exigimos a nuestros profesores?*"
 
   utter_costos_ocultos:
   - text: "¡No! Somos transparentes, nosotros solo te cobramos el curso o la carrera. No somos como otras empresas, que tienen costos disfrazados."
 
   utter_becas_instituto:
-  - text: "La carrera normal está en $1,200, pero podrías aplicar a una promoción si te inscribes hoy, aplicando a una beca con el **50% de descuento**.\n\n¡Mira este caso de éxito de uno de nuestros estudiantes con una beca del 100%! 👇\nhttps://www.youtube.com/watch?v=ENLACE_A_TU_VIDEO_AQUI\n\nY recuerda que todos los valores que tú dejes en CGE nos ayuda a salvar vidas."
+  - text: "La carrera normal está en $1,200, pero podrías aplicar a una promoción si te inscribes hoy, aplicando a una beca con el **50% de descuento**.\n\n¡Mira este caso de éxito de uno de nuestros estudiantes con una beca del 100%!\nhttps://www.youtube.com/watch?v=ENLACE_A_TU_VIDEO_AQUI\n\nY recuerda que todos los valores que tú dejes en CGE nos ayuda a salvar vidas."
 
   utter_descuento_hermanos:
   - text: "¡Claro que sí! Nuestro **Plan de Ayuda Voluntaria** se ajustará a tus necesidades. \n\nDaniela, mi asistente humana, te responderá enseguida con las promociones especiales por familiares que tenemos activas en este momento.\n\nY recuerda que todos los valores que tú dejes en CGE nos ayuda a salvar vidas."
@@ -702,7 +785,25 @@ responses:
   utter_menciones_capacitadora:
   - text: "¡Las menciones son como una especialización para tu curso!\n\nTodos los cursos tienen una mención que dura **2 meses adicionales**. La excelente noticia es que ingresas con la misma promoción del curso que ya realizaste (por ejemplo, si pagaste $60 por tu curso, la mención te sale exactamente al mismo valor).\n\nAquí tienes las menciones disponibles:\n- **Farmacia:** Visitador médico.\n- **Laboratorio Clínico:** Imagenología.\n- **Rehabilitación Física:** Terapia enfocada al deporte.\n- **Educación Inicial:** Cuidado de párvulos con capacidades diferentes.\n- **Enfermería:** Puedes elegir entre UCI, Nefrología o Instrumentista quirúrgico.\n- **Emergencias Médicas:** Gestión de riesgos.\n\n¿Te gustaría añadir una mención a tu formación para potenciar tu perfil?"
 
-  
+  utter_requisitos_mencion:
+  - text: "Para sacar una mención (especialización), el **único requisito** es haber aprobado el curso base en el que deseas hacer la mención.\n\nSi ya cumples con este requisito y estás interesado en realizar la mención, por favor comunícate con mi asistente **Daniela** para que te ayude con tu inscripción."
+
+  utter_listar_todos_los_cursos:
+  - text: "¡Claro! Nuestros cursos están organizados por módulos (cada módulo dura 1 mes). Te comparto la lista completa:\n\n** Cursos de 2 módulos**\n- Mecánica de motos para mujeres\n\n** Cursos de 4 módulos**\n- Mecánica automotriz dirigida al área de la salud\n- Flores de Bach\n\n** Cursos de 5 módulos**\n- Odontología\n- Auxiliar de farmacia\n- Laboratorio clínico\n\n** Cursos de 6 módulos**\n- Rehabilitación física\n\n** Cursos de 8 módulos**\n- Auxiliar de naturopatía\n- Auxiliar de enfermería\n- Emergencias médicas\n- Auxiliar en veterinaria\n- Auxiliar en educación inicial\n\n** Otros talleres**\n- Taller de inyectología (duración de 1 mes)\n\n¿Cuál de estos te interesa para darte más detalles?"
+
+  utter_info_carrera_elegida:
+  - text: "¡Perfecto! Al elegir la Carrera de Tecnología Superior (2 años), te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\n¿Qué te gustaría saber ahora? ¿Los **costos**, la **duración**, los **horarios** o el **campo laboral**?"
+
+  utter_info_curso_elegido:
+  - text: "¡Excelente decisión! Nuestros Cursos de Capacitación son rápidos, 100% prácticos y te dan múltiples certificaciones para empezar a trabajar.\n\n¿Qué te gustaría saber ahora? ¿Los **costos** del curso, los **requisitos**, o su **duración**?"
+
+  utter_como_estas:
+  - text: "¡Estoy excelente y muy emocionada de ayudarte hoy! Cuéntame, ¿en qué área te gustaría prepararte o qué dudas tienes sobre nuestros cursos o carreras?"
+
+  utter_duracion_capacitadora:
+  - text: "Nuestros cursos de capacitación están organizados por **módulos (cada módulo dura 1 mes)**.\n\nLa duración total depende del área de tu interés:\n- **8 meses:** Enfermería, Emergencias Médicas, Naturopatía, Veterinaria, Educación Inicial.\n- **6 meses:** Rehabilitación Física.\n- **5 meses:** Odontología, Farmacia, Laboratorio Clínico.\n- **4 meses:** Flores de Bach, Mecánica Automotriz.\n- **2 meses:** Mecánica de motos para mujeres.\n- **1 mes:** Taller de inyectología.\n\n¿De qué curso te gustaría conocer los costos o requisitos?"
+
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

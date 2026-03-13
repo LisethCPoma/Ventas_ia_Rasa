@@ -108,6 +108,16 @@ nlu:
     - de la carrera de [farmacia](carrera)
     - informame sobre [farmacias](carrera)
     - quiero [educacion en linea](carrera)
+    - me gustaría estar [enseñando a niños]{"entity": "carrera", "value": "educacion inicial"}
+    - me gustaría estar en una [farmacia]{"entity": "carrera", "value": "administracion de farmacias"}
+    - me gustaría estar en un [hospital salvando vidas]{"entity": "carrera", "value": "enfermeria"}
+    - administrando una [empresa]{"entity": "carrera", "value": "administracion"}
+    - me gustaría estar en un [laboratorio]{"entity": "carrera", "value": "laboratorio clinico"}
+    - me gustaría estar en una ambulancia atendiendo [emergencias]{"entity": "carrera", "value": "emergencias medicas"}
+    - en una [farmacia]{"entity": "carrera", "value": "administracion de farmacias"}
+    - trabajando en una [farmacia]{"entity": "carrera", "value": "administracion de farmacias"}
+    - del área de [inteligencia artificial]{"entity": "carrera", "value": "inteligencia artificial"}
+    - del área de [enfermería]{"entity": "carrera", "value": "enfermeria"}
 
 - intent: informar_area_interes
   examples: |
@@ -214,6 +224,7 @@ nlu:
     - ¿Cuántos semestres son en [marketing digital](carrera)?
     - ¿La carrera de [inteligencia artificial](carrera) también dura dos años?
 
+
 - intent: preguntar_costos
   examples: |
     - ¿Cuánto cuesta estudiar en el instituto?
@@ -230,6 +241,7 @@ nlu:
     - Cuáles son los costos de [marketing digital](carrera)
     - Cuáles son los costos de la carrera de [educacion inicial](carrera)
     - Cuáles son los costos
+
 
 - intent: preguntar_opciones_pago
   examples: |
@@ -401,6 +413,44 @@ nlu:
     - ¿Tienen jornada en la mañana o solo en la noche para [enfermeria](carrera)?
     - antes de hablar con ella, ¿a qué hora recibo clases de [marketing digital](carrera)?
 
+- intent: elegir_carrera
+  examples: |
+    - la carrera
+    - quiero la carrera
+    - me interesa la tecnología
+    - prefiero la carrera
+    - información de la carrera
+    - me gustaría la carrera
+    - sí, quiero saber sobre la carrera
+    - la carrera de tecnología superior
+    - Háblame sobre la carrera de emergencias médicas
+    - quiero la carrera de enfermería
+    - la carrera de farmacia
+    - de la carrera
+    - saber de la carrera
+    - sobre la carrera
+
+- intent: elegir_curso
+  examples: |
+    - el curso
+    - quiero el curso
+    - el curso corto
+    - de capacitación
+    - prefiero el curso
+    - información del curso
+    - el curso de capacitación
+    - me interesa el curso
+    - el curso de farmacia
+    - Háblame sobre el curso de emergencias médicas
+    - quiero el curso de enfermería
+    - del curso
+    - saber del curso
+    - sobre el curso
+    - el curso Dime qué curso tienen
+    - el curso dime que cursos
+    - quiero el curso cuales son
+    - el curso qué cursos hay
+
 # -----------------------------  CAPACITADORA -----------------------------------
 - intent: preguntar_cursos_capacitadora
   examples: |
@@ -414,7 +464,17 @@ nlu:
     - ¿Qué cursos hay actualmente?
     - ¿Qué capacitaciones puedo hacer en CGE?
     - ¿Cuánto duran los cursos?
-
+    - Cuáles son los cursos
+    - Háblame sobre los cursos que hay en consulting
+    - qué cursos hay
+    - dime los cursos de capacitación
+    - cuáles cursos tienen
+    - ¿Qué cursos hay en CGE?
+    - ¿Qué cursos ofrecen?
+    - ¿Qué cursos tienen?
+    - ¿Qué cursos hay disponibles?
+    
+    
 - intent: afirmar
   examples: |
     - sí
@@ -464,6 +524,11 @@ nlu:
     - ¿Cuánto debo pagar por mes?
     - ¿Hay promociones en los cursos?
     - ¿Cuánto cuesta estudiar enfermería en la capacitadora?
+    - el costo del curso de
+    - cuánto vale el curso de
+    - cual es el valor del curso de
+    - ¿Cuánto cuesta el curso de
+    
 
 - intent: preguntar_uniformes_capacitadora
   examples: |
@@ -528,6 +593,15 @@ nlu:
     - me quiero inscribir, ¿hay cupos?
     - ¿tienen espacio en el curso de enfermería?
     - ¿aún tienen espacio disponible?
+    - ¿Tienen cupos?
+    - ¿Aún hay espacio?
+    - ¿Cuántos cupos quedan?
+    - tienen cupos para el curso de [flores de bach]{"entity": "carrera", "value": "flores de bach"}??
+    - quedan cupos para [odontología]{"entity": "carrera", "value": "odontologia"}
+    - hay espacio en [veterinaria]{"entity": "carrera", "value": "veterinaria"}
+    - cupos para [inyectología]{"entity": "carrera", "value": "inyectologia"}
+    - quiero saber si hay cupos para [motos]{"entity": "carrera", "value": "mecanica de motos"}
+    - quedan cupos para el curso de [farmacia]{"entity": "carrera", "value": "administracion de farmacias"}
 
 - intent: preguntar_senescyt_capacitadora
   examples: |
@@ -664,6 +738,13 @@ nlu:
     - ¿Quiénes dan las clases?
     - preparación de los profesores
     - ¿los docentes tienen experiencia?
+    - sus docentes son buenos
+    - qué tal son los profesores
+    - son buenos los profesores
+    - calidad de los docentes
+    - ¿los docentes son buenos?
+    - Hablame sobre los docentes de consulting group ecuador
+    
 
 - intent: preguntar_costos_ocultos
   examples: |
@@ -735,6 +816,38 @@ nlu:
     - de que son las menciones
     - en que me puedo especializar
     - tienen mencion para enfermeria?
+
+- intent: preguntar_requisitos_mencion
+  examples: |
+    - quiero sacar la especializacion
+    - como saco la mencion
+    - como puedo sacar la mencion en farmacia
+    - quisiera ser visitador medico
+    - hay algun requisito para sacar la mencion
+    - que necesito para la mencion
+    - requisitos de la mencion
+    - quiero hacer la especializacion
+    - Acabé mi curso de farmacia y quiero sacar la especialización
+
+- intent: preguntar_todos_los_cursos
+  examples: |
+    - quiero ver todos los cursos
+    - dame la lista completa de cursos
+    - muestrame todos los cursos
+    - todos los cursos
+    - cuales son todos los cursos
+    - quiero saber de todos los cursos
+
+- intent: preguntar_duracion_capacitadora
+  examples: |
+    - Cuánto dura el curso
+    - cuánto tiempo es del curso
+    - duración del curso
+    - cuántos meses son de capacitación
+    - qué tiempo dura la capacitación
+    - cuánto dura el curso de enfermeria
+
+
     
 # --- SINÓNIMOS Y MANEJO DE ERRORES ORTOGRÁFICOS ---
 - synonym: enfermeria
@@ -902,4 +1015,20 @@ nlu:
     - cómo llego al instituto
     - están en guayaquil
 
+- intent: preguntar_como_estas
+  examples: |
+    - ¿Cómo estás?
+    - que tal estas
+    - como te encuentras
+    - que tal
+    - hola como estas
+    - como te va
+    - Cómo estás
+    - cómo estás
+    - hola cómo estás
+    - qué tal cómo estás
+    - cómo te encuentras el día de hoy
+    - cómo estás Consultina
+
+  
   

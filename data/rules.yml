@@ -279,3 +279,28 @@ rules:
   steps:
   - intent: preguntar_menciones_capacitadora
   - action: utter_menciones_capacitadora
+
+- rule: Consultina responde los requisitos de la mencion
+  steps:
+  - intent: preguntar_requisitos_mencion
+  - action: utter_requisitos_mencion
+
+- rule: Consultina da la lista completa de cursos cuando la piden
+  steps:
+  - intent: preguntar_todos_los_cursos
+  - action: utter_listar_todos_los_cursos
+
+- rule: Consultina guia al estudiante cuando elige la Carrera
+  steps:
+  - intent: elegir_carrera
+  - action: utter_info_carrera_elegida
+
+- rule: Consultina guia al estudiante cuando elige el Curso
+  steps:
+  - intent: elegir_curso
+  - action: utter_info_curso_elegido
+
+- rule: Consultina responde la duracion de los cursos
+  steps:
+  - intent: preguntar_duracion_capacitadora
+  - action: utter_duracion_capacitadora
