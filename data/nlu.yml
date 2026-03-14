@@ -489,21 +489,16 @@ nlu:
 
 - intent: elegir_curso
   examples: |
+- intent: elegir_curso
+  examples: |
     - el curso
     - quiero el curso
     - el curso corto
     - de capacitación
-    - prefiero el curso
-    - información del curso
-    - el curso de capacitación
-    - me interesa el curso
-    - del curso
-    - saber del curso
-    - sobre el curso
-    - el curso de [enfermería]{"entity": "carrera", "value": "enfermeria"}
-    - quisiera saber sobre el curso de [enfermería]{"entity": "carrera", "value": "enfermeria"}
-    - me interesa el curso de [farmacia]{"entity": "carrera", "value": "administracion de farmacias"}
-    - info del curso de [emergencias medicas](carrera)
+    - me puedes ayudar con los cursos de [enfermería]{"entity": "carrera", "value": "enfermeria"}
+    - qué cursos hay en [enfermería]{"entity": "carrera", "value": "enfermeria"}
+    - cursos de [farmacia]{"entity": "carrera", "value": "administracion de farmacias"}
+    - quiero información de los cursos de [emergencias medicas](carrera)
     - el curso de [veterinaria](carrera)
     - del curso de [odontologia](carrera)
     - quiero el curso de [mecánica de motos]{"entity": "carrera", "value": "mecanica de motos"}
@@ -625,6 +620,16 @@ nlu:
     - ¿Ustedes ayudan a conseguir el lugar para las prácticas?
     - ¿Dónde hacen prácticas los estudiantes?
     - ¿Hay voluntariados o experiencia práctica?
+    - se realizan prácticas
+    - Y dónde voy a hacer las prácticas
+    - en dónde se hacen las prácticas del curso
+    - el curso incluye prácticas
+    - dónde me toca hacer las prácticas
+    - quiero saber de las prácticas del curso
+    - ¿Los cursos tienen prácticas?
+    - ¿Dónde se realizan las prácticas?
+    - ¿Tienen convenios con hospitales o instituciones?
+    - ¿Voy a practicar con pacientes reales?
 
 - intent: preguntar_certificados_capacitadora
   examples: |

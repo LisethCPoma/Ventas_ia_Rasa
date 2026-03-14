@@ -702,7 +702,7 @@ responses:
   - text: "¡Excelente pregunta! Lo que vas a aprender es 100% práctico y adaptado al mercado laboral.\n\nPara darte la malla curricular exacta, ¿me podrías recordar de qué carrera o curso te gustaría saber el contenido?"
 
   utter_ubicacion:
-  - text: "El Instituto Superior Tecnológico Consulting Group Ecuador cuenta con **32 sedes a nivel nacional**.\n\nPara indicarte la sede más cercana a tu domicilio o provincia, mi asistente Daniela podrá asistirte enseguida."
+  - text: "Nuestro Instituto Superior Tecnológico Consulting Group Ecuador cuenta con **más de 30 sedes a nivel nacional**.\n\nEsto nos permite llegar a muchas ciudades y brindar educación de calidad en todo el país. Daniela te indicará enseguida cuál es la más conveniente para ti."
 
 
   # ======================== CAPACITADORA ========================
@@ -710,10 +710,10 @@ responses:
   - text: "¡Excelente! En la Capacitadora CGE contamos con cursos diseñados para que aprendas habilidades 100% prácticas y las apliques de inmediato en el mundo real.\n\nAntes de mostrarte todas las opciones, me encantaría saber un poco más de ti: **¿Dónde te visualizas en el futuro?**\n\n¿Te imaginas **salvando vidas** en un hospital, atendiendo emergencias llenas de adrenalina en una **ambulancia**, llenando de alegría y enseñando a **niños**, o tal vez trabajando con la fuerza de los motores en un taller mecánico?\n\n¡Cuéntame qué te apasiona para guiarte hacia el curso perfecto para ti! \n(O si prefieres ver todo los cursos que CGE ofrece, simplemente dime 'quiero ver todos los cursos' y te mostrare todas las opciones que tenemos disponibles para ti!)."
 
   utter_requisitos_capacitadora:
-  - text: "¡Qué bueno que quieras formar parte de CGE! Para inscribirte y comenzar tu formación solo debes cumplir con algunos requisitos básicos.\n\nLos documentos que debes presentar son:\nCopia de cédula de la persona que se va a inscribir\nCopia de cédula del representante (sólo mamá o papá)\nTítulo de bachiller (opcional)\nComprobante de pago del primer módulo\n\nEn caso de no contar con el título de bachiller, no te preocupes. Deberás firmar un **acta de compromiso**, donde te comprometes a culminar el bachillerato.\n\nSi tienes alguna situación especial respecto al representante, lo más recomendable es consultarlo directamente con mi asistente **Daniela**, quien podrá orientarte según el caso."
+  - text: "Para inscribirte y comenzar tu formación los requisitos son:\n- Copia de cédula de la persona que se va a inscribir.\n- Copia de cédula del representante (solo mamá o papá).\n- Título de bachiller (opcional).\n- Comprobante de pago del primer módulo.\n\nEn caso de no contar con el título de bachiller, no te preocupes. Deberás firmar un **acta de compromiso**, donde te comprometes a culminar el bachillerato.\n\nSi tienes alguna situación especial respecto al representante, lo más recomendable es consultarlo directamente con mi asistente humana Daniela, que está aquí mismo para orientarte."
 
   utter_costos_capacitadora:
-  - text: "Nuestros cursos te pueden salir **GRATIS** gracias a nuestro Plan de Ayuda, o puedes aprovechar nuestra **promoción especial 2x1** por $60.06 (o $61.44 pagando con la app 'De Una').\n\nAdemás, la inscripción y la matrícula son **completamente gratuitas**.\n\nTe podemos explicar mejor de los valores exactos y los descuentos que tenemos hoy con Daniela, mi asistente humana.\n\nY recuerda que todos los valores que tú dejes en CGE nos ayuda a salvar vidas."
+  - text: "Nuestros cursos te pueden salir **GRATIS** gracias a nuestro Plan de Ayuda, o puedes aprovechar nuestra **promoción especial 2x1** por **$61.41**.\n\nAdemás, la inscripción y la matrícula son completamente gratuitas.\n\nPara explicarte mejor los valores exactos, mi asistente humana Daniela (que está aquí mismo contigo) te ayudará en un momento.\n\nY recuerda que todos los valores que tú dejes en CGE nos ayudan a salvar vidas."
   
   utter_uniformes_capacitadora:
   - text: "¡Sí usamos uniformes! Pero nosotros no lo vendemos. Les recordamos que CGE es un organismo de interés nacional con personería jurídica dada por el Ministerio de Salud Pública y reconocida como voluntaria cooperante de la Secretaría Nacional de Gestión de Riesgos. Por seguridad de nuestros pacientes y hospitales, los uniformes se hacen solo en lugares autorizados."
@@ -722,13 +722,72 @@ responses:
   - text: "En la Capacitadora CGE nuestros cursos están diseñados para que puedas aprender habilidades prácticas reales dentro de cada área.\n\nTe comparto lo que aprenderás en cada uno de nuestros cursos:\n\n**Enfermería**\nAprenderás sobre el cuidado de pacientes dentro de clínicas, hospitales, casas de salud y centros geriátricos. Actividades:\n- Medición de signos vitales\n- Inyectología y sueroterapia\n- Curaciones de heridas y suturas\n- Participación en áreas como quirófano, UCI y salas hospitalarias.\n\n**Emergencias Médicas**\nGracias a nuestras ambulancias, atenderás emergencias 100% reales. Aprenderás:\n- Reanimación avanzada y medición de signos vitales avanzados\n- Suturas avanzadas, inyectología y sueroterapia\n- Atención de traumas y quemaduras.\n\n**Rehabilitación Física**\nSe enfoca en ayudar a los pacientes a recuperar su movilidad, fuerza y vitalidad después de lesiones o accidentes mediante diferentes terapias.\n\n**Laboratorio Clínico**\nAprenderás sobre:\n- Extracción, recepción y entrega de resultados de muestras\n- Indicaciones al paciente\n- Limpieza y manejo del laboratorio.\n\n**Naturopatía**\nSe enfoca en el bienestar físico y emocional a través de terapias naturales. Incluye:\n- Registro de historial natural de salud\n- Asistencia en consultas y preparación de productos naturales\n- Apoyo en masajes naturales.\n\n**Odontología**\nAprenderás a:\n- Asistir en intervenciones odontológicas y apoyo administrativo\n- Preparar instrumental, resinas, cementos o alginatos para impresiones\n- Realizar control de inventario.\n\n**Farmacia**\nManejo de medicamentos para su venta y administración adecuada:\n- Nombres genéricos y comerciales\n- Dosificación, vía de administración y efectos secundarios.\n\n**Veterinaria**\nCuidado de especies mayores y menores. Aprenderás:\n- Medición de signos vitales, suturas, inyectología y sueroterapia\n- Preparación de instrumentos y asistencia en cirugías\n- Administración de medicamentos bajo supervisión.\n\n**Educación Inicial**\nCuidado y desarrollo de niños desde los 0 años:\n- Recreación, estimulación temprana y pintado de caritas\n- Colaboración con docentes y fomento de hábitos de convivencia.\n\n**Taller de Inyectología**\nTaller 100% práctico (sin prácticas adicionales) donde aprenderás a:\n- Colocar sueros y aplicar inyecciones de forma profesional.\n\n**Mecánica básica de motos para mujeres**\nAprenderás sobre:\n- Sistema de transmisión, frenos, suspensión, sistema eléctrico, encendido y mantenimiento preventivo.\n\n**Mecánica básica de vehículos (Personal de salud)**\nAprenderás a actuar ante:\n- Pérdida de frenos o potencia, vehículo varado, sobrecalentamiento y fallas eléctricas.\n\n**Flores de Bach**\nBienestar emocional a través de esencias florales naturales. Aprenderás a:\n- Identificar emociones (estrés, ansiedad, depresión)\n- Dosificar esencias y aplicar terapias naturales para el equilibrio integral.\n\nSi deseas, puedo ayudarte también a conocer la duración o el costo del curso que te interesa."
 
   utter_practicas_capacitadora:
-  - text: "En CGE creemos que la mejor forma de aprender es practicando en entornos reales.\n\nPor eso, nuestros cursos cuentan con prácticas o voluntariados reales, y además tenemos convenios con diferentes instituciones, lo que permite que los estudiantes adquieran experiencia desde su formación.\n\nTe explico cómo funcionan las prácticas según el curso:\n\n**Enfermería**\nLas prácticas se realizan con pacientes 100% reales. CGE cuenta con convenios en instituciones públicas y privadas, por lo que la institución se encarga de asignar el lugar de práctica. Esto permite que los estudiantes se den a conocer, abriendo puertas en el ámbito laboral.\n\n**Emergencias Médicas**\nLas prácticas se realizan atendiendo emergencias 100% reales gracias a nuestras ambulancias avanzadas vinculadas al **ECU 911**. También existen convenios con clínicas y hospitales públicos y privados.\n\n**Rehabilitación Física**\nLas prácticas se realizan en clínicas, hospitales y centros de rehabilitación. Además, CGE cuenta con **su propio centro de rehabilitación**.\n\n**Laboratorio Clínico**\nLas prácticas se realizan en clínicas, hospitales y laboratorios externos.\n\n**Naturopatía**\nSe realizan prácticas 100% reales en centros de naturopatía con los que CGE tiene convenios (como KIRI).\n\n** Odontología**\nLos estudiantes realizan prácticas en clínicas y hospitales del sector público y privado.\n\n**Farmacia**\nLas prácticas se realizan en clínicas y hospitales, así como en redes de farmacias como Farmacias Económicas, Cruz Azul y Santa Marta.\n\n**Veterinaria**\nLas prácticas se realizan con casos reales en clínicas veterinarias.\n\n**Educación Inicial**\nLas prácticas se realizan en unidades educativas y guarderías. Además, contamos con nuestra propia guardería llamada **“Rincón Kid CGE”**.\n\n**Mecánica básica de vehículos (Personal de salud)**\nLas prácticas se realizan dentro de la capacitadora, en talleres donde se trabaja con experiencia real.\n\n**Mecánica básica de motos para mujeres**\nLas prácticas también se realizan dentro de la capacitadora con experiencia directa en el área.\n\n**Flores de Bach**\nLas prácticas se realizan de manera interna durante todo el curso. Se trabaja con ejercicios prácticos para aprender a aplicar terapias de esecias florales para el bienestar emocional y energético.\n\n¿Te gustaría realizar un curso en el área de salud, educación o mecánica?*"
+  - condition:
+    - type: slot
+      name: carrera
+      value: enfermeria
+    text: "¡Claro que sí! En **Enfermería**, las prácticas se realizan con pacientes 100% reales. Contamos con convenios en instituciones públicas y privadas, y la institución se encarga de asignarte el lugar de práctica. ¡Esto te permite darte a conocer y abrirte puertas en el ámbito laboral!\n\n¿Te gustaría que mi compañera Daniela te ayude con los requisitos o los costos aquí mismo?"
 
+  - condition:
+    - type: slot
+      name: carrera
+      value: emergencias medicas
+    text: "¡Por supuesto! En **Emergencias Médicas**, la adrenalina es real. Las prácticas se realizan atendiendo emergencias 100% reales gracias a que tenemos **ambulancias avanzadas vinculadas al ECU 911**. También existen convenios con clínicas y hospitales.\n\n¿Te gustaría que Daniela te dé más detalles de los costos o requisitos?"
+
+  - condition:
+    - type: slot
+      name: carrera
+      value: rehabilitacion fisica
+    text: "¡Claro que sí! En **Rehabilitación Física**, las prácticas se realizan en clínicas, hospitales y centros de rehabilitación. Además, ¡CGE cuenta con **su propio centro de rehabilitación** para tu formación práctica!\n\n¿Te gustaría conocer los costos o requisitos con mi compañera Daniela?"
+
+  - condition:
+    - type: slot
+      name: carrera
+      value: laboratorio clinico
+    text: "¡Así es! Para **Laboratorio Clínico**, las prácticas preprofesionales se realizan directamente en clínicas, hospitales y laboratorios externos con los que tenemos convenios.\n\n¿Te gustaría que Daniela te dé información sobre los costos o requisitos?"
+
+  - condition:
+    - type: slot
+      name: carrera
+      value: naturopatia
+    text: "¡Por supuesto! En **Naturopatía**, realizarás prácticas 100% reales en centros de medicina natural con los que CGE tiene convenios (como el centro KIRI).\n\n¿Deseas que Daniela te ayude con los costos o requisitos?"
+
+  - condition:
+    - type: slot
+      name: carrera
+      value: odontologia
+    text: "¡Claro que sí! En **Odontología**, nuestros estudiantes realizan prácticas directamente en clínicas y hospitales del sector público y privado con los que mantenemos convenios.\n\n¿Te gustaría conocer los costos o requisitos con Daniela?"
+
+  - condition:
+    - type: slot
+      name: carrera
+      value: administracion de farmacias
+    text: "¡Por supuesto! Para **Farmacia**, las prácticas se realizan en clínicas y hospitales, así como en grandes redes reales como **Farmacias Económicas, Cruz Azul y Santa Marta**.\n\n¿Deseas que mi compañera Daniela te indique los costos o requisitos?"
+
+  - condition:
+    - type: slot
+      name: carrera
+      value: veterinaria
+    text: "¡Claro! En **Veterinaria**, las prácticas se realizan con casos reales directamente en clínicas veterinarias aliadas, para que ganes experiencia en el trato y cuidado animal.\n\n¿Te gustaría que Daniela te ayude con los costos o requisitos?"
+
+  - condition:
+    - type: slot
+      name: carrera
+      value: educacion inicial
+    text: "¡Así es! En **Educación Inicial**, las prácticas se realizan en unidades educativas y guarderías. Además, contamos con nuestra propia guardería infantil llamada **“Rincón Kid CGE”** para tus prácticas.\n\n¿Te gustaría conocer los costos o requisitos con Daniela?"
+
+  - condition:
+    - type: slot
+      name: carrera
+      value: flores de bach
+    text: "¡Claro que sí! En **Flores de Bach**, las prácticas se realizan de manera interna durante todo el curso. Se trabaja con ejercicios prácticos para aprender a aplicar terapias de esencias florales para el bienestar emocional y energético.\n\n¿Te gustaría que Daniela te indique los costos o requisitos?"
+
+  - text: "¡En CGE creemos que la mejor forma de aprender es practicando en entornos reales!\n\nPor eso, nuestros cursos cuentan con prácticas en hospitales, ambulancias del ECU 911, redes de farmacias, guarderías y clínicas veterinarias, dependiendo de tu área de estudio para que adquieras experiencia laboral desde el primer día.\n\n¿De qué curso en específico te gustaría saber cómo son las prácticas?"
   utter_certificados_capacitadora:
-  - text: "¡Claro! Al finalizar nuestros cursos en la Capacitadora CGE, los estudiantes reciben entre **8 y 10 certificados**, lo que fortalece mucho su perfil profesional.\n\nEntre los certificados que reciben se encuentran:\n- Certificado avalado por la **Universidad Técnica Estatal de Quevedo (UTEQ)**\n- Certificado del **Instituto Superior Tecnológico Consulting Group Ecuador**\n- Certificado de la **Asociación Ecuatoriana de Operadoras y Capacitadoras de la Salud (AEOCAS)**\n- Certificación de la **Asociación de Auxiliares de Enfermería del Ecuador**\n\nAdemás, durante el proceso de formación se pueden recibir otros certificados adicionales relacionados con las áreas de capacitación.\n\nEsto permite que los estudiantes respalden sus conocimientos con varias certificaciones, lo cual es una gran ventaja al momento de buscar oportunidades dentro del ámbito laboral o continuar con su formación profesional.\n\n*¿Te gustaría que te ayude a revisar los requisitos para inscribirte en alguno de nuestros cursos?*"
+  - text: "¡Claro! Al finalizar nuestros cursos en la Capacitadora CGE, los estudiantes reciben entre **8 y 10 certificados**.\n\nEntre ellos se encuentran certificados avalados por la **Universidad Técnica Estatal de Quevedo**, por el **Instituto Superior Tecnológico Consulting Group Ecuador**, y por la **Asociación Ecuatoriana de Operadoras y Capacitadoras de la Salud**.\n\nEsto te da una gran ventaja en el ámbito laboral. ¿Te gustaría que Daniela te ayude a revisar tus requisitos aquí mismo?"
 
   utter_senescyt_capacitadora:
-  - text: "Es una excelente pregunta. La **SENESCYT** es el ente encargado de registrar los títulos de educación superior, como los que otorgan universidades e institutos tecnológicos.\n\nEn el caso de nuestros cursos de la Capacitadora CGE, los estudiantes reciben **certificados de capacitación**, los cuales respaldan la formación que han adquirido y pueden ayudarles a desempeñarse tanto en el sector público como privado dependiendo del área.\n\nAhora bien, si posteriormente decides continuar tus estudios con nosotros en el **Instituto Superior Tecnológico Consulting Group Ecuador**, allí sí obtendrás un **título de tercer nivel**, el cual se registra en la SENESCYT.\n\nMuchos estudiantes comienzan con un curso porque les permite adquirir experiencia, definir su vocación y luego continuar con su carrera profesional dentro del instituto."
+  - text: "Es una excelente pregunta. La SENESCYT es el ente encargado de registrar los títulos de educación superior.\n\nEn el caso de nuestros cursos de la Capacitadora CGE, recibes certificados de capacitación que respaldan tu formación y te ayudan a desempeñarte **en el ámbito laboral** tanto en el sector público como privado, dependiendo del área.\n\nAhora bien, si luego decides continuar tus estudios en nuestra carrera del instituto, allí sí obtendrás un título de tercer nivel registrado en la SENESCYT."
 
   utter_materiales_capacitadora:
   - text: "Es una muy buena pregunta. En los cursos de la Capacitadora CGE, los materiales que se utilizarán se van coordinando **progresivamente** conforme avanza la formación.\n\nEsto significa que, a medida que vayas avanzando en tu preparación, el docente te irá indicando poco a poco cuáles son los materiales específicos que se utilizarán en cada etapa del curso.\n\nDe esta manera, puedes organizarte mejor y adquirir **solo lo necesario en el momento adecuado**, según las actividades prácticas que se vayan realizando durante la capacitación.\n\nSi ya tienes claro qué curso te gustaría seguir, avísame y te ayudo con los requisitos de inscripción."
@@ -866,13 +925,100 @@ responses:
   - text: "¡Perfecto! Al elegir la Carrera de Tecnología Superior (2 años), te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\n¿Qué te gustaría saber ahora? ¿Los **costos**, la **duración**, los **horarios** o el **campo laboral**?"
 
   utter_info_curso_elegido:
-  - text: "¡Excelente decisión! Nuestros Cursos de Capacitación son rápidos, 100% prácticos y te dan múltiples certificaciones para empezar a trabajar.\n\n¿Qué te gustaría saber ahora? ¿Los **costos** del curso, los **requisitos**, o su **duración**?"
+  - condition:
+    - type: slot
+      name: carrera
+      value: enfermeria
+    text: "¡Excelente elección! Te comento que nuestro curso de **Auxiliar de Enfermería** es 100% práctico y fascinante. Aprenderás sobre el cuidado integral de pacientes en hospitales y clínicas, realizando actividades reales como:\n\n- Medición de signos vitales.\n- Inyectología y sueroterapia.\n- Curación de heridas y suturas.\n- Asistencia en áreas como quirófano, UCI y salas hospitalarias.\n\nSaldrás completamente preparado para trabajar. ¿Qué te gustaría conocer ahora? ¿Los costos del curso, los requisitos, o su duración?"
+    
+  - condition:
+    - type: slot
+      name: carrera
+      value: emergencias medicas
+    text: "¡Una profesión llena de adrenalina! En el curso de **Emergencias Médicas** aprenderás de forma 100% práctica a salvar vidas. Te capacitaremos en Reanimación Cardiopulmonar (RCP), manejo de traumas, extracción vehicular, inmovilización y atención prehospitalaria avanzada.\n\n¡Estarás listo para la acción! ¿Qué te gustaría conocer ahora? ¿Los costos del curso, los requisitos, o su duración?"
+
+  - condition:
+    - type: slot
+      name: carrera
+      value: administracion de farmacias
+    text: "¡Excelente elección! El curso de **Auxiliar de Farmacia** es muy solicitado. Aprenderás de forma 100% práctica sobre farmacología, correcta dispensación de medicamentos, lectura de recetas, inyectología básica y gestión de inventarios. ¡Ideal para trabajar rápidamente en cualquier cadena de farmacias!\n\n¿Qué te gustaría conocer ahora? ¿Los costos del curso, los requisitos, o su duración?"
+
+  - condition:
+    - type: slot
+      name: carrera
+      value: veterinaria
+    text: "¡Qué hermosa vocación! El curso de **Auxiliar de Veterinaria** es 100% práctico. Aprenderás primeros auxilios veterinarios, anatomía, manejo de medicación, asistencia en cirugías y cuidado integral de animales de compañía.\n\n¿Qué te gustaría conocer ahora? ¿Los costos del curso, los requisitos, o su duración?"
+
+  - condition:
+    - type: slot
+      name: carrera
+      value: educacion inicial
+    text: "¡Una carrera de pura vocación! En el curso de **Educación Inicial** aprenderás 100% en la práctica sobre estimulación temprana, desarrollo psicomotor, nutrición infantil y cómo crear ambientes de aprendizaje mágicos para los niños.\n\n¿Qué te gustaría conocer ahora? ¿Los costos del curso, los requisitos, o su duración?"
+
+  - condition:
+    - type: slot
+      name: carrera
+      value: laboratorio clinico
+    text: "¡Excelente elección! En el curso de **Laboratorio Clínico** aprenderás de forma 100% práctica la toma de muestras, análisis hematológicos, microbiológicos y el manejo de equipos para apoyar en diagnósticos médicos precisos.\n\n¿Qué te gustaría conocer ahora? ¿Los costos del curso, los requisitos, o su duración?"
+
+  - condition:
+    - type: slot
+      name: carrera
+      value: odontologia
+    text: "¡Una gran decisión! En el curso de **Auxiliar de Odontología** aprenderás de forma 100% práctica el manejo de instrumental, preparación de materiales dentales, esterilización y asistencia directa al odontólogo en el sillón dental.\n\n¿Qué te gustaría conocer ahora? ¿Los costos del curso, los requisitos, o su duración?"
+
+  - text: "¡Excelente decisión! Nuestros Cursos de Capacitación son rápidos, 100% prácticos y te dan múltiples certificaciones para empezar a trabajar y destacar en el área que elegiste.\n\n¿Qué te gustaría saber ahora? ¿Los costos del curso, los requisitos, o su duración?"
 
   utter_como_estas:
   - text: "¡Estoy excelente y muy emocionada de ayudarte hoy! Cuéntame, ¿en qué área te gustaría prepararte o qué dudas tienes sobre nuestros cursos o carreras?"
 
   utter_duracion_capacitadora:
-  - text: "Nuestros cursos de capacitación están organizados por **módulos (cada módulo dura 1 mes)**.\n\nLa duración total depende del área de tu interés:\n- **8 meses:** Enfermería, Emergencias Médicas, Naturopatía, Veterinaria, Educación Inicial.\n- **6 meses:** Rehabilitación Física.\n- **5 meses:** Odontología, Farmacia, Laboratorio Clínico.\n- **4 meses:** Flores de Bach, Mecánica Automotriz.\n- **2 meses:** Mecánica de motos para mujeres.\n- **1 mes:** Taller de inyectología.\n\n¿De qué curso te gustaría conocer los costos o requisitos?"
+  - condition:
+    - type: slot
+      name: carrera
+      value: enfermeria
+    text: "El curso de **Enfermería** tiene una duración de **8 módulos** (8 meses)."
+  - condition:
+    - type: slot
+      name: carrera
+      value: emergencias medicas
+    text: "El curso de **Emergencias Médicas** tiene una duración de **8 módulos** (8 meses)."
+  - condition:
+    - type: slot
+      name: carrera
+      value: veterinaria
+    text: "El curso de **Veterinaria** tiene una duración de **8 módulos** (8 meses)."
+  - condition:
+    - type: slot
+      name: carrera
+      value: educacion inicial
+    text: "El curso de **Educación Inicial** tiene una duración de **8 módulos** (8 meses)."
+  - condition:
+    - type: slot
+      name: carrera
+      value: naturopatia
+    text: "El curso de **Naturopatía** tiene una duración de **8 módulos** (8 meses)."
+  - condition:
+    - type: slot
+      name: carrera
+      value: rehabilitacion fisica
+    text: "El curso de **Rehabilitación Física** tiene una duración de **6 módulos** (6 meses)."
+  - condition:
+    - type: slot
+      name: carrera
+      value: odontologia
+    text: "El curso de **Odontología** tiene una duración de **5 módulos** (5 meses)."
+  - condition:
+    - type: slot
+      name: carrera
+      value: administracion de farmacias
+    text: "El curso de **Farmacia** tiene una duración de **5 módulos** (5 meses)."
+  - condition:
+    - type: slot
+      name: carrera
+      value: laboratorio clinico
+    text: "El curso de **Laboratorio Clínico** tiene una duración de **5 módulos** (5 meses)."
+  - text: "Nuestros cursos de capacitación están organizados por **módulos (cada módulo dura 1 mes)**. La duración va desde 1 mes (como inyectología) hasta 8 meses (como enfermería). ¿De qué curso te gustaría saber la duración exacta?"
 
 
 session_config:
