@@ -362,6 +362,6 @@ async function enviarMensajeServidor(textoUsuario) {
             textInput.disabled = false;
             textInput.focus();
         }
-    }, 50); 
+    }, 2); 
 
 }

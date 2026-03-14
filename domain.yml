@@ -641,7 +641,7 @@ responses:
     - type: slot
       name: carrera
       value: educacion inicial
-    text: "En **Educación Inicial** aprenderás sobre estimulación temprana, desarrollo psicomotor, creación de ambientes de aprendizaje seguros y técnicas para potenciar la creatividad de los niños.\n\n<img src='assets/images/Logo.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
+    text: "En **Educación Inicial** aprenderás sobre estimulación temprana, desarrollo psicomotor, creación de ambientes de aprendizaje seguros y técnicas para potenciar la creatividad de los niños.\n\n<img src='assets/images/educacioninicialcollage.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
   - text: "¡Excelente pregunta! Lo que vas a aprender depende de la opción que elijas:\n\n**Si eliges la Carrera de 2 años:** El pensum es avanzado y súper completo.\n**Si eliges el Curso Corto:** Aprenderás habilidades 100% prácticas desde el primer día.\n\n¿De qué carrera o curso en específico te gustaría saber el contenido?"
 
   - condition:
@@ -743,7 +743,8 @@ responses:
   - text: "En CGE nos enfocamos en preparar a nuestros estudiantes de forma práctica y profesional, brindándoles las herramientas teóricas y prácticas necesarias para desenvolverse en el ámbito laboral.\n\nDurante la formación, los estudiantes adquieren **experiencia real a través de prácticas**, lo cual les permite desarrollar habilidades que son muy valoradas en diferentes áreas del sector público y privado.\n\nAdemás, al realizar prácticas en instituciones, clínicas, empresas o centros relacionados con su área, los estudiantes tienen la oportunidad de **darse a conocer profesionalmente**, lo cual muchas veces abre puertas directas dentro del campo laboral.\n\nNuestro objetivo es que cada estudiante salga preparado, con experiencia y con la confianza necesaria para desenvolverse en su área profesional.\n\n¿En qué área te gustaría prepararte para empezar a construir tu camino profesional?"
 
   utter_becas_capacitadora:
-  - text: "Por el momento no contamos con un programa de becas activas, pero sí tenemos **descuentos y promociones** disponibles.\n\nLa inscripción y la matrícula son **completamente gratuitas**. Además, los cursos que normalmente tienen un valor aproximado de $72.50 pueden acceder a descuentos adicionales dependiendo de las campañas vigentes.\n\n¡Mira la experiencia de nuestros estudiantes becados y beneficiados!\n\n<video controls class='w-64 md:w-80 h-auto rounded-xl mt-3 mb-3 shadow-sm border border-gray-100'><source src='assets/videos/videobecado.mp4' type='video/mp4'></video>\n\nPara conocer qué descuento se puede aplicar en tu caso, mi asistente **Daniela** puede brindarte la información."
+  - text: "Por el momento no contamos con un programa de becas activas, pero sí tenemos **descuentos y promociones** disponibles.\n\nLa inscripción y la matrícula son **completamente gratuitas**. Además, los cursos que normalmente tienen un valor aproximado de $72.50 pueden acceder a descuentos adicionales dependiendo de las campañas vigentes. Pero si puedes acceder a becas en el instituto, de hasta el 50% de descuento o hasta becas del 100% de descuento, como es el caso de Alexis.\n\n¡Mira este caso de éxito!\n\n<iframe src='https://drive.google.com/file/d/1sP3YNRjZtIkn-WU8sr4nD3vYMrfWBjHR/preview' width='320' height='180' class='rounded-xl mt-3 mb-3 shadow-md border border-gray-200' allow='autoplay; fullscreen'></iframe>\n\nPara conocer qué descuento se puede aplicar en tu caso, mi asistente **Daniela** puede brindarte la información.\n\nY recuerda que todos los valores que tú dejes en CGE nos ayuda a salvar vidas."
+
   
   utter_costo_certificacion_capacitadora:
   - text: "Nosotros **no cobramos certificados**. Sí hay un valor por procesos de certificación y auditoría educativa de algunos entes de evaluación.\n\nTú vas a recibir mínimo 5 certificados por curso, pero todo esto dependerá de las promociones que estén vigentes.\n\nY recuerda que todos los valores que tú dejes en CGE nos ayuda a salvar vidas."
@@ -837,8 +838,7 @@ responses:
   - text: "¡No! Somos transparentes, nosotros solo te cobramos el curso o la carrera. No somos como otras empresas, que tienen costos disfrazados."
 
   utter_becas_instituto:
-  - text: "La carrera normal está en $1,200, pero podrías aplicar a una promoción si te inscribes hoy, aplicando a una beca con el **50% de descuento**.\n\n¡Mira este caso de éxito de uno de nuestros estudiantes becados!\n\n<video controls class='w-64 md:w-80 h-auto rounded-xl mt-3 mb-3 shadow-sm border border-gray-100'><source src='assets/videos/videobecado.mp4' type='video/mp4'></video>\n\nY recuerda que todos los valores que tú dejes en CGE nos ayuda a salvar vidas."
-
+  - text: "La carrera normal está en $1,200, pero podrías aplicar a una promoción si te inscribes hoy, aplicando a una beca con el **50% de descuento**.\n\n¡Mira este caso de éxito de uno de nuestros estudiantes becados!\n\n<iframe src='https://drive.google.com/file/d/1sP3YNRjZtIkn-WU8sr4nD3vYMrfWBjHR/preview' class='w-64 md:w-80 aspect-video rounded-xl mt-3 mb-3 shadow-sm border border-gray-100' allow='autoplay; fullscreen'></iframe>\n\nY recuerda que todos los valores que tú dejes en CGE nos ayuda a salvar vidas."
   utter_descuento_hermanos:
   - text: "¡Claro que sí! Nuestro **Plan de Ayuda Voluntaria** se ajustará a tus necesidades. \n\nDaniela, mi asistente humana, te responderá enseguida con las promociones especiales por familiares que tenemos activas en este momento.\n\nY recuerda que todos los valores que tú dejes en CGE nos ayuda a salvar vidas."
 

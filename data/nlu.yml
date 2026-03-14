@@ -741,7 +741,6 @@ nlu:
     - ¿Cómo puedo aplicar a una beca?
     - ¿Dan algún tipo de beneficio para estudiantes?
     - ¿Hay promociones para los cursos?
-    - ¿Cuánto cuesta la inscripción?
     - ¿El instituto ofrece becas?
 
 - intent: preguntar_costo_certificacion_capacitadora
