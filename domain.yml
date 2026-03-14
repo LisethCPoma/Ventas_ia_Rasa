@@ -238,47 +238,47 @@ responses:
     - type: slot
       name: carrera
       value: "enfermeria"
-    text: "La carrera de **Enfermería** es 100% presencial. ¿Te gustaría saber en qué horarios puedes estudiarla?"
+    text: "La carrera de **Enfermería** es 100% presencial."
   - condition:
     - type: slot
       name: carrera
       value: "emergencias medicas"
-    text: "La carrera de **Emergencias Médicas** es 100% presencial. ¿Quisieras conocer los horarios disponibles?"
+    text: "La carrera de **Emergencias Médicas** es 100% presencial."
   - condition:
     - type: slot
       name: carrera
       value: "rehabilitacion fisica"
-    text: "La carrera de **Rehabilitación Física** es presencial. ¿Te gustaría saber cuáles son los horarios?"
+    text: "La carrera de **Rehabilitación Física** es presencial."
   - condition:
     - type: slot
       name: carrera
       value: "naturopatia"
-    text: "La carrera de **Naturopatía** es presencial de fines de semana. ¿Quisieras conocer los costos?"
+    text: "La carrera de **Naturopatía** es presencial."
   - condition:
     - type: slot
       name: carrera
       value: "gastronomia"
-    text: "La carrera de **Gastronomía** es totalmente presencial y muy práctica. ¿Te interesa saber los métodos de pago?"
+    text: "La carrera de **Gastronomía** maneja una modalidad híbrida, es tanto presencial como en línea y muy práctica, pero solo se encuentra disponible en la ciudad de Quito."
   - condition:
     - type: slot
       name: carrera
       value: "mecanica automotriz"
-    text: "La carrera de **Mecánica Automotriz** es 100% presencial. ¿Quisieras que te cuente en qué puedes laborar al graduarte?"
+    text: "La carrera de **Mecánica Automotriz** maneja una modalidad híbrida, es tanto presencial como en línea. ¿Quisieras que te cuente en qué puedes laborar al graduarte?"
   - condition:
     - type: slot
       name: carrera
       value: "educacion inicial"
-    text: "La carrera de **Educación Inicial** es presencial. ¿Deseas saber más acerca de cómo matricularte?"
+    text: "La carrera de **Educación Inicial** maneja una modalidad híbrida, es tanto presencial como en línea. ¿Deseas saber más acerca de cómo matricularte?"
   - condition:
     - type: slot
       name: carrera
       value: "administracion de sistemas de la salud"
-    text: "La carrera de **Administración de Sistemas de la Salud** se maneja bajo una modalidad Híbrida. ¿Te gustaría conocer los horarios específicos?"
+    text: "La carrera de **Administración de Sistemas de la Salud** es híbrida."
   - condition:
     - type: slot
       name: carrera
       value: "laboratorio clinico"
-    text: "La carrera de **Laboratorio Clínico** tiene clases virtuales en la noche y prácticas presenciales. ¿Quieres saber cómo inscribirte hoy mismo?"
+    text: "La carrera de **Laboratorio Clínico** tiene clases 100% presenciales. ¿Quieres saber cómo inscribirte hoy mismo?"
   - condition:
     - type: slot
       name: carrera
@@ -298,12 +298,12 @@ responses:
     - type: slot
       name: carrera
       value: "administracion de farmacias"
-    text: "La carrera de **Administración de Farmacias** se maneja de forma virtual. ¿Te gustaría tener información de los costos?"
+    text: "La carrera de **Administración de Farmacias** se maneja de forma híbrida. ¿Te gustaría tener información de los costos?"
   - condition:
     - type: slot
       name: carrera
       value: "inteligencia artificial"
-    text: "La carrera de **Inteligencia Artificial** se maneja en modalidad virtual o híbrida dependiendo del nivel. Puedes hablar con mi asistente Daniela para apartar un cupo"
+    text: "La carrera de **Inteligencia Artificial** se maneja en modalidad virtual. Puedes hablar con mi asistente Daniela para apartar un cupo"
   - text: "La institución ofrece carreras en modalidad **presencial** (como Enfermería, Gastronomía, etc.) y también **en línea** (como Administración y Marketing Digital).\n¿De qué carrera exactamente te interesa saber la modalidad?"
 
   utter_duracion_carreras:

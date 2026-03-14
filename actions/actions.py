@@ -318,7 +318,23 @@ class ActionGeminiFallback(Action):
             "AIzaSyDN3341-VFEe2L3EhOV8FzbCDMoqiHMkug",
             "AIzaSyADqQO2hRnZufzhnubK_O9SUsdzzuWXhSI",
             "AIzaSyA4i2bdp6gjBFGAVqV7ahAvyBqbHDD8viA",
-            "AIzaSyArDCSiYDdvuvsYv9nk52w4ffHuGE88yQU"
+            "AIzaSyArDCSiYDdvuvsYv9nk52w4ffHuGE88yQU",
+            "AIzaSyDgGCqUP-Pz2nfIrPkdB3nrQk3BHFoU3gw",
+            "AIzaSyDPQmMepy90NAXm-jQQtWjrvZ5n0BaVwq4",
+            "AIzaSyCU-vqzJDa8FBYDlN7E19j6r1Mp8H9SFAg",
+            "AIzaSyCpWndLpMTRsaTOOo4aSjsJIO3VYR5kn3A",
+            "AIzaSyB1G4zLyP0FeGnCP2LryIB4KeAl3cYEfVk",
+            "AIzaSyBO5CYJLFMgyjijkZRTrYPiP4jr8aSw7f4",
+            "AIzaSyCQ0Lpyfalw6OfJN7OBJhoafa83QMj4isA",
+            "AIzaSyBYOfhogvL6iRAR1m5RuaD6jV5SmvZeuQk",
+            "AIzaSyBZWC0N3nA-8Ajmo6Tih07Emm9DZpEXC0M",
+            "AIzaSyA0QGVwPN_TUTlKg49E2kNHH7MIKyYgUD8",
+            "AIzaSyBnUOF_Kwisj5L5SOPnyj09VIC5uKi9tsg",
+            "AIzaSyBs-ri6QqoVdx71VQPe8EhwPyoGdpvFZB4",
+            "AIzaSyBn9Hh54_M8pKAe_haw2wl2fSgrSy062Xo",
+            "AIzaSyBZYWb3gfDY_p68Be5qLFFTkvublmDc7aw",
+            "AIzaSyA508PSquwZTDSCvrNfdAh4R-xnOy-Eyrw"
+
         ]
 
         # 4. System prompt detallado con toda la información real de CGE
