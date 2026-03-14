@@ -183,7 +183,7 @@ responses:
   - text: "¡Excelente elección! Esa es una de nuestras áreas más solicitadas. Tenemos opciones de Carreras (2 años) y Cursos cortos 100% prácticos dependiendo de la especialidad.\n¿Te interesa más la información de **la Carrera** o **el Curso**?"
 
   utter_voluntariado_consultinos:
-  - text: "¡Así es! Muchos de los estudiantes de la institución nos dicen que estudiar aquí no solo les da una profesión, sino también la oportunidad de salvar vidas y servir a la comunidad a través de el programa Consultinos. ¡Es una experiencia que cambia vidas!"
+  - text: "¡Así es! Muchos de los estudiantes nos dicen que estudiar aquí no solo les da una profesión, sino la oportunidad de salvar vidas y servir al país a través del programa Consultinos.\n\n¡Mira a nuestras brigadas en primera línea durante el Terremoto del 16 de abril y la pandemia de COVID-19!\n\n<div class='flex gap-2 mt-3 mb-2'><img src='assets/images/collageterremoto.jpeg' class='w-1/2 rounded-xl object-cover shadow-sm border border-gray-200'><img src='assets/images/collagepandemia.jpeg' class='w-1/2 rounded-xl object-cover shadow-sm border border-gray-200'></div>\n\n¡Somos verdaderos héroes de vocación!"
 
   utter_refuerzo_decision:
   - text: "Si te gusta ayudar a las personas, superar retos y quieres tener una carrera con propósito, este puede ser el comienzo de algo muy grande para ti. ¡Estás en las mejores manos con mi asistente Daniela para dar este paso!"

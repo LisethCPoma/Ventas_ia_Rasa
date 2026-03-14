@@ -258,8 +258,26 @@ class ActionGeminiFallback(Action):
 
         contexto_historial = "\n".join(historial[-12:])  # últimos ~6 intercambios
 
-        # 3. Configurar la API de Gemini
-        genai.configure(api_key="AIzaSyD3o3yp3gGeSb7WX4kXwgxDMJznGcwoTLw")
+# 3. Lista de tus API Keys (Rotador)
+        # Reemplaza estos textos con tus 10 API keys reales
+        api_keys = [
+            "AIzaSyD3o3yp3gGeSb7WX4kXwgxDMJznGcwoTLw", # Tu llave actual
+            "AIzaSyAgNW19aIMGfGGvHAHl-nNBkrokd0CKft4",
+            "AIzaSyBecjaFKCcCFXmM6_dCI2BcHeaWKsMYQKE",
+            "AIzaSyBZFJxLp3HalsLg8I7Ft9U9rv62MIe827Q",
+            "AIzaSyD12dqpT6876mk93iHUHmweTz9usMR7dNE",
+            "AIzaSyD9C6LoTAZ8LGtlIYe_U3t6Qmgnj33EtgE",
+            "AIzaSyBoYvQnAfZ5nyoF44_lbxmFJ8v5O2XgT1c",
+            "AIzaSyCL60avJYx2N5QakLFDXE19v7dfwUt5t9Y",
+            "AIzaSyBqS_cHSSgZd03WhhUnsySCX1o9mG1FYq8",
+            "AIzaSyD9C6LoTAZ8LGtlIYe_U3t6Qmgnj33EtgE",
+            "AIzaSyBoYvQnAfZ5nyoF44_lbxmFJ8v5O2XgT1c",
+            "AIzaSyCL60avJYx2N5QakLFDXE19v7dfwUt5t9Y",
+            "AIzaSyBqS_cHSSgZd03WhhUnsySCX1o9mG1FYq8",
+
+
+            # ... puedes agregar todas las que quieras
+        ]
 
         # 4. System prompt detallado con toda la información real de CGE
         instrucciones_sistema = """
@@ -304,22 +322,44 @@ Pregunta actual del usuario: {mensaje_usuario}
 
 Responde como Consultina siguiendo estrictamente las instrucciones del sistema."""
 
-        try:
-            model = genai.GenerativeModel(
-                'gemini-2.5-flash',
-                system_instruction=instrucciones_sistema,
-                safety_settings={
-                    HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_NONE,
-                    HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_NONE,
-                    HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: HarmBlockThreshold.BLOCK_NONE,
-                    HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_NONE,
-                }
-            )
-            respuesta_gemini = model.generate_content(prompt_completo)
-            dispatcher.utter_message(text=respuesta_gemini.text)
-            
-        except Exception as e:
-            print(f"Error con Gemini API: {e}")
+        # 5. Bucle del Rotador de APIs
+        respuesta_exitosa = False
+
+        for api_key in api_keys:
+            try:
+                # Configuramos la API con la llave actual del bucle
+                genai.configure(api_key=api_key)
+                
+                model = genai.GenerativeModel(
+                    'gemini-2.5-flash',
+                    system_instruction=instrucciones_sistema,
+                    safety_settings={
+                        HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_NONE,
+                        HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_NONE,
+                        HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: HarmBlockThreshold.BLOCK_NONE,
+                        HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_NONE,
+                    }
+                )
+                
+                # Intentamos generar la respuesta
+                respuesta_gemini = model.generate_content(prompt_completo)
+                dispatcher.utter_message(text=respuesta_gemini.text)
+                
+                # Si llega hasta aquí sin dar error, significa que funcionó. 
+                # Rompemos el bucle para no seguir gastando las otras APIs.
+                respuesta_exitosa = True
+                break 
+
+            except Exception as e:
+                # Si falla (por cuota excedida, por ejemplo), imprimimos el error en consola 
+                # y el bucle continuará automáticamente con la siguiente API Key.
+                print(f"⚠️ API Key terminada en ...{api_key[-4:]} falló. Intentando con la siguiente... Error: {e}")
+                continue
+
+        # 6. Fallback final de emergencia
+        # Si TODAS las APIs de la lista fallaron (se agotaron todas las cuotas)
+        if not respuesta_exitosa:
+            print("TODAS LAS API KEYS SE HAN AGOTADO.")
             dispatcher.utter_message(
                 text="Esa es una excelente pregunta que mi asistente Daniela te podría responder de manera más precisa y detallada.\n\nLe he notificado para que te responda enseguida."
             )

@@ -14,8 +14,8 @@ const bottomInputContainer = document.getElementById('bottom-input-container');
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 const reconocimiento = new SpeechRecognition();
 reconocimiento.lang = 'es-ES';
-reconocimiento.interimResults = true; 
-reconocimiento.continuous = true; 
+reconocimiento.interimResults = true;
+reconocimiento.continuous = true;
 
 // Generar un ID único para esta sesión de chat
 const sessionID = "usuario_" + Math.random().toString(36).substring(2, 10);
@@ -35,29 +35,29 @@ cargarVoces();
 function reproducirVozFemenina(texto) {
     const nuevaVoz = new SpeechSynthesisUtterance(texto);
     nuevaVoz.lang = 'es-ES';
-    nuevaVoz.rate = 1.0; 
+    nuevaVoz.rate = 1.0;
     nuevaVoz.pitch = 1.0;
 
     let voces = vocesDisponibles.length > 0 ? vocesDisponibles : window.speechSynthesis.getVoices();
     let vocesEsp = voces.filter(v => v.lang.includes('es'));
 
     const nombresFemeninos = ['Monica', 'Paulina', 'Google español de Estados Unidos', 'Helena', 'Laura', 'Sabina', 'Victoria'];
-    
+
     let vozInstanciada = null;
-    
+
     for (const nombre of nombresFemeninos) {
         vozInstanciada = vocesEsp.find(v => v.name.includes(nombre));
         if (vozInstanciada) break;
     }
 
     if (!vozInstanciada && vocesEsp.length > 0) {
-        vozInstanciada = vocesEsp.find(v => 
-            !v.name.includes('Jorge') && 
-            !v.name.includes('Diego') && 
+        vozInstanciada = vocesEsp.find(v =>
+            !v.name.includes('Jorge') &&
+            !v.name.includes('Diego') &&
             !v.name.includes('Javier')
         );
         if (!vozInstanciada) {
-            vozInstanciada = vocesEsp[0]; 
+            vozInstanciada = vocesEsp[0];
         }
     }
 
@@ -82,7 +82,7 @@ function transicionAChat() {
     welcomeArea.classList.add('hidden');
     chatContainer.classList.remove('hidden');
     chatContainer.classList.add('flex');
-    
+
     bottomInputContainer.appendChild(theInputBox);
 }
 
@@ -94,7 +94,7 @@ function agregarMensaje(remitente, texto, esUsuario) {
     div.className = `flex w-full opacity-0 animate-[fadeIn_0.4s_ease-out_forwards] ${esUsuario ? "justify-end" : "justify-start"}`;
 
     let htmlContent = '';
-    
+
     if (esUsuario) {
         htmlContent = `
             <div class="bg-primary text-white shadow-md px-5 py-3.5 rounded-3xl rounded-br-sm max-w-[85%] md:max-w-[70%] text-[15px] font-medium leading-relaxed tracking-wide shadow-primary/20">
@@ -113,10 +113,10 @@ function agregarMensaje(remitente, texto, esUsuario) {
             </div>
         `;
     }
-    
+
     div.innerHTML = htmlContent;
     chatBox.appendChild(div);
-    
+
     setTimeout(() => {
         chatBox.scrollTo({ top: chatBox.scrollHeight, behavior: 'smooth' });
     }, 50);
@@ -129,7 +129,7 @@ btnHablar.onclick = () => {
     }
 
     if (!escuchando) {
-        try { reconocimiento.start(); } catch(e) {}
+        try { reconocimiento.start(); } catch (e) { }
     } else {
         reconocimiento.stop();
     }
@@ -139,20 +139,20 @@ btnHablar.onclick = () => {
 reconocimiento.onstart = () => {
     if (!chatIniciado) transicionAChat();
     escuchando = true;
-    textoEscuchado = "";  
-    textInput.value = ""; 
-    
+    textoEscuchado = "";
+    textInput.value = "";
+
     theInputBox.classList.add('escuchando-fx', 'bg-white');
     theInputBox.classList.remove('bg-inputBg');
-    
+
     btnHablar.classList.add('bg-primary', 'text-white');
     btnHablar.classList.remove('bg-transparent', 'text-gray-600', 'hover:bg-gray-200');
-    
+
     btnHablar.classList.remove('hidden');
     btnEnviarTexto.classList.add('hidden');
-    
+
     textInput.placeholder = 'Te escucho (Haz clic de nuevo en el micrófono para enviar)...';
-    
+
     iconMic.innerHTML = '<rect x="6" y="6" width="12" height="12" rx="2" ry="2"></rect>';
 };
 
@@ -168,14 +168,14 @@ reconocimiento.onresult = (event) => {
             transcripcionInterina += event.results[i][0].transcript;
         }
     }
-    
+
     textInput.value = textoEscuchado + transcripcionInterina;
 };
 
 // 6. Al apagar el micrófono, se corrige y se envía el texto
 reconocimiento.onend = () => {
     escuchando = false;
-    
+
     theInputBox.classList.remove('escuchando-fx', 'bg-white');
     theInputBox.classList.add('bg-inputBg');
     btnHablar.classList.remove('bg-primary', 'text-white');
@@ -184,7 +184,7 @@ reconocimiento.onend = () => {
     iconMic.innerHTML = '<path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" x2="12" y1="19" y2="22"></line>';
 
     let textoFinal = textInput.value.trim();
-    
+
     if (textoFinal.length > 0) {
         textoFinal = textoFinal.replace(/consultiva/gi, "Consultina");
         textoFinal = textoFinal.replace(/con dulcina/gi, "Consultina");
@@ -194,7 +194,7 @@ reconocimiento.onend = () => {
         textoFinal = textoFinal.replace(/mancillar/gi, "mención");
         textoFinal = textoFinal.replace(/medición/gi, "mención");
 
-        textInput.value = ""; 
+        textInput.value = "";
         enviarMensajeServidor(textoFinal);
     } else {
         textInput.placeholder = 'Escribe o habla tu pregunta a Consultina...';
@@ -208,7 +208,7 @@ reconocimiento.onerror = () => {
 // 7. Lógica de Input de Texto
 textInput.addEventListener('input', () => {
     if (escuchando) return;
-    
+
     if (textInput.value.trim().length > 0) {
         btnHablar.classList.add('hidden');
         btnEnviarTexto.classList.remove('hidden');
@@ -231,15 +231,15 @@ btnEnviarTexto.onclick = () => {
 function enviarTextoLibre() {
     const textoUsuario = textInput.value.trim();
     if (textoUsuario === '') return;
-    
+
     textInput.value = '';
     btnHablar.classList.remove('hidden');
     btnEnviarTexto.classList.add('hidden');
-    
+
     if (window.speechSynthesis.speaking) {
         window.speechSynthesis.cancel();
     }
-    
+
     enviarMensajeServidor(textoUsuario);
 }
 
@@ -257,45 +257,49 @@ async function enviarMensajeServidor(textoUsuario) {
         });
 
         const data = await respuesta.json();
-        
-        if(data && data.length > 0) {
+
+        if (data && data.length > 0) {
             let textoParaVoz = "";
             let textoParaChat = "";
-            
+
             data.forEach((mensaje, index) => {
                 if (index > 0 && (mensaje.text || mensaje.image)) {
-                    textoParaChat += '<br><br>'; 
+                    textoParaChat += '<br><br>';
                 }
-                
-                if(mensaje.text) {
+
+                if (mensaje.text) {
                     let textoCapa = mensaje.text
                         .replace(/\*\*(.*?)\*\*/g, '<strong class="text-primary font-semibold">$1</strong>')
                         .replace(/\n/g, '<br>');
-                    
+
                     textoParaChat += textoCapa;
-                    
-                    let textoLimpioVoz = mensaje.text.replace(/\*/g, '');
+// 1. Truco maestro: Crear un elemento invisible para extraer SOLO el texto humano
+                    let elementoTemporal = document.createElement("div");
+                    elementoTemporal.innerHTML = mensaje.text;
+                    let textoSinCodigo = elementoTemporal.textContent || elementoTemporal.innerText || "";
+
+                    // 2. Ahora sí, limpiamos los asteriscos y corregimos pronunciación
+                    let textoLimpioVoz = textoSinCodigo.replace(/\*/g, '');
                     textoLimpioVoz = textoLimpioVoz.replace(/NVIDIA/g, 'Envidia');
                     textoLimpioVoz = textoLimpioVoz.replace(/USFQ/g, 'U S F Q');
                     textoLimpioVoz = textoLimpioVoz.replace(/UDLA/g, 'Udla');
                     textoLimpioVoz = textoLimpioVoz.replace(/IESS/g, 'Íes');
                     textoLimpioVoz = textoLimpioVoz.replace(/MSP/g, 'Eme Ese Pe');
-                    textoLimpioVoz = textoLimpioVoz.replace(/CGE/g, 'C G E'); 
-                    
+                    textoLimpioVoz = textoLimpioVoz.replace(/CGE/g, 'C G E');
+
                     textoParaVoz += textoLimpioVoz + ". ";
                 }
-                
-                if(mensaje.image) {
-                    let imgCapa = `<img src="${mensaje.image}" alt="Imagen adjunta" class="max-w-full h-auto rounded-xl mt-3 shadow-sm border border-gray-100">`;
-                    textoParaChat += imgCapa;
+
+                if (mensaje.image) {
+                    let imgCapa = `<img src="${mensaje.image}" alt="Imagen adjunta" class="w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100">`;
                 }
             });
-            
-            if(textoParaChat.trim().length > 0) {
+
+            if (textoParaChat.trim().length > 0) {
                 agregarMensaje("Consultina", textoParaChat, false);
             }
-            
-            if(textoParaVoz.trim().length > 0) {
+
+            if (textoParaVoz.trim().length > 0) {
                 reproducirVozFemenina(textoParaVoz);
             }
         }
