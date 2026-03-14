@@ -270,11 +270,11 @@ rules:
   - intent: preguntar_practicas_cerca
   - action: utter_practicas_cerca
 
-- rule: Consultina explica que es un voluntariado
+- rule: Responder sobre voluntariados y consultinos
   steps:
-  - intent: preguntar_diferencia_voluntariado
-  - action: utter_diferencia_voluntariado
-
+  - intent: preguntar_voluntariado
+  - action: utter_voluntariado
+  
 - rule: Consultina responde sobre las menciones de la capacitadora
   steps:
   - intent: preguntar_menciones_capacitadora

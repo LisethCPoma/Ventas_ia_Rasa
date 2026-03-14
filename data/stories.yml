@@ -9,8 +9,8 @@ stories:
     entities:
     - carrera: "enfermería"
   - action: utter_reaccion_carrera
-  - intent: mencionar_voluntariado
-  - action: utter_voluntariado_consultinos
+  - intent: preguntar_voluntariado    
+  - action: utter_voluntariado
   - intent: pedir_refuerzo_cierre
   - action: utter_refuerzo_decision
 
@@ -90,8 +90,8 @@ stories:
   - action: utter_reaccion_carrera
   - intent: preguntar_costos
   - action: utter_costos
-  - intent: mencionar_voluntariado
-  - action: utter_voluntariado_consultinos
+  - intent: preguntar_voluntariado    
+  - action: utter_voluntariado
   - intent: preguntar_practicas
   - action: utter_practicas
   - intent: preguntar_modalidad_estudio

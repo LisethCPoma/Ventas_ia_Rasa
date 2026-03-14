@@ -4,7 +4,6 @@ intents:
   - saludar
   - presentar_consultina
   - informar_carrera_interes
-  - mencionar_voluntariado
   - pedir_refuerzo_cierre
   - preguntar_oferta_academica
   - preguntar_cupos
@@ -58,7 +57,6 @@ intents:
   - preguntar_beneficios_estudiar
   - preguntar_convalidacion_practicas
   - preguntar_practicas_cerca
-  - preguntar_diferencia_voluntariado
   - preguntar_menciones_capacitadora
   - preguntar_requisitos_mencion
   - preguntar_todos_los_cursos
@@ -66,6 +64,7 @@ intents:
   - elegir_curso
   - preguntar_como_estas
   - preguntar_duracion_capacitadora
+  - preguntar_voluntariado
   
 
 entities:
@@ -182,8 +181,8 @@ responses:
   # --- FALLBACK ---
   - text: "¡Excelente elección! Esa es una de nuestras áreas más solicitadas. Tenemos opciones de Carreras (2 años) y Cursos cortos 100% prácticos dependiendo de la especialidad.\n¿Te interesa más la información de **la Carrera** o **el Curso**?"
 
-  utter_voluntariado_consultinos:
-  - text: "¡Así es! Muchos de los estudiantes nos dicen que estudiar aquí no solo les da una profesión, sino la oportunidad de salvar vidas y servir al país a través del programa Consultinos.\n\n¡Mira a nuestras brigadas en primera línea durante el Terremoto del 16 de abril y la pandemia de COVID-19!\n\n<div class='flex gap-2 mt-3 mb-2'><img src='assets/images/collageterremoto.jpeg' class='w-1/2 rounded-xl object-cover shadow-sm border border-gray-200'><img src='assets/images/collagepandemia.jpeg' class='w-1/2 rounded-xl object-cover shadow-sm border border-gray-200'></div>\n\n¡Somos verdaderos héroes de vocación!"
+  utter_voluntariado:
+  - text: "¡Qué excelente pregunta! En CGE, el aprendizaje práctico y el servicio a la comunidad van de la mano.\n\nSer parte de los **Consultinos** o realizar un **voluntariado** con nosotros significa tener la vocación de ayudar y servir a la sociedad sin esperar remuneración, movidos puramente por el deseo de salvar vidas y hacer el bien.\n\nA través de nuestras **prácticas 100% reales**, nuestros estudiantes logran exactamente eso: aplican todo lo aprendido en escenarios reales (hospitales, ambulancias, comunidades), ganando experiencia vital para su carrera mientras ayudan a quienes más lo necesitan.\n\n¡Mira a nuestras brigadas en primera línea durante el Terremoto del 16A y la pandemia de COVID-19!\n\n<div class='flex gap-2 mt-3 mb-2'><img src='assets/images/collageterremoto.jpeg' class='w-1/2 rounded-xl object-cover shadow-sm border border-gray-200'><img src='assets/images/collagepandemia.jpeg' class='w-1/2 rounded-xl object-cover shadow-sm border border-gray-200'></div>\n\n¡Somos verdaderos héroes de vocación! ¿Te gustaría unirte a esta gran familia?"
 
   utter_refuerzo_decision:
   - text: "Si te gusta ayudar a las personas, superar retos y quieres tener una carrera con propósito, este puede ser el comienzo de algo muy grande para ti. ¡Estás en las mejores manos con mi asistente Daniela para dar este paso!"
@@ -232,7 +231,7 @@ responses:
   - text: "Esa es una excelente pregunta que mi asistente Daniela te podría responder de manera más precisa y detallada.\n\n Mi asistente Daniela te responderá enseguida con toda la información solicitada."
 
   utter_horarios:
-  - text: "¡Claro! Nuestro horario de atención para admisiones es de lunes a domingos de 8:00 a.m. a 6:00 p.m. ¡Te esperamos!"
+  - text: "¡Claro! Nuestro horario de atención para admisiones es de lunes a sábados de 8:00 am a 6:00 pm y los domingos de 8:00 a.m. a 12:00 p.m. ¡Te esperamos!"
 
   utter_modalidad_estudio:
   - condition:
@@ -391,12 +390,12 @@ responses:
     - type: slot
       name: carrera
       value: enfermeria
-    text: "En la carrera de **Técnico Superior en Enfermería**, tus prácticas preprofesionales se realizarán en clínicas u hospitales, trabajando directamente con pacientes reales. ¿Deseas saber más acerca del campo laboral?"
+    text: "En la carrera de **Técnico Superior en Enfermería**, tus prácticas preprofesionales se realizarán en clínicas u hospitales (MSP, IESS, etc.), trabajando directamente con pacientes reales. ¡Aplicarás todo tu conocimiento para salvar vidas!\n\n<img src='assets/images/collageenfermeria.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>\n\n¿Deseas saber más acerca del campo laboral?"
   - condition:
     - type: slot
       name: carrera
       value: emergencias medicas
-    text: "Para **Emergencias Médicas**, las prácticas se desarrollan en clínicas u hospitales. además, el instituto es el **único organismo que cuenta con ambulancias propias vinculadas al ECU 911**, por lo que participarás en escenarios reales de atención de emergencias. ¿Deseas saber más acerca del campo laboral al graduarte?"
+    text: "Para **Emergencias Médicas**, las prácticas se desarrollan en clínicas u hospitales. Además, el instituto es el **único organismo que cuenta con ambulancias propias vinculadas al ECU 911**, por lo que participarás en escenarios reales de rescate y atención de emergencias.\n\n<img src='assets/images/collageemergencias.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>\n\n¿Te gustaría conocer la duración o los costos?"
   - condition:
     - type: slot
       name: carrera
@@ -426,7 +425,8 @@ responses:
     - type: slot
       name: carrera
       value: educacion inicial
-    text: "Las prácticas para **Educación Inicial** se realizan en unidades educativas y guarderías. El instituto cuenta con espacios propios como el centro privado Rincón KitCGE y mas."
+    text: "Las prácticas para **Educación Inicial** se realizan en unidades educativas y guarderías. El instituto cuenta con espacios propios como el centro privado Rincón KitCGE y más.\n\n<img src='assets/images/educacioninicialcollage.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>\n\n¿Tienes alguna duda sobre esta hermosa profesión?"
+  - text: "Las prácticas preprofesionales se realizan en entornos 100% reales dependiendo de la carrera elegida (hospitales, ambulancias ECU 911, empresas, guarderías, etc.).\nSi la carrera que te interesa tiene convenios muy específicos, **Daniela** te compartirá enseguida el listado de instituciones donde podrías realizar tus prácticas."
   - condition:
     - type: slot
       name: carrera
@@ -449,12 +449,12 @@ responses:
     - type: slot
       name: carrera
       value: enfermeria
-    text: "¡El campo laboral es inmenso y hermoso! Podrás trabajar **salvando vidas** en clínicas privadas o instituciones de salud pública (IESS, MSP y otros). O si lo prefieres, puedes crear tu propia empresa de cuidados de enfermería y servir no solo en el Ecuador, ¡sino a todo el mundo!\n\nImagina el impacto que tendrás al mejorar la vida de tantas personas. ¡Mira a nuestros estudiantes en acción!\n\nhttps://www.tusitioweb.com/ENLACE_A_TU_FOTO_AQUI.jpg"
+    text: "¡El campo laboral es inmenso y hermoso! Podrás trabajar **salvando vidas** en clínicas privadas o instituciones de salud pública (IESS, MSP y otros). O si lo prefieres, puedes crear tu propia empresa de cuidados de enfermería y servir no solo en el Ecuador, ¡sino a todo el mundo!\n\nImagina el impacto que tendrás al mejorar la vida de tantas personas. ¡Mira a nuestros estudiantes en acción!\n\n<img src='assets/images/enfermeria.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
   - condition:
     - type: slot
       name: carrera
       value: emergencias medicas
-    text: "¡Tendrás una profesión llena de adrenalina y propósito! Podrás trabajar **salvando vidas** en atención prehospitalaria, rescates y el sistema ECU 911, o puedes crear tu propia empresa de atención de emergencias sirviendo en Ecuador y el mundo.\n\n¡Mira a nuestros héroes en acción!\n\nhttps://www.tusitioweb.com/ENLACE_A_TU_FOTO_AQUI.jpg"
+    text: "¡Tendrás una profesión llena de adrenalina y propósito! Podrás trabajar **salvando vidas** en atención prehospitalaria, rescates y el sistema ECU 911, o puedes crear tu propia empresa de atención de emergencias sirviendo en Ecuador y el mundo.\n\n¡Mira a nuestros héroes en acción!\n\n<img src='assets/images/collageemergencias.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
   - text: "¡Tu campo laboral será gigante! Te preparamos para que puedas trabajar en las instituciones más grandes del país (públicas y privadas) o para que crees tu propia empresa y puedas brindar tus servicios no solo en Ecuador, ¡sino a todo el mundo!"
   - condition:
     - type: slot
@@ -490,7 +490,7 @@ responses:
     - type: slot
       name: carrera
       value: educacion inicial
-    text: "Para **Educación Inicial**, las salidas laborales incluyen:\n- Docencia en unidades educativas, colegios y escuelas.\n- Gestión y dirección de centros de desarrollo infantil y guarderías.\n- Emprender tu propio centro educativo o de nivelación. ¿Quisieras conocer los costos y cuotas?"
+    text: "Para **Educación Inicial**, las salidas laborales incluyen:\n- Docencia en unidades educativas, colegios y escuelas.\n- Gestión y dirección de centros de desarrollo infantil y guarderías.\n- Emprender tu propio centro educativo o de nivelación. ¿Quisieras conocer los costos y cuotas?\n\n<img src='assets/images/educacioninicialcollage.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
   - condition:
     - type: slot
       name: carrera
@@ -627,10 +627,82 @@ responses:
   - text: "Tenemos varios horarios a escoger (matutinos, nocturnos, fines de semana, etc.), pero te recordamos que los cupos son limitados.\n\nPor procesos de calidad internacionales, **solo recibimos hasta 25 personas por curso**.\n\nSi quieres saber qué horarios tenemos disponibles, esta información privada te la puede entregar **Daniela**, mi asistente humana."
 
   utter_malla_curricular:
-  - text: "¡Excelente pregunta! Lo que vas a aprender depende de la opción que elijas:\n\n **Si eliges la Carrera de 2 años:** El pensum es avanzado y súper completo.\n\n**Si eliges el Curso Corto:** Aprenderás habilidades 100% prácticas desde el primer día (como inyectología, curaciones, o manejo de niños según tu área).\n\n¿Te interesa conocer que aprenderás?"
+  - condition:
+    - type: slot
+      name: carrera
+      value: enfermeria
+    text: "En **Enfermería** aprenderás desde toma de signos vitales, administración de medicación e inyectología, hasta curaciones avanzadas y asistencia en procedimientos médicos. ¡Saldrás completamente preparado para cuidar y salvar vidas!\n\n<img src='assets/images/enfermeria.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
+  - condition:
+    - type: slot
+      name: carrera
+      value: emergencias medicas
+    text: "En **Emergencias Médicas** aprenderás a manejar situaciones críticas: reanimación cardiopulmonar (RCP), inmovilización, extracción vehicular, manejo de traumas y atención prehospitalaria avanzada.\n\n<img src='assets/images/terremoto1.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
+  - condition:
+    - type: slot
+      name: carrera
+      value: educacion inicial
+    text: "En **Educación Inicial** aprenderás sobre estimulación temprana, desarrollo psicomotor, creación de ambientes de aprendizaje seguros y técnicas para potenciar la creatividad de los niños.\n\n<img src='assets/images/Logo.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
+  - text: "¡Excelente pregunta! Lo que vas a aprender depende de la opción que elijas:\n\n**Si eliges la Carrera de 2 años:** El pensum es avanzado y súper completo.\n**Si eliges el Curso Corto:** Aprenderás habilidades 100% prácticas desde el primer día.\n\n¿De qué carrera o curso en específico te gustaría saber el contenido?"
+
+  - condition:
+    - type: slot
+      name: carrera
+      value: rehabilitacion fisica
+    text: "En **Rehabilitación Física** aprenderás anatomía, técnicas de masoterapia, kinesioterapia y el uso de equipos especializados para devolverles el movimiento y bienestar a los pacientes."
+  - condition:
+    - type: slot
+      name: carrera
+      value: laboratorio clinico
+    text: "En **Laboratorio Clínico** aprenderás sobre toma de muestras, análisis hematológicos, microbiológicos y el uso de equipos de laboratorio para apoyar en diagnósticos médicos precisos."
+  - condition:
+    - type: slot
+      name: carrera
+      value: administracion de farmacias
+    text: "En **Administración de Farmacias** aprenderás sobre farmacología, dispensación de medicamentos, atención al paciente y gestión de inventarios para farmacias y clínicas."
+  - condition:
+    - type: slot
+      name: carrera
+      value: administracion de sistemas de la salud
+    text: "En **Administración de Sistemas de la Salud** aprenderás sobre gestión hospitalaria, auditoría médica, calidad en la atención y normativas para liderar instituciones de salud."
+  - condition:
+    - type: slot
+      name: carrera
+      value: administracion
+    text: "En **Administración** aprenderás sobre gestión de empresas, contabilidad, talento humano, finanzas y planificación estratégica para liderar o crear tu propio negocio."
+  - condition:
+    - type: slot
+      name: carrera
+      value: marketing digital
+    text: "En **Marketing Digital y Comercio Electrónico** aprenderás a crear campañas en redes sociales, posicionamiento SEO/SEM, estrategias de e-commerce y análisis de datos digitales."
+  - condition:
+    - type: slot
+      name: carrera
+      value: desarrollo de contenidos y manejo de redes
+    text: "En **Desarrollo de Contenidos y Manejo de Redes** aprenderás sobre creación de contenido multimedia, community management, diseño gráfico y estrategias para viralizar marcas."
+  - condition:
+    - type: slot
+      name: carrera
+      value: mecanica automotriz
+    text: "En **Mecánica Automotriz** aprenderás sobre motores, sistemas de inyección, electricidad automotriz y diagnóstico computarizado para reparar vehículos modernos."
+  - condition:
+    - type: slot
+      name: carrera
+      value: gastronomia
+    text: "En **Gastronomía** aprenderás técnicas culinarias nacionales e internacionales, panadería, repostería, y administración de restaurantes y negocios de alimentos."
+  - condition:
+    - type: slot
+      name: carrera
+      value: naturopatia
+    text: "En **Naturopatía** aprenderás sobre medicina alternativa, fitoterapia, terapias florales y nutrición natural para promover la salud de forma holística."
+  - condition:
+    - type: slot
+      name: carrera
+      value: inteligencia artificial
+    text: "En **Inteligencia Artificial** aprenderás programación, machine learning, análisis de datos y creación de modelos predictivos para automatizar procesos tecnológicos."
+  - text: "¡Excelente pregunta! Lo que vas a aprender es 100% práctico y adaptado al mercado laboral.\n\nPara darte la malla curricular exacta, ¿me podrías recordar de qué carrera o curso te gustaría saber el contenido?"
 
   utter_ubicacion:
-  - text: "El Instituto Superior Tecnológico Consulting Group Ecuador cuenta con **32 sedes a nivel nacional**.\n\nPara indicarte la sede más cercana a tu domicilio o provincia, mi asistente Daniela se pondrá en contacto contigo enseguida con todas las direcciones oficiales."
+  - text: "El Instituto Superior Tecnológico Consulting Group Ecuador cuenta con **32 sedes a nivel nacional**.\n\nPara indicarte la sede más cercana a tu domicilio o provincia, mi asistente Daniela podrá asistirte enseguida."
 
 
   # ======================== CAPACITADORA ========================
@@ -671,7 +743,7 @@ responses:
   - text: "En CGE nos enfocamos en preparar a nuestros estudiantes de forma práctica y profesional, brindándoles las herramientas teóricas y prácticas necesarias para desenvolverse en el ámbito laboral.\n\nDurante la formación, los estudiantes adquieren **experiencia real a través de prácticas**, lo cual les permite desarrollar habilidades que son muy valoradas en diferentes áreas del sector público y privado.\n\nAdemás, al realizar prácticas en instituciones, clínicas, empresas o centros relacionados con su área, los estudiantes tienen la oportunidad de **darse a conocer profesionalmente**, lo cual muchas veces abre puertas directas dentro del campo laboral.\n\nNuestro objetivo es que cada estudiante salga preparado, con experiencia y con la confianza necesaria para desenvolverse en su área profesional.\n\n¿En qué área te gustaría prepararte para empezar a construir tu camino profesional?"
 
   utter_becas_capacitadora:
-  - text: "Por el momento no contamos con un programa de becas activas, pero sí tenemos **descuentos y promociones** disponibles para quienes desean comenzar su formación con nosotros.\n\nAlgo muy importante que debes saber es que **la inscripción y la matrícula son completamente gratuitas**.\n\nEl pago inicial que realizas no corresponde a una inscripción, sino que es directamente el pago de tu **primera mensualidad** del curso.\n\nAdemás, los cursos que normalmente tienen un valor aproximado de $72.50 pueden acceder a descuentos adicionales en la mensualidad, dependiendo de las campañas vigentes.\n\nPara conocer qué descuento o promoción se puede aplicar en tu caso, mi asistente **Daniela** puede brindarte la información más actualizada.\n\n¿Te gustaría que te ponga en contacto con ella para que revisen los beneficios disponibles para ti?"
+  - text: "Por el momento no contamos con un programa de becas activas, pero sí tenemos **descuentos y promociones** disponibles.\n\nLa inscripción y la matrícula son **completamente gratuitas**. Además, los cursos que normalmente tienen un valor aproximado de $72.50 pueden acceder a descuentos adicionales dependiendo de las campañas vigentes.\n\n¡Mira la experiencia de nuestros estudiantes becados y beneficiados!\n\n<video controls class='w-64 md:w-80 h-auto rounded-xl mt-3 mb-3 shadow-sm border border-gray-100'><source src='assets/videos/videobecado.mp4' type='video/mp4'></video>\n\nPara conocer qué descuento se puede aplicar en tu caso, mi asistente **Daniela** puede brindarte la información."
   
   utter_costo_certificacion_capacitadora:
   - text: "Nosotros **no cobramos certificados**. Sí hay un valor por procesos de certificación y auditoría educativa de algunos entes de evaluación.\n\nTú vas a recibir mínimo 5 certificados por curso, pero todo esto dependerá de las promociones que estén vigentes.\n\nY recuerda que todos los valores que tú dejes en CGE nos ayuda a salvar vidas."
@@ -765,7 +837,7 @@ responses:
   - text: "¡No! Somos transparentes, nosotros solo te cobramos el curso o la carrera. No somos como otras empresas, que tienen costos disfrazados."
 
   utter_becas_instituto:
-  - text: "La carrera normal está en $1,200, pero podrías aplicar a una promoción si te inscribes hoy, aplicando a una beca con el **50% de descuento**.\n\n¡Mira este caso de éxito de uno de nuestros estudiantes con una beca del 100%!\nhttps://www.youtube.com/watch?v=ENLACE_A_TU_VIDEO_AQUI\n\nY recuerda que todos los valores que tú dejes en CGE nos ayuda a salvar vidas."
+  - text: "La carrera normal está en $1,200, pero podrías aplicar a una promoción si te inscribes hoy, aplicando a una beca con el **50% de descuento**.\n\n¡Mira este caso de éxito de uno de nuestros estudiantes becados!\n\n<video controls class='w-64 md:w-80 h-auto rounded-xl mt-3 mb-3 shadow-sm border border-gray-100'><source src='assets/videos/videobecado.mp4' type='video/mp4'></video>\n\nY recuerda que todos los valores que tú dejes en CGE nos ayuda a salvar vidas."
 
   utter_descuento_hermanos:
   - text: "¡Claro que sí! Nuestro **Plan de Ayuda Voluntaria** se ajustará a tus necesidades. \n\nDaniela, mi asistente humana, te responderá enseguida con las promociones especiales por familiares que tenemos activas en este momento.\n\nY recuerda que todos los valores que tú dejes en CGE nos ayuda a salvar vidas."
@@ -779,8 +851,6 @@ responses:
   utter_practicas_cerca:
   - text: "CGE mantiene convenios con el Ministerio de Salud Pública (MSP), el Instituto Ecuatoriano de Seguridad Social (IESS) y con los hospitales y clínicas más grandes del país.\n\nTu ubicación exacta va a estar bajo control de los directores de carrera, los cuales **garantizarán tu lugar de prácticas** (buscando tu comodidad) junto al cumplimiento de la malla educativa."
 
-  utter_diferencia_voluntariado:
-  - text: "Es muy sencillo: en las carreras del Instituto les decimos 'Prácticas', y en la Capacitadora les llamamos 'Voluntarios' o también 'Prácticas'.\n\nSer un voluntario significa tener la vocación de ayudar y servir a la comunidad desde tu primer día de formación, aplicando todo lo aprendido en escenarios 100% reales para salvar vidas."
 
   utter_menciones_capacitadora:
   - text: "¡Las menciones son como una especialización para tu curso!\n\nTodos los cursos tienen una mención que dura **2 meses adicionales**. La excelente noticia es que ingresas con la misma promoción del curso que ya realizaste (por ejemplo, si pagaste $60 por tu curso, la mención te sale exactamente al mismo valor).\n\nAquí tienes las menciones disponibles:\n- **Farmacia:** Visitador médico.\n- **Laboratorio Clínico:** Imagenología.\n- **Rehabilitación Física:** Terapia enfocada al deporte.\n- **Educación Inicial:** Cuidado de párvulos con capacidades diferentes.\n- **Enfermería:** Puedes elegir entre UCI, Nefrología o Instrumentista quirúrgico.\n- **Emergencias Médicas:** Gestión de riesgos.\n\n¿Te gustaría añadir una mención a tu formación para potenciar tu perfil?"

@@ -173,8 +173,24 @@ nlu:
     - quedan cupos disponibles para la carrera de [enfermeria](carrera)
 
 
-- intent: mencionar_voluntariado
+- intent: preguntar_voluntariado
   examples: |
+    - Además, nuestros estudiantes pueden participar en voluntariados y brigadas de salud.
+    - Cuéntale sobre los Consultinos y el voluntariado
+    - Háblale de las brigadas médicas
+    - yo también quiero hacer voluntariados
+    - también me gustaría participar en consultinos
+    - ¿hacen voluntariado?
+    - quiero ser parte de los voluntariados
+    - cómo entro a consultinos
+    - explícame lo de los voluntarios
+    - ¿Qué es un voluntariado?
+    - ¿Cuál es la diferencia entre prácticas y voluntariado?
+    - ¿Por qué le dicen voluntariados?
+    - ¿Qué significa ser voluntario en CGE?
+    - realizan voluntariados??
+    - Hay voluntariados o experiencia práctica?
+    - tienen programas de voluntariado
     - Además, nuestros estudiantes pueden participar en voluntariados y brigadas de salud.
     - Cuéntale sobre los Consultinos y el voluntariado
     - Háblale de las brigadas médicas
@@ -186,6 +202,12 @@ nlu:
     - yo voy a realizar también voluntariados
     - Y dónde voy a realizar mis voluntariados
     - quiero ser parte de los consultinos
+    - explícame lo de los voluntarios
+    - ¿Qué es un voluntariado?
+    - ¿Cuál es la diferencia entre prácticas y voluntariado?
+    - ¿Por qué le dicen voluntariados?
+    - ¿Qué significa ser voluntario en CGE?
+    - explícame lo de los voluntarios
 
 - intent: pedir_refuerzo_cierre
   examples: |
@@ -837,13 +859,6 @@ nlu:
     - ¿Me ubican en un lugar cerca de mi vivienda?
     - ¿Yo elijo dónde hacer las prácticas?
 
-- intent: preguntar_diferencia_voluntariado
-  examples: |
-    - ¿Qué es un voluntariado?
-    - ¿Cuál es la diferencia entre prácticas y voluntariado?
-    - ¿Por qué le dicen voluntariados?
-    - ¿Qué significa ser voluntario en CGE?
-    - explícame lo de los voluntarios
 
 - intent: preguntar_menciones_capacitadora
   examples: |
@@ -894,13 +909,13 @@ nlu:
     - cuánto dura el curso de enfermeria
 
 
-    
 # --- SINÓNIMOS Y MANEJO DE ERRORES ORTOGRÁFICOS ---
 - synonym: enfermeria
   examples: |
     - Enfermería
     - enfermeria
     - enfermera
+    - enfermería
 
 - synonym: emergencias medicas
   examples: |
@@ -908,26 +923,33 @@ nlu:
     - emergencias
     - emergencia médicas
     - emergencia medicas
+    - emergencias medicas
     - paramédico
     - paramedicos
 
 - synonym: marketing digital
   examples: |
     - Marketing Digital y Comercio Electrónico
+    - marketing digital
     - marketing
     - comercio electrónico
+    - comercio electronico
     - marquetin
     - mkt
 
 - synonym: administracion
   examples: |
     - Administración
+    - administracion
+    - administración
     - admin
     - administracion de empresas
+    - administración de empresas
 
 - synonym: inteligencia artificial
   examples: |
     - Inteligencia Artificial
+    - inteligencia artificial
     - ia
     - i a
     - inteligencia
@@ -939,6 +961,7 @@ nlu:
     - rehabilitación física
     - terapia fisica
     - fisioterapia
+    - terapia física
 
 - synonym: laboratorio clinico
   examples: |
@@ -946,10 +969,12 @@ nlu:
     - laboratorio clínico
     - laboratorista
 
-- synonym: administracion en farmacias
+- synonym: administracion de farmacias
   examples: |
     - administracion en farmacias
     - administración en farmacias
+    - administracion de farmacias
+    - administración de farmacias
     - farmacia
     - farmacias
     - técnico superior en farmacia
@@ -958,8 +983,10 @@ nlu:
 - synonym: administracion de sistemas de la salud
   examples: |
     - administracion de sistemas de la salud
+    - administración de sistemas de la salud
     - sistemas de salud
     - administracion hospitalaria
+    - administración hospitalaria
 
 - synonym: educacion inicial
   examples: |
@@ -982,6 +1009,7 @@ nlu:
     - mecanica automotriz
     - mecánica automotriz
     - mecanica
+    - mecánica
 
 - synonym: gastronomia
   examples: |
@@ -995,49 +1023,6 @@ nlu:
     - naturopatia
     - naturopatía
     - medicina natural
-
-- synonym: educacion
-  examples: |
-    - educación
-    - educacion
-    - educativa
-    - enseñanza
-
-- synonym: tecnologia
-  examples: |
-    - tecnología
-    - tecnologia
-    - tecnológica
-
-- synonym: productividad
-  examples: |
-    - técnica
-    - tecnica
-    - productividad
-    - productiva
-
-- synonym: salud
-  examples: |
-    - salud
-    - medicina
-    - medica
-    
-- synonym: emergencias medicas
-  examples: |
-    - Emergencias Médicas
-    - emergencias medicas
-    - emergencias
-    - emergencia médicas
-    - emergencia medicas
-    - Emergencias Medicas
-
-- synonym: enfermeria
-  examples: |
-    - Enfermería
-    - enfermeria
-    - Enfermeria
-    - enfermera
-
 - intent: preguntar_malla_curricular
   examples: |
     - qué voy a aprender en enfermería

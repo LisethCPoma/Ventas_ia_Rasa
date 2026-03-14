@@ -228,6 +228,47 @@ btnEnviarTexto.onclick = () => {
     enviarTextoLibre();
 };
 
+// --- FUNCIONES DE ANIMACIÓN "PENSANDO" ---
+function mostrarCargando() {
+    if (!chatIniciado) transicionAChat();
+    
+    if (document.getElementById('mensaje-cargando')) return;
+
+    const divCargando = document.createElement('div');
+    divCargando.id = 'mensaje-cargando';
+    // 🚨 ELIMINAMOS EL RETRASO: Ahora aparece instantáneamente de golpe
+    divCargando.className = `flex w-full justify-start mt-2 mb-2`; 
+    
+    divCargando.innerHTML = `
+        <div class="flex gap-4 w-full md:max-w-[85%]">
+            <div class="w-9 h-9 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <img src="assets/images/Logo.png" alt="Avatar Consultina" class="w-full h-full object-contain drop-shadow-sm">
+            </div>
+            <div class="bg-white border border-gray-100 shadow-sm rounded-3xl rounded-tl-sm px-5 py-4 w-auto flex items-center justify-center min-w-[70px] min-h-[45px]">
+                <div class="flex space-x-1.5">
+                    <div class="w-2.5 h-2.5 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0s;"></div>
+                    <div class="w-2.5 h-2.5 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.15s;"></div>
+                    <div class="w-2.5 h-2.5 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.3s;"></div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    chatBox.appendChild(divCargando);
+    
+    setTimeout(() => {
+        chatBox.scrollTo({ top: chatBox.scrollHeight, behavior: 'smooth' });
+    }, 10);
+}
+
+function ocultarCargando() {
+    const divCargando = document.getElementById('mensaje-cargando');
+    if (divCargando) {
+        divCargando.remove();
+    }
+}
+// ----------------------------------------
+
 function enviarTextoLibre() {
     const textoUsuario = textInput.value.trim();
     if (textoUsuario === '') return;
@@ -244,70 +285,83 @@ function enviarTextoLibre() {
 }
 
 // 8. Comunicación con Rasa
+// 8. Comunicación con Rasa
+// 8. Comunicación con Rasa
 async function enviarMensajeServidor(textoUsuario) {
     agregarMensaje("Tú", textoUsuario, true);
     textInput.placeholder = 'Consultina está analizando...';
     textInput.disabled = true;
 
-    try {
-        const respuesta = await fetch("http://localhost:5005/webhooks/rest/webhook", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ sender: sessionID, message: textoUsuario })
-        });
+    // 1. Mostrar la burbuja de los 3 puntitos INSTANTÁNEAMENTE
+    mostrarCargando();
 
-        const data = await respuesta.json();
-
-        if (data && data.length > 0) {
-            let textoParaVoz = "";
-            let textoParaChat = "";
-
-            data.forEach((mensaje, index) => {
-                if (index > 0 && (mensaje.text || mensaje.image)) {
-                    textoParaChat += '<br><br>';
-                }
-
-                if (mensaje.text) {
-                    let textoCapa = mensaje.text
-                        .replace(/\*\*(.*?)\*\*/g, '<strong class="text-primary font-semibold">$1</strong>')
-                        .replace(/\n/g, '<br>');
-
-                    textoParaChat += textoCapa;
-// 1. Truco maestro: Crear un elemento invisible para extraer SOLO el texto humano
-                    let elementoTemporal = document.createElement("div");
-                    elementoTemporal.innerHTML = mensaje.text;
-                    let textoSinCodigo = elementoTemporal.textContent || elementoTemporal.innerText || "";
-
-                    // 2. Ahora sí, limpiamos los asteriscos y corregimos pronunciación
-                    let textoLimpioVoz = textoSinCodigo.replace(/\*/g, '');
-                    textoLimpioVoz = textoLimpioVoz.replace(/NVIDIA/g, 'Envidia');
-                    textoLimpioVoz = textoLimpioVoz.replace(/USFQ/g, 'U S F Q');
-                    textoLimpioVoz = textoLimpioVoz.replace(/UDLA/g, 'Udla');
-                    textoLimpioVoz = textoLimpioVoz.replace(/IESS/g, 'Íes');
-                    textoLimpioVoz = textoLimpioVoz.replace(/MSP/g, 'Eme Ese Pe');
-                    textoLimpioVoz = textoLimpioVoz.replace(/CGE/g, 'C G E');
-
-                    textoParaVoz += textoLimpioVoz + ". ";
-                }
-
-                if (mensaje.image) {
-                    let imgCapa = `<img src="${mensaje.image}" alt="Imagen adjunta" class="w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100">`;
-                }
+    // 2. Darle un micro-respiro al navegador (50ms) para que dibuje los puntitos en pantalla
+    setTimeout(async () => {
+        try {
+            const respuesta = await fetch("http://localhost:5005/webhooks/rest/webhook", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ sender: sessionID, message: textoUsuario })
             });
 
-            if (textoParaChat.trim().length > 0) {
-                agregarMensaje("Consultina", textoParaChat, false);
-            }
+            const data = await respuesta.json();
+            
+            // 3. Ya llegó la respuesta, ocultamos los puntitos
+            ocultarCargando();
+            
+            if(data && data.length > 0) {
+                let textoParaVoz = "";
+                let textoParaChat = "";
+                
+                data.forEach((mensaje, index) => {
+                    if (index > 0 && (mensaje.text || mensaje.image)) {
+                        textoParaChat += '<br><br>'; 
+                    }
+                    
+                    if(mensaje.text) {
+                        let textoCapa = mensaje.text
+                            .replace(/\*\*(.*?)\*\*/g, '<strong class="text-primary font-semibold">$1</strong>')
+                            .replace(/\n/g, '<br>');
+                        
+                        textoParaChat += textoCapa;
+                        
+                        let elementoTemporal = document.createElement("div");
+                        elementoTemporal.innerHTML = mensaje.text;
+                        let textoSinCodigo = elementoTemporal.textContent || elementoTemporal.innerText || "";
 
-            if (textoParaVoz.trim().length > 0) {
-                reproducirVozFemenina(textoParaVoz);
+                        let textoLimpioVoz = textoSinCodigo.replace(/\*/g, '');
+                        textoLimpioVoz = textoLimpioVoz.replace(/NVIDIA/g, 'Envidia');
+                        textoLimpioVoz = textoLimpioVoz.replace(/USFQ/g, 'U S F Q');
+                        textoLimpioVoz = textoLimpioVoz.replace(/UDLA/g, 'Udla');
+                        textoLimpioVoz = textoLimpioVoz.replace(/IESS/g, 'Íes');
+                        textoLimpioVoz = textoLimpioVoz.replace(/MSP/g, 'Eme Ese Pe');
+                        textoLimpioVoz = textoLimpioVoz.replace(/CGE/g, 'C G E'); 
+                        
+                        textoParaVoz += textoLimpioVoz + ". ";
+                    }
+                    
+                    if(mensaje.image) {
+                        let imgCapa = `<img src="${mensaje.image}" alt="Imagen adjunta" class="w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100">`;
+                        textoParaChat += imgCapa;
+                    }
+                });
+                
+                if(textoParaChat.trim().length > 0) {
+                    agregarMensaje("Consultina", textoParaChat, false);
+                }
+                
+                if(textoParaVoz.trim().length > 0) {
+                    reproducirVozFemenina(textoParaVoz);
+                }
             }
+        } catch (error) {
+            ocultarCargando();
+            agregarMensaje("Sistema", "Error de conexión con el servidor de IA.", false);
+        } finally {
+            textInput.placeholder = 'Escribe o habla tu pregunta a Consultina...';
+            textInput.disabled = false;
+            textInput.focus();
         }
-    } catch (error) {
-        agregarMensaje("Sistema", "Error de conexión con el servidor de IA.", false);
-    } finally {
-        textInput.placeholder = 'Escribe o habla tu pregunta a Consultina...';
-        textInput.disabled = false;
-        textInput.focus();
-    }
+    }, 50); 
+
 }
