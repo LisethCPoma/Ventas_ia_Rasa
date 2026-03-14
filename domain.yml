@@ -726,7 +726,7 @@ responses:
     - type: slot
       name: carrera
       value: enfermeria
-    text: "¡Claro que sí! En **Enfermería**, las prácticas se realizan con pacientes 100% reales. Contamos con convenios en instituciones públicas y privadas, y la institución se encarga de asignarte el lugar de práctica. ¡Esto te permite darte a conocer y abrirte puertas en el ámbito laboral!\n\n¿Te gustaría que mi compañera Daniela te ayude con los requisitos o los costos aquí mismo?"
+    text: "¡Claro que sí! En nuestro curso de **Auxiliar de Enfermería**, las prácticas pre-profesionales se realizan con pacientes 100% reales. Tenemos convenios directos con el **Hospital Dr. Gustavo Domínguez, el IESS, el MSP** y clínicas privadas de primer nivel.\n\n¡La institución se encarga de asignarte tu lugar de práctica para que te des a conocer en el ámbito laboral real!\n\n¿Te gustaría que mi compañera Daniela te ayude con los requisitos o los costos aquí mismo?"
 
   - condition:
     - type: slot

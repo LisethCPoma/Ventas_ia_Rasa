@@ -489,8 +489,6 @@ nlu:
 
 - intent: elegir_curso
   examples: |
-- intent: elegir_curso
-  examples: |
     - el curso
     - quiero el curso
     - el curso corto
@@ -503,6 +501,22 @@ nlu:
     - del curso de [odontologia](carrera)
     - quiero el curso de [mecánica de motos]{"entity": "carrera", "value": "mecanica de motos"}
     - sobre el curso de [flores de bach]{"entity": "carrera", "value": "flores de bach"}
+    - y para [farmacia]{"entity": "carrera", "value": "administracion de farmacias"}
+    - y en [enfermería]{"entity": "carrera", "value": "enfermeria"}
+    - y el de [farmacia]{"entity": "carrera", "value": "administracion de farmacias"}
+    - qué me dices de [farmacia]{"entity": "carrera", "value": "administracion de farmacias"}
+    - y de [laboratorio]{"entity": "carrera", "value": "laboratorio clinico"}
+
+- intent: pedir_recomendacion
+  examples: |
+    - cuál me recomiendas más
+    - entre farmacia y enfermería cuál me recomiendas más
+    - qué curso me recomiendas
+    - no sé cuál elegir
+    - cuál es mejor
+    - me recomiendas enfermería o farmacia
+    - cuál tiene más salida laboral enfermería o farmacia
+    - no sé si elegir enfermería o farmacia
 # -----------------------------  CAPACITADORA -----------------------------------
 - intent: preguntar_cursos_capacitadora
   examples: |

@@ -274,7 +274,7 @@ rules:
   steps:
   - intent: preguntar_voluntariado
   - action: utter_voluntariado
-  
+
 - rule: Consultina responde sobre las menciones de la capacitadora
   steps:
   - intent: preguntar_menciones_capacitadora
@@ -309,3 +309,8 @@ rules:
   steps:
   - intent: preguntar_como_estas
   - action: utter_como_estas
+
+- rule: Consultina responde recomendaciones con Gemini
+  steps:
+  - intent: pedir_recomendacion
+  - action: action_gemini_fallback
