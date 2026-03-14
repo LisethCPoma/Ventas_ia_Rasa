@@ -17,3 +17,5 @@ __pycache__/
 # Docker y Local
 .DS_Store
 .env
+
+assets/
