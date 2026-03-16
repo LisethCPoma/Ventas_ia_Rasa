@@ -61,72 +61,26 @@ nlu:
 
 - intent: informar_carrera_interes
   examples: |
-    - Nuestro visitante quiere conocer la carrera de [enfermeria](carrera)
-    - Me interesa la carrera de [marketing digital](carrera)
     - Quiero estudiar [emergencias medicas](carrera)
     - Busco información sobre [naturopatia](carrera)
     - Tienen [rehabilitacion fisica](carrera)
     - Quiero inscribirme en [mecanica automotriz](carrera)
-    - ¿Me dan info de [gastronomia](carrera)?
     - Quiero seguir [educacion inicial](carrera)
     - Me interesa [administracion de sistemas de salud](carrera)
     - Busco [laboratorio clinico](carrera)
     - [administracion](carrera)
     - [inteligencia artificial](carrera)
-    - Me gustaría saber sobre la carrera de [marketing digital](carrera)
-    - quiero saber sobre [enfermeria](carrera)
-    - quiero seguir [educacion inicial](carrera)
-    - informacion sobre [mecanica automotriz](carrera)
-    - quiero la carrera de [educacion inicial](carrera)
-    - Me gustaría saber de la carrera de [educacion inicial](carrera)
-    - la carrera de [marketing digital](carrera)
-    - de la carrera de [rehabilitacion fisica](carrera)
-    - Okay háblame acerca de la carrera de [desarrollo de contenidos y manejo de redes](carrera)
-    - Quiero saber sobre la carrera de [desarrollo de contenidos y manejo de redes](carrera)
     - me interesa la de [redes](carrera)
     - quiero [desarrollo de contenidos](carrera)
-    - Háblame sobre la carrera de [administracion de farmacias](carrera)
     - tecnico superior en farmacia
-    - la carrera de [administracion en farmacias](carrera)
-    - quiero estudiar [administracion de farmacias](carrera)
-    - sobre la carrera de [farmacia](carrera)
-    - de la carrera de [farmacia](carrera)
     - informame sobre [farmacias](carrera)
-    - quiero [educacion en linea](carrera)
-    - [laboratorio clinico](carrera) por favor
-    - de [laboratorio clinico](carrera)
-    - [enfermeria](carrera) por favor
-    - Okay háblame acerca de la carrera de [desarrollo de contenidos y manejo de redes](carrera)
-    - Quiero saber sobre la carrera de [desarrollo de contenidos y manejo de redes](carrera)
-    - me interesa la de [redes](carrera)
-    - quiero [desarrollo de contenidos](carrera)
-    - Háblame sobre la carrera de [administracion de farmacias](carrera)
-    - tecnico superior en farmacia
-    - la carrera de [administracion en farmacias](carrera)
-    - quiero estudiar [administracion de farmacias](carrera)
-    - sobre la carrera de [farmacia](carrera)
-    - de la carrera de [farmacia](carrera)
-    - informame sobre [farmacias](carrera)
-    - quiero [educacion en linea](carrera)
     - me gustaría estar [enseñando a niños]{"entity": "carrera", "value": "educacion inicial"}
     - me gustaría estar en una [farmacia]{"entity": "carrera", "value": "administracion de farmacias"}
     - me gustaría estar en un [hospital salvando vidas]{"entity": "carrera", "value": "enfermeria"}
     - administrando una [empresa]{"entity": "carrera", "value": "administracion"}
     - me gustaría estar en un [laboratorio]{"entity": "carrera", "value": "laboratorio clinico"}
     - me gustaría estar en una ambulancia atendiendo [emergencias]{"entity": "carrera", "value": "emergencias medicas"}
-    - en una [farmacia]{"entity": "carrera", "value": "administracion de farmacias"}
-    - trabajando en una [farmacia]{"entity": "carrera", "value": "administracion de farmacias"}
-    - del área de [inteligencia artificial]{"entity": "carrera", "value": "inteligencia artificial"}
-    - del área de [enfermería]{"entity": "carrera", "value": "enfermeria"}
-    - Quisiera saber sobre el curso de [enfermería]{"entity": "carrera", "value": "enfermeria"}
-    - me gustaría estar [enseñándole a niños]{"entity": "carrera", "value": "educacion inicial"}
-    - [enseñándole a niños]{"entity": "carrera", "value": "educacion inicial"}
-    - qué cursos hay en [enfermería]{"entity": "carrera", "value": "enfermeria"}
-    - trabajando con [ motores ]{ "entity": "carrera" , "valor": "mecanica automotriz" }
-    - me visualizo trabajando con [ motores ]{ "entity": "carrera" , "value": "mecanica automotriz" }
-    - quisiera atender [ emergencias ]{ "entity": "carrera" , "value": "emergencias medicas" }
-    - para atender [ emergencias médicas ]{ "entity": "carrera" , "value": "emergencias médicas" }
-    - quiero aprender para trabajar en [ ambulancia ]{ "entity": "carrera" , "value": "emergencias medicas" }
+    - trabajando con [motores]{"entity": "carrera", "value": "mecanica automotriz"}
 
 - intent: informar_area_interes
   examples: |
@@ -474,17 +428,22 @@ nlu:
     - me gustaría la carrera
     - sí, quiero saber sobre la carrera
     - la carrera de tecnología superior
-    - de la carrera
-    - saber de la carrera
-    - sobre la carrera
-    - la carrera por favor
+    - quiero saber mas sobre la carrera de [educacion inicial]{"entity": "carrera", "value": "educacion inicial"}
+    - Háblame acerca de la carrera de [desarrollo de contenidos y manejo de redes](carrera)
+    - Quiero saber sobre la carrera de [desarrollo de contenidos y manejo de redes](carrera)
+    - Háblame sobre la carrera de [administracion de farmacias](carrera)
+    - la carrera de [administracion en farmacias](carrera)
+    - sobre la carrera de [farmacia](carrera)
+    - de la carrera de [farmacia](carrera)
+    - Nuestro visitante quiere conocer la carrera de [enfermeria](carrera)
+    - Me interesa la carrera de [marketing digital](carrera)
+    - Me gustaría saber sobre la carrera de [marketing digital](carrera)
+    - Me gustaría saber de la carrera de [educacion inicial](carrera)
+    - la carrera de [marketing digital](carrera)
+    - de la carrera de [rehabilitacion fisica](carrera)
     - la carrera de [naturopatía]{"entity": "carrera", "value": "naturopatia"}
     - la carrera de [mecánica automotriz]{"entity": "carrera", "value": "mecanica automotriz"}
     - quiero la carrera de [enfermería]{"entity": "carrera", "value": "enfermeria"}
-    - la carrera de [marketing digital](carrera)
-    - de la carrera de [rehabilitacion fisica](carrera)
-    - Háblame sobre la carrera de [administracion de farmacias]{"entity": "carrera", "value": "administracion de farmacias"}
-    - la carrera de [gastronomía]{"entity": "carrera", "value": "gastronomia"}
     - info de la carrera de [educación inicial]{"entity": "carrera", "value": "educacion inicial"}
 
 - intent: elegir_curso
@@ -902,6 +861,13 @@ nlu:
     - de que son las menciones
     - en que me puedo especializar
     - tienen mencion para enfermeria?
+    - quisiera saber sobre las menciones
+    - qué son las menciones
+    - en qué me puedo especializar
+    - tienen menciones
+    - quiero saber de las menciones
+    - cómo funcionan las menciones
+    - de que tratan las menciones
 
 - intent: preguntar_requisitos_mencion
   examples: |
