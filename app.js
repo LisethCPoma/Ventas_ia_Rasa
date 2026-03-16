@@ -268,8 +268,6 @@ function enviarTextoLibre() {
 }
 
 // 8. Comunicación con Rasa
-// 8. Comunicación con Rasa
-// 8. Comunicación con Rasa
 async function enviarMensajeServidor(textoUsuario) {
     agregarMensaje("Tú", textoUsuario, true);
     textInput.placeholder = 'Consultina está analizando...';
@@ -318,7 +316,9 @@ async function enviarMensajeServidor(textoUsuario) {
                         textoLimpioVoz = textoLimpioVoz.replace(/UDLA/g, 'Udla');
                         textoLimpioVoz = textoLimpioVoz.replace(/IESS/g, 'Íes');
                         textoLimpioVoz = textoLimpioVoz.replace(/MSP/g, 'Eme Ese Pe');
-                        textoLimpioVoz = textoLimpioVoz.replace(/CGE/g, 'C G E'); 
+                        textoLimpioVoz = textoLimpioVoz.replace(/CGE/g, 'C G E');
+                        textoLimpioVoz = textoLimpioVoz.replace(/\$([0-9]+)\.([0-9]+)/g, '$1 dólares con $2 centavos');
+                        textoLimpioVoz = textoLimpioVoz.replace(/\$([0-9]+)/g, '$1 dólares');
                         
                         textoParaVoz += textoLimpioVoz + ". ";
                     }

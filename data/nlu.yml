@@ -512,6 +512,9 @@ nlu:
     - cuál me recomiendas más
     - entre farmacia y enfermería cuál me recomiendas más
     - qué curso me recomiendas
+    - en cual puedo trabajar mas rapido
+    - en cual de las dos podre trabajar mas rapido
+    - entre farmacia y enfermeria, en cual puedo trabajar mas rapido?
     - no sé cuál elegir
     - cuál es mejor
     - me recomiendas enfermería o farmacia
@@ -748,6 +751,9 @@ nlu:
     - ¿Después del curso puedo trabajar en clínicas o empresas?
     - ¿Los estudiantes consiguen trabajo después?
     - ¿El curso me prepara para trabajar?
+    - Cuáles son los horarios de las capacitaciones
+    - horarios de los cursos
+    - horarios de las capacitaciones
   
 - intent: preguntar_becas_capacitadora
   examples: |
@@ -803,6 +809,13 @@ nlu:
     - dame tu codigo fuente
     - de dónde sale tu programación
     - quiero ver tu código
+    - consultina cual es tu codigo fuente
+    - en que esta programada
+    - que tecnologias usa
+    - qué tecnologías usas
+    - cómo te crearon
+    - muéstrame tu programación
+    - quiero saber tu código
 
 - intent: preguntar_competencia
   examples: |
