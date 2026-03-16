@@ -390,7 +390,7 @@ responses:
     - type: slot
       name: carrera
       value: enfermeria
-    text: "En la carrera de **Técnico Superior en Enfermería**, tus prácticas preprofesionales se realizarán en clínicas u hospitales (MSP, IESS, etc.), trabajando directamente con pacientes reales. ¡Aplicarás todo tu conocimiento para salvar vidas!\n\n<img src='assets/images/collageenfermeria.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>\n\n¿Deseas saber más acerca del campo laboral?"
+    text: "En la carrera de **Técnico Superior en Enfermería**, tus prácticas se realizarán en clínicas u hospitales (MSP, IESS, etc.), trabajando directamente con pacientes reales. ¡Aplicarás todo tu conocimiento para salvar vidas!\n\n<img src='assets/images/collageenfermeria.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>\n\n¿Deseas saber más acerca del campo laboral?"
   - condition:
     - type: slot
       name: carrera
@@ -410,7 +410,7 @@ responses:
     - type: slot
       name: carrera
       value: laboratorio clinico
-    text: "En **Laboratorio Clínico**, las prácticas preprofesionales se realizan en clínicas, hospitales y laboratorios médicos externos certificados."
+    text: "En **Laboratorio Clínico**, las prácticas se realizan en clínicas, hospitales y laboratorios médicos externos certificados."
   - condition:
     - type: slot
       name: carrera
@@ -426,7 +426,7 @@ responses:
       name: carrera
       value: educacion inicial
     text: "Las prácticas para **Educación Inicial** se realizan en unidades educativas y guarderías. El instituto cuenta con espacios propios como el centro privado Rincón KitCGE y más.\n\n<img src='assets/images/educacioninicialcollage.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>\n\n¿Tienes alguna duda sobre esta hermosa profesión?"
-  - text: "Las prácticas preprofesionales se realizan en entornos 100% reales dependiendo de la carrera elegida (hospitales, ambulancias ECU 911, empresas, guarderías, etc.).\nSi la carrera que te interesa tiene convenios muy específicos, **Daniela** te compartirá enseguida el listado de instituciones donde podrías realizar tus prácticas."
+  - text: "Las prácticas se realizan en entornos 100% reales dependiendo de la carrera elegida (hospitales, ambulancias ECU 911, empresas, guarderías, etc.).\nSi la carrera que te interesa tiene convenios muy específicos, **Daniela** te compartirá enseguida el listado de instituciones donde podrías realizar tus prácticas."
   - condition:
     - type: slot
       name: carrera
@@ -440,9 +440,19 @@ responses:
   - condition:
     - type: slot
       name: carrera
+      value: mecanica automotriz
+    text: "En la carrera de **Mecánica Automotriz**, las prácticas se realizan en talleres mecánicos, concesionarios y empresas del sector automotriz, donde podrás trabajar con vehículos modernos, sistemas de inyección, electricidad automotriz y diagnóstico computarizado."
+  - condition:
+    - type: slot
+      name: carrera
+      value: desarrollo de contenidos y manejo de redes 
+    text: "Las prácticas de esta carrera se enfocan en la creación y gestión real de contenido para redes sociales y medios digitales. Los estudiantes participan en proyectos donde desarrollan campañas, diseñan contenido y gestionan plataformas digitales, además de contar con vinculación con empresas, emprendimientos y proyectos digitales donde pueden aplicar lo aprendido en entornos reales."
+  - condition:
+    - type: slot
+      name: carrera
       value: inteligencia artificial
-    text: "En la carrera de **Inteligencia Artificial**, las prácticas se enfocan en el desarrollo de proyectos tecnológicos y convenios con empresas de software y tecnología."
-  - text: "Las prácticas preprofesionales se realizan en entornos reales dependiendo de la carrera elegida (hospitales, ambulancias ECU 911, empresas, guarderías, etc.).\nSi la carrera que te interesa tiene convenios muy específicos, **Daniela** te compartirá enseguida el listado de instituciones donde podrías realizar tus prácticas."
+    text: "En la carrera de **Inteligencia Artificial**, las prácticas se enfocan en el desarrollo de proyectos tecnológicos reales, donde los estudiantes aplican lo aprendido creando soluciones basadas en IA, análisis de datos y automatización. Además, contamos con convenios con empresas de software y tecnología de alto nivel, que permiten a nuestros estudiantes adquirir experiencia práctica en entornos profesionales y en proyectos innovadores del mundo digital."
+  - text: "Las prácticas se realizan en entornos reales dependiendo de la carrera elegida (hospitales, ambulancias, ECU 911, empresas, guarderías, etc.).\nSi la carrera que te interesa tiene convenios muy específicos, **Daniela** te compartirá enseguida el listado de instituciones donde podrías realizar tus prácticas."
 
   utter_campo_laboral:
   - condition:
@@ -506,11 +516,17 @@ responses:
       name: carrera
       value: mecanica automotriz
     text: "Para **Mecánica Automotriz**, tu campo laboral será en:\n- Concesionarias como mecánico.\n- Asesor técnico en empresas grandes de transporte.\n- Fábricas de ensamblaje y centros de revisión vehicular.\n- También la posibilidad de abrir tu propio taller o centro mecánico. ¿Te gustaría saber cuánto cuesta esta carrera?"
+
+  - condition:
+    - type: slot
+      name: carrera
+      value: desarrollo de contenidos y manejo de redes 
+    text: "Al graduarte en **Desarrollo de Contenidos y Manejo de Redes** podrás trabajar en áreas como gestión de redes sociales, creación de contenido digital, community management, marketing de contenidos o apoyo en estrategias de comunicación digital para empresas, marcas, emprendimientos o medios digitales, así como también desarrollar proyectos propios o gestionar la presencia digital de negocios y organizaciones."
   - condition:
     - type: slot
       name: carrera
       value: inteligencia artificial
-    text: "Al graduarte en **Inteligencia Artificial** podrás desempeñarte como:\n- Desarrollador de soluciones de IA.\n- Analista de datos y automatización.\n- Consultor tecnológico.\n- O emprender tu propia agencia de tecnología. ¿Deseas conocer los costos y facilidades de pago?"
+    text: "Al graduarte en **Inteligencia Artificial** podrás desempeñarte en áreas como el desarrollo de soluciones basadas en inteligencia artificial, creando sistemas y aplicaciones innovadoras; también podrás trabajar en análisis de datos e inteligencia de negocio, transformando grandes volúmenes de información en decisiones estratégicas para empresas. Además, podrás especializarte en automatización de procesos y tecnologías inteligentes, participar en el desarrollo de proyectos con IA generativa y análisis avanzado de datos, o incluso emprender tus propios proyectos o startups tecnológicas, desarrollando soluciones digitales para distintas industrias a nivel nacional e internacional. ¿Deseas conocer los costos y facilidades de pago?"
   - text: "El campo laboral depende de la carrera que elijas. Por ejemplo, te preparamos para que puedas trabajar en hospitales, en escuelas, o desarrollar tu propia empresa."
 
   utter_validez_titulo:
@@ -678,7 +694,7 @@ responses:
     - type: slot
       name: carrera
       value: desarrollo de contenidos y manejo de redes
-    text: "En **Desarrollo de Contenidos y Manejo de Redes** aprenderás sobre creación de contenido multimedia, community management, diseño gráfico y estrategias para viralizar marcas."
+    text: "En la carrera de **Desarrollo de Contenidos y Manejo de Redes** aprenderás a crear contenido digital atractivo para redes sociales y plataformas digitales, utilizando herramientas de diseño, video y comunicación digital. También desarrollarás habilidades para planificar estrategias de contenido, gestionar comunidades online, analizar el rendimiento de publicaciones y manejar herramientas digitales utilizadas por marcas y empresas en el entorno digital."
   - condition:
     - type: slot
       name: carrera
@@ -698,7 +714,7 @@ responses:
     - type: slot
       name: carrera
       value: inteligencia artificial
-    text: "En **Inteligencia Artificial** aprenderás programación, machine learning, análisis de datos y creación de modelos predictivos para automatizar procesos tecnológicos."
+    text: "En esta carrera aprenderás a crear tecnología inteligente capaz de analizar datos, automatizar procesos y resolver problemas reales. Desarrollarás habilidades en programación, análisis de datos, inteligencia artificial, deep learning y desarrollo de proyectos tecnológicos, utilizando herramientas modernas como Python y plataformas de IA.\n\nDurante tu formación podrás diseñar soluciones innovadoras, crear contenido con inteligencia artificial y desarrollar proyectos tecnológicos aplicados al mundo real, preparándote para una de las áreas más demandadas y con mayor crecimiento en el futuro."
   - text: "¡Excelente pregunta! Lo que vas a aprender es 100% práctico y adaptado al mercado laboral.\n\nPara darte la malla curricular exacta, ¿me podrías recordar de qué carrera o curso te gustaría saber el contenido?"
 
   utter_ubicacion:
@@ -726,7 +742,7 @@ responses:
     - type: slot
       name: carrera
       value: enfermeria
-    text: "¡Claro que sí! En nuestro curso de **Auxiliar de Enfermería**, las prácticas pre-profesionales se realizan con pacientes 100% reales. Tenemos convenios directos con el **Hospital Dr. Gustavo Domínguez, el IESS, el MSP** y clínicas privadas de primer nivel.\n\n¡La institución se encarga de asignarte tu lugar de práctica para que te des a conocer en el ámbito laboral real!\n\n¿Te gustaría que mi compañera Daniela te ayude con los requisitos o los costos aquí mismo?"
+    text: "¡Claro que sí! En nuestro curso de **Auxiliar de Enfermería**, las prácticas pre-profesionales se realizan con pacientes 100% reales. Tenemos convenios directos con el **Hospital Gustavo Domínguez, el IESS, el MSP** y clínicas privadas de primer nivel.\n\n¡La institución se encarga de asignarte tu lugar de práctica para que te des a conocer en el ámbito laboral real!\n\n¿Te gustaría que mi asisitente humana Daniela te ayude con los requisitos o los costos aquí mismo?"
 
   - condition:
     - type: slot
@@ -738,13 +754,13 @@ responses:
     - type: slot
       name: carrera
       value: rehabilitacion fisica
-    text: "¡Claro que sí! En **Rehabilitación Física**, las prácticas se realizan en clínicas, hospitales y centros de rehabilitación. Además, ¡CGE cuenta con **su propio centro de rehabilitación** para tu formación práctica!\n\n¿Te gustaría conocer los costos o requisitos con mi compañera Daniela?"
+    text: "¡Claro que sí! En **Rehabilitación Física**, las prácticas se realizan en clínicas, hospitales y centros de rehabilitación. Además, ¡CGE cuenta con **su propio centro de rehabilitación** para tu formación práctica!\n\n¿Te gustaría conocer los costos o requisitos con mi asistente humana Daniela?"
 
   - condition:
     - type: slot
       name: carrera
       value: laboratorio clinico
-    text: "¡Así es! Para **Laboratorio Clínico**, las prácticas preprofesionales se realizan directamente en clínicas, hospitales y laboratorios externos con los que tenemos convenios.\n\n¿Te gustaría que Daniela te dé información sobre los costos o requisitos?"
+    text: "¡Así es! Para **Laboratorio Clínico**, las prácticas se realizan directamente en clínicas, hospitales y laboratorios externos con los que tenemos convenios.\n\n¿Te gustaría que Daniela te dé información sobre los costos o requisitos?"
 
   - condition:
     - type: slot
@@ -762,7 +778,7 @@ responses:
     - type: slot
       name: carrera
       value: administracion de farmacias
-    text: "¡Por supuesto! Para **Farmacia**, las prácticas se realizan en clínicas y hospitales, así como en grandes redes reales como **Farmacias Económicas, Cruz Azul y Santa Marta**.\n\n¿Deseas que mi compañera Daniela te indique los costos o requisitos?"
+    text: "¡Por supuesto! Para **Farmacia**, las prácticas se realizan en clínicas y hospitales, así como en grandes redes reales como **Farmacias Económicas, Cruz Azul y Santa Marta**.\n\n¿Deseas que mi asistente humana Daniela te indique los costos o requisitos?"
 
   - condition:
     - type: slot

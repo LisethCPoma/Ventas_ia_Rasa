@@ -20,53 +20,37 @@ reconocimiento.continuous = true;
 // Generar un ID único para esta sesión de chat
 const sessionID = "usuario_" + Math.random().toString(36).substring(2, 10);
 
-// --- CONFIGURACIÓN DE VOZ FEMENINA Y NATURAL ---
-let vocesDisponibles = [];
+// --- CONFIGURACIÓN DE VOZ PREMIUM (EDGE-TTS) ---
+// Variable global para poder interrumpir a Consultina si el usuario habla
+let audioActual = null; 
 
-function cargarVoces() {
-    vocesDisponibles = window.speechSynthesis.getVoices();
-}
-
-if (window.speechSynthesis.onvoiceschanged !== undefined) {
-    window.speechSynthesis.onvoiceschanged = cargarVoces;
-}
-cargarVoces();
-
-function reproducirVozFemenina(texto) {
-    const nuevaVoz = new SpeechSynthesisUtterance(texto);
-    nuevaVoz.lang = 'es-ES';
-    nuevaVoz.rate = 1.0;
-    nuevaVoz.pitch = 1.0;
-
-    let voces = vocesDisponibles.length > 0 ? vocesDisponibles : window.speechSynthesis.getVoices();
-    let vocesEsp = voces.filter(v => v.lang.includes('es'));
-
-    const nombresFemeninos = ['Monica', 'Paulina', 'Google español de Estados Unidos', 'Helena', 'Laura', 'Sabina', 'Victoria'];
-
-    let vozInstanciada = null;
-
-    for (const nombre of nombresFemeninos) {
-        vozInstanciada = vocesEsp.find(v => v.name.includes(nombre));
-        if (vozInstanciada) break;
+async function reproducirVozFemenina(texto) {
+    // Si Consultina estaba hablando, la callamos antes de iniciar el nuevo audio
+    if (audioActual) {
+        audioActual.pause();
+        audioActual.currentTime = 0;
     }
 
-    if (!vozInstanciada && vocesEsp.length > 0) {
-        vozInstanciada = vocesEsp.find(v =>
-            !v.name.includes('Jorge') &&
-            !v.name.includes('Diego') &&
-            !v.name.includes('Javier')
-        );
-        if (!vozInstanciada) {
-            vozInstanciada = vocesEsp[0];
+    try {
+        // Pedimos el audio a nuestro nuevo servidor de Python
+        const response = await fetch("http://localhost:5002/generar_audio", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ text: texto })
+        });
+        
+        if (response.ok) {
+            // Recibimos el MP3, lo preparamos y le damos Play!
+            const blob = await response.blob();
+            const audioUrl = URL.createObjectURL(blob);
+            audioActual = new Audio(audioUrl);
+            audioActual.play();
+        } else {
+            console.error("Error en el servidor de voz");
         }
+    } catch (error) {
+        console.error("No se pudo conectar al servidor de voz:", error);
     }
-
-    if (vozInstanciada) {
-        nuevaVoz.voice = vozInstanciada;
-    }
-
-    window.speechSynthesis.cancel();
-    window.speechSynthesis.speak(nuevaVoz);
 }
 // ------------------------------------------------
 
@@ -125,7 +109,6 @@ function agregarMensaje(remitente, texto, esUsuario) {
 // 3. Control del micrófono
 btnHablar.onclick = () => {
     if (window.speechSynthesis.speaking) {
-        window.speechSynthesis.cancel();
     }
 
     if (!escuchando) {
