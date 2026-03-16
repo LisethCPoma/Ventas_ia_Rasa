@@ -285,6 +285,11 @@ nlu:
     - qué hace un egresado de [emergencias medicas](carrera)
     - campo laboral de [educacion inicial](carrera)
     - qué trabajo hay para [gastronomia](carrera)
+    - que hacen en la carrera de tecnología superior en [administracion](carrera)
+    - que hacen en la carrera de [administracion](carrera)
+    - en que puedo trabajar con la tecnologia superior en [marketing digital](carrera)
+    - campo laboral de la tecnologia superior en [enfermeria](carrera)
+    - qué se hace en tecnología superior en [emergencias medicas](carrera)
 
 - intent: preguntar_validez_titulo
   examples: |
@@ -394,6 +399,14 @@ nlu:
     - ¿Cuánto cuesta el uniforme?
     - ¿Dónde venden los uniformes del instituto?
     - ¿Cuándo debo comprar el uniforme para clases?
+    - que precio tienen los uniformes y como puedo conseguirlos
+    - donde compro el uniforme
+    - el uniforme viene incluido
+    - me regalan el uniforme
+    - como consigo el uniforme
+    - cuanto cuestan los uniformes
+    - ¿El instituto tiene uniforme?
+    - ¿Dónde puedo comprar el uniforme?
 
 - intent: preguntar_horarios_clases
   examples: |
@@ -427,7 +440,10 @@ nlu:
     - información de la carrera
     - me gustaría la carrera
     - sí, quiero saber sobre la carrera
-    - la carrera de tecnología superior
+    - la carrera de tecnología superior en [administración]{"entity": "carrera", "value": "administracion"}
+    - la carrera de tecnología superior en [enfermería]{"entity": "carrera", "value": "enfermeria"}
+    - la tecnología superior en [marketing digital](carrera)
+    - quiero seguir la carrera de tecnología superior en [educacion inicial](carrera)
     - quiero saber mas sobre la carrera de [educacion inicial]{"entity": "carrera", "value": "educacion inicial"}
     - Háblame acerca de la carrera de [desarrollo de contenidos y manejo de redes](carrera)
     - Quiero saber sobre la carrera de [desarrollo de contenidos y manejo de redes](carrera)
@@ -465,6 +481,7 @@ nlu:
     - y el de [farmacia]{"entity": "carrera", "value": "administracion de farmacias"}
     - qué me dices de [farmacia]{"entity": "carrera", "value": "administracion de farmacias"}
     - y de [laboratorio]{"entity": "carrera", "value": "laboratorio clinico"}
+    - quisiera un curso donde pueda aprender de [primeros auxilios]{"entity": "carrera", "value": "emergencias medicas"}
 
 - intent: pedir_recomendacion
   examples: |
@@ -568,6 +585,14 @@ nlu:
     - ¿Puedo comprar el uniforme en cualquier lugar?
     - ¿Dónde llevo el uniforme de CGE?
     - ¿Con quién puedo comprar el uniforme?
+    - que precio tienen los uniformes y como puedo conseguirlos
+    - donde compro el uniforme
+    - el uniforme viene incluido
+    - me regalan el uniforme
+    - como consigo el uniforme
+    - cuanto cuestan los uniformes
+    - ¿El instituto tiene uniforme?
+    - ¿Dónde puedo comprar el uniforme?
 
 - intent: preguntar_que_aprenderas_capacitadora
   examples: |
@@ -913,6 +938,7 @@ nlu:
     - enfermeria
     - enfermera
     - enfermería
+    - primeros auxilios
 
 - synonym: emergencias medicas
   examples: |
@@ -923,6 +949,7 @@ nlu:
     - emergencias medicas
     - paramédico
     - paramedicos
+    - primeros auxilios
 
 - synonym: marketing digital
   examples: |
@@ -1042,6 +1069,21 @@ nlu:
     - dónde quedan
     - cómo llego al instituto
     - están en guayaquil
+
+- synonym: desarrollo de contenidos y manejo de redes
+  examples: |
+    - desarrollo de contenidos
+    - manejo de redes
+    - desarrrollo de contenidos y manejo de redes
+    - desarrollo de contenido
+    - creador de contenido
+    - redes
+
+- synonym: inteligencia artificial
+  examples: |
+    - inteligencia artifical
+    - inteligenciaa rtifical
+    - IA
 
 - intent: preguntar_como_estas
   examples: |

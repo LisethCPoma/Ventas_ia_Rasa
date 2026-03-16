@@ -104,6 +104,28 @@ responses:
 
   # ======================== INSTITUTO ========================
   utter_reaccion_carrera:
+  # --- EXCEPCIONES: ÁREAS QUE SON EXCLUSIVAMENTE CURSOS ---
+  - condition:
+    - type: slot
+      name: carrera
+      value: odontologia
+    text: "¡Excelente elección! Para **Odontología** te comento que contamos exclusivamente con nuestro **Curso de Capacitación** (es corto y 100% práctico), ya que no disponemos de carrera de 2 años en esta área.\n\n¿Te gustaría conocer los **costos**, la **duración** o los **requisitos** de este curso?"
+  - condition:
+    - type: slot
+      name: carrera
+      value: veterinaria
+    text: "¡Excelente elección! Para **Veterinaria** te comento que contamos exclusivamente con nuestro **Curso de Capacitación** (es corto y 100% práctico), ya que no disponemos de carrera de 2 años en esta área.\n\n¿Te gustaría conocer los **costos**, la **duración** o los **requisitos** de este curso?"
+  - condition:
+    - type: slot
+      name: carrera
+      value: flores de bach
+    text: "¡Excelente elección! Para **Flores de Bach** te comento que contamos exclusivamente con nuestro **Curso de Capacitación** (es corto y 100% práctico), ya que no es una carrera de 2 años.\n\n¿Te gustaría conocer los **costos**, la **duración** o los **requisitos** de este curso?"
+  - condition:
+    - type: slot
+      name: carrera
+      value: inyectologia
+    text: "¡Excelente elección! Para **Inyectología** te comento que contamos exclusivamente con un **Taller de Capacitación** de 1 mes (100% práctico).\n\n¿Te gustaría conocer los **costos** o **requisitos** de este taller?"
+
   # --- ÁREAS QUE TIENEN AMBAS (CARRERA DE 2 AÑOS Y CURSO CORTO) ---
   - condition:
     - type: slot
@@ -718,7 +740,7 @@ responses:
   - text: "¡Excelente pregunta! Lo que vas a aprender es 100% práctico y adaptado al mercado laboral.\n\nPara darte la malla curricular exacta, ¿me podrías recordar de qué carrera o curso te gustaría saber el contenido?"
 
   utter_ubicacion:
-  - text: "Nuestro Instituto Superior Tecnológico Consulting Group Ecuador cuenta con **más de 30 sedes a nivel nacional**.\n\nEsto nos permite llegar a muchas ciudades y brindar educación de calidad en todo el país. Daniela te indicará enseguida cuál es la más conveniente para ti."
+  - text: "¡Claro que sí! A nivel nacional, nuestro holding educativo Consulting Group Ecuador (sumando las sedes del Instituto y de la Capacitadora) cuenta con **más de 30 sedes**.\n\nEsto nos permite llegar a muchas ciudades y brindar educación de calidad en todo el país. Mi asistente humana Daniela te indicará enseguida la dirección exacta de la sede más conveniente para ti."
 
 
   # ======================== CAPACITADORA ========================
