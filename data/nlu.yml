@@ -481,7 +481,6 @@ nlu:
     - y el de [farmacia]{"entity": "carrera", "value": "administracion de farmacias"}
     - qué me dices de [farmacia]{"entity": "carrera", "value": "administracion de farmacias"}
     - y de [laboratorio]{"entity": "carrera", "value": "laboratorio clinico"}
-    - quisiera un curso donde pueda aprender de [primeros auxilios]{"entity": "carrera", "value": "emergencias medicas"}
 
 - intent: pedir_recomendacion
   examples: |
@@ -938,7 +937,10 @@ nlu:
     - enfermeria
     - enfermera
     - enfermería
-    - primeros auxilios
+    - enfemeria
+    - emfermeria
+    - infermeria
+ 
 
 - synonym: emergencias medicas
   examples: |
@@ -949,7 +951,6 @@ nlu:
     - emergencias medicas
     - paramédico
     - paramedicos
-    - primeros auxilios
 
 - synonym: marketing digital
   examples: |
