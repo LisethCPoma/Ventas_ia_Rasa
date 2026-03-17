@@ -40,6 +40,10 @@ nlu:
     - estas engañando
     - es puro invento
     - mientes
+    - peudes mentirme
+    - puedes mentirme
+    - me puedes mentir
+    - Peudes mentirme
 
 - intent: preguntar_instituto_premiado
   examples: |
@@ -51,6 +55,8 @@ nlu:
     - cuál es la institución tecnológica más reconocida del país
     - quien es el instituto mas reconocido a nivel nacional
     - el mejor instituto de educacion superior
+    - ciual es el mejor innsitiuto
+    - cual es el mejor instituto
 
 - intent: presentar_consultina
   examples: |
@@ -81,6 +87,8 @@ nlu:
     - me gustaría estar en un [laboratorio]{"entity": "carrera", "value": "laboratorio clinico"}
     - me gustaría estar en una ambulancia atendiendo [emergencias]{"entity": "carrera", "value": "emergencias medicas"}
     - trabajando con [motores]{"entity": "carrera", "value": "mecanica automotriz"}
+    - quiero [administrar una empresa]{"entity": "carrera", "value": "administracion"}
+    - Quiero [administrar uba enmpresa]{"entity": "carrera", "value": "administracion"}
 
 - intent: informar_area_interes
   examples: |
@@ -125,6 +133,7 @@ nlu:
     - Dime qué cupos hay para la carrera de [marketing digital](carrera)
     - hay cupos para la carrera de [inteligencia artificial](carrera)
     - quedan cupos disponibles para la carrera de [enfermeria](carrera)
+    - cuantos cupos hay para todas las carreras
 
 
 - intent: preguntar_voluntariado
@@ -799,6 +808,10 @@ nlu:
     - cómo te crearon
     - muéstrame tu programación
     - quiero saber tu código
+    - quien te creeo Consultina
+    - quien te creo
+    - quien te invento
+    - Quien te creeo Consultina_
 
 - intent: preguntar_competencia
   examples: |
@@ -929,6 +942,20 @@ nlu:
     - qué tiempo dura la capacitación
     - cuánto dura el curso de enfermeria
 
+- intent: preguntar_becas_general
+  examples: |
+    - ¿Hay becas disponibles?
+    - ¿Puedo obtener una beca?
+    - quiero aplicar a una beca
+    - ¿Ofrecen algún tipo de ayuda económica?
+    - ¿Hay descuentos para estudiar?
+    - ¿Cómo puedo aplicar a una beca?
+    - ¿Dan algún tipo de beneficio para estudiantes?
+    - ¿El instituto ofrece becas?
+    - hablame de las becas
+    - puedo acceder a una beca
+    - hay programas de becas
+
 
 # --- SINÓNIMOS Y MANEJO DE ERRORES ORTOGRÁFICOS ---
 - synonym: enfermeria
@@ -940,6 +967,7 @@ nlu:
     - enfemeria
     - emfermeria
     - infermeria
+    - enfermreria
  
 
 - synonym: emergencias medicas
@@ -1048,6 +1076,7 @@ nlu:
     - naturopatia
     - naturopatía
     - medicina natural
+    
 - intent: preguntar_malla_curricular
   examples: |
     - qué voy a aprender en enfermería
@@ -1059,6 +1088,11 @@ nlu:
     - me puedes pasar la malla curricular
     - malla de estudio
     - cuáles son las materias
+    - que temas se ven en [laboratorio clinico](carrera)
+    - que voy a aprender en [laboratorio clinico](carrera)
+    - que temas dan en [emergencias medicas](carrera)
+    - qué voy a aprender si estudio [rehabilitacion fisica](carrera)
+    - qué me van a enseñar en [administracion](carrera)
 
 - intent: preguntar_ubicacion
   examples: |

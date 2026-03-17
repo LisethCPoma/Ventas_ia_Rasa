@@ -14,7 +14,7 @@ rules:
 - rule: Consultina se presenta cuando le preguntan quién es
   steps:
   - intent: preguntar_identidad
-  - action: utter_saludo
+  - action: utter_identidad
 
 - rule: Consultina enumera las carreras si el estudiante pregunta de manera general
   steps:
@@ -313,4 +313,9 @@ rules:
 - rule: Consultina responde recomendaciones con Gemini
   steps:
   - intent: pedir_recomendacion
+  - action: action_gemini_fallback
+
+- rule: Consultina responde sobre becas en general con Gemini
+  steps:
+  - intent: preguntar_becas_general
   - action: action_gemini_fallback

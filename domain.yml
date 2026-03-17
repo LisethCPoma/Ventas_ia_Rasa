@@ -95,6 +95,9 @@ responses:
   utter_saludo:
   - text: "¡Hola, mucho gusto! Te damos la bienvenida al organismo de formación y titulación más grande, completo y premiado del país. ¿Qué información te gustaría conocer hoy?"
 
+  utter_identidad:
+  - text: "¡Hola! Soy **Consultina**, la asistente virtual inteligente oficial de Consulting Group Ecuador.\n\nEstoy aquí para guiarte, resolver todas tus dudas sobre nuestras carreras y cursos, y ayudarte a dar el primer paso hacia tu futuro profesional. ¿En qué te puedo ayudar hoy?"
+
   utter_veracidad:
   - text: "¡Para nada! Como asistente de ventas oficial con el respaldo de Gemini, Claude, ChatGPT y otros modelos de lenguaje, garantizo que toda la información que se te proporciona es completamente verídica y verificada."
 
