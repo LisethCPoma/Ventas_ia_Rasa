@@ -20,37 +20,49 @@ reconocimiento.continuous = true;
 // Generar un ID único para esta sesión de chat
 const sessionID = "usuario_" + Math.random().toString(36).substring(2, 10);
 
-// --- CONFIGURACIÓN DE VOZ PREMIUM (EDGE-TTS) ---
-// Variable global para poder interrumpir a Consultina si el usuario habla
-let audioActual = null; 
-
-async function reproducirVozFemenina(texto) {
+// --- CONFIGURACIÓN DE VOZ NATIVA (FORZANDO VOZ FEMENINA) ---
+function reproducirVozFemenina(texto) {
     // Si Consultina estaba hablando, la callamos antes de iniciar el nuevo audio
-    if (audioActual) {
-        audioActual.pause();
-        audioActual.currentTime = 0;
+    if (window.speechSynthesis.speaking) {
+        window.speechSynthesis.cancel();
     }
 
-    try {
-        // Pedimos el audio a nuestro nuevo servidor de Python
-        const response = await fetch("http://localhost:5002/generar_audio", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ text: texto })
-        });
-        
-        if (response.ok) {
-            // Recibimos el MP3, lo preparamos y le damos Play!
-            const blob = await response.blob();
-            const audioUrl = URL.createObjectURL(blob);
-            audioActual = new Audio(audioUrl);
-            audioActual.play();
-        } else {
-            console.error("Error en el servidor de voz");
-        }
-    } catch (error) {
-        console.error("No se pudo conectar al servidor de voz:", error);
+    const mensajeVoz = new SpeechSynthesisUtterance(texto);
+    
+    // Configuramos el idioma, velocidad y tono
+    mensajeVoz.lang = 'es-ES'; // Español
+    mensajeVoz.rate = 1.05;    // Un poquito más rápido para que suene fluida
+    mensajeVoz.pitch = 1.15;   // Tono ligeramente más agudo (ayuda a que suene más femenina)
+
+    // Buscar la lista de voces instaladas en la computadora/navegador
+    const voces = window.speechSynthesis.getVoices();
+    
+    // Filtro avanzado: Buscamos nombres específicos de voces femeninas en español
+    let vozSeleccionada = voces.find(voz => 
+        voz.lang.includes('es') && 
+        (
+            voz.name.includes('Sabina') ||   // Microsoft (Windows)
+            voz.name.includes('Helena') ||   // Microsoft (Windows)
+            voz.name.includes('Laura') ||    // Microsoft (Windows)
+            voz.name.includes('Dalia') ||    // Microsoft (Windows)
+            voz.name.includes('Paulina') ||  // Mac / iOS
+            voz.name.includes('Monica') ||   // Mac / iOS
+            voz.name.includes('Google español') // Chrome / Android (Suele ser mujer)
+        )
+    );
+
+    // Si por alguna razón no tiene ninguna de las anteriores, agarramos la primera en español que encuentre
+    if (!vozSeleccionada) {
+        vozSeleccionada = voces.find(voz => voz.lang.includes('es'));
     }
+
+    // Le asignamos la voz femenina al mensaje
+    if (vozSeleccionada) {
+        mensajeVoz.voice = vozSeleccionada;
+    }
+
+    // Le damos play a la voz
+    window.speechSynthesis.speak(mensajeVoz);
 }
 // ------------------------------------------------
 
@@ -108,7 +120,9 @@ function agregarMensaje(remitente, texto, esUsuario) {
 
 // 3. Control del micrófono
 btnHablar.onclick = () => {
+    // Si el usuario toca el micrófono, interrumpimos a Consultina
     if (window.speechSynthesis.speaking) {
+        window.speechSynthesis.cancel();
     }
 
     if (!escuchando) {
