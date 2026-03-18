@@ -129,7 +129,7 @@ rules:
 - rule: Consultina responde sobre los horarios de clases
   steps:
   - intent: preguntar_horarios_clases
-  - action: utter_horarios_clases
+  - action: action_gemini_fallback
 
 - rule: Consultina Responde Malla Curricular
   steps:
@@ -198,7 +198,7 @@ rules:
 - rule: Consultina responde sobre los horarios de clases de la capacitadora
   steps:
   - intent: preguntar_horarios_cursos_capacitadora
-  - action: utter_horarios_cursos_capacitadora
+  - action: action_gemini_fallback
 
 - rule: Consultina responde sobre las oportunidades laborales post curso
   steps:

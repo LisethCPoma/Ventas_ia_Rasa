@@ -25,7 +25,6 @@ intents:
   - preguntar_proceso_matricula
   - preguntar_uniformes
   - informar_area_interes
-  - preguntar_horarios_clases
   - preguntar_malla_curricular
   - preguntar_ubicacion
   - preguntar_cursos_capacitadora
@@ -42,7 +41,6 @@ intents:
   - preguntar_senescyt_capacitadora
   - preguntar_materiales_capacitadora
   - preguntar_horarios_practicas_capacitadora
-  - preguntar_horarios_cursos_capacitadora
   - preguntar_trabajo_capacitadora
   - preguntar_becas_capacitadora
   - preguntar_costo_certificacion_capacitadora
@@ -107,104 +105,109 @@ responses:
 
   # ======================== INSTITUTO ========================
   utter_reaccion_carrera:
-  # --- EXCEPCIONES: ÁREAS QUE SON EXCLUSIVAMENTE CURSOS ---
+  # --- EXCEPCIONES: ÁREAS QUE SON EXCLUSIVAMENTE CURSOS CORTOS ---
   - condition:
     - type: slot
       name: carrera
       value: odontologia
-    text: "¡Excelente elección! Para **Odontología** te comento que contamos exclusivamente con nuestro **Curso de Capacitación** (es corto y 100% práctico), ya que no disponemos de carrera de 2 años en esta área.\n\n¿Te gustaría conocer los **costos**, la **duración** o los **requisitos** de este curso?"
+    text: "¡Excelente elección! Para **Odontología** contamos exclusivamente con nuestro **Curso de Capacitación** (5 meses). Es 100% práctico y aprenderás a preparar instrumental, esterilización y asistencia directa al odontólogo. ¿Te gustaría conocer los costos o los requisitos para inscribirte?"
   - condition:
     - type: slot
       name: carrera
       value: veterinaria
-    text: "¡Excelente elección! Para **Veterinaria** te comento que contamos exclusivamente con nuestro **Curso de Capacitación** (es corto y 100% práctico), ya que no disponemos de carrera de 2 años en esta área.\n\n¿Te gustaría conocer los **costos**, la **duración** o los **requisitos** de este curso?"
+    text: "¡Qué hermosa vocación! Para **Veterinaria** contamos exclusivamente con nuestro **Curso de Capacitación** (8 meses). Es 100% práctico y aprenderás primeros auxilios veterinarios, anatomía, manejo de medicación y asistencia en cirugías. ¿Te gustaría conocer los costos o los requisitos?"
   - condition:
     - type: slot
       name: carrera
       value: flores de bach
-    text: "¡Excelente elección! Para **Flores de Bach** te comento que contamos exclusivamente con nuestro **Curso de Capacitación** (es corto y 100% práctico), ya que no es una carrera de 2 años.\n\n¿Te gustaría conocer los **costos**, la **duración** o los **requisitos** de este curso?"
+    text: "¡Qué interesante! Para **Flores de Bach** contamos exclusivamente con nuestro **Curso de Capacitación** (4 meses). Aprenderás a utilizar esencias florales para equilibrar emociones y manejar el estrés. ¿Te gustaría conocer los costos o los requisitos?"
   - condition:
     - type: slot
       name: carrera
       value: inyectologia
-    text: "¡Excelente elección! Para **Inyectología** te comento que contamos exclusivamente con un **Taller de Capacitación** de 1 mes (100% práctico).\n\n¿Te gustaría conocer los **costos** o **requisitos** de este taller?"
+    text: "¡Excelente elección! Para **Inyectología** contamos exclusivamente con un **Taller Práctico** de 1 mes. Aprenderás desde cero a colocar sueros, canalizar vías y aplicar inyecciones de forma profesional. ¿Te gustaría conocer los costos para iniciar?"
 
   # --- ÁREAS QUE TIENEN AMBAS (CARRERA DE 2 AÑOS Y CURSO CORTO) ---
   - condition:
     - type: slot
       name: carrera
       value: enfermeria
-    text: "¡Excelente elección! Esa es una de nuestras áreas más solicitadas en Salud.\n\nPara **Enfermería** tenemos dos opciones:\n **La Carrera de Tecnología Superior:** Dura 2 años y te otorga un título de tercer nivel (SENESCYT).\n **El Curso de Capacitación:** Es más corto, 100% práctico y te otorga certificaciones.\n\n¿Cuál te interesa más: **La Carrera** o **el Curso**?"
+    text: "¡Excelente elección! **Enfermería** es una vocación hermosa donde aprenderás toma de signos vitales, inyectología, sueroterapia y asistencia médica para salvar vidas. Tenemos dos opciones para ti:\n- **La Carrera (2 años):** Te otorga tu título de tercer nivel (SENESCYT).\n- **El Curso (8 meses):** 100% práctico con certificaciones avaladas.\n¿Cuál de las dos opciones te llama más la atención?"
   - condition:
     - type: slot
       name: carrera
       value: emergencias medicas
-    text: "¡Excelente elección! Esa es una de nuestras áreas más solicitadas en Salud.\n\nPara **Emergencias Médicas** tenemos dos opciones:\n **La Carrera de Tecnología Superior:** Dura 2 años y te otorga un título de tercer nivel (SENESCYT).\n **El Curso de Capacitación:** Es más corto, 100% práctico y te otorga certificaciones.\n\n¿Cuál te interesa más: **La Carrera** o **el Curso**?"
+    text: "¡Una profesión llena de adrenalina! En **Emergencias Médicas** aprenderás rescate, reanimación (RCP), inmovilización y atención en ambulancias. Tenemos dos opciones para ti:\n- **La Carrera (2 años):** Te otorga tu título de tercer nivel (SENESCYT).\n- **El Curso (8 meses):** 100% práctico con certificaciones avaladas.\n¿Cuál de las dos opciones te llama más la atención?"
   - condition:
     - type: slot
       name: carrera
       value: rehabilitacion fisica
-    text: "¡Excelente elección! Esa es una de nuestras áreas más solicitadas en Salud.\n\nPara **Rehabilitación Física** tenemos dos opciones:\n **La Carrera de Tecnología Superior:** Dura 2 años y te otorga un título de tercer nivel (SENESCYT).\n**El Curso de Capacitación:** Es más corto, 100% práctico y te otorga certificaciones.\n\n¿Cuál te interesa más: **La Carrera** o **el Curso**?"
+    text: "¡Excelente elección! En **Rehabilitación Física** aprenderás anatomía, masoterapia y el uso de equipos para devolverles el bienestar a los pacientes. Tenemos dos opciones para ti:\n- **La Carrera (2 años):** Título de tercer nivel (SENESCYT).\n- **El Curso (6 meses):** 100% práctico con certificaciones avaladas.\n¿Cuál de las dos opciones te llama más la atención?"
   - condition:
     - type: slot
       name: carrera
       value: laboratorio clinico
-    text: "¡Excelente elección! Esa es una de nuestras áreas más solicitadas en Salud.\n\nPara **Laboratorio Clínico** tenemos dos opciones:\n **La Carrera de Tecnología Superior:** Dura 2 años y te otorga un título de tercer nivel (SENESCYT).\n**El Curso de Capacitación:** Es más corto, 100% práctico y te otorga certificaciones.\n\n¿Cuál te interesa más: **La Carrera** o **el Curso**?"
+    text: "¡Excelente elección! En **Laboratorio Clínico** aprenderás sobre toma de muestras, análisis hematológicos, microbiológicos y el uso de equipos médicos. Tenemos dos opciones para ti:\n- **La Carrera (2 años):** Título de tercer nivel (SENESCYT).\n- **El Curso (5 meses):** 100% práctico con certificaciones avaladas.\n¿Cuál de las dos opciones te llama más la atención?"
   - condition:
     - type: slot
       name: carrera
       value: administracion de farmacias
-    text: "¡Excelente elección! Esa es una de nuestras áreas más solicitadas en Salud.\n\nPara **Farmacia** tenemos dos opciones:\n**La Carrera de Tecnología Superior:** Dura 2 años y te otorga un título de tercer nivel (SENESCYT).\n**El Curso de Capacitación:** Es más corto, 100% práctico y te otorga certificaciones.\n\n¿Cuál te interesa más: **La Carrera** o **el Curso**?"
+    text: "¡Excelente elección! En el área de **Farmacia** aprenderás sobre farmacología, dispensación de medicamentos y atención al paciente. Tenemos dos opciones para ti:\n- **La Carrera (2 años):** Título de tercer nivel (SENESCYT).\n- **El Curso (5 meses):** 100% práctico con certificaciones avaladas.\n¿Cuál de las dos opciones te llama más la atención?"
   - condition:
     - type: slot
       name: carrera
       value: educacion inicial
-    text: "¡Excelente elección! Esa es una de nuestras áreas más solicitadas.\n\nPara **Educación Inicial** tenemos dos opciones:\n**La Carrera de Tecnología Superior:** Dura 2 años y te otorga un título de tercer nivel (SENESCYT).\n**El Curso de Capacitación:** Es más corto, 100% práctico y te otorga certificaciones.\n\n¿Cuál te interesa más: **La Carrera** o **el Curso**?"
+    text: "¡Una carrera de pura vocación! En **Educación Inicial** aprenderás sobre estimulación temprana, desarrollo psicomotor y cómo crear ambientes de aprendizaje mágicos. Tenemos dos opciones para ti:\n- **La Carrera (2 años):** Título de tercer nivel (SENESCYT).\n- **El Curso (8 meses):** 100% práctico con certificaciones avaladas.\n¿Cuál de las dos opciones te llama más la atención?"
   - condition:
     - type: slot
       name: carrera
       value: mecanica automotriz
-    text: "¡Excelente elección! Esa es una de nuestras áreas más solicitadas.\n\nPara **Mecánica Automotriz** tenemos dos opciones:\n**La Carrera de Tecnología Superior:** Dura 2 años y te otorga un título de tercer nivel (SENESCYT).\n**El Curso de Capacitación:** Es enfocado al área de salud o motos, 100% práctico y te otorga certificaciones.\n\n¿Cuál te interesa más: **La Carrera** o **el Curso**?"
+    text: "¡Excelente elección! En **Mecánica Automotriz** aprenderás sobre motores, sistemas de inyección y diagnóstico para reparar vehículos. Tenemos dos opciones para ti:\n- **La Carrera (2 años):** Título de tercer nivel (SENESCYT).\n- **El Curso Corto:** Enfocado a motos o para personal de salud.\n¿Cuál de las dos opciones te llama más la atención?"
   - condition:
     - type: slot
       name: carrera
       value: naturopatia
-    text: "¡Excelente elección! Esa es una de nuestras áreas más solicitadas.\n\nPara **Naturopatía** tenemos dos opciones:\n**La Carrera de Tecnología Superior:** Dura 2 años y te otorga un título de tercer nivel (SENESCYT).\n**El Curso de Capacitación:** Es más corto, 100% práctico y te otorga certificaciones.\n\n¿Cuál te interesa más: **La Carrera** o **el Curso**?"
+    text: "¡Excelente elección! En **Naturopatía** aprenderás sobre medicina alternativa, fitoterapia, terapias florales y nutrición natural para promover la salud. Tenemos dos opciones para ti:\n- **La Carrera (2 años):** Título de tercer nivel (SENESCYT).\n- **El Curso (8 meses):** 100% práctico con certificaciones avaladas.\n¿Cuál de las dos opciones te llama más la atención?"
 
-  # --- ÁREAS QUE SON EXCLUSIVAMENTE CARRERAS (NO HAY CURSO) ---
+  # --- ÁREAS QUE SON EXCLUSIVAMENTE CARRERAS DE 3ER NIVEL ---
   - condition:
     - type: slot
       name: carrera
       value: administracion
-    text: "¡Excelente elección! La formación en **Administración** es clave en el mundo empresarial y se imparte de manera virtual como Carrera de Tecnología Superior (2 años).\n¿Qué información te gustaría conocer? Puedes preguntarme por costos, duración o campo laboral."
+    text: "¡Excelente elección! La formación en **Administración** se imparte como Carrera de Tecnología Superior (2 años). Te preparamos a fondo y aprenderás sobre gestión de empresas, contabilidad, talento humano y finanzas para liderar o crear tu propio negocio. ¿Qué te gustaría saber ahora? ¿Costos, horarios o campo laboral?"
   - condition:
     - type: slot
       name: carrera
       value: marketing digital
-    text: "¡Excelente elección! El **Marketing Digital** es una de las carreras con más futuro hoy en día. Se imparte de manera virtual como Tecnología Superior (2 años).\n¿Qué información específica te gustaría conocer? Puedes preguntarme por costos, duración o campo laboral."
+    text: "¡Excelente elección! El **Marketing Digital** se imparte de manera virtual como Carrera de Tecnología Superior (2 años). Aprenderás a crear campañas en redes sociales, posicionamiento SEO, e-commerce y análisis de datos. ¿Qué te gustaría saber ahora? ¿Costos o campo laboral?"
   - condition:
     - type: slot
       name: carrera
       value: desarrollo de contenidos y manejo de redes
-    text: "¡Excelente elección! El **Desarrollo de Contenidos y Manejo de Redes** es vital para las empresas actualmente. Se imparte en línea como Tecnología Superior (2 años).\n¿Qué información te gustaría conocer? Puedes preguntarme por costos, duración o campo laboral."
+    text: "¡Excelente elección! El **Desarrollo de Contenidos y Manejo de Redes** se imparte como Carrera de Tecnología Superior (2 años). Aprenderás a crear contenido digital atractivo, planificar estrategias, gestionar comunidades online y manejar herramientas de diseño. ¿Te gustaría conocer los costos o el campo laboral?"
   - condition:
     - type: slot
       name: carrera
       value: inteligencia artificial
-    text: "¡Excelente elección! La **Inteligencia Artificial** es la carrera del futuro (Tecnología Superior de 1 año y medio).\n¿Qué información específica te gustaría conocer? Puedes preguntarme por costos, duración o campo laboral."
+    text: "¡Excelente elección! La **Inteligencia Artificial** es la carrera del futuro (1 año y medio). Aprenderás a crear tecnología inteligente, realizar análisis de datos, automatizar procesos y desarrollar proyectos reales con programación avanzada. ¿Qué te gustaría conocer ahora? ¿Costos o campo laboral?"
   - condition:
     - type: slot
       name: carrera
       value: gastronomia
-    text: "¡Excelente elección! La **Gastronomía** es una carrera 100% práctica y apasionante (Tecnología Superior de 2 años).\n¿Qué información específica te gustaría conocer? Puedes preguntarme por costos, duración o campo laboral."
+    text: "¡Excelente elección! La **Gastronomía** se imparte como Carrera de Tecnología Superior (2 años). Es 100% práctica y aprenderás técnicas culinarias nacionales e internacionales, panadería, repostería y administración de restaurantes. ¿Te gustaría conocer los costos o campo laboral?"
   - condition:
     - type: slot
       name: carrera
       value: administracion de sistemas de la salud
-    text: "¡Excelente elección! La **Administración de Sistemas de la Salud** es una Carrera de Tecnología Superior (2 años) súper demandada.\n¿Qué información específica te gustaría conocer? Puedes preguntarme por costos, duración o campo laboral."
+    text: "¡Excelente elección! La **Administración de Sistemas de la Salud** se imparte como Carrera de Tecnología Superior (2 años). Aprenderás sobre gestión hospitalaria, auditoría médica, calidad en la atención y normativas para liderar instituciones de salud. ¿Qué te gustaría saber ahora? ¿Costos o campo laboral?"
+  - condition:
+    - type: slot
+      name: carrera
+      value: educacion basica
+    text: "¡Excelente elección! La **Educación Básica** se imparte como Carrera de Tecnología Superior (2 años). Aprenderás sobre pedagogía, didáctica de las matemáticas y lenguaje, psicología educativa y diseño de material didáctico para potenciar el desarrollo de niños y adolescentes. ¿Qué te gustaría conocer ahora? ¿Los costos, la duración o el campo laboral?"
   
   # --- FALLBACK ---
-  - text: "¡Excelente elección! Esa es una de nuestras áreas más solicitadas. Tenemos opciones de Carreras (2 años) y Cursos cortos 100% prácticos dependiendo de la especialidad.\n¿Te interesa más la información de **la Carrera** o **el Curso**?"
+  - text: "¡Excelente elección! Esa es una de nuestras áreas más solicitadas y aprenderás habilidades altamente demandadas en el mercado laboral actual. Tenemos opciones de Carreras (2 años) y Cursos cortos 100% prácticos dependiendo de la especialidad.\n¿Te interesa más la información de **la Carrera** o **el Curso**?"
 
   utter_voluntariado:
   - text: "¡Qué excelente pregunta! En CGE, el aprendizaje práctico y el servicio a la comunidad van de la mano.\n\nSer parte de los **Consultinos** o realizar un **voluntariado** con nosotros significa tener la vocación de ayudar y servir a la sociedad sin esperar remuneración, movidos puramente por el deseo de salvar vidas y hacer el bien.\n\nA través de nuestras **prácticas 100% reales**, nuestros estudiantes logran exactamente eso: aplican todo lo aprendido en escenarios reales (hospitales, ambulancias, comunidades), ganando experiencia vital para su carrera mientras ayudan a quienes más lo necesitan.\n\n¡Mira a nuestras brigadas en primera línea durante el Terremoto del 16 de abril y la pandemia de COVID-19!\n\n<div class='flex gap-2 mt-3 mb-2'><img src='assets/images/collageterremoto.jpeg' class='w-1/2 rounded-xl object-cover shadow-sm border border-gray-200'><img src='assets/images/collagepandemia.jpeg' class='w-1/2 rounded-xl object-cover shadow-sm border border-gray-200'></div>\n\n¡Somos verdaderos héroes de vocación! ¿Te gustaría unirte a esta gran familia?"
@@ -329,6 +332,11 @@ responses:
       name: carrera
       value: "inteligencia artificial"
     text: "La carrera de **Inteligencia Artificial** se maneja en modalidad virtual. Puedes hablar con mi asistente Daniela para apartar un cupo"
+  - condition:
+    - type: slot
+      name: carrera
+      value: educacion basica
+    text: "La carrera de **Educación Básica** maneja una modalidad híbrida (tanto presencial como en línea). ¿Deseas saber más acerca de cómo matricularte?"
   - text: "La institución ofrece carreras en modalidad **presencial** (como Enfermería, Gastronomía, etc.) y también **en línea** (como Administración y Marketing Digital).\n¿De qué carrera exactamente te interesa saber la modalidad?"
 
   utter_duracion_carreras:
@@ -397,6 +405,12 @@ responses:
       name: carrera
       value: gastronomia
     text: "La carrera de **Gastronomía** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo. ¿Te gustaría saber en qué campos podrías trabajar al graduarte?"
+
+  - condition:
+    - type: slot
+      name: carrera
+      value: educacion basica
+    text: "La carrera de **Educación Básica** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo. ¿Te gustaría saber en qué campos podrías trabajar al graduarte?"
   - condition:
     - type: slot
       name: carrera
@@ -415,7 +429,7 @@ responses:
     - type: slot
       name: carrera
       value: enfermeria
-    text: "En la carrera de **Técnico Superior en Enfermería**, tus prácticas se realizarán en clínicas u hospitales (MSP, IESS, etc.), trabajando directamente con pacientes reales. ¡Aplicarás todo tu conocimiento para salvar vidas!\n\n Te mostramos fotos reales de nuestros consultinos desempeñando sus funciones en entornos de practica 100% reales<img src='assets/images/collageenfermeria.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>\n\n¿Deseas saber más acerca del campo laboral?"
+    text: "En la carrera de **Técnico Superior en Enfermería**, tus prácticas se realizarán en clínicas u hospitales (como el Gustavo Domínguez o Cuba Center), subcentros de salud y el MSP, trabajando directamente con pacientes reales. ¡Aplicarás todo tu conocimiento para salvar vidas!\n\n Te mostramos fotos reales de nuestros consultinos desempeñando sus funciones en entornos de practica 100% reales<img src='assets/images/collageenfermeria.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>\n\n¿Deseas saber más acerca del campo laboral?"
   - condition:
     - type: slot
       name: carrera
@@ -451,6 +465,11 @@ responses:
       name: carrera
       value: educacion inicial
     text: "Las prácticas para **Educación Inicial** se realizan en unidades educativas y guarderías. El instituto cuenta con espacios propios como el centro privado Rincón KitCGE y más.\n\n<img src='assets/images/educacioninicialcollage.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>\n\n¿Tienes alguna duda sobre esta hermosa profesión?"
+  - condition:
+    - type: slot
+      name: carrera
+      value: educacion basica
+    text: "Las prácticas para **Educación Básica** se realizan en unidades educativas, escuelas de educación básica y centros de apoyo escolar.\n\n¿Tienes alguna duda sobre esta hermosa profesión?"
   - text: "Las prácticas se realizan en entornos 100% reales dependiendo de la carrera elegida (hospitales, ambulancias ECU 911, empresas, guarderías, etc.).\nSi la carrera que te interesa tiene convenios muy específicos, **Daniela** te compartirá enseguida el listado de instituciones donde podrías realizar tus prácticas."
   - condition:
     - type: slot
@@ -484,7 +503,7 @@ responses:
     - type: slot
       name: carrera
       value: enfermeria
-    text: "¡El campo laboral es inmenso y hermoso! Podrás trabajar **salvando vidas** en clínicas privadas o instituciones de salud pública (IESS, MSP y otros). O si lo prefieres, puedes crear tu propia empresa de cuidados de enfermería y servir no solo en el Ecuador, ¡sino a todo el mundo!\n\nImagina el impacto que tendrás al mejorar la vida de tantas personas. ¡Mira a nuestros estudiantes en acción!\n\n<img src='assets/images/enfermeria.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
+    text: "¡El campo laboral es inmenso y hermoso! Podrás trabajar **salvando vidas** en clínicas privadas, subcentros de salud o instituciones de salud pública (como el Hospital Gustavo Domínguez, Cuba Center, MSP y otros). O si lo prefieres, puedes crear tu propia empresa de cuidados de enfermería y servir no solo en el Ecuador, ¡sino a todo el mundo!\n\nImagina el impacto que tendrás al mejorar la vida de tantas personas. ¡Mira a nuestros estudiantes en acción!\n\n<img src='assets/images/enfermeria.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
   - condition:
     - type: slot
       name: carrera
@@ -526,6 +545,11 @@ responses:
       name: carrera
       value: educacion inicial
     text: "Para **Educación Inicial**, las salidas laborales incluyen:\n- Docencia en unidades educativas, colegios y escuelas.\n- Gestión y dirección de centros de desarrollo infantil y guarderías.\n- Emprender tu propio centro educativo o de nivelación. ¿Quisieras conocer los costos y cuotas?\n\n<img src='assets/images/educacioninicialcollage.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
+  - condition:
+    - type: slot
+      name: carrera
+      value: educacion basica
+    text: "Para **Educación Básica**, las salidas laborales incluyen:\n- Docencia en unidades educativas, colegios y escuelas de educación básica.\n- Diseño de material didáctico y proyectos educativos.\n- Emprender tu propio centro de nivelación académica. ¿Quisieras conocer los costos y cuotas?"
   - condition:
     - type: slot
       name: carrera
@@ -598,6 +622,11 @@ responses:
   - condition:
     - type: slot
       name: carrera
+      value: educacion basica
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Educación Básica** debidamente registrado en la SENESCYT. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
+  - condition:
+    - type: slot
+      name: carrera
       value: marketing digital
     text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Marketing Digital y Comercio Electrónico** debidamente registrado en la SENESCYT. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
   - condition:
@@ -664,8 +693,8 @@ responses:
   utter_uniformes:
   - text: "¡Sí usamos uniformes! Pero nosotros no lo vendemos. Les recordamos que CGE es un organismo de interés nacional con personería jurídica dada por el Ministerio de Salud Pública y reconocida como voluntaria cooperante de la Secretaría Nacional de Gestión de Riesgos. Por seguridad de nuestros pacientes y hospitales, los uniformes se hacen solo en lugares autorizados."
 
-  utter_horarios_clases:
-  - text: "Tenemos varias jornadas a escoger para tu carrera: **matutinas, vespertinas, nocturnas y jornadas especiales**.\n\nTe recordamos que los cupos son limitados. Por procesos de calidad internacionales, **solo recibimos hasta 25 personas por curso**.\n\nSi quieres conocer qué jornadas especiales tenemos o la disponibilidad exacta, mi asistente humana **Daniela** te dará toda la información."
+  #utter_horarios_clases: []
+  #- text: "Tenemos varias jornadas a escoger para tu carrera: **matutinas, vespertinas, nocturnas y jornadas especiales**.\n\nTe recordamos que los cupos son limitados. Por procesos de calidad internacionales, **solo recibimos hasta 25 personas por curso**.\n\nSi quieres conocer qué jornadas especiales tenemos o la disponibilidad exacta, mi asistente humana **Daniela** te dará toda la información."
 
   utter_malla_curricular:
   - condition:
@@ -678,6 +707,11 @@ responses:
       name: carrera
       value: emergencias medicas
     text: "En **Emergencias Médicas** aprenderás a manejar situaciones críticas: reanimación cardiopulmonar (RCP), inmovilización, extracción vehicular, manejo de traumas y atención prehospitalaria avanzada.\n\n<img src='assets/images/terremoto1.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
+  - condition:
+    - type: slot
+      name: carrera
+      value: educacion basica
+    text: "En **Educación Básica** aprenderás sobre pedagogía, didáctica de las matemáticas y lenguaje, psicología educativa, diseño de material didáctico y cómo crear ambientes de aprendizaje efectivos para niños y adolescentes."
   - condition:
     - type: slot
       name: carrera
@@ -767,7 +801,7 @@ responses:
     - type: slot
       name: carrera
       value: enfermeria
-    text: "¡Claro que sí! En nuestro curso de **Auxiliar de Enfermería**, las prácticas se realizan con pacientes 100% reales. Tenemos convenios directos con el **Hospital Gustavo Domínguez, el IESS, el MSP** y clínicas privadas de primer nivel.. Además, **no cobramos las prácticas voluntarias** como en la mayoría de lugares hacen.\n\n¡La institución se encarga de asignarte tu lugar de práctica para que te des a conocer en el ámbito laboral real!\n\nTe muestro algunas fotos de nuestros consultinos realizando sus prácticas en entornos reales:\n\n<img src='assets/images/collageenfermeria.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
+    text: "¡Claro que sí! En nuestro curso de **Auxiliar de Enfermería**, las prácticas se realizan con pacientes 100% reales. Tenemos convenios directos con el **Hospital Gustavo Domínguez, Cuba Center, subcentros de salud, el MSP** y clínicas privadas de primer nivel. Además, **no cobramos las prácticas voluntarias** como en la mayoría de lugares hacen.\n\n¡La institución se encarga de asignarte tu lugar de práctica para que te des a conocer en el ámbito laboral real!\n\nTe muestro algunas fotos de nuestros consultinos realizando sus prácticas en entornos reales:\n\n<img src='assets/images/collageenfermeria.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
 
   - condition:
     - type: slot
@@ -837,8 +871,8 @@ responses:
   utter_horarios_practicas_capacitadora:
   - text: "¡No te preocupes por tus prácticas! Nosotros **respetamos tu tiempo**.\n\nSi estás estudiando o trabajando, en tu tiempo libre te podemos ubicar tus prácticas. CGE, al ser el organismo de formación más grande y premiado del país, tiene convenios con las instituciones más importantes del Ecuador, por ende, hay muchos lugares con horarios flexibles donde tú podrás realizarlas."
 
-  utter_horarios_cursos_capacitadora:
-  - text: "Para nuestros cursos de capacitación contamos con jornadas **matutinas, vespertinas y fines de semana**.\n\nTe recordamos que los cupos son sumamente limitados, ya que por procesos de calidad internacionales, **solo recibimos hasta 25 personas por curso**.\n\nPara revisar la disponibilidad exacta de los horarios, mi asistente humana **Daniela** te ayudará enseguida."
+  #utter_horarios_cursos_capacitadora: []
+  #- text: "Para nuestros cursos de capacitación contamos con jornadas **matutinas, vespertinas y fines de semana**.\n\nTe recordamos que los cupos son sumamente limitados, ya que por procesos de calidad internacionales, **solo recibimos hasta 25 personas por curso**.\n\nPara revisar la disponibilidad exacta de los horarios, mi asistente humana **Daniela** te ayudará enseguida."
 
   utter_trabajo_capacitadora:
   - text: "¡Esa es una excelente pregunta! En CGE te brindamos **todas las herramientas, el conocimiento 100% práctico y los mejores convenios** para que desarrolles tus habilidades al máximo.\n\nMuchísimos de nuestros estudiantes logran quedarse trabajando en los mismos lugares donde realizan sus prácticas gracias a su excelente desempeño. Sin embargo, es importante ser muy transparentes contigo: CGE no te 'regala' ni te asegura el puesto de trabajo; tu contratación dependerá siempre de tu propio desenvolvimiento, esfuerzo y vocación de servicio.\n\nNosotros te damos la mejor preparación para que brilles en las entrevistas. ¿Te gustaría conocer cómo inscribirte y empezar a prepararte?"
@@ -951,7 +985,7 @@ responses:
   - text: "¡Claro que sí! Puedes convalidar tus prácticas siempre y cuando nos presentes información que valide tu experiencia laboral y que esta se ajuste a nuestras mallas curriculares, previo a un análisis del director de carrera."
 
   utter_practicas_cerca:
-  - text: "CGE mantiene convenios con el Ministerio de Salud Pública (MSP), el Instituto Ecuatoriano de Seguridad Social (IESS) y con los hospitales y clínicas más grandes del país.\n\nTu ubicación exacta va a estar bajo control de los directores de carrera, los cuales **garantizarán tu lugar de prácticas** (buscando tu comodidad) junto al cumplimiento de la malla educativa."
+  - text: "CGE mantiene convenios con el Ministerio de Salud Pública (MSP), hospitales como el Gustavo Domínguez y Cuba Center, subcentros de salud y con las clínicas más grandes del país.\n\nTu ubicación exacta va a estar bajo control de los directores de carrera, los cuales **garantizarán tu lugar de prácticas** (buscando tu comodidad) junto al cumplimiento de la malla educativa."
 
 
   utter_menciones_capacitadora:
@@ -969,7 +1003,11 @@ responses:
       name: carrera
       value: enfermeria
     text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Enfermería (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\nAprenderás desde toma de signos vitales e inyectología, hasta curaciones avanzadas y asistencia médica. ¡Saldrás completamente preparado para cuidar y salvar vidas!\n\n¿Qué te gustaría saber ahora de la carrera? ¿Los **costos**, la **duración**, los **horarios** o el **campo laboral**?"
-
+  - condition:
+    - type: slot
+      name: carrera
+      value: educacion basica
+    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Educación Básica (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\nAprenderás sobre didáctica, pedagogía y diseño de ambientes de aprendizaje para potenciar el desarrollo académico de los estudiantes.\n\n¿Qué te gustaría saber ahora de la carrera? ¿Los **costos**, la **duración**, los **horarios** o el **campo laboral**?"
   - condition:
     - type: slot
       name: carrera

@@ -89,6 +89,10 @@ nlu:
     - trabajando con [motores]{"entity": "carrera", "value": "mecanica automotriz"}
     - quiero [administrar una empresa]{"entity": "carrera", "value": "administracion"}
     - Quiero [administrar uba enmpresa]{"entity": "carrera", "value": "administracion"}
+    - quiero estudiar [educacion basica](carrera)
+    - me interesa [educacion basica](carrera)
+    - quiero estudiar [educacion basica](carrera)
+    - me interesa [educacion basica](carrera)
 
 - intent: informar_area_interes
   examples: |
@@ -240,6 +244,11 @@ nlu:
     - Cuáles son los costos de [marketing digital](carrera)
     - Cuáles son los costos de la carrera de [educacion inicial](carrera)
     - Cuáles son los costos
+    - qué precio tiene la carrera de [enfermeria]{"entity": "carrera", "value": "enfermeria"}
+    - me das los precios de [marketing digital]{"entity": "carrera", "value": "marketing digital"}
+    - y el precio de [emergencias medicas]{"entity": "carrera", "value": "emergencias medicas"}
+    - cual es el precio de la carrera
+    - dame los precios por favor
 
 
 - intent: preguntar_opciones_pago
@@ -470,6 +479,8 @@ nlu:
     - la carrera de [mecánica automotriz]{"entity": "carrera", "value": "mecanica automotriz"}
     - quiero la carrera de [enfermería]{"entity": "carrera", "value": "enfermeria"}
     - info de la carrera de [educación inicial]{"entity": "carrera", "value": "educacion inicial"}
+    - la carrera de [educación básica]{"entity": "carrera", "value": "educacion basica"}
+    - la carrera de [educación básica]{"entity": "carrera", "value": "educacion basica"}
 
 - intent: elegir_curso
   examples: |
@@ -759,6 +770,13 @@ nlu:
     - ¿Dan algún tipo de beneficio para estudiantes?
     - ¿Hay promociones para los cursos?
     - ¿El instituto ofrece becas?
+    - hay descuentos para los cursos de capacitadora
+    - qué descuentos hay en los cursos
+    - tienen promociones para los cursos cortos
+    - hay alguna promo para la capacitadora
+    - quiero saber de descuentos en cursos
+    - me dan beca para un curso de capacitacion
+    - promociones vigentes para cursos
 
 - intent: preguntar_costo_certificacion_capacitadora
   examples: |
@@ -968,6 +986,14 @@ nlu:
     - emfermeria
     - infermeria
     - enfermreria
+
+- synonym: educacion basica
+  examples: |
+    - Educación Básica
+    - educacion basica
+    - educación básica
+    - profesor de escuela
+    - docencia basica
  
 
 - synonym: emergencias medicas
@@ -1076,6 +1102,14 @@ nlu:
     - naturopatia
     - naturopatía
     - medicina natural
+
+- synonym: educacion basica
+  examples: |
+    - Educación Básica
+    - educacion basica
+    - educación básica
+    - profesor de escuela
+    - docencia basica
     
 - intent: preguntar_malla_curricular
   examples: |
