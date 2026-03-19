@@ -20,7 +20,7 @@ reconocimiento.continuous = true;
 // Generar un ID único para esta sesión de chat
 const sessionID = "usuario_" + Math.random().toString(36).substring(2, 10);
 
-// --- CONFIGURACIÓN DE VOZ NATIVA (FORZANDO VOZ FEMENINA) ---
+// --- CONFIGURACIÓN DE VOZ NATIVA (ACENTO LATINO Y MÁS FLUIDA) ---
 function reproducirVozFemenina(texto) {
     // Si Consultina estaba hablando, la callamos antes de iniciar el nuevo audio
     if (window.speechSynthesis.speaking) {
@@ -29,29 +29,35 @@ function reproducirVozFemenina(texto) {
 
     const mensajeVoz = new SpeechSynthesisUtterance(texto);
     
-    // Configuramos el idioma, velocidad y tono
-    mensajeVoz.lang = 'es-ES'; // Español
-    mensajeVoz.rate = 1.05;    // Un poquito más rápido para que suene fluida
-    mensajeVoz.pitch = 1.15;   // Tono ligeramente más agudo (ayuda a que suene más femenina)
+    // Configuramos el idioma a Español Latinoamericano / Neutral
+    mensajeVoz.lang = 'es-MX'; // México / Latino neutral
+    
+    // Ajustes de fluidez (Más naturales, menos robóticos)
+    mensajeVoz.rate = 1.0;     // Velocidad normal para que articule bien las palabras
+    mensajeVoz.pitch = 1.05;   // Tono muy ligeramente agudo (femenino) sin distorsionar
 
     // Buscar la lista de voces instaladas en la computadora/navegador
     const voces = window.speechSynthesis.getVoices();
     
-    // Filtro avanzado: Buscamos nombres específicos de voces femeninas en español
+    // Filtro avanzado: Buscamos nombres específicos de voces femeninas LATINOAMERICANAS
     let vozSeleccionada = voces.find(voz => 
-        voz.lang.includes('es') && 
+        (voz.lang.includes('es-MX') || voz.lang.includes('es-US') || voz.lang.includes('es-419') || voz.lang.includes('es')) && 
         (
-            voz.name.includes('Sabina') ||   // Microsoft (Windows)
-            voz.name.includes('Helena') ||   // Microsoft (Windows)
-            voz.name.includes('Laura') ||    // Microsoft (Windows)
-            voz.name.includes('Dalia') ||    // Microsoft (Windows)
-            voz.name.includes('Paulina') ||  // Mac / iOS
-            voz.name.includes('Monica') ||   // Mac / iOS
-            voz.name.includes('Google español') // Chrome / Android (Suele ser mujer)
-        )
+            voz.name.includes('Sabina') ||           // Microsoft (Windows - Español México)
+            voz.name.includes('Paulina') ||          // Mac / iOS (Español México)
+            voz.name.includes('Mia') ||              // Mac / iOS (Español México)
+            voz.name.includes('Google español de Estados Unidos') || // Chrome / Android (Neutral Femenino)
+            voz.name.includes('Google Español')      // Chrome genérico
+        ) && 
+        !voz.name.includes('Helena') && !voz.name.includes('Laura') // Excluimos explícitamente los acentos de España
     );
 
-    // Si por alguna razón no tiene ninguna de las anteriores, agarramos la primera en español que encuentre
+    // Fallback 1: Si no tiene esos nombres exactos, agarramos cualquier voz de México o US (Latino)
+    if (!vozSeleccionada) {
+        vozSeleccionada = voces.find(voz => voz.lang.includes('es-MX') || voz.lang.includes('es-US') || voz.lang.includes('es-419'));
+    }
+
+    // Fallback 2: Último recurso, la primera en español que encuentre
     if (!vozSeleccionada) {
         vozSeleccionada = voces.find(voz => voz.lang.includes('es'));
     }

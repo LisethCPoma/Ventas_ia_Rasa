@@ -206,8 +206,9 @@ responses:
       value: educacion basica
     text: "¡Excelente elección! La **Educación Básica** se imparte como Carrera de Tecnología Superior (2 años). Aprenderás sobre pedagogía, didáctica de las matemáticas y lenguaje, psicología educativa y diseño de material didáctico para potenciar el desarrollo de niños y adolescentes. ¿Qué te gustaría conocer ahora? ¿Los costos, la duración o el campo laboral?"
   
-  # --- FALLBACK ---
-  - text: "¡Excelente elección! Esa es una de nuestras áreas más solicitadas y aprenderás habilidades altamente demandadas en el mercado laboral actual. Tenemos opciones de Carreras (2 años) y Cursos cortos 100% prácticos dependiendo de la especialidad.\n¿Te interesa más la información de **la Carrera** o **el Curso**?"
+  
+# --- FALLBACK (Cuando piden una carrera que NO existe) ---
+  - text: "¡Me encanta tu interés por prepararte! Sin embargo, debo confirmarte que por el momento **no ofertamos esa especialidad** en nuestra institución.\n\n¡Pero no te desanimes! Somos líderes y tenemos excelentes opciones en las áreas de Salud, Educación, Administración, Tecnología y Mecánica.\n\n¿Te gustaría que te muestre nuestra lista completa de carreras y cursos para que descubras alguna otra opción que te apasione?"
 
   utter_voluntariado:
   - text: "¡Qué excelente pregunta! En CGE, el aprendizaje práctico y el servicio a la comunidad van de la mano.\n\nSer parte de los **Consultinos** o realizar un **voluntariado** con nosotros significa tener la vocación de ayudar y servir a la sociedad sin esperar remuneración, movidos puramente por el deseo de salvar vidas y hacer el bien.\n\nA través de nuestras **prácticas 100% reales**, nuestros estudiantes logran exactamente eso: aplican todo lo aprendido en escenarios reales (hospitales, ambulancias, comunidades), ganando experiencia vital para su carrera mientras ayudan a quienes más lo necesitan.\n\n¡Mira a nuestras brigadas en primera línea durante el Terremoto del 16 de abril y la pandemia de COVID-19!\n\n<div class='flex gap-2 mt-3 mb-2'><img src='assets/images/collageterremoto.jpeg' class='w-1/2 rounded-xl object-cover shadow-sm border border-gray-200'><img src='assets/images/collagepandemia.jpeg' class='w-1/2 rounded-xl object-cover shadow-sm border border-gray-200'></div>\n\n¡Somos verdaderos héroes de vocación! ¿Te gustaría unirte a esta gran familia?"
@@ -1086,7 +1087,10 @@ responses:
       value: inteligencia artificial
     text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Inteligencia Artificial (1 año y medio)**, te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\nAprenderás a crear tecnología inteligente, realizar análisis de datos, automatizar procesos y desarrollar proyectos reales con programación avanzada.\n\n¿Qué te gustaría saber ahora de la carrera? ¿Los **costos**, la **duración**, los **horarios** o el **campo laboral**?"
 
-  - text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado directamente en la SENESCYT.\n\nAquí adquirirás todos los conocimientos prácticos y teóricos necesarios para dominar tu área y asegurar tu futuro profesional.\n\n¿Qué te gustaría saber ahora de la carrera? ¿Los **costos**, la **duración**, los **horarios** o el **campo laboral**?"
+  # --- FALLBACK (Cuando piden una carrera que NO existe) ---
+  - text: "¡Me encanta tu entusiasmo! Sin embargo, para darte la información correcta, debo aclararte que por el momento **no contamos con esa especialidad exacta** en nuestro catálogo.\n\nNosotros nos enfocamos en formar a los mejores en áreas de Salud, Educación, Administración, Tecnología y Mecánica.\n\n¿Te interesaría que te comparta nuestro catálogo completo de carreras (2 años) y cursos cortos para que veas todas las opciones que sí tenemos disponibles?"
+
+
 
   utter_info_curso_elegido:
   - condition:

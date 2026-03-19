@@ -120,6 +120,11 @@ nlu:
     - de ciencias de la [salud]{"entity": "area_academica"}
     - las tecnologicas del instituto
     - Quiero de el área [tecnologica]{"entity": "area_academica", "value":"tecnologia"}
+    - quiero [salvar vidas]{"entity": "area_academica", "value": "salud"}
+    - me gusta [salvar vidas]{"entity": "area_academica", "value": "salud"}
+    - mi sueño es [salvar vidas]{"entity": "area_academica", "value": "salud"}
+    - pasión por [salvar vidas]{"entity": "area_academica", "value": "salud"}
+    - quiero ayudar a [salvar vidas]{"entity": "area_academica", "value": "salud"}
 
 - intent: preguntar_cupos
   examples: |

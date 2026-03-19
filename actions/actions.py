@@ -42,7 +42,7 @@ class ActionConsultarCuposCapacitadora(Action):
             cupos_disponibles = None
             conexion = None
 
-            # Conexión a la Base de Datos
+ # Conexión a la Base de Datos
             try:
                 conexion = mysql.connector.connect(
                     host='127.0.0.1',
@@ -53,28 +53,41 @@ class ActionConsultarCuposCapacitadora(Action):
                 if conexion.is_connected():
                     cursor = conexion.cursor(dictionary=True, buffered=True)
                     
-            # Consulta a tu tabla 'cursos_capacitadora' usando la variable normalizada
-                    query = "SELECT cupos FROM cursos_capacitadora WHERE LOWER(nombre) LIKE %s"
-                    cursor.execute(query, (f"%{carrera_normalizada}%",))
-                    resultado = cursor.fetchone()
+                    # 1. Primero buscamos en la tabla de CURSOS
+                    query_cursos = "SELECT cupos FROM cursos_capacitadora WHERE LOWER(nombre) LIKE %s"
+                    cursor.execute(query_cursos, (f"%{carrera_normalizada}%",))
+                    resultado_curso = cursor.fetchone()
 
-                    if resultado:
-                        cupos_disponibles = resultado["cupos"]
+                    if resultado_curso:
+                        # Sí es un curso, respondemos normal
+                        cupos_disponibles = resultado_curso["cupos"]
+                        mensaje = f"¡Sí! Aún contamos con cupos disponibles para el curso de **{nombre_bonito}**.\n\nActualmente nos quedan **{cupos_disponibles} cupos disponibles**.\n\nSi te interesa, lo ideal es asegurar tu espacio lo antes posible."
+                        dispatcher.utter_message(text=mensaje)
+                    else:
+                        # 2. Si no es curso, buscamos en la tabla de CARRERAS por si el usuario se confundió
+                        query_carreras = "SELECT cupos FROM carreras WHERE LOWER(nombre) LIKE %s"
+                        cursor.execute(query_carreras, (f"%{carrera_normalizada}%",))
+                        resultado_carrera = cursor.fetchone()
+
+                        if resultado_carrera:
+                            # ¡Lo encontramos en carreras! Corregimos al usuario amablemente
+                            cupos_disponibles = resultado_carrera["cupos"]
+                            mensaje = f"¡Te hago una pequeña aclaración! **{nombre_bonito}** se imparte como una **Carrera de Tecnología Superior** (no como curso corto).\n\nPara esta carrera, actualmente nos quedan **{cupos_disponibles} cupos disponibles**"
+                            dispatcher.utter_message(text=mensaje)
+                        else:
+                            # 3. Si de verdad no existe en ningún lado, lanzamos el mensaje de Daniela
+                            mensaje = f"En este momento mi asistente Daniela puede confirmarte los cupos exactos para **{nombre_bonito}**.\n\n¡Le he notificado para que revise el sistema y te responda enseguida!"
+                            dispatcher.utter_message(text=mensaje)
 
             except Error as e:
                 print(f"Error conectando a MySQL (cursos): {e}")
+                # Si se cae la base de datos, que el bot no se quede callado
+                mensaje = f"En este momento mi asistente Daniela puede confirmarte los cupos exactos para **{nombre_bonito}**.\n\n¡Le he notificado para que revise el sistema y te responda enseguida!"
+                dispatcher.utter_message(text=mensaje)
             finally:
                 if conexion is not None and conexion.is_connected():
                     cursor.close()
                     conexion.close()
-
-            # Responder si encontró los cupos en la BDD
-            if cupos_disponibles is not None:
-                mensaje = f"¡Sí! Aún contamos con cupos disponibles para el curso de **{nombre_bonito}**.\n\nActualmente nos quedan **{cupos_disponibles} cupos disponibles**.\n\nSi te interesa, lo ideal es asegurar tu espacio lo antes posible. ¿Te gustaría que te ponga en contacto con mi asistente Daniela para reservar tu lugar?"
-            else:
-                mensaje = f"En este momento mi asistente Daniela puede confirmarte los cupos exactos para el curso de **{nombre_bonito}**.\n\n¡Le he notificado para que revise el sistema y te responda enseguida!"
-            
-            dispatcher.utter_message(text=mensaje)
 
         # ESCENARIO 2: El usuario NO mencionó el curso o el micrófono lo cortó ("hay cupos disponibles para...")
         else:
@@ -82,7 +95,6 @@ class ActionConsultarCuposCapacitadora(Action):
             dispatcher.utter_message(text=mensaje)
 
         return []
-
 
 class ActionConsultarCuposCapacitadora(Action):
     """Consulta la tabla cursos_capacitadora y lista todos los cupos disponibles en tiempo real."""
@@ -194,7 +206,7 @@ class ActionConsultarCupos(Action):
             cupos_disponibles = None
             conexion = None
 
-            # Conexión a la Base de Datos
+# Conexión a la Base de Datos
             try:
                 conexion = mysql.connector.connect(
                     host='127.0.0.1',
@@ -205,29 +217,41 @@ class ActionConsultarCupos(Action):
                 if conexion.is_connected():
                     cursor = conexion.cursor(dictionary=True, buffered=True)
                     
-            # Consulta a tu tabla 'carreras' usando la variable normalizada
-                    query = "SELECT cupos FROM carreras WHERE LOWER(nombre) LIKE %s"
-                    cursor.execute(query, (f"%{carrera_normalizada}%",))
-                    resultado = cursor.fetchone()
+                    # 1. Primero buscamos en la tabla de CARRERAS
+                    query_carreras = "SELECT cupos FROM carreras WHERE LOWER(nombre) LIKE %s"
+                    cursor.execute(query_carreras, (f"%{carrera_normalizada}%",))
+                    resultado_carrera = cursor.fetchone()
 
-                    if resultado:
-                        cupos_disponibles = resultado["cupos"]
+                    if resultado_carrera:
+                        # Sí es una carrera, respondemos normal
+                        cupos_disponibles = resultado_carrera["cupos"]
+                        mensaje = f"¡Sí! Aún contamos con cupos disponibles para la carrera de **{nombre_bonito}**.\n\nActualmente nos quedan **{cupos_disponibles} cupos disponibles**.\n\nTe recordamos que por procesos de calidad internacionales, solo recibimos hasta 25 personas por aula para garantizar tu aprendizaje"
+                        dispatcher.utter_message(text=mensaje)
+                    else:
+                        # 2. Si no es carrera, buscamos en la tabla de CURSOS por si el usuario se confundió
+                        query_cursos = "SELECT cupos FROM cursos_capacitadora WHERE LOWER(nombre) LIKE %s"
+                        cursor.execute(query_cursos, (f"%{carrera_normalizada}%",))
+                        resultado_curso = cursor.fetchone()
 
-            except Error as e:
+                        if resultado_curso:
+                            # ¡Lo encontramos en cursos! Corregimos al usuario amablemente
+                            cupos_disponibles = resultado_curso["cupos"]
+                            mensaje = f"¡Te hago una pequeña aclaración! **{nombre_bonito}** se imparte exclusivamente como un **Curso de Capacitación** 100% práctico (no como carrera de 2 años).\n\nPara este curso, actualmente nos quedan **{cupos_disponibles} cupos disponibles**"
+                            dispatcher.utter_message(text=mensaje)
+                        else:
+                            # 3. Si de verdad no existe en ningún lado, lanzamos el mensaje de Daniela
+                            mensaje = f"En este momento mi asistente Daniela puede confirmarte los cupos exactos disponibles para **{nombre_bonito}**.\n\n¡Le he notificado para que revise el sistema y te responda enseguida!"
+                            dispatcher.utter_message(text=mensaje)
+
+            except mysql.connector.Error as e:
                 print(f"Error conectando a MySQL (carreras): {e}")
+                # Si se cae la base de datos, que el bot no se quede callado
+                mensaje = f"En este momento mi asistente Daniela puede confirmarte los cupos exactos disponibles para la carrera de **{nombre_bonito}**.\n\n¡Le he notificado para que revise el sistema y te responda enseguida!"
+                dispatcher.utter_message(text=mensaje)
             finally:
                 if conexion is not None and conexion.is_connected():
                     cursor.close()
                     conexion.close()
-
-            # Responder si encontró los cupos en la BDD
-            if cupos_disponibles is not None:
-                mensaje = f"¡Sí! Aún contamos con cupos disponibles para la carrera de **{nombre_bonito}**.\n\nActualmente nos quedan **{cupos_disponibles} cupos disponibles**.\n\nTe recordamos que por procesos de calidad internacionales, solo recibimos hasta 25 personas por aula para garantizar tu aprendizaje.\n\n¿Te gustaría que te ponga en contacto con mi asistente Daniela para que te ayude a asegurar tu cupo antes de que se agoten?"
-            else:
-                # Si la carrera no está en la BDD
-                mensaje = f"En este momento mi asistente Daniela puede confirmarte los cupos exactos disponibles para la carrera de **{nombre_bonito}**.\n\n¡Le he notificado para que revise el sistema y te responda enseguida!"
-            
-            dispatcher.utter_message(text=mensaje)
 
         # ESCENARIO 2: El usuario NO mencionó la carrera ("¿Tienen cupos?")
         else:
@@ -430,11 +454,12 @@ class ActionGeminiFallback(Action):
 Eres Consultina, la asistente virtual experta en ventas y admisiones del Instituto Superior Tecnológico Consulting Group Ecuador y la Capacitadora CGE.
 
 == TU ROL Y TONO (MUY IMPORTANTE) ==
-- Eres una asesora de admisiones HUMANA, cálida, empática y con mucha energía. 
-- NO suenes como un robot leyendo un manual. Usa un dialecto muy natural y conversacional.
-- INICIA tus respuestas usando frases conectoras humanas, como por ejemplo: "Mira, te comento que...", "¡Claro que sí! Te cuento...", "¡Qué excelente pregunta!", "Para que tengas una mejor idea...".
+- Eres una asesora de admisiones HUMANA, empática y con energía, pero PROFESIONAL Y SERIA.
+- ¡PROHIBICIÓN ESTRICTA!: NO uses términos de cariño inapropiados o informales bajo ninguna circunstancia (NUNCA digas "mi vida", "mi amor", "corazón", "cariño", "lindo", etc.). El trato debe ser cortés pero respetuoso.
+- NO suenes como un robot leyendo un manual. Usa un dialecto natural y conversacional.
+- INICIA tus respuestas usando frases conectoras como: "Mira, te comento que...", "¡Claro que sí! Te cuento...", "Para que tengas una mejor idea...".
 - ESTÁS EN UNA TABLET FÍSICA DENTRO DE LAS OFICINAS DE ADMISIONES. 
-- NUNCA digas "Te pondré en contacto con Daniela". Debes decir: "Mi asistenete humana Daniela, te ayudará con esto".
+- NUNCA digas "Te pondré en contacto con Daniela". Debes decir: "Mi asistente humana Daniela, te ayudará con esto".
 - PROHIBIDO usar emojis.
 - PROHIBIDO usar abreviaturas como UTEQ, ISTCGE, AEOCAS, SENESCYT. Escríbelas completas.
 
@@ -496,6 +521,7 @@ Si el estudiante habla de CARRERAS DE 2 AÑOS (Instituto):
 - Certificado del título de bachiller (descargado de internet) - 100% OBLIGATORIO (No hay excepciones ni actas).
 - 2 fotos tamaño carnet.
 - Comprobante de depósito de inscripción.
+- REGLA VITAL SOBRE LA CÉDULA: Si el usuario te indica de forma clara que NO TIENE CÉDULA o la perdió, ESTÁ ESTRICTAMENTE PROHIBIDO darle vueltas al asunto. Debes responderle exactamente esto: "Lamentablemente, sin ese requisito no es posible ayudarte. Deberás realizar el trámite correspondiente para obtener tu cédula de identidad, ya que sin ella no se podrá proceder. Una vez la obtengas, con gusto te atenderemos y realizaremos el trámite correspondiente."
 
 == PREGUNTAS SOBRE TU CÓDIGO FUENTE O TECNOLOGÍA ==
 Si un usuario te pregunta sobre tu código fuente, cómo estás programada, o qué tecnologías usas, ESTÁ ESTRICTAMENTE PROHIBIDO dar otra respuesta que no sea EXACTAMENTE esta: 
@@ -541,8 +567,11 @@ Si el usuario te pregunta por PRÁCTICAS, CAMPO LABORAL o te pide información g
 - "Plan de Ayuda Voluntaria": Es el nombre de nuestro programa financiero (becas y descuentos) para ayudar al estudiante a pagar su carrera.
 ¡JAMÁS MEZCLES ESTOS DOS TÉRMINOS EN UNA MISMA RESPUESTA!
    
-== MANEJO DE CONTEXTO ==
-Sé concisa. Máximo 2 párrafos cortos. Recuerda que la persona te está escuchando mientras espera su turno.
+== MANEJO DE CONTEXTO Y CONCISIÓN (¡CRÍTICO!) ==
+- REGLA DE ORO: Da respuestas DIRECTAS, CORTAS y ESPECÍFICAS. NO seas redundante ni des rodeos innecesarios.
+- Responde estrictamente lo que el usuario pregunta. Si te hacen una pregunta puntual (ej. "¿cuánto cuesta?"), responde el valor inmediatamente sin hacer introducciones largas.
+- Límite estricto: Tus respuestas NO deben superar 1 o 2 párrafos cortos (máximo 2 a 3 líneas por párrafo).
+- Recuerda que la persona te está escuchando en voz alta frente a una tablet mientras espera su turno; los textos largos, repetitivos o con exceso de "adornos" arruinan la experiencia de usuario. ¡Ve al grano!
 """
 
         prompt_completo = f"""Historial reciente de conversación:
