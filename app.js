@@ -258,6 +258,7 @@ reconocimiento.onend = () => {
         textoFinal = textoFinal.replace(/consultena/gi, "Consultina");
         textoFinal = textoFinal.replace(/mancillar/gi, "mención");
         textoFinal = textoFinal.replace(/medición/gi, "mención");
+        
 
         textInput.value = "";
         enviarMensajeServidor(textoFinal);
@@ -405,6 +406,7 @@ async function enviarMensajeServidor(textoUsuario) {
                         textoLimpioVoz = textoLimpioVoz.replace(/IESS/g, 'Íes');
                         textoLimpioVoz = textoLimpioVoz.replace(/MSP/g, 'Eme Ese Pe');
                         textoLimpioVoz = textoLimpioVoz.replace(/CGE/g, 'C G E');
+                        textoLimpioVoz = textoLimpioVoz.replace(/2x1/gi, 'dos por uno');
                         textoLimpioVoz = textoLimpioVoz.replace(/\$([0-9]+)\.([0-9]+)/g, '$1 dólares con $2 centavos');
                         textoLimpioVoz = textoLimpioVoz.replace(/\$([0-9]+)/g, '$1 dólares');
                         
