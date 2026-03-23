@@ -42,6 +42,18 @@
             from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
+    /* Asegura que el contenido multimedia no sea exageradamente alto */
+    .video-consultina, .img-consultina {
+        max-height: 250px; /* Ajusta según prefieras */
+        object-fit: cover;
+    }
+    
+    /* En pantallas pequeñas, quitamos la doble columna para que no se vea apretado */
+    @media (max-width: 768px) {
+        .flex-row {
+            flex-direction: column !important;
+        }
+    }
     </style>
 </head>
 <body class="bg-geminiBg text-gray-800 h-screen flex flex-col font-sans overflow-hidden">

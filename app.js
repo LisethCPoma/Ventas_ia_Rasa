@@ -88,12 +88,34 @@ function transicionAChat() {
     bottomInputContainer.appendChild(theInputBox);
 }
 
-// 2. Función para renderizar los mensajes
-function agregarMensaje(remitente, texto, esUsuario) {
-    if (!chatIniciado) transicionAChat();
+// 2. Función helper: extrae <video> e <img> de un string HTML y los devuelve separados
+function extraerMedia(htmlStr) {
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = htmlStr;
 
-    const div = document.createElement('div');
-    div.className = `flex w-full opacity-0 animate-[fadeIn_0.4s_ease-out_forwards] ${esUsuario ? "justify-end" : "justify-start"}`;
+    // Buscar el primer video o imagen embebida (excluyendo collages tipo <div class='flex ...'>)
+    const video = tempDiv.querySelector('video');
+    const img = tempDiv.querySelector('img:not([class*="w-1/2"])'); // excluir imágenes de collage
+
+    let mediaEl = null;
+    if (video) {
+        // Clonar el video y aplicarle clases de layout
+        mediaEl = video.cloneNode(true);
+        mediaEl.className = 'rounded-2xl shadow-sm w-full h-auto max-h-[260px] border border-gray-100';
+        video.remove();
+    } else if (img) {
+        mediaEl = img.cloneNode(true);
+        mediaEl.className = 'rounded-2xl shadow-sm w-full h-auto border border-gray-100';
+        img.remove();
+    }
+
+    return { textoLimpio: tempDiv.innerHTML, mediaEl };
+}
+
+// 3. Función para renderizar los mensajes
+function agregarMensaje(nombre, texto, esUsuario, media = null) {
+    const divMensaje = document.createElement('div');
+    divMensaje.className = `flex ${esUsuario ? 'justify-end' : 'justify-start'} mb-2 w-full`;
 
     let htmlContent = '';
 
@@ -103,25 +125,65 @@ function agregarMensaje(remitente, texto, esUsuario) {
                 ${texto}
             </div>
         `;
+        divMensaje.innerHTML = htmlContent;
     } else {
-        htmlContent = `
-            <div class="flex gap-4 w-full md:max-w-[85%]">
-                <div class="w-9 h-9 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <img src="assets/images/Logo.png" alt="Avatar Consultina" class="w-full h-full object-contain drop-shadow-sm">
-                </div>
-                <div class="bg-white border border-gray-100 shadow-sm rounded-3xl rounded-tl-sm px-6 py-4 text-gray-800 text-[15px] leading-relaxed w-full">
-                    ${texto}
-                </div>
-            </div>
-        `;
+        // Intentar extraer media embebida del texto
+        const { textoLimpio, mediaEl } = extraerMedia(texto);
+        const tieneMedia = !!mediaEl || !!media;
+
+        const wrapper = document.createElement('div');
+        wrapper.className = 'flex gap-4 w-full md:max-w-[95%]';
+
+        // Avatar
+        const avatar = document.createElement('div');
+        avatar.className = 'w-9 h-9 flex items-center justify-center flex-shrink-0 mt-0.5';
+        avatar.innerHTML = `<img src="assets/images/Logo.png" alt="Avatar Consultina" class="w-full h-full object-contain drop-shadow-sm">`;
+
+        // Burbuja
+        const burbuja = document.createElement('div');
+        burbuja.className = 'bg-white border border-gray-100 shadow-sm rounded-3xl rounded-tl-sm px-6 py-4 text-gray-800 text-[15px] leading-relaxed w-full';
+
+        if (tieneMedia) {
+            // Layout doble columna: texto izquierda, media derecha
+            const row = document.createElement('div');
+            row.className = 'flex flex-col md:flex-row gap-5 items-start';
+
+            const colTexto = document.createElement('div');
+            colTexto.className = 'flex-1 min-w-0';
+            colTexto.innerHTML = textoLimpio;
+
+            const colMedia = document.createElement('div');
+            colMedia.className = 'w-full md:w-[42%] flex-shrink-0';
+
+            if (mediaEl) {
+                colMedia.appendChild(mediaEl);
+            } else if (media) {
+                // Caso legado: objeto media pasado como parámetro
+                const el = document.createElement(media.type === 'image' ? 'img' : 'video');
+                el.src = media.url;
+                el.className = 'rounded-2xl shadow-sm w-full h-auto max-h-[260px] border border-gray-100';
+                if (media.type === 'video') el.controls = true;
+                colMedia.appendChild(el);
+            }
+
+            row.appendChild(colTexto);
+            row.appendChild(colMedia);
+            burbuja.appendChild(row);
+        } else {
+            burbuja.innerHTML = textoLimpio;
+        }
+
+        wrapper.appendChild(avatar);
+        wrapper.appendChild(burbuja);
+        divMensaje.appendChild(wrapper);
     }
 
-    div.innerHTML = htmlContent;
-    chatBox.appendChild(div);
+    if (esUsuario) {
+        divMensaje.innerHTML = htmlContent;
+    }
 
-    setTimeout(() => {
-        chatBox.scrollTo({ top: chatBox.scrollHeight, behavior: 'smooth' });
-    }, 50);
+    chatBox.appendChild(divMensaje);
+    chatBox.scrollTop = chatBox.scrollHeight;
 }
 
 // 3. Control del micrófono
@@ -239,7 +301,7 @@ function mostrarCargando() {
 
     const divCargando = document.createElement('div');
     divCargando.id = 'mensaje-cargando';
-    // 🚨 ELIMINAMOS EL RETRASO: Ahora aparece instantáneamente de golpe
+    //ELIMINAMOS EL RETRASO: Ahora aparece instantáneamente de golpe
     divCargando.className = `flex w-full justify-start mt-2 mb-2`; 
     
     divCargando.innerHTML = `
@@ -328,9 +390,15 @@ async function enviarMensajeServidor(textoUsuario) {
                         
                         let elementoTemporal = document.createElement("div");
                         elementoTemporal.innerHTML = mensaje.text;
+                        
+                        // Eliminar cualquier elemento marcado como data-novoz (ej: enlaces) para que no los lea
+                        elementoTemporal.querySelectorAll('[data-novoz]').forEach(el => el.remove());
+                        
                         let textoSinCodigo = elementoTemporal.textContent || elementoTemporal.innerText || "";
 
                         let textoLimpioVoz = textoSinCodigo.replace(/\*/g, '');
+                        // Eliminar emojis para que Consultina no los lea en voz alta
+                        textoLimpioVoz = textoLimpioVoz.replace(/[\p{Extended_Pictographic}\u{1F3FB}-\u{1F3FF}\u{1F9B0}-\u{1F9B3}]/gu, '');
                         textoLimpioVoz = textoLimpioVoz.replace(/NVIDIA/g, 'Envidia');
                         textoLimpioVoz = textoLimpioVoz.replace(/USFQ/g, 'U S F Q');
                         textoLimpioVoz = textoLimpioVoz.replace(/UDLA/g, 'Udla');
@@ -366,5 +434,12 @@ async function enviarMensajeServidor(textoUsuario) {
             textInput.focus();
         }
     }); 
-
+// Añadir esto al final de app.js para callar a Consultina al dar play
+document.addEventListener('play', function(e){
+    if(e.target.tagName === 'VIDEO'){
+        if (window.speechSynthesis.speaking) {
+            window.speechSynthesis.cancel();
+        }
+    }
+}, true);
 }
