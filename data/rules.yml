@@ -319,3 +319,13 @@ rules:
   steps:
   - intent: preguntar_becas_general
   - action: action_gemini_fallback
+
+- rule: Consultina delega la continuidad de la carrera y homologaciones a Gemini
+  steps:
+  - intent: continuar_carrera_homologacion
+  - action: action_gemini_fallback
+
+- rule: Consultina delega el costo de inscripcion a Gemini
+  steps:
+  - intent: preguntar_costo_inscripcion
+  - action: action_gemini_fallback

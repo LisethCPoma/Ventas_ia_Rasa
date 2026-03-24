@@ -10,6 +10,7 @@ intents:
   - preguntar_horarios
   - preguntar_duracion_carreras
   - preguntar_costos
+  - preguntar_costo_inscripcion
   - preguntar_opciones_pago
   - preguntar_practicas
   - preguntar_campo_laboral
@@ -58,6 +59,7 @@ intents:
   - preguntar_menciones_capacitadora
   - preguntar_requisitos_mencion
   - preguntar_todos_los_cursos
+  - continuar_carrera_homologacion
   - elegir_carrera
   - elegir_curso
   - preguntar_como_estas
@@ -431,12 +433,12 @@ responses:
     - type: slot
       name: carrera
       value: enfermeria
-    text: "En la carrera de **Técnico Superior en Enfermería**, tus prácticas se realizarán en clínicas u hospitales (como el Gustavo Domínguez o Cuba Center), subcentros de salud y el MSP, trabajando directamente con pacientes reales. ¡Aplicarás todo tu conocimiento para salvar vidas!\n\n Te mostramos fotos reales de nuestros consultinos desempeñando sus funciones en entornos de practica 100% reales<img src='assets/images/collageenfermeria.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>\n\n¿Deseas saber más acerca del campo laboral?"
+    text: "En la carrera de **Técnico Superior en Enfermería**, tus prácticas se realizarán en clínicas u hospitales (como el Gustavo Domínguez o Cuba Center), subcentros de salud y el MSP, trabajando directamente con pacientes reales. ¡Aplicarás todo tu conocimiento para salvar vidas!\n\n Te mostramos fotos reales de nuestros consultinos desempeñando sus funciones en entornos de practica 100% reales<img src='assets/images/enfermeria1.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>\n\n¿Deseas saber más acerca del campo laboral?"
   - condition:
     - type: slot
       name: carrera
       value: emergencias medicas
-    text: "Para **Emergencias Médicas**, las prácticas se desarrollan en clínicas u hospitales. Además, **no cobramos las prácticas voluntarias** como en la mayoría de lugares hacen.\n\nSomos el único organismo que cuenta con **16 ambulancias propias a nivel nacional** vinculadas al ECU 911, por lo que participarás en escenarios reales de rescate y atención de emergencias.\n\n Te mostramos fotos reales de nuestros consultinos desempeñando sus funciones en entornos de practica 100% reales<img src='assets/images/collageemergencias.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>\n\n¿Te gustaría conocer la duración o los costos?"
+    text: "Para **Emergencias Médicas**, las prácticas se desarrollan en clínicas u hospitales. Además, **no cobramos las prácticas voluntarias** como en la mayoría de lugares hacen.\n\nSomos el único organismo que cuenta con **16 ambulancias propias a nivel nacional** vinculadas al ECU 911, por lo que participarás en escenarios reales de rescate y atención de emergencias.\n\n Te mostramos fotos reales de nuestros consultinos desempeñando sus funciones en entornos de practica 100% reales<img src='assets/images/emergencias1.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>\n\n¿Te gustaría conocer la duración o los costos?"
   - condition:
     - type: slot
       name: carrera
@@ -466,7 +468,7 @@ responses:
     - type: slot
       name: carrera
       value: educacion inicial
-    text: "Las prácticas para **Educación Inicial** se realizan en unidades educativas y guarderías. El instituto cuenta con espacios propios como el centro privado Rincón KitCGE y más.\n\n<img src='assets/images/educacioninicialcollage.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>\n\n¿Tienes alguna duda sobre esta hermosa profesión?"
+    text: "Las prácticas para **Educación Inicial** se realizan en unidades educativas y guarderías. El instituto cuenta con espacios propios como el centro privado Rincón KitCGE y más.\n\n<img src='assets/images/educacioninicial1.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>\n\n¿Tienes alguna duda sobre esta hermosa profesión?"
   - condition:
     - type: slot
       name: carrera
@@ -505,12 +507,12 @@ responses:
     - type: slot
       name: carrera
       value: enfermeria
-    text: "¡El campo laboral es inmenso y hermoso! Podrás trabajar **salvando vidas** en clínicas privadas, subcentros de salud o instituciones de salud pública (como el Hospital Gustavo Domínguez, Cuba Center, MSP y otros). O si lo prefieres, puedes crear tu propia empresa de cuidados de enfermería y servir no solo en el Ecuador, ¡sino a todo el mundo!\n\nImagina el impacto que tendrás al mejorar la vida de tantas personas. ¡Mira a nuestros estudiantes en acción!\n\n<img src='assets/images/enfermeria.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
+    text: "¡El campo laboral es inmenso y hermoso! Podrás trabajar **salvando vidas** en clínicas privadas, subcentros de salud o instituciones de salud pública (como el Hospital Gustavo Domínguez, Cuba Center, MSP y otros). O si lo prefieres, puedes crear tu propia empresa de cuidados de enfermería y servir no solo en el Ecuador, ¡sino a todo el mundo!\n\nImagina el impacto que tendrás al mejorar la vida de tantas personas. ¡Mira a nuestros estudiantes en acción!\n\n<img src='assets/images/enfermeria1.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
   - condition:
     - type: slot
       name: carrera
       value: emergencias medicas
-    text: "¡Tendrás una profesión llena de adrenalina y propósito! Podrás trabajar **salvando vidas** en atención prehospitalaria, rescates y el sistema ECU 911, o puedes crear tu propia empresa de atención de emergencias sirviendo en Ecuador y el mundo.\n\n¡Mira a nuestros héroes en acción!\n\n<img src='assets/images/collageemergencias.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
+    text: "¡Tendrás una profesión llena de adrenalina y propósito! Podrás trabajar **salvando vidas** en atención prehospitalaria, rescates y el sistema ECU 911, o puedes crear tu propia empresa de atención de emergencias sirviendo en Ecuador y el mundo.\n\n¡Mira a nuestros héroes en acción!\n\n<img src='assets/images/emergencias1.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
   - text: "¡Tu campo laboral será gigante! Te preparamos para que puedas trabajar en las instituciones más grandes del país (públicas y privadas) o para que crees tu propia empresa y puedas brindar tus servicios no solo en Ecuador, ¡sino a todo el mundo!"
   - condition:
     - type: slot
@@ -546,7 +548,7 @@ responses:
     - type: slot
       name: carrera
       value: educacion inicial
-    text: "Para **Educación Inicial**, las salidas laborales incluyen:\n- Docencia en unidades educativas, colegios y escuelas.\n- Gestión y dirección de centros de desarrollo infantil y guarderías.\n- Emprender tu propio centro educativo o de nivelación. ¿Quisieras conocer los costos y cuotas?\n\n<img src='assets/images/educacioninicialcollage.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
+    text: "Para **Educación Inicial**, las salidas laborales incluyen:\n- Docencia en unidades educativas, colegios y escuelas.\n- Gestión y dirección de centros de desarrollo infantil y guarderías.\n- Emprender tu propio centro educativo o de nivelación. ¿Quisieras conocer los costos y cuotas?\n\n<img src='assets/images/educacioninicial1.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
   - condition:
     - type: slot
       name: carrera
@@ -703,12 +705,12 @@ responses:
     - type: slot
       name: carrera
       value: enfermeria
-    text: "En **Enfermería** aprenderás desde toma de signos vitales, administración de medicación e inyectología, hasta curaciones avanzadas y asistencia en procedimientos médicos. ¡Saldrás completamente preparado para cuidar y salvar vidas!\n\n<img src='assets/images/enfermeria.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
+    text: "En **Enfermería** aprenderás desde toma de signos vitales, administración de medicación e inyectología, hasta curaciones avanzadas y asistencia en procedimientos médicos. ¡Saldrás completamente preparado para cuidar y salvar vidas!\n\n<img src='assets/images/enfermeria1.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
   - condition:
     - type: slot
       name: carrera
       value: emergencias medicas
-    text: "En **Emergencias Médicas** aprenderás a manejar situaciones críticas: reanimación cardiopulmonar (RCP), inmovilización, extracción vehicular, manejo de traumas y atención prehospitalaria avanzada.\n\n<img src='assets/images/terremoto1.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
+    text: "En **Emergencias Médicas** aprenderás a manejar situaciones críticas: reanimación cardiopulmonar (RCP), inmovilización, extracción vehicular, manejo de traumas y atención prehospitalaria avanzada.\n\n<img src='assets/images/emergencias1.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
   - condition:
     - type: slot
       name: carrera
@@ -718,7 +720,7 @@ responses:
     - type: slot
       name: carrera
       value: educacion inicial
-    text: "En **Educación Inicial** aprenderás sobre estimulación temprana, desarrollo psicomotor, creación de ambientes de aprendizaje seguros y técnicas para potenciar la creatividad de los niños.\n\n<img src='assets/images/educacioninicialcollage.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
+    text: "En **Educación Inicial** aprenderás sobre estimulación temprana, desarrollo psicomotor, creación de ambientes de aprendizaje seguros y técnicas para potenciar la creatividad de los niños.\n\n<img src='assets/images/educacioninicial1.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
   - text: "¡Excelente pregunta! Lo que vas a aprender depende de la opción que elijas:\n\n**Si eliges la Carrera de 2 años:** El pensum es avanzado y súper completo.\n**Si eliges el Curso Corto:** Aprenderás habilidades 100% prácticas desde el primer día.\n\n¿De qué carrera o curso en específico te gustaría saber el contenido?"
 
   - condition:
@@ -803,13 +805,13 @@ responses:
     - type: slot
       name: carrera
       value: enfermeria
-    text: "¡Claro que sí! En nuestro curso de **Auxiliar de Enfermería**, las prácticas se realizan con pacientes 100% reales. Tenemos convenios directos con el **Hospital Gustavo Domínguez, Cuba Center, subcentros de salud, el MSP** y clínicas privadas de primer nivel. Además, **no cobramos las prácticas voluntarias** como en la mayoría de lugares hacen.\n\n¡La institución se encarga de asignarte tu lugar de práctica para que te des a conocer en el ámbito laboral real!\n\nTe muestro algunas fotos de nuestros consultinos realizando sus prácticas en entornos reales:\n\n<img src='assets/images/collageenfermeria.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
+    text: "¡Claro que sí! En nuestro curso de **Auxiliar de Enfermería**, las prácticas se realizan con pacientes 100% reales. Tenemos convenios directos con el **Hospital Gustavo Domínguez, Cuba Center, subcentros de salud, el MSP** y clínicas privadas de primer nivel. Además, **no cobramos las prácticas voluntarias** como en la mayoría de lugares hacen.\n\n¡La institución se encarga de asignarte tu lugar de práctica para que te des a conocer en el ámbito laboral real!\n\nTe muestro algunas fotos de nuestros consultinos realizando sus prácticas en entornos reales:\n\n<img src='assets/images/enfermeria1.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
 
   - condition:
     - type: slot
       name: carrera
       value: emergencias medicas
-    text: "Para **Emergencias Médicas**, las prácticas se desarrollan en clínicas u hospitales. Además, **no cobramos las prácticas voluntarias** como en la mayoría de lugares hacen.\n\nSomos el único organismo que cuenta con **16 ambulancias propias a nivel nacional** vinculadas al ECU 911, por lo que participarás en escenarios reales de rescate y atención de emergencias.\n\n<img src='assets/images/collageemergencias.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>\n\n¿Te gustaría conocer la duración o los costos?"
+    text: "Para **Emergencias Médicas**, las prácticas se desarrollan en clínicas u hospitales. Además, **no cobramos las prácticas voluntarias** como en la mayoría de lugares hacen.\n\nSomos el único organismo que cuenta con **16 ambulancias propias a nivel nacional** vinculadas al ECU 911, por lo que participarás en escenarios reales de rescate y atención de emergencias.\n\n<img src='assets/images/emergencias1.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>\n\n¿Te gustaría conocer la duración o los costos?"
 
   - condition:
     - type: slot
@@ -851,7 +853,7 @@ responses:
     - type: slot
       name: carrera
       value: educacion inicial
-    text: "¡Así es! En **Educación Inicial**, las prácticas se realizan en unidades educativas y guarderías. Además, contamos con nuestra propia guardería infantil llamada **“Rincón Kid CGE”** para tus prácticas.\n\nTe muestro algunas fotos de nuestros consultinos realizando sus prácticas en entornos reales:\n\n<img src='assets/images/educacioninicialcollage.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
+    text: "¡Así es! En **Educación Inicial**, las prácticas se realizan en unidades educativas y guarderías. Además, contamos con nuestra propia guardería infantil llamada **“Rincón Kid CGE”** para tus prácticas.\n\nTe muestro algunas fotos de nuestros consultinos realizando sus prácticas en entornos reales:\n\n<img src='assets/images/educacioninicial1.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
 
   - condition:
     - type: slot
@@ -880,7 +882,7 @@ responses:
   - text: "¡Esa es una excelente pregunta! En CGE te brindamos **todas las herramientas, el conocimiento 100% práctico y los mejores convenios** para que desarrolles tus habilidades al máximo.\n\nMuchísimos de nuestros estudiantes logran quedarse trabajando en los mismos lugares donde realizan sus prácticas gracias a su excelente desempeño. Sin embargo, es importante ser muy transparentes contigo: CGE no te 'regala' ni te asegura el puesto de trabajo; tu contratación dependerá siempre de tu propio desenvolvimiento, esfuerzo y vocación de servicio.\n\nNosotros te damos la mejor preparación para que brilles en las entrevistas. ¿Te gustaría conocer cómo inscribirte y empezar a prepararte?"
 
   utter_becas_capacitadora:
-  - text: "🎉 Por el momento no contamos con un programa de becas activas, pero sí tenemos **descuentos y promociones** disponibles. 💵\n\nLa inscripción y la matrícula son **completamente gratuitas**. ✅ Además, los cursos que normalmente tienen un valor aproximado de $72.50 pueden acceder a descuentos adicionales dependiendo de las campañas vigentes. Pero si puedes acceder a becas en el instituto, de hasta el 50% de descuento o hasta becas del 100% de descuento, como es el caso de Alexis.\n\n🌟 ¡Mira este caso de éxito!<video controls class='w-64 md:w-80 h-auto rounded-xl mt-3 mb-3 shadow-sm border border-gray-100'><source src='assets/video/videobecado.mp4' type='video/mp4'></video>\n\nPara conocer qué descuento se puede aplicar en tu caso, mi asistente **Daniela** puede brindarte la información.\n\nY recuerda que todos los valores que tú dejes en CGE nos ayuda a salvar vidas. ❤️"
+  - text: "🎉 Por el momento no contamos con un programa de becas activas, pero sí tenemos **descuentos y promociones** disponibles. 💵\n\nLa inscripción y la matrícula son **completamente gratuitas**. ✅ Además, los cursos que normalmente tienen un valor aproximado de $72.50 pueden acceder a descuentos adicionales dependiendo de las campañas vigentes. Pero si puedes acceder a becas en el instituto, de hasta el 50% de descuento o hasta becas del 100% de descuento, como es el caso de algunos de nuestros becados.\n\n🌟 ¡Mira este caso de éxito!<video controls class='w-64 md:w-80 h-auto rounded-xl mt-3 mb-3 shadow-sm border border-gray-100'><source src='assets/video/videobecado.mp4' type='video/mp4'></video>\n\nPara conocer qué descuento se puede aplicar en tu caso, mi asistente **Daniela** puede brindarte la información.\n\nY recuerda que todos los valores que tú dejes en CGE nos ayuda a salvar vidas. ❤️"
 
   
   utter_costo_certificacion_capacitadora:
@@ -1004,7 +1006,7 @@ responses:
     - type: slot
       name: carrera
       value: enfermeria
-    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Enfermería (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\nAprenderás desde toma de signos vitales e inyectología, hasta curaciones avanzadas y asistencia médica. ¡Saldrás completamente preparado para cuidar y salvar vidas!\n\nPero antes de continuar, te comparto un gran beneficio: **¿Sabías que puedes terminar tu carrera en menos tiempo?** ⏳\n\nSi primero realizas nuestro curso de **Auxiliar de Enfermería (8 meses)**, luego podrás homologar el primer año de tu carrera. Esto significa que saldrías rápido con un certificado (avalado para iniciar tu vida laboral) y estarías adelantando tus estudios superiores simultáneamente. 🚀\n\n¿Qué te gustaría elegir el día de hoy? ¿Te animas a iniciar primero con el **curso** para aprovechar esta ventaja, o prefieres continuar directamente con la información de la **carrera** (costos, duración, etc.)?"
+    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Enfermería (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\nAprenderás desde toma de signos vitales e inyectología, hasta curaciones avanzadas y asistencia médica. ¡Saldrás completamente preparado para cuidar y salvar vidas!\n\nPero antes de continuar, te comparto un gran beneficio: **¿Sabías que puedes terminar tu carrera en menos tiempo?** ⏳\n\nSi primero realizas nuestro curso de **Auxiliar de Enfermería (8 meses)**, luego podrás homologar. Esto significa que saldrías rápido con un certificado (avalado para iniciar tu vida laboral) y estarías adelantando tus estudios superiores simultáneamente. 🚀\n\n¿Qué te gustaría elegir el día de hoy? ¿Te animas a iniciar primero con el **curso** para aprovechar esta ventaja, o prefieres continuar directamente con la información de la **carrera** (costos, duración, etc.)?"
   - condition:
     - type: slot
       name: carrera
@@ -1014,25 +1016,25 @@ responses:
     - type: slot
       name: carrera
       value: emergencias medicas
-    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Emergencias Médicas (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\nAprenderás a manejar situaciones críticas: reanimación cardiopulmonar (RCP), inmovilización, extracción vehicular, manejo de traumas y atención prehospitalaria avanzada.\n\nPero antes de continuar, te comparto un gran beneficio: **¿Sabías que puedes terminar tu carrera en menos tiempo?** ⏳\n\nSi primero realizas nuestro curso de **Emergencias Médicas (8 meses)**, luego podrás homologar el primer año de tu carrera. Esto significa que saldrías rápido con certificados avalados por instituciones de alta categoría como la UTEQ y el ISTCGE para iniciar tu vida laboral y estarías adelantando tus estudios superiores simultáneamente. 🚀\n\n¿Qué te gustaría elegir el día de hoy? ¿Te animas a iniciar primero con el **curso** para aprovechar esta ventaja, o prefieres continuar directamente con la información de la **carrera** (costos, duración, etc.)?"
+    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Emergencias Médicas (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\nAprenderás a manejar situaciones críticas: reanimación cardiopulmonar (RCP), inmovilización, extracción vehicular, manejo de traumas y atención prehospitalaria avanzada.\n\nPero antes de continuar, te comparto un gran beneficio: **¿Sabías que puedes terminar tu carrera en menos tiempo?** ⏳\n\nSi primero realizas nuestro curso de **Emergencias Médicas (8 meses)**, luego podrás homologar. Esto significa que saldrías rápido con certificados avalados por instituciones de alta categoría como la UTEQ y el ISTCGE para iniciar tu vida laboral y estarías adelantando tus estudios superiores simultáneamente. 🚀\n\n¿Qué te gustaría elegir el día de hoy? ¿Te animas a iniciar primero con el **curso** para aprovechar esta ventaja, o prefieres continuar directamente con la información de la **carrera** (costos, duración, etc.)?"
 
   - condition:
     - type: slot
       name: carrera
       value: rehabilitacion fisica
-    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Rehabilitación Física (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\nAprenderás anatomía, técnicas de masoterapia, kinesioterapia y el uso de equipos especializados para devolverles el movimiento y bienestar a los pacientes.\n\nPero antes de continuar, te comparto un gran beneficio: **¿Sabías que puedes terminar tu carrera en menos tiempo?** ⏳\n\nSi primero realizas nuestro curso de **Rehabilitación Física (6 meses)**, luego podrás homologar el primer año de tu carrera. Esto significa que saldrías rápido con un certificado (avalado para iniciar tu vida laboral) y estarías adelantando tus estudios superiores simultáneamente. 🚀\n\n¿Qué te gustaría elegir el día de hoy? ¿Te animas a iniciar primero con el **curso** para aprovechar esta ventaja, o prefieres continuar directamente con la información de la **carrera** (costos, duración, etc.)?"
+    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Rehabilitación Física (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\nAprenderás anatomía, técnicas de masoterapia, kinesioterapia y el uso de equipos especializados para devolverles el movimiento y bienestar a los pacientes.\n\nPero antes de continuar, te comparto un gran beneficio: **¿Sabías que puedes terminar tu carrera en menos tiempo?** ⏳\n\nSi primero realizas nuestro curso de **Rehabilitación Física (6 meses)**, luego podrás homologar. Esto significa que saldrías rápido con un certificado (avalado para iniciar tu vida laboral) y estarías adelantando tus estudios superiores simultáneamente. 🚀\n\n¿Qué te gustaría elegir el día de hoy? ¿Te animas a iniciar primero con el **curso** para aprovechar esta ventaja, o prefieres continuar directamente con la información de la **carrera** (costos, duración, etc.)?"
 
   - condition:
     - type: slot
       name: carrera
       value: laboratorio clinico
-    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Laboratorio Clínico (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\nAprenderás sobre toma de muestras, análisis hematológicos, microbiológicos y el uso de equipos de laboratorio para apoyar en diagnósticos médicos precisos.\n\nPero antes de continuar, te comparto un gran beneficio: **¿Sabías que puedes terminar tu carrera en menos tiempo?** ⏳\n\nSi primero realizas nuestro curso de **Laboratorio Clínico (5 meses)**, luego podrás homologar el primer año de tu carrera. Esto significa que saldrías rápido con un certificado (avalado para iniciar tu vida laboral) y estarías adelantando tus estudios superiores simultáneamente. 🚀\n\n¿Qué te gustaría elegir el día de hoy? ¿Te animas a iniciar primero con el **curso** para aprovechar esta ventaja, o prefieres continuar directamente con la información de la **carrera** (costos, duración, etc.)?"
+    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Laboratorio Clínico (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\nAprenderás sobre toma de muestras, análisis hematológicos, microbiológicos y el uso de equipos de laboratorio para apoyar en diagnósticos médicos precisos.\n\nPero antes de continuar, te comparto un gran beneficio: **¿Sabías que puedes terminar tu carrera en menos tiempo?** ⏳\n\nSi primero realizas nuestro curso de **Laboratorio Clínico (5 meses)**, luego podrás homologar. Esto significa que saldrías rápido con un certificado (avalado para iniciar tu vida laboral) y estarías adelantando tus estudios superiores simultáneamente. 🚀\n\n¿Qué te gustaría elegir el día de hoy? ¿Te animas a iniciar primero con el **curso** para aprovechar esta ventaja, o prefieres continuar directamente con la información de la **carrera** (costos, duración, etc.)?"
 
   - condition:
     - type: slot
       name: carrera
       value: administracion de farmacias
-    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Administración de Farmacias (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\nAprenderás sobre farmacología, dispensación de medicamentos, atención al paciente y gestión de inventarios para farmacias y clínicas.\n\nPero antes de continuar, te comparto un gran beneficio: **¿Sabías que puedes terminar tu carrera en menos tiempo?** ⏳\n\nSi primero realizas nuestro curso de **Auxiliar de Farmacia (5 meses)**, luego podrás homologar el primer año de tu carrera. Esto significa que saldrías rápido con un certificado (avalado para iniciar tu vida laboral) y estarías adelantando tus estudios superiores simultáneamente. 🚀\n\n¿Qué te gustaría elegir el día de hoy? ¿Te animas a iniciar primero con el **curso** para aprovechar esta ventaja, o prefieres continuar directamente con la información de la **carrera** (costos, duración, etc.)?"
+    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Administración de Farmacias (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\nAprenderás sobre farmacología, dispensación de medicamentos, atención al paciente y gestión de inventarios para farmacias y clínicas.\n\nPero antes de continuar, te comparto un gran beneficio: **¿Sabías que puedes terminar tu carrera en menos tiempo?** ⏳\n\nSi primero realizas nuestro curso de **Auxiliar de Farmacia (5 meses)**, luego podrás homologar. Esto significa que saldrías rápido con un certificado (avalado para iniciar tu vida laboral) y estarías adelantando tus estudios superiores simultáneamente. 🚀\n\n¿Qué te gustaría elegir el día de hoy? ¿Te animas a iniciar primero con el **curso** para aprovechar esta ventaja, o prefieres continuar directamente con la información de la **carrera** (costos, duración, etc.)?"
 
   - condition:
     - type: slot
@@ -1044,7 +1046,7 @@ responses:
     - type: slot
       name: carrera
       value: educacion inicial
-    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Educación Inicial (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado directamente en la SENESCYT.\n\nAprenderás sobre estimulación temprana, desarrollo psicomotor y cómo crear ambientes de aprendizaje seguros. Podrás trabajar en escuelas, guarderías o abrir tu propio centro educativo.\n\nPero antes de continuar, te comparto un gran beneficio: **¿Sabías que puedes terminar tu carrera en menos tiempo?** ⏳\n\nSi primero realizas nuestro curso de **Auxiliar en Educación Inicial (8 meses)**, luego podrás homologar el primer año de tu carrera. Esto significa que saldrías rápido con un certificado (avalado para iniciar tu vida laboral) y estarías adelantando tus estudios superiores simultáneamente. 🚀\n\n¿Qué te gustaría elegir el día de hoy? ¿Te animas a iniciar primero con el **curso** para aprovechar esta ventaja, o prefieres continuar directamente con la información de la **carrera** (costos, duración, etc.)?"
+    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Educación Inicial (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado directamente en la SENESCYT.\n\nAprenderás sobre estimulación temprana, desarrollo psicomotor y cómo crear ambientes de aprendizaje seguros. Podrás trabajar en escuelas, guarderías o abrir tu propio centro educativo.\n\nPero antes de continuar, te comparto un gran beneficio: **¿Sabías que puedes terminar tu carrera en menos tiempo?** ⏳\n\nSi primero realizas nuestro curso de **Auxiliar en Educación Inicial (8 meses)**, luego podrás homologar. Esto significa que saldrías rápido con un certificado (avalado para iniciar tu vida laboral) y estarías adelantando tus estudios superiores simultáneamente. 🚀\n\n¿Qué te gustaría elegir el día de hoy? ¿Te animas a iniciar primero con el **curso** para aprovechar esta ventaja, o prefieres continuar directamente con la información de la **carrera** (costos, duración, etc.)?"
 
   - condition:
     - type: slot
@@ -1080,7 +1082,7 @@ responses:
     - type: slot
       name: carrera
       value: naturopatia
-    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Naturopatía (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\nAprenderás sobre medicina alternativa, fitoterapia, terapias florales y nutrición natural para promover la salud de forma holística.\n\nPero antes de continuar, te comparto un gran beneficio: **¿Sabías que puedes terminar tu carrera en menos tiempo?** ⏳\n\nSi primero realizas nuestro curso de **Auxiliar de Naturopatía (8 meses)**, luego podrás homologar el primer año de tu carrera. Esto significa que saldrías rápido con un certificado (avalado para iniciar tu vida laboral) y estarías adelantando tus estudios superiores simultáneamente. 🚀\n\n¿Qué te gustaría elegir el día de hoy? ¿Te animas a iniciar primero con el **curso** para aprovechar esta ventaja, o prefieres continuar directamente con la información de la **carrera** (costos, duración, etc.)?"
+    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Naturopatía (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\nAprenderás sobre medicina alternativa, fitoterapia, terapias florales y nutrición natural para promover la salud de forma holística.\n\nPero antes de continuar, te comparto un gran beneficio: **¿Sabías que puedes terminar tu carrera en menos tiempo?** ⏳\n\nSi primero realizas nuestro curso de **Auxiliar de Naturopatía (8 meses)**, luego podrás homologar. Esto significa que saldrías rápido con un certificado (avalado para iniciar tu vida laboral) y estarías adelantando tus estudios superiores simultáneamente. 🚀\n\n¿Qué te gustaría elegir el día de hoy? ¿Te animas a iniciar primero con el **curso** para aprovechar esta ventaja, o prefieres continuar directamente con la información de la **carrera** (costos, duración, etc.)?"
 
   - condition:
     - type: slot
@@ -1104,7 +1106,7 @@ responses:
     - type: slot
       name: carrera
       value: emergencias medicas
-    text: "¡Una profesión llena de adrenalina! En el curso de **Emergencias Médicas** aprenderás de forma 100% práctica a salvar vidas. Te capacitaremos en Reanimación Cardiopulmonar (RCP), manejo de traumas, extracción vehicular, inmovilización y atención prehospitalaria avanzada.\n\n¡Estarás listo para la acción! \n\nTe muestro algunas fotos de nuestros consultinos en entornos reales:\n\n<img src='assets/images/collageemergencias.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
+    text: "¡Una profesión llena de adrenalina! En el curso de **Emergencias Médicas** aprenderás de forma 100% práctica a salvar vidas. Te capacitaremos en Reanimación Cardiopulmonar (RCP), manejo de traumas, extracción vehicular, inmovilización y atención prehospitalaria avanzada.\n\n¡Estarás listo para la acción! \n\nTe muestro algunas fotos de nuestros consultinos en entornos reales:\n\n<img src='assets/images/emergencias1.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
 
   - condition:
     - type: slot
@@ -1122,7 +1124,7 @@ responses:
     - type: slot
       name: carrera
       value: educacion inicial
-    text: "¡Una carrera de pura vocación! En el curso de **Educación Inicial** aprenderás 100% en la práctica sobre estimulación temprana, desarrollo psicomotor, nutrición infantil y cómo crear ambientes de aprendizaje mágicos para los niños.\n\nTe muestro algunas fotos de nuestros consultinos realizando sus prácticas en entornos reales:\n\n<img src='assets/images/educacioninicialcollage.png' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
+    text: "¡Una carrera de pura vocación! En el curso de **Educación Inicial** aprenderás 100% en la práctica sobre estimulación temprana, desarrollo psicomotor, nutrición infantil y cómo crear ambientes de aprendizaje mágicos para los niños.\n\nTe muestro algunas fotos de nuestros consultinos realizando sus prácticas en entornos reales:\n\n<img src='assets/images/educacioninicial1.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
 
   - condition:
     - type: slot

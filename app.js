@@ -20,6 +20,9 @@ reconocimiento.continuous = true;
 // Generar un ID único para esta sesión de chat
 const sessionID = "usuario_" + Math.random().toString(36).substring(2, 10);
 
+// Memoria global de imágenes mostradas para evitar duplicados seguidos
+const lastShownMedia = { enfermeria: '', emergencias: '', educacion: '', video: '' };
+
 // --- CONFIGURACIÓN DE VOZ NATIVA (ACENTO LATINO Y MÁS FLUIDA) ---
 function reproducirVozFemenina(texto) {
     // Si Consultina estaba hablando, la callamos antes de iniciar el nuevo audio
@@ -210,8 +213,8 @@ reconocimiento.onstart = () => {
     theInputBox.classList.add('escuchando-fx', 'bg-white');
     theInputBox.classList.remove('bg-inputBg');
 
-    btnHablar.classList.add('bg-primary', 'text-white');
-    btnHablar.classList.remove('bg-transparent', 'text-gray-600', 'hover:bg-gray-200');
+    btnHablar.classList.add('bg-red-500', 'text-white', 'animate-pulse');
+    btnHablar.classList.remove('bg-transparent', 'text-gray-600', 'hover:bg-gray-200', 'bg-primary');
 
     btnHablar.classList.remove('hidden');
     btnEnviarTexto.classList.add('hidden');
@@ -243,7 +246,7 @@ reconocimiento.onend = () => {
 
     theInputBox.classList.remove('escuchando-fx', 'bg-white');
     theInputBox.classList.add('bg-inputBg');
-    btnHablar.classList.remove('bg-primary', 'text-white');
+    btnHablar.classList.remove('bg-red-500', 'text-white', 'animate-pulse');
     btnHablar.classList.add('bg-transparent', 'text-gray-600', 'hover:bg-gray-200');
     textInput.placeholder = 'Consultina está analizando...';
     iconMic.innerHTML = '<path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" x2="12" y1="19" y2="22"></line>';
@@ -386,6 +389,40 @@ async function enviarMensajeServidor(textoUsuario) {
                         let textoCapa = mensaje.text
                             .replace(/\*\*(.*?)\*\*/g, '<strong class="text-primary font-semibold">$1</strong>')
                             .replace(/\n/g, '<br>');
+                            
+                        // --- SISTEMA DE ALEATORIEDAD MULTIMEDIA SIN REPETICIÓN ---
+                        // Función auxiliar para obtener un elemento distinto al último mostrado
+                        const getUniqueMedia = (array, key) => {
+                            if (array.length <= 1) return array[0];
+                            let newRandom;
+                            do {
+                                newRandom = array[Math.floor(Math.random() * array.length)];
+                            } while (newRandom === lastShownMedia[key]);
+                            lastShownMedia[key] = newRandom;
+                            return newRandom;
+                        };
+
+                        // Enfermería
+                        if (textoCapa.includes('enfermeria1.jpeg')) {
+                            const imgsEnfermeria = ['enfermeria1.jpeg', 'enfermeria2.jpeg', 'enfermeria3.jpeg', 'enfermeria5.jpeg', 'enfermeria6.jpeg'];
+                            textoCapa = textoCapa.replace('enfermeria1.jpeg', getUniqueMedia(imgsEnfermeria, 'enfermeria'));
+                        }
+                        // Emergencias Médicas
+                        if (textoCapa.includes('emergencias1.jpeg')) {
+                            const imgsEmergencias = ['emergencias1.jpeg', 'emergencias2.jpeg', 'emergencias3.jpeg', 'emergencias4.jpeg', 'emergencias5.jpeg'];
+                            textoCapa = textoCapa.replace('emergencias1.jpeg', getUniqueMedia(imgsEmergencias, 'emergencias'));
+                        }
+                        // Educación Inicial
+                        if (textoCapa.includes('educacioninicial1.jpeg')) {
+                            const imgsEdu = ['educacioninicial1.jpeg', 'educacioninicial2.jpeg', 'educacioninicial3.jpeg'];
+                            textoCapa = textoCapa.replace('educacioninicial1.jpeg', getUniqueMedia(imgsEdu, 'educacion'));
+                        }
+                        // Videos de Caso de Éxito
+                        if (textoCapa.includes('videobecado.mp4')) {
+                            const videosExito = ['videobecado.mp4', 'videobecado2.mp4', 'videobecado3.mp4'];
+                            textoCapa = textoCapa.replace('videobecado.mp4', getUniqueMedia(videosExito, 'video'));
+                        }
+                        // ------------------------------------------
                         
                         textoParaChat += textoCapa;
                         

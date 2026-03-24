@@ -255,6 +255,18 @@ nlu:
     - cual es el precio de la carrera
     - dame los precios por favor
 
+- intent: preguntar_costo_inscripcion
+  examples: |
+    - ¿Cuánto cuesta la inscripción?
+    - ¿Qué valor tiene la inscripción?
+    - ¿La inscripción se paga?
+    - ¿Cuánto debo pagar por inscribirme?
+    - costo de inscripción
+    - ¿Tiene precio matricularse?
+    - ¿Cuánto cuesta matricularse?
+    - precio de la inscripcion
+    - cuanto cuesta inscribirse
+    - cuesta algo la inscripción
 
 - intent: preguntar_opciones_pago
   examples: |
@@ -520,6 +532,20 @@ nlu:
     - me recomiendas enfermería o farmacia
     - cuál tiene más salida laboral enfermería o farmacia
     - no sé si elegir enfermería o farmacia
+
+- intent: continuar_carrera_homologacion
+  examples: |
+    - ya hice el curso quiero la carrera
+    - ya hice el curso de capacitación ahora quiero la carrera
+    - prefiero continuar directamente con la información de la carrera
+    - continuar directamente con la información de la carrera
+    - dame la información de la carrera
+    - ya estudié el curso, quiero la carrera
+    - ya hice el curso, dame costos
+    - ya tomé ese curso
+    - ya hice el curso
+    - ya tengo el certificado de ese curso
+
 # -----------------------------  CAPACITADORA -----------------------------------
 - intent: preguntar_cursos_capacitadora
   examples: |
