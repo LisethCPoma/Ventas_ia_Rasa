@@ -424,10 +424,15 @@ nlu:
     - ¿puedo enviar las fotos de mis documentos por WhatsApp y quedar listo?
     - ¿tengo que ir a alguna oficina en particular o todo el proceso se puede terminar por internet?
 
-- intent: preguntar_uniformes
+- intent: preguntar_inscripcion_online
   examples: |
-    - ¿El instituto tiene uniforme?
-    - ¿Dónde puedo comprar el uniforme?
+    - ¿puedo hacer la inscripción en línea?
+    - ¿puedo inscribirme por internet?
+    - ¿se puede hacer la matrícula por whatsapp?
+    - ¿puedo enviar mis documentos por correo?
+    - ¿la inscripción es online?
+    - ¿puedo adelantar mi inscripción desde casa?
+    - ¿cómo me inscribo virtualmente?
     - ¿Cuándo deberías adquirir el uniforme?
     - ¿Es obligatorio usar uniforme?
     - ¿Con quién puedo comprar el uniforme?

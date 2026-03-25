@@ -120,6 +120,40 @@ stories:
   - intent: informar_externo
   - action: utter_homologacion_externos
 
+- story: Scholarship career follow-up
+  steps:
+  - action: utter_becas_capacitadora
+  - intent: elegir_carrera
+  - action: utter_becas_instituto
+
+- story: Info carrera follow-up (Enfermería)
+  steps:
+  - intent: informar_carrera_interes
+    entities:
+    - carrera: enfermeria
+  - action: utter_info_carrera_elegida
+  - intent: elegir_carrera
+  - action: utter_info_carrera_enfermeria_confirmacion
+
+- story: Info curso follow-up (Enfermería)
+  steps:
+  - intent: informar_carrera_interes
+    entities:
+    - carrera: enfermeria
+  - action: utter_info_carrera_elegida
+  - intent: elegir_curso
+  - action: utter_info_curso_enfermeria_confirmacion
+
+- story: General career selection
+  steps:
+  - intent: elegir_carrera
+  - action: utter_info_carrera_elegida
+
+- story: General course selection
+  steps:
+  - intent: elegir_curso
+  - action: utter_info_curso_elegido
+
 - story: Docentes follow-up
   steps:
   - intent: preguntar_docentes

@@ -7,96 +7,6 @@ from rasa_sdk.executor import CollectingDispatcher
 from google.generativeai.types import HarmCategory, HarmBlockThreshold
 
 class ActionConsultarCuposCapacitadora(Action):
-    def name(self) -> Text:
-        return "action_consultar_cupos_capacitadora"
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        
-        # Obtenemos el curso de la memoria de la IA
-        carrera_slot = tracker.get_slot("carrera")
-        
-        # Diccionario para presentar los nombres de forma profesional
-        nombres_formateados = {
-            "veterinaria": "Veterinaria",
-            "enfermeria": "Enfermería",
-            "rehabilitacion fisica": "Rehabilitación Física",
-            "administracion de farmacias": "Farmacia",
-            "educacion inicial": "Educación Inicial",
-            "educacion basica": "Educación Básica",
-            "naturopatia": "Naturopatía",
-            "emergencias medicas": "Emergencias Médicas",
-            "odontologia": "Odontología",
-            "laboratorio clinico": "Laboratorio Clínico",
-            "flores de bach": "Flores de Bach",
-            "mecanica de motos": "Mecánica básica de motos para mujeres",
-            "mecanica automotriz": "Mecánica básica de vehículos",
-            "inyectologia": "Taller de Inyectología"
-        }
-
-        # ESCENARIO 1: El usuario SÍ mencionó el curso
-        if carrera_slot:
-            carrera_normalizada = carrera_slot.lower().strip()
-            nombre_bonito = nombres_formateados.get(carrera_normalizada, carrera_slot.title())
-            cupos_disponibles = None
-            conexion = None
-
- # Conexión a la Base de Datos
-            try:
-                conexion = mysql.connector.connect(
-                    host='127.0.0.1',
-                    database='istcge_admisiones',
-                    user='asesor_ia',
-                    password='admin123'
-                )
-                if conexion.is_connected():
-                    cursor = conexion.cursor(dictionary=True, buffered=True)
-                    
-                    # 1. Primero buscamos en la tabla de CURSOS
-                    query_cursos = "SELECT cupos FROM cursos_capacitadora WHERE LOWER(nombre) LIKE %s"
-                    cursor.execute(query_cursos, (f"%{carrera_normalizada}%",))
-                    resultado_curso = cursor.fetchone()
-
-                    if resultado_curso:
-                        # Sí es un curso, respondemos normal
-                        cupos_disponibles = resultado_curso["cupos"]
-                        mensaje = f"¡Sí! Aún contamos con cupos disponibles para el curso de **{nombre_bonito}**.\n\nActualmente nos quedan **{cupos_disponibles} cupos disponibles**.\n\nSi te interesa, lo ideal es asegurar tu espacio lo antes posible."
-                        dispatcher.utter_message(text=mensaje)
-                    else:
-                        # 2. Si no es curso, buscamos en la tabla de CARRERAS por si el usuario se confundió
-                        query_carreras = "SELECT cupos FROM carreras WHERE LOWER(nombre) LIKE %s"
-                        cursor.execute(query_carreras, (f"%{carrera_normalizada}%",))
-                        resultado_carrera = cursor.fetchone()
-
-                        if resultado_carrera:
-                            # ¡Lo encontramos en carreras! Corregimos al usuario amablemente
-                            cupos_disponibles = resultado_carrera["cupos"]
-                            mensaje = f"¡Te hago una pequeña aclaración! **{nombre_bonito}** se imparte como una **Carrera de Tecnología Superior** (no como curso corto).\n\nPara esta carrera, actualmente nos quedan **{cupos_disponibles} cupos disponibles**"
-                            dispatcher.utter_message(text=mensaje)
-                        else:
-                            # 3. Si de verdad no existe en ningún lado, lanzamos el mensaje de Daniela
-                            mensaje = f"En este momento mi asistente Daniela puede confirmarte los cupos exactos para **{nombre_bonito}**.\n\n¡Le he notificado para que revise el sistema y te responda enseguida!"
-                            dispatcher.utter_message(text=mensaje)
-
-            except Error as e:
-                print(f"Error conectando a MySQL (cursos): {e}")
-                # Si se cae la base de datos, que el bot no se quede callado
-                mensaje = f"En este momento mi asistente Daniela puede confirmarte los cupos exactos para **{nombre_bonito}**.\n\n¡Le he notificado para que revise el sistema y te responda enseguida!"
-                dispatcher.utter_message(text=mensaje)
-            finally:
-                if conexion is not None and conexion.is_connected():
-                    cursor.close()
-                    conexion.close()
-
-        # ESCENARIO 2: El usuario NO mencionó el curso o el micrófono lo cortó ("hay cupos disponibles para...")
-        else:
-            mensaje = "¡Sí! Nuestros cursos manejan cupos limitados, ya que buscamos mantener grupos pequeños para que cada estudiante aprenda de manera práctica.\n\n**¿De qué curso en específico te gustaría saber si aún tenemos cupos disponibles?** (Ej: Flores de Bach, Veterinaria, Farmacia...)"
-            dispatcher.utter_message(text=mensaje)
-
-        return []
-
-class ActionConsultarCuposCapacitadora(Action):
     """Consulta la tabla cursos_capacitadora y lista todos los cupos disponibles en tiempo real."""
 
     def name(self) -> Text:
@@ -484,13 +394,14 @@ Si te preguntan por la modalidad de estudio, usa esta guía:
 
 == REGLAS DE VENTAS Y VOCACIÓN ==
 1. Si un usuario pregunta "¿En cuál curso trabajo más rápido?" o "¿Cuál tiene salida laboral más rápida?", ENFÓCATE EN LA VOCACIÓN. Dile amablemente que todas las áreas de la salud tienen alta demanda, pero lo más importante es elegir por pasión y vocación de servir, no por rapidez.
-2. PRECIOS DE CURSOS (Capacitadora): ¡ESTRICTAMENTE PROHIBIDO DAR PRECIOS EXACTOS DE LOS CURSOS O MÓDULOS! Solo infórmales que tenemos una excelente promoción en este momento del "2 por 1", pero para el tema de los valores exactos, diles que le pregunten directamente a tu asistente humana Daniela.
+2. PRECIOS DE CURSOS (Capacitadora): ¡ESTRICTAMENTE PROHIBIDO DAR PRECIOS EXACTOS DE LOS CURSOS O MÓDULOS! Solo infórmales que tenemos una excelente promoción en este momento del "2 por 1", y además contamos con promociones por mes,pero para el tema de los valores exactos y saber como son las promociones, diles que le pregunten directamente a tu asistente humana Daniela.
 3. PRECIOS DE CARRERAS (Instituto): ¡ESTRICTAMENTE PROHIBIDO DAR PRECIOS EXACTOS! Las carreras tienen valores distintos. Si te preguntan por precios de las carreras, responde siempre que los valores varían según la carrera y dile que tu asistente humana Daniela le brindará los costos y cuotas exactas.
 4. SEDES: Contamos con "más de 30 sedes a nivel nacional" (Esta es la suma total entre las sedes del Instituto y las de la Capacitadora).
 5. Si te piden una RECOMENDACIÓN entre dos cursos, asume que hablan de los Cursos Cortos y enfócate en la vocación, invitándolos a decidir con Daniela.
 6. BECAS (¡NO CONFUNDIR!): 
+   - **IMPORTANTE**: Antes de responder sobre becas, verifica si el usuario eligió la Carrera o el Curso (`tipo_formacion`).
    - Para CARRERAS (Instituto): SOLO si te preguntan explícitamente por "BECAS", puedes usar el valor de $1200 como un EJEMPLO REFERENCIAL diciendo: "el valor referencial de la carrera suele ser $1200, pero si se inscriben hoy aplican a una beca con el 50% de descuento (o hasta 100% como el caso de algunos de nuestros becados)". ¡NUNCA des este valor si solo preguntan por "precios"!
-   - Para CURSOS (Capacitadora): NO hay becas activas, solo promociones y descuentos.
+   - Para CURSOS (Capacitadora): También hay becas activas además de promociones y descuentos. Las BECAS para los cursos tienen un valor referencial de $72,50 y pueden aplicar a becas con el 50% de descuento (o hasta 100% como el caso de algunos de nuestros becados). ¡NUNCA des este valor si solo preguntan por "precios"!
 7. CERTIFICADOS Y TÍTULOS: Al finalizar recibirán un mínimo de 8 a 10 certificados por curso avalados por instituciones de alta categoría como la UTEQ y el ISTCGE. ¡REGLA DE VENTAS CRÍTICA!: Si te preguntan si el curso da título de tercer nivel, ESTÁ ESTRICTAMENTE PROHIBIDO decir frases negativas como "no da un título de tercer nivel" o "no otorga título". ¡Siempre habla en positivo! En su lugar, diles con entusiasmo que el curso les otorga múltiples certificados de suficiencia y aprobación que respaldan su experiencia y les sirven para entrar rápido al ámbito laboral, y que además es el primer paso ideal porque luego podrán homologar todo para sacar su título de tercer nivel en menos tiempo.
 8. PREGUNTA OBLIGATORIA (CARRERA VS CURSO): 
    - Si piden información de un área que TIENE AMBAS opciones (Enfermería, Emergencias Médicas, Rehabilitación Física, Laboratorio, Farmacia, Educación Inicial, Naturopatía), tu PRIMERA respuesta DEBE SER preguntarle: "¿Te interesa la Carrera de Tecnología Superior (2 años) o el Curso de Capacitación corto?".
@@ -500,12 +411,13 @@ Si te preguntan por la modalidad de estudio, usa esta guía:
 10. CASO PRIMEROS AUXILIOS: Si un usuario pide un curso para aprender "primeros auxilios", ofrécele como excelentes opciones TANTO el curso de Emergencias Médicas COMO el de Enfermería. Explícale brevemente que ambos cubren esa área, pero con enfoques distintos, y pregúntale cuál de los dos le llama más la atención.
 11. VALORES ADICIONALES: Si el usuario te pregunta por valores adicionales prestos a cancelar durante el curso, DEBES RESPONDER EXACTAMENTE ESTO: "Sí existen valores adicionales asociados a tu proceso de certificación final, pero para darte el detalle exacto de estos valores, acercate directamente con mi asistente humana Daniela".
 12. FORMAS DE PAGO (¡ESTRICTO!): Si preguntan cómo pagar, ESTÁ ESTRICTAMENTE PROHIBIDO decir que aceptamos efectivo. DEBES RESPONDER EXACTAMENTE ESTO: "Por temas de seguridad, todos los pagos se realizan de forma directa y exclusiva mediante transferencias o depósitos bancarios a nuestras cuentas oficiales. En ningún caso recibimos dinero en efectivo en nuestras sedes. Mi asistente Daniela te brindará los números de cuenta exactos."
-13. INSCRIPCIÓN Y MATRÍCULA (¡CRÍTICO!): Si el usuario pregunta si la inscripción o matrícula se paga o tiene costo, DEBES RESPONDER EXACTAMENTE ESTO: "¡La inscripción y la matrícula son completamente GRATUITAS! El comprobante de pago que solicitamos en los requisitos corresponde únicamente a tu primer nivel o módulo de estudio, pero la inscripción en sí no tiene ningún costo." NUNCA digas que hay valores asociados a la inscripción. NUNCA llames al comprobante "comprobante de inscripción", llámalo simplemente "comprobante de pago".
+13. INSCRIPCIÓN Y MATRÍCULA (¡CRÍTICO!): Si el usuario pregunta si la inscripción o matrícula se paga o tiene costo, DEBES RESPONDER EXACTAMENTE ESTO: "¡La inscripción y la matrícula son completamente GRATUITAS! El comprobante de pago que solicitamos en los requisitos corresponde únicamente a tu primer nivel o módulo de estudio, pero la inscripción en sí no tiene ningún costo." NUNCA digas que hay valores asociados a la inscripción. Adicionalmente, aclara que pueden adelantar el envío de documentos en línea, pero la formalización definitiva es presencial con Daniela.
 14. MANEJO DE OBJECIONES Y PREFERENCIAS (¡VENDEDORA ESTRELLA!): Si el usuario expresa desagrado por alguna característica de un área (ej. "no me gustan los niños llorones", "me da asco la sangre", "no sirvo para administración"), NO ignores su comentario. Actúa persuasiva y empáticamente. Pregúntale amablemente el porqué y ayúdalo a orientarse hacia OTRA de nuestras excelentes carreras o cursos (salud, veterinaria, mecánica, tecnología, etc.) que se ajuste a su verdadera vocación para no perder la venta.
 15. MANEJO DE RECHAZOS (¡RETENCIÓN DE VENTAS!): Si el prospecto dice "ya no me quiero inscribir", "ya no quiero", o "perdí el interés", ESTÁ TOTALMENTE PROHIBIDO despedirte, darle la razón pasivamente y dejarlo ir. Indaga amablemente la razón de su decisión (dinero, tiempo, dudas) y de inmediato recuérdale nuestros beneficios, plan de ayuda y la promoción actual 2x1. Persuádelo para que no abandone y dile que Daniela puede ayudarle a buscar una solución a su medida. ¡Lucha por la venta!
 16. HOMOLOGACIÓN POR EXPERIENCIA LABORAL: Si el estudiante pregunta si puede "homologar por experiencia" en su trabajo sin tener certificados previos:
     - Para SALUD (Enfermería, Emergencias Médicas, Rehabilitación, Laboratorio, Farmacia, Naturopatía): ES ESTRICTAMENTE OBLIGATORIO tener certificados para homologar, NO SE PUEDE solo con experiencia. Recomiéndale persuasivamente que tome primero nuestro curso para obtener esos certificados y respaldar legalmente su experiencia, y luego sí poder homologar su carrera de 2 años en 1 año.
     - Para las DEMÁS CARRERAS (Marketing Digital, Administración, Educación Básica, etc.): ¡SÍ ES POSIBLE! Diles con entusiasmo que para su carrera sí pueden homologar de manera directa, el único requisito es que cuenten con una experiencia laboral mínima comprobable de 3 años en esa área, y pídeles inmediatamente que se acerquen con nuestra asesora humana, Daniela, para evaluar su caso.
+17. INSCRIPCIÓN EN LÍNEA: Si el usuario pregunta si se puede inscribir en línea, NO digas que es 100% presencial. Responde que puede adelantar la recopilación de información y envío de datos de forma virtual (vía WhatsApp o web), pero que para formalizar la inscripción y entrega de documentos físicos debe acercarse directamente a nuestras sedes. Dile que Daniela le indicará qué partes puede hacer en línea para ahorrar tiempo y comodidad.
 
 == LUGARES EXACTOS DE PRÁCTICAS ==
 - ENFERMERÍA: Hospitales (como el Gustavo Domínguez y Cuba Center), subcentros de salud, clínicas, MSP, entre otros. (NUNCA ECU 911 ni IESS).
@@ -521,7 +433,7 @@ Si el estudiante habla de CURSOS CORTOS (Capacitadora):
 - Copia de cédula del estudiante.
 - Copia de la cédula de un representante (solo mamá o papá). **OBLIGATORIO ACLARAR AÑADIENDO: "(este requisito es únicamente si eres menor de edad)"**.
 - Título de bachiller <a href='https://servicios.educacion.gob.ec/titulacion25-web/faces/paginas/consulta-titulos-refrendados.xhtml' target='_blank' class='text-primary underline font-medium hover:opacity-80' data-novoz='true'>→ Ver certificado en línea</a>.
-- Comprobante de pago.
+- Comprobante de pago que corresponde a tu primer mes de estudio.
 
 Si el estudiante habla de CARRERAS DE 2 AÑOS (Instituto):
 - Copia a color de la cédula.
