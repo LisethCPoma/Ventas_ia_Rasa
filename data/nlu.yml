@@ -80,15 +80,19 @@ nlu:
     - quiero [desarrollo de contenidos](carrera)
     - tecnico superior en farmacia
     - informame sobre [farmacias](carrera)
-    - me gustaría estar [enseñando a niños]{"entity": "carrera", "value": "educacion inicial"}
-    - me gustaría estar en una [farmacia]{"entity": "carrera", "value": "administracion de farmacias"}
-    - me gustaría estar en un [hospital salvando vidas]{"entity": "carrera", "value": "enfermeria"}
     - administrando una [empresa]{"entity": "carrera", "value": "administracion"}
-    - me gustaría estar en un [laboratorio]{"entity": "carrera", "value": "laboratorio clinico"}
-    - me gustaría estar en una ambulancia atendiendo [emergencias]{"entity": "carrera", "value": "emergencias medicas"}
-    - trabajando con [motores]{"entity": "carrera", "value": "mecanica automotriz"}
-    - quiero [administrar una empresa]{"entity": "carrera", "value": "administracion"}
-    - Quiero [administrar uba enmpresa]{"entity": "carrera", "value": "administracion"}
+    - [administrando empresas]{"entity": "carrera", "value": "administracion"}
+    - [administrando una empresa]{"entity": "carrera", "value": "administracion"}
+    - me gustaría estar [administrando empresas]{"entity": "carrera", "value": "administracion"}
+    - me gustaría estar en un [hospital salvando vidas]{"entity": "carrera", "value": "enfermeria"}
+    - [salvando vidas en un hospital]{"entity": "carrera", "value": "enfermeria"}
+    - me gustaría estar en una [ambulancia]{"entity": "carrera", "value": "emergencias medicas"}
+    - [en una ambulancia atendiendo emergencias]{"entity": "carrera", "value": "emergencias medicas"}
+    - [en el laboratorio]{"entity": "carrera", "value": "laboratorio clinico"}
+    - [en la farmacia]{"entity": "carrera", "value": "administracion de farmacias"}
+    - [enseñando a niños]{"entity": "carrera", "value": "educacion inicial"}
+    - [arreglando motores]{"entity": "carrera", "value": "mecanica automotriz"}
+    - [arreglando una moto]{"entity": "carrera", "value": "mecanica automotriz"}
     - quiero estudiar [educacion basica](carrera)
     - me interesa [educacion basica](carrera)
     - quiero estudiar [educacion basica](carrera)
@@ -737,6 +741,11 @@ nlu:
     - ¿Los certificados sirven para el sector público?
     - ¿Los certificados tienen validez oficial?
     - ¿La SENESCYT reconoce estos cursos?
+    - y mi titulo que titulo obtengo despues de finalizar el curso
+    - con que titulo salgo del curso
+    - el curso me da titulo de tercer nivel?
+    - título del curso
+    - titulo del curso
     - ¿El certificado me sirve para seguir estudiando?
 
 - intent: preguntar_materiales_capacitadora
@@ -1022,6 +1031,8 @@ nlu:
     - emfermeria
     - infermeria
     - enfermreria
+    - salvando vidas
+    - hospital
 
 - synonym: educacion basica
   examples: |
@@ -1041,6 +1052,8 @@ nlu:
     - emergencias medicas
     - paramédico
     - paramedicos
+    - ambulancia
+    - paramedico
 
 - synonym: marketing digital
   examples: |
@@ -1060,6 +1073,7 @@ nlu:
     - admin
     - administracion de empresas
     - administración de empresas
+    - administrando empresas
 
 - synonym: inteligencia artificial
   examples: |
@@ -1111,6 +1125,8 @@ nlu:
     - educación
     - parvularia
     - profesor de niños
+    - niños
+    - enseñando a niños
 
 - synonym: desarrollo de contenidos y manejo de redes
   examples: |
@@ -1125,6 +1141,8 @@ nlu:
     - mecánica automotriz
     - mecanica
     - mecánica
+    - motores
+    - arreglando motores
 
 - synonym: gastronomia
   examples: |

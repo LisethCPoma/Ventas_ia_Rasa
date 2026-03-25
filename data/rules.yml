@@ -96,10 +96,29 @@ rules:
   - intent: preguntar_emprendimiento
   - action: utter_emprendimiento
 
-- rule: Consultina responde sobre homologacion de materias
+- rule: Preguntar homologación (primera vez)
+  condition:
+  - slot_was_set:
+    - vienes_de_curso: null
   steps:
   - intent: preguntar_homologacion
   - action: utter_preguntar_homologacion_inicial
+
+- rule: Responder homologación (si ya es consultino)
+  condition:
+  - slot_was_set:
+    - vienes_de_curso: true
+  steps:
+  - intent: preguntar_homologacion
+  - action: utter_homologacion_si
+
+- rule: Responder homologación (si no es consultino)
+  condition:
+  - slot_was_set:
+    - vienes_de_curso: false
+  steps:
+  - intent: preguntar_homologacion
+  - action: utter_homologacion_no
 
 - rule: Consultina responde sobre los requisitos de inscripcion
   steps:

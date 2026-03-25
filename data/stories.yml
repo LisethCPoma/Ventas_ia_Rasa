@@ -108,6 +108,7 @@ stories:
   - intent: preguntar_homologacion
   - action: utter_preguntar_homologacion_inicial
   - intent: afirmar
+  - action: action_set_vienes_de_curso_si
   - action: utter_homologacion_si
 
 - story: Flujo Homologacion - Estudiante dice que NO
@@ -115,6 +116,7 @@ stories:
   - intent: preguntar_homologacion
   - action: utter_preguntar_homologacion_inicial
   - intent: negar
+  - action: action_set_vienes_de_curso_no
   - action: utter_homologacion_no
 
 - story: Flujo Homologacion - Estudiante viene de otro instituto
@@ -128,25 +130,28 @@ stories:
   - intent: elegir_carrera
   - action: utter_becas_instituto
 
-- story: Info carrera follow-up (Enfermería)
+- story: Selecting a specialty while in Career context
   steps:
   - slot_was_set:
     - tipo_formacion: carrera
   - intent: informar_carrera_interes
-    entities:
-    - carrera: enfermeria
   - action: utter_info_carrera_elegida
-  - intent: elegir_carrera
-  - action: utter_info_carrera_enfermeria_confirmacion
 
-- story: Info curso follow-up (Enfermería)
+- story: Selecting a specialty while in Course context
   steps:
   - slot_was_set:
     - tipo_formacion: curso
   - intent: informar_carrera_interes
-    entities:
-    - carrera: enfermeria
-  - action: utter_info_curso_enfermeria_confirmacion
+  - action: utter_info_curso_elegido
+
+- story: Selecting a specialty after all courses list
+  steps:
+  - intent: preguntar_todos_los_cursos
+  - action: utter_listar_todos_los_cursos
+  - slot_was_set:
+    - tipo_formacion: curso
+  - intent: informar_carrera_interes
+  - action: utter_info_curso_elegido
 
 - story: General career selection
   steps:
