@@ -5,6 +5,8 @@ stories:
   steps:
   - intent: presentar_consultina
   - action: utter_saludo_consultina
+  - slot_was_set:
+    - tipo_formacion: carrera
   - intent: informar_carrera_interes
     entities:
     - carrera: "enfermería"
@@ -128,6 +130,8 @@ stories:
 
 - story: Info carrera follow-up (Enfermería)
   steps:
+  - slot_was_set:
+    - tipo_formacion: carrera
   - intent: informar_carrera_interes
     entities:
     - carrera: enfermeria
@@ -137,11 +141,11 @@ stories:
 
 - story: Info curso follow-up (Enfermería)
   steps:
+  - slot_was_set:
+    - tipo_formacion: curso
   - intent: informar_carrera_interes
     entities:
     - carrera: enfermeria
-  - action: utter_info_carrera_elegida
-  - intent: elegir_curso
   - action: utter_info_curso_enfermeria_confirmacion
 
 - story: General career selection
@@ -160,3 +164,25 @@ stories:
   - action: utter_docentes
   - intent: informar_carrera_interes
   - action: utter_docentes
+- story: Selecting a specialty while in Course context
+  steps:
+  - slot_was_set:
+    - tipo_formacion: curso
+  - intent: informar_carrera_interes
+  - action: utter_info_curso_elegido
+
+- story: Selecting a specialty while in Career context
+  steps:
+  - slot_was_set:
+    - tipo_formacion: carrera
+  - intent: informar_carrera_interes
+  - action: utter_info_carrera_elegida
+
+- story: Selecting a specialty after all courses list
+  steps:
+  - intent: preguntar_todos_los_cursos
+  - action: utter_listar_todos_los_cursos
+  - slot_was_set:
+    - tipo_formacion: curso
+  - intent: informar_carrera_interes
+  - action: utter_info_curso_elegido

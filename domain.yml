@@ -68,6 +68,8 @@ intents:
   - preguntar_becas_general
   
 
+  
+
 entities:
   - carrera
   - area_academica
@@ -107,6 +109,12 @@ slots:
       value: carrera
     - type: from_intent
       intent: elegir_curso
+      value: curso
+    - type: from_intent
+      intent: preguntar_todos_los_cursos
+      value: curso
+    - type: from_intent
+      intent: preguntar_cursos_capacitadora
       value: curso
 
 actions:
@@ -1040,7 +1048,13 @@ responses:
   - text: "¡Claro que sí! Contamos con **programas de becas** tanto para nuestros cursos cortos como para las carreras de tercer nivel. 🎓✨\n\n¿Te interesaría saber más sobre las becas para un **Curso** o para una **Carrera**? Mi asistente Daniela te dará todos los detalles. 👩‍💼"
 
   utter_inscripcion_online:
-  - text: "Te comento que la recopilación de información y el envío de documentos sí lo puedes ir adelantando **en línea** para ganar tiempo. 💻✨\n\nSin embargo, para formalizar tu inscripción y finalizar la entrega de documentos físicos, es necesario acercarse directamente. Mi asistente humana **Daniela** te indicará ahora mismo qué pasos puedes adelantar de forma virtual para que tu proceso sea lo más cómodo posible. ¡Ella está lista para ayudarte! 👩‍💼"
+  - text: "Te comento que la recopilación de información sí lo puedes ir adelantando **en línea** para ganar tiempo. 💻✨\n\nSin embargo, para formalizar tu inscripción y finalizar la entrega de documentos físicos, es necesario acercarse directamente. Mi asistente humana **Daniela** te indicará ahora mismo qué pasos puedes adelantar de forma virtual para que tu proceso sea lo más cómodo posible. ¡Ella está lista para ayudarte! 👩‍💼"
+
+  utter_descuento_hermanos:
+  - text: "🎉 ¡Claro que sí! Nuestro **Plan de Ayuda Voluntaria** se ajustará a tus necesidades. 💵\n\nDaniela, mi asistente humana, te responderá enseguida con las promociones especiales por familiares que tenemos activas en este momento. 👩‍💼\n\nY recuerda que todos los valores que tú dejes en CGE nos ayuda a salvar vidas. ❤️"
+
+  utter_beneficios_estudiar:
+  - text: "Estudiar con nosotros trae beneficios directos para ti y tu familia. \n\nPor ejemplo, si estudias Auxiliar de Enfermería, podrás aprender a poner un suero o una inyección. Con esto te ahorrarías mucho dinero cuando un familiar necesite atención, ya que **tendrán una enfermera en casa**.\n\nRecordemos que ir a poner un suero a una persona costaría alrededor de $15 a $20 dólares, ¡dinero que tú te estarías ahorrando solo por ser parte de CGE!"
 
   utter_convalidacion_practicas:
   - text: "¡Claro que sí! Puedes convalidar tus prácticas siempre y cuando nos presentes información que valide tu experiencia laboral y que esta se ajuste a nuestras mallas curriculares, previo a un análisis del director de carrera."
@@ -1056,7 +1070,7 @@ responses:
   - text: "Para sacar una mención (especialización), el **único requisito** es haber aprobado el curso base en el que deseas hacer la mención.\n\nSi ya cumples con este requisito y estás interesado en realizar la mención, por favor comunícate con mi asistente **Daniela** para que te ayude con tu inscripción."
 
   utter_listar_todos_los_cursos:
-  - text: "¡Claro! Nuestros cursos están organizados por meses. Te comparto la lista completa:\n\n** Cursos de 2 meses**\n- Mecánica de motos para mujeres\n\n** Cursos de 4 meses**\n- Mecánica automotriz dirigida al área de la salud\n- Flores de Bach\n\n** Cursos de 5 meses**\n- Odontología\n- Auxiliar de farmacia\n- Laboratorio clínico\n\n** Cursos de 6 meses**\n- Rehabilitación física\n\n** Cursos de 8 meses**\n- Auxiliar de naturopatía\n- Auxiliar de enfermería\n- Emergencias médicas\n- Auxiliar en veterinaria\n- Auxiliar en educación inicial\n\n** Otros talleres**\n- Taller de inyectología (duración de 1 mes)\n\n¿Cuál de estos te interesa para darte más detalles?"
+  - text: "¡Claro! Nuestros cursos están organizados por meses. Te comparto la lista completa:\n- ** Cursos de 2 meses**:Mecánica de motos para mujeres\n- ** Cursos de 4 meses**: Mecánica automotriz dirigida al área de la salu y Flores de Bach.\n- ** Cursos de 5 meses**: Odontología, Auxiliar de farmacia y Laboratorio clínico.\n- ** Cursos de 6 meses**: Rehabilitación física.\n- ** Cursos de 8 meses**: Auxiliar de naturopatía, Auxiliar de enfermería, Emergencias médicas, Auxiliar en veterinaria y Auxiliar en educación inicial.\n- ** Otros talleres**: Taller de inyectología (duración de 1 mes)\n\n🌟 ¡Mira todo lo que puedes aprender!<video controls class='w-64 md:w-80 h-auto rounded-xl mt-3 mb-3 shadow-sm border border-gray-100'><source src='assets/video/videocursos.mp4' type='video/mp4'></video>\n\n¿Cuál de estos te interesa para darte más detalles?"
 
   utter_info_carrera_elegida:
   - condition:
@@ -1064,12 +1078,6 @@ responses:
       name: carrera
       value: enfermeria
     text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Enfermería (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\nAprenderás desde toma de signos vitales e inyectología, hasta curaciones avanzadas y asistencia médica. ¡Saldrás completamente preparado para cuidar y salvar vidas!\n\nPero antes de continuar, te comparto un gran beneficio: **¿Sabías que puedes terminar tu carrera en menos tiempo?** ⏳\n\nSi primero realizas nuestro curso de **Auxiliar de Enfermería (8 meses)**, luego podrás homologar. Esto significa que saldrías rápido con un certificado (avalado para iniciar tu vida laboral) y estarías adelantando tus estudios superiores simultáneamente. 🚀\n\n¿Qué te gustaría elegir el día de hoy? ¿Te animas a iniciar primero con el **curso** para aprovechar esta ventaja, o prefieres continuar directamente con la información de la **carrera** (costos, duración, etc.)?"
-
-  utter_info_carrera_enfermeria_confirmacion:
-  - text: "¡Perfecto! Has elegido continuar directamente con la **Carrera de Tecnología Superior en Enfermería (2 años)**. 🩺\n\nExcelente decisión para obtener tu título de tercer nivel registrado en la SENESCYT. Recuerda que siempre tienes la opción de homologar con el curso corto si cambias de opinión para salir más rápido al mundo laboral, pero si prefieres ir directo, ¡aquí tienes los detalles! 🚀\n\n¿Qué te gustaría saber primero: **costos**, **duración**, **horarios** o **campo laboral**?"
-
-  utter_info_curso_enfermeria_confirmacion:
-  - text: "¡Excelente decisión! El **Curso de Auxiliar de Enfermería (8 meses)** es 100% práctico y te permitirá trabajar rápidamente mientras adelantas tu carrera profesional. 🚀\n\n¿Qué te gustaría conocer ahora del curso: **costos**, **requisitos** o **duración**?"
   - condition:
     - type: slot
       name: carrera
@@ -1265,6 +1273,12 @@ responses:
     text: "El curso de **Laboratorio Clínico** tiene una duración de **5 meses**."
   - text: "Nuestros cursos de capacitación están organizados por **meses**. La duración va desde 1 mes (como inyectología) hasta 8 meses (como enfermería). ¿De qué curso te gustaría saber la duración exacta?"
 
+
+  utter_info_carrera_enfermeria_confirmacion:
+  - text: "¡Perfecto! Has elegido continuar directamente con la **Carrera de Tecnología Superior en Enfermería (2 años)**. 🩺\n\nExcelente decisión para obtener tu título de tercer nivel registrado en la SENESCYT. Recuerda que siempre tienes la opción de homologar con el curso corto si cambias de opinión para salir más rápido al mundo laboral, pero si prefieres ir directo, ¡aquí tienes los detalles! 🚀\n\n¿Qué te gustaría saber primero: **costos**, **duración**, **horarios** o **campo laboral**?"
+
+  utter_info_curso_enfermeria_confirmacion:
+  - text: "¡Excelente decisión! El **Curso de Auxiliar de Enfermería (8 meses)** es 100% práctico y te permitirá trabajar rápidamente mientras adelantas tu carrera profesional. 🚀\n\n¿Qué te gustaría conocer ahora del curso: **costos**, **requisitos** o **duración**?"
 
 session_config:
   session_expiration_time: 60

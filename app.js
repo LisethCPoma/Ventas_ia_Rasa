@@ -404,12 +404,12 @@ async function enviarMensajeServidor(textoUsuario) {
 
                         // Enfermería
                         if (textoCapa.includes('enfermeria1.jpeg')) {
-                            const imgsEnfermeria = ['enfermeria1.jpeg', 'enfermeria2.jpeg', 'enfermeria3.jpeg', 'enfermeria5.jpeg', 'enfermeria6.jpeg'];
+                            const imgsEnfermeria = ['enfermeria1.jpeg', 'enfermeria2.jpeg', 'enfermeria3.jpeg', 'enfermeria4.jpeg', 'enfermeria5.jpeg', 'enfermeria6.jpeg'];
                             textoCapa = textoCapa.replace('enfermeria1.jpeg', getUniqueMedia(imgsEnfermeria, 'enfermeria'));
                         }
                         // Emergencias Médicas
                         if (textoCapa.includes('emergencias1.jpeg')) {
-                            const imgsEmergencias = ['emergencias1.jpeg', 'emergencias2.jpeg', 'emergencias3.jpeg', 'emergencias4.jpeg', 'emergencias5.jpeg'];
+                            const imgsEmergencias = ['emergencias1.jpeg', 'emergencias2.jpeg', 'emergencias3.jpeg', 'emergencias4.jpeg', 'emergencias5.jpeg', 'emergencias6.jpeg', 'emergencias7.jpeg'];
                             textoCapa = textoCapa.replace('emergencias1.jpeg', getUniqueMedia(imgsEmergencias, 'emergencias'));
                         }
                         // Educación Inicial
