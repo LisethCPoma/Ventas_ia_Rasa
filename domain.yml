@@ -166,104 +166,103 @@ responses:
     - type: slot
       name: carrera
       value: odontologia
-    text: "¡Excelente elección! Para **Odontología** contamos exclusivamente con nuestro **Curso de Capacitación** (5 meses). Es 100% práctico y aprenderás a preparar instrumental, esterilización, asistencia directa al odontólogo y muchas cosas más!. ¿Te gustaría conocer los costos o los requisitos para inscribirte?"
+    text: "¡Excelente elección! Para **Odontología** contamos exclusivamente con nuestro **Curso de Capacitación** (5 meses). Aquí aprenderás a cuidar sonrisas. Te enseñaremos a manejar el instrumental dental y los materiales necesarios para tratamientos, además de cómo esterilizar todo para garantizar la seguridad de los pacientes. Asistirás al odontólogo y serás parte del equipo que ayuda a las personas a mantener su salud bucal. ¡Y muchas cosas más!\n¿Te gustaría conocer los costos o los requisitos para inscribirte?"
   - condition:
     - type: slot
       name: carrera
       value: veterinaria
-    text: "¡Qué hermosa vocación! Para **Veterinaria** contamos exclusivamente con nuestro **Curso de Capacitación** (8 meses). Es 100% práctico y aprenderás primeros auxilios veterinarios, anatomía, manejo de medicación, asistencia en cirugías y muchas cosas más!. ¿Te gustaría conocer los costos o los requisitos?"
+    text: "¡Qué hermosa vocación! Para **Veterinaria** contamos exclusivamente con nuestro **Curso de Capacitación** (8 meses). Aquí, tu pasión por los animales te llevará a ayudar a aquellos que no pueden hablar. Aprenderás a proporcionar primeros auxilios, conocerás la anatomía y te capacitarás en la medicación y en cómo asistir en cirugías para salvar a las mascotas. ¡Y muchas cosas más!\n¿Te gustaría conocer los costos o los requisitos?"
   - condition:
     - type: slot
       name: carrera
       value: flores de bach
-    text: "¡Qué interesante! Para **Flores de Bach** contamos exclusivamente con nuestro **Curso de Capacitación** (4 meses). Aprenderás a utilizar esencias florales para equilibrar emociones, manejar el estrés y muchas cosas más!. ¿Te gustaría conocer los costos o los requisitos?"
+    text: "¡Qué interesante! Para **Flores de Bach** contamos exclusivamente con nuestro **Curso de Capacitación** (4 meses). Descubrirás cómo usar las esencias de las flores naturales para ayudar a las personas a calmar la ansiedad, quitar el estrés y curar sus emociones de una forma muy tranquila. Tu conocimiento será una herramienta poderosa para el equilibrio emocional. ¡Y muchas cosas más!\n¿Te gustaría conocer los costos o los requisitos?"
   - condition:
     - type: slot
       name: carrera
       value: inyectologia
-    text: "¡Excelente elección! Para **Inyectología** contamos exclusivamente con un **Taller Práctico** de 1 mes. Aprenderás desde cero a colocar sueros, canalizar vías, aplicar inyecciones de forma profesional y muchas cosas más!. ¿Te gustaría conocer los costos para iniciar?"
+    text: "¡Excelente elección! Para **Inyectología** contamos exclusivamente con un **Taller Práctico** de 1 mes. Te enseñaremos a canalizar vías, aplicar inyecciones y administrar sueros, en un trabajo práctico y seguro, para que puedas asistir en emergencias o tratamientos médicos. Te convertirás en un experto en proporcionar alivio y cuidado a los pacientes. ¡Y muchas cosas más!\n¿Te gustaría conocer los costos para iniciar?"
 
   # --- ÁREAS QUE TIENEN AMBAS (CARRERA DE 2 AÑOS Y CURSO CORTO) ---
   - condition:
     - type: slot
       name: carrera
       value: enfermeria
-    text: "¡Excelente elección! **Enfermería** es una vocación hermosa donde aprenderás toma de signos vitales, inyectología, sueroterapia, suturas, asistencia médica para salvar vidas, ingresarás en hospitales o clínicas 100% reales, ingresas a áreas como quirófano y aprenderás muchas cosas más!. Tenemos dos opciones para ti:\n- **La Carrera (2 años):** Te otorga tu título de tercer nivel (SENESCYT).\n- **El Curso (8 meses):** 100% práctico con certificaciones avaladas.\n¿Cuál de las dos opciones te llama más la atención?"
+    text: "¡Excelente elección! En **Enfermería** aprenderás a cuidar a los pacientes de manera directa, lo que incluye desde tomarles la presión y ponerles un suero sin que sientan dolor, hasta curar sus heridas y asistir a los médicos en el quirófano para salvar vidas. Te convertirás en el apoyo fundamental de aquellos que más lo necesitan, brindando no solo atención médica, sino también consuelo y empatía. ¡Y muchas cosas más!\nTenemos dos opciones para ti:\n- **La Carrera (2 años):** Título de tercer nivel (SENESCYT / Viceministerio de Educación Superior).\n- **El Curso (8 meses):** 100% práctico con certificaciones avaladas.\n¿Cuál de las dos opciones te llama más la atención?"
   - condition:
     - type: slot
       name: carrera
       value: emergencias medicas
-    text: "¡Una profesión llena de adrenalina! En **Emergencias Médicas** aprenderás rescate, reanimación (RCP), inmovilización, atención en ambulancias, y muchas cosas más!. Tenemos dos opciones para ti:\n- **La Carrera (2 años):** Te otorga tu título de tercer nivel (SENESCYT).\n- **El Curso (8 meses):** 100% práctico con certificaciones avaladas.\n¿Cuál de las dos opciones te llama más la atención?"
+    text: "¡Una profesión de héroes! En **Emergencias Médicas** te prepararás para ser el héroe en momentos críticos, aprendiendo a reanimar un corazón, rescatar personas atrapadas en accidentes y brindar primeros auxilios dentro de una ambulancia. Cada segundo cuenta y tú serás la diferencia entre la vida y la muerte, desarrollando habilidades que te permitirán actuar con rapidez y seguridad. ¡Y muchas cosas más!\nTenemos dos opciones para ti:\n- **La Carrera (2 años):** Título de tercer nivel (SENESCYT / Viceministerio de Educación Superior).\n- **El Curso (8 meses):** 100% práctico con certificaciones avaladas.\n¿Cuál de las dos opciones te llama más la atención?"
   - condition:
     - type: slot
       name: carrera
       value: rehabilitacion fisica
-    text: "¡Excelente elección! En **Rehabilitación Física** aprenderás anatomía, masoterapia, el uso de equipos para devolverles el bienestar a los pacientes, y muchas cosas más!. Tenemos dos opciones para ti:\n- **La Carrera (2 años):** Título de tercer nivel (SENESCYT).\n- **El Curso (6 meses):** 100% práctico con certificaciones avaladas.\n¿Cuál de las dos opciones te llama más la atención?"
+    text: "¡Excelente elección! En **Rehabilitación Física** aprenderás a ayudar a las personas a recuperar el movimiento de su cuerpo después de lesiones o enfermedades. Usarás tus manos, ejercicios sencillos y algunas máquinas para aliviar dolores y que puedan volver a hacer sus actividades favoritas, como caminar, jugar o bañarse solos, sin miedo ni dolor. ¡Y muchas cosas más!\nTenemos dos opciones para ti:\n- **La Carrera (2 años):** Título de tercer nivel (SENESCYT / Viceministerio de Educación Superior).\n- **El Curso (6 meses):** 100% práctico con certificaciones avaladas.\n¿Cuál de las dos opciones te llama más la atención?"
   - condition:
     - type: slot
       name: carrera
       value: laboratorio clinico
-    text: "¡Excelente elección! En **Laboratorio Clínico** aprenderás sobre toma de muestras, análisis hematológicos, microbiológicos, el uso de equipos médicos y muchas cosas más!. Tenemos dos opciones para ti:\n- **La Carrera (2 años):** Título de tercer nivel (SENESCYT).\n- **El Curso (5 meses):** 100% práctico con certificaciones avaladas.\n¿Cuál de las dos opciones te llama más la atención?"
+    text: "¡Excelente elección! En **Laboratorio Clínico** te enseñaremos cómo tomar muestras de sangre, saliva o tejidos, y cómo analizar esos datos para detectar enfermedades. Aprenderás a usar diferentes equipos y a entender los resultados, para ayudar a los médicos a hacer diagnósticos precisos y a cuidar mejor a los pacientes. ¡Y muchas cosas más!\nTenemos dos opciones para ti:\n- **La Carrera (2 años):** Título de tercer nivel (SENESCYT / Viceministerio de Educación Superior).\n- **El Curso (5 meses):** 100% práctico con certificaciones avaladas.\n¿Cuál de las dos opciones te llama más la atención?"
   - condition:
     - type: slot
       name: carrera
       value: administracion de farmacias
-    text: "¡Excelente elección! En el área de **Farmacia** aprenderás sobre farmacología, dispensación de medicamentos, atención al paciente y muchas cosas más!. Tenemos dos opciones para ti:\n- **La Carrera (2 años):** Título de tercer nivel (SENESCYT).\n- **El Curso (5 meses):** 100% práctico con certificaciones avaladas.\n¿Cuál de las dos opciones te llama más la atención?"
+    text: "¡Excelente elección! En **Farmacia** te familiarizarás con cada medicina, cómo leer esas recetas médicas complicadas y cómo guiar a las personas para que sigan sus tratamientos correctamente y mejoren su salud. Serás un puente entre el medicamento y el paciente, asegurándote de que reciban el cuidado que necesitan. ¡Y muchas cosas más!\nTenemos dos opciones para ti:\n- **La Carrera (2 años):** Título de tercer nivel (SENESCYT / Viceministerio de Educación Superior).\n- **El Curso (5 meses):** 100% práctico con certificaciones avaladas.\n¿Cuál de las dos opciones te llama más la atención?"
   - condition:
     - type: slot
       name: carrera
       value: educacion inicial
-    text: "¡Una carrera de pura vocación! En **Educación Inicial** aprenderás sobre estimulación temprana, desarrollo psicomotor, cómo crear ambientes de aprendizaje mágicos y muchas cosas más!. Tenemos dos opciones para ti:\n- **La Carrera (2 años):** Título de tercer nivel (SENESCYT).\n- **El Curso (8 meses):** 100% práctico con certificaciones avaladas.\n¿Cuál de las dos opciones te llama más la atención?"
+    text: "¡Una carrera de pura vocación! En **Educación Inicial** tu labor será fundamental en la vida de los más pequeños. Aprenderás sobre estimulación temprana y desarrollo psicomotor, creando un ambiente seguro donde los niños puedan explorar y aprender. Serás un guía en sus primeros pasos hacia el conocimiento, ayudándolos a desarrollar habilidades que les servirán toda la vida. ¡Y muchas cosas más!\nTenemos dos opciones para ti:\n- **La Carrera (2 años):** Título de tercer nivel (SENESCYT / Viceministerio de Educación Superior).\n- **El Curso (8 meses):** 100% práctico con certificaciones avaladas.\n¿Cuál de las dos opciones te llama más la atención?"
   - condition:
     - type: slot
       name: carrera
       value: mecanica automotriz
-    text: "¡Excelente elección! En **Mecánica Automotriz** aprenderás sobre motores, sistemas de inyección, diagnóstico para reparar vehículos y muchas cosas más!. Tenemos dos opciones para ti:\n- **La Carrera (2 años):** Título de tercer nivel (SENESCYT).\n- **El Curso Corto:** Enfocado a motos o para personal de salud.\n¿Cuál de las dos opciones te llama más la atención?"
+    text: "¡Excelente elección! En **Mecánica Automotriz** te convertirás en un solucionador de problemas. Aprenderás sobre motores, sistemas de inyección y electricidad en vehículos. Te enseñaremos a realizar diagnósticos computarizados, ayudando a que los vehículos funcionen sin problemas y contribuyendo a la seguridad de todos en la carretera. ¡Y muchas cosas más!\nTenemos dos opciones para ti:\n- **La Carrera (2 años):** Título de tercer nivel (SENESCYT / Viceministerio de Educación Superior).\n- **El Curso Corto:** Enfocado a motos o para personal de salud.\n¿Cuál de las dos opciones te llama más la atención?"
   - condition:
     - type: slot
       name: carrera
       value: naturopatia
-    text: "¡Excelente elección! En **Naturopatía** aprenderás sobre medicina alternativa, fitoterapia, terapias florales, nutrición natural para promover la salud y muchas cosas más!. Tenemos dos opciones para ti:\n- **La Carrera (2 años):** Título de tercer nivel (SENESCYT).\n- **El Curso (8 meses):** 100% práctico con certificaciones avaladas.\n¿Cuál de las dos opciones te llama más la atención?"
+    text: "¡Excelente elección! En **Naturopatía** aprenderás a sanar el cuerpo usando el poder de la naturaleza, las plantas medicinales y la buena alimentación, ayudando a las personas a curarse y sentirse llenas de energía. Serás un promotor de la salud natural y el bienestar integral. ¡Y muchas cosas más!\nTenemos dos opciones para ti:\n- **La Carrera (2 años):** Título de tercer nivel (SENESCYT / Viceministerio de Educación Superior).\n- **El Curso (8 meses):** 100% práctico con certificaciones avaladas.\n¿Cuál de las dos opciones te llama más la atención?"
 
   # --- ÁREAS QUE SON EXCLUSIVAMENTE CARRERAS DE 3ER NIVEL ---
   - condition:
     - type: slot
       name: carrera
       value: administracion
-    text: "¡Excelente elección! La formación en **Administración** se imparte como Carrera de Tecnología Superior (2 años). Te preparamos a fondo y aprenderás sobre gestión de empresas, contabilidad, talento humano, finanzas para liderar o crear tu propio negocio y muchas cosas más!. ¿Qué te gustaría saber ahora? ¿Costos, horarios o campo laboral?"
+    text: "¡Excelente elección! La formación en **Administración** se imparte como Carrera (2 años). Te convertirás en un líder en el mundo empresarial. Aprenderás a gestionar empresas, manejar contabilidad y desarrollar habilidades en talento humano. Te capacitarás en planificación estratégica, lo que te permitirá guiar a equipos hacia el éxito y hacer una diferencia en el mundo de los negocios. ¡Y muchas cosas más!\n¿Qué te gustaría saber ahora? ¿Costos, horarios o campo laboral?"
   - condition:
     - type: slot
       name: carrera
       value: marketing digital
-    text: "¡Excelente elección! El **Marketing Digital** se imparte de manera virtual como Carrera de Tecnología Superior (2 años). Aprenderás a crear campañas en redes sociales, posicionamiento SEO, e-commerce, análisis de datos y muchas cosas más!. ¿Qué te gustaría saber ahora? ¿Costos o campo laboral?"
+    text: "¡Excelente elección! El **Marketing Digital** se imparte de manera virtual (2 años). Descubrirás cómo usar las redes sociales y el internet para que un negocio venda muchísimo más, aprendiendo a hacer publicidad llamativa y a entender qué es lo que la gente quiere comprar. Te convertirás en un experto en conectar productos con personas. ¡Y muchas cosas más!\n¿Qué te gustaría saber ahora? ¿Costos o campo laboral?"
   - condition:
     - type: slot
       name: carrera
       value: desarrollo de contenidos y manejo de redes
-    text: "¡Excelente elección! El **Desarrollo de Contenidos y Manejo de Redes** se imparte como Carrera de Tecnología Superior (2 años). Aprenderás a crear contenido digital atractivo, planificar estrategias, gestionar comunidades online, manejar herramientas de diseño y muchas cosas más!. ¿Te gustaría conocer los costos o el campo laboral?"
+    text: "¡Excelente elección! El **Desarrollo de Contenidos y Manejo de Redes** se imparte como Carrera (2 años). Aprenderás a grabar videos geniales, diseñar imágenes atractivas y manejar las redes sociales de empresas o emprendimientos para que consigan miles de seguidores y clientes. Tu creatividad y habilidades digitales serán clave para el éxito en el mundo actual. ¡Y muchas cosas más!\n¿Te gustaría conocer los costos o el campo laboral?"
   - condition:
     - type: slot
       name: carrera
       value: inteligencia artificial
-    text: "¡Excelente elección! La **Inteligencia Artificial** es la carrera del futuro (1 año y medio). Aprenderás a crear tecnología inteligente, realizar análisis de datos, automatizar procesos, desarrollar proyectos reales con programación avanzada y muchas cosas más!. ¿Qué te gustaría conocer ahora? ¿Costos o campo laboral?"
+    text: "¡Excelente elección! La **Inteligencia Artificial** es la carrera del futuro (1 año y medio). Aprenderás a crear programas inteligentes y tecnología que pueda pensar, resolver problemas difíciles y automatizar tareas. Tu trabajo será innovador y transformador, contribuyendo a un mundo donde la tecnología y la humanidad se complementen. ¡Y muchas cosas más!\n¿Qué te gustaría conocer ahora? ¿Costos o campo laboral?"
   - condition:
     - type: slot
       name: carrera
       value: gastronomia
-    text: "¡Excelente elección! La **Gastronomía** se imparte como Carrera de Tecnología Superior (2 años). Es 100% práctica y aprenderás técnicas culinarias nacionales e internacionales, panadería, repostería, administración de restaurantes y muchas cosas más!. ¿Qué te gustaría conocer ahora? ¿Costos o campo laboral?"
+    text: "¡Excelente elección! La **Gastronomía** se imparte como Carrera (2 años) en Quito. Aprenderás a preparar deliciosos platos nacionales e internacionales, hacer postres increíbles y también cómo administrar tu propio restaurante para que la gente siempre quiera volver. Tu creatividad en la cocina será el sabor que atraiga a todos. ¡Y muchas cosas más!\n¿Te gustaría conocer los costos o campo laboral?"
   - condition:
     - type: slot
       name: carrera
       value: administracion de sistemas de la salud
-    text: "¡Excelente elección! La **Administración de Sistemas de la Salud** se imparte como Carrera de Tecnología Superior (2 años). Aprenderás sobre gestión hospitalaria, auditoría médica, calidad en la atención, normativas para liderar instituciones de salud y muchas cosas más!. ¿Qué te gustaría saber ahora? ¿Costos o campo laboral?"
+    text: "¡Excelente elección! La **Administración de Sistemas de la Salud** se imparte como Carrera (2 años). Aprenderás a dirigir un hospital o clínica para que todo funcione a la perfección, desde que el paciente entra hasta que se va, asegurándote de que los médicos tengan lo necesario y que la atención sea de primera. Serás el arquitecto de un sistema de salud eficiente y humano. ¡Y muchas cosas más!\n¿Qué te gustaría saber ahora? ¿Costos o campo laboral?"
   - condition:
     - type: slot
       name: carrera
       value: educacion basica
-    text: "¡Excelente elección! La **Educación Básica** se imparte como Carrera de Tecnología Superior (2 años). Aprenderás sobre pedagogía, didáctica de las matemáticas y lenguaje, psicología educativa, diseño de material didáctico para potenciar el desarrollo de niños y adolescentes y muchas cosas más!. ¿Qué te gustaría conocer ahora? ¿Los costos, la duración o el campo laboral?"
+    text: "¡Excelente elección! La **Educación Básica** se imparte como Carrera (2 años). Te prepararás para ser ese profesor inolvidable que enseña a leer, escribir y entender el mundo a los niños y adolescentes, utilizando métodos divertidos y mucha paciencia. Tu influencia puede cambiar vidas y abrir puertas a futuros brillantes. ¡Y muchas cosas más!\n¿Qué te gustaría conocer ahora? ¿Los costos, la duración o el campo laboral?"
   
-  
-# --- FALLBACK (Cuando piden una carrera que NO existe) ---
+  # --- FALLBACK ---
   - text: "¡Me encanta tu interés por prepararte! Sin embargo, debo confirmarte que por el momento **no ofertamos esa especialidad** en nuestra institución.\n\n¡Pero no te desanimes! Somos líderes y tenemos excelentes opciones en las áreas de Salud, Educación, Administración, Tecnología y Mecánica.\n\n¿Te gustaría que te muestre nuestra lista completa de carreras y cursos para que descubras alguna otra opción que te apasione?"
 
   utter_voluntariado:
@@ -476,7 +475,7 @@ responses:
       name: carrera
       value: naturopatia
     text: "La carrera de **Naturopatía** tiene una duración de **2 años** (4 semestres).\nNuestro objetivo es formarte como un profesional altamente capacitado en ese tiempo. ¿Te gustaría saber en qué campos podrías trabajar al graduarte?"
-  - text: "La mayoría de las carreras del instituto tienen una duración de **2 años**, a excepción de **Inteligencia Artificial**, que dura **1 año y medio**.\n¿De qué carrera en específico te gustaría saber la duración o más detalles?"
+  - text: "La mayoría de las carreras del instituto tienen una duración de **2 años (equivalentes a 4 semestres)**, a excepción de **Inteligencia Artificial**, que dura **1 año y medio (3 semestres)**.\n¿De qué carrera en específico te gustaría saber la duración o más detalles?"
 
   utter_opciones_pago:
   - text: "💳 ¡Sí! Puedes realizar los pagos por semestre completo, o diferirlos en cuotas **mensuales** (5 cuotas) o **semanales** (20 semanas).\n¿Para qué carrera te gustaría consultar los valores y cuotas exactas?"
@@ -651,7 +650,7 @@ responses:
     - type: slot
       name: tipo_formacion
       value: carrera
-    text: "Al finalizar la **Carrera**, obtendrás el título de tercer nivel como **Técnico Superior en Enfermería** debidamente registrado en la SENESCYT. 🎓✨ ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
+    text: "Al finalizar la **Carrera**, obtendrás el título de tercer nivel como **Técnico Superior en Enfermería** debidamente registrado en la SENESCYT/Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación. 🎓✨ ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
   - condition:
     - type: slot
       name: carrera
@@ -659,7 +658,7 @@ responses:
     - type: slot
       name: tipo_formacion
       value: carrera
-    text: "Al finalizar la **Carrera**, obtendrás el título de tercer nivel como **Tecnólogo Superior en Emergencias Médicas** debidamente registrado en la SENESCYT. 🎓✨ ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
+    text: "Al finalizar la **Carrera**, obtendrás el título de tercer nivel como **Tecnólogo Superior en Emergencias Médicas** debidamente registrado en la SENESCYT/Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación. 🎓✨ ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
   - text: "Dependiendo de tu elección, puedes obtener certificados de capacitación (para trabajar rápido) o un título de tercer nivel (Carreras de 2 años). 🎓 ¿Te gustaría que te aclare la diferencia para el área que te interesa? 😊"
   - condition:
     - type: slot
@@ -668,7 +667,7 @@ responses:
     - type: slot
       name: tipo_formacion
       value: carrera
-    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Rehabilitación Física** debidamente registrado en la SENESCYT. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Rehabilitación Física** debidamente registrado en la SENESCYT/Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
   - condition:
     - type: slot
       name: carrera
@@ -676,7 +675,7 @@ responses:
     - type: slot
       name: tipo_formacion
       value: carrera
-    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Laboratorio Clínico** debidamente registrado en la SENESCYT. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Laboratorio Clínico** debidamente registrado en la SENESCYT/Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
   - condition:
     - type: slot
       name: carrera
@@ -684,7 +683,7 @@ responses:
     - type: slot
       name: tipo_formacion
       value: carrera
-    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Administración de Farmacias** debidamente registrado en la SENESCYT. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Administración de Farmacias** debidamente registrado en la SENESCYT/Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
   - condition:
     - type: slot
       name: carrera
@@ -692,7 +691,7 @@ responses:
     - type: slot
       name: tipo_formacion
       value: carrera
-    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Administración de Sistemas de Salud** debidamente registrado en la SENESCYT. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Administración de Sistemas de Salud** debidamente registrado en la SENESCYT/Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
   - condition:
     - type: slot
       name: carrera
@@ -700,7 +699,7 @@ responses:
     - type: slot
       name: tipo_formacion
       value: carrera
-    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Educación Inicial** debidamente registrado en la SENESCYT. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Educación Inicial** debidamente registrado en la SENESCYT/Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
   - condition:
     - type: slot
       name: carrera
@@ -708,7 +707,7 @@ responses:
     - type: slot
       name: tipo_formacion
       value: carrera
-    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Administración** debidamente registrado en la SENESCYT. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Administración** debidamente registrado en la SENESCYT/Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
   - condition:
     - type: slot
       name: carrera
@@ -716,7 +715,7 @@ responses:
     - type: slot
       name: tipo_formacion
       value: carrera
-    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Educación Básica** debidamente registrado en la SENESCYT. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Educación Básica** debidamente registrado en la SENESCYT/Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
   - condition:
     - type: slot
       name: carrera
@@ -724,7 +723,7 @@ responses:
     - type: slot
       name: tipo_formacion
       value: carrera
-    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Marketing Digital y Comercio Electrónico** debidamente registrado en la SENESCYT. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Marketing Digital y Comercio Electrónico** debidamente registrado en la SENESCYT/Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
   - condition:
     - type: slot
       name: carrera
@@ -732,7 +731,7 @@ responses:
     - type: slot
       name: tipo_formacion
       value: carrera
-    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Desarrollo de Contenidos y Manejo de Redes** debidamente registrado en la SENESCYT. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Desarrollo de Contenidos y Manejo de Redes** debidamente registrado en la SENESCYT/Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
   - condition:
     - type: slot
       name: carrera
@@ -740,7 +739,7 @@ responses:
     - type: slot
       name: tipo_formacion
       value: carrera
-    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Mecánica Automotriz** debidamente registrado en la SENESCYT. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Mecánica Automotriz** debidamente registrado en la SENESCYT/Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
   - condition:
     - type: slot
       name: carrera
@@ -748,7 +747,7 @@ responses:
     - type: slot
       name: tipo_formacion
       value: carrera
-    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Gastronomía** debidamente registrado en la SENESCYT. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Gastronomía** debidamente registrado en la SENESCYT/Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
   - condition:
     - type: slot
       name: carrera
@@ -756,7 +755,7 @@ responses:
     - type: slot
       name: tipo_formacion
       value: carrera
-    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Naturopatía** debidamente registrado en la SENESCYT. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Naturopatía** debidamente registrado en la SENESCYT/Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación.. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
   - condition:
     - type: slot
       name: carrera
@@ -764,8 +763,8 @@ responses:
     - type: slot
       name: tipo_formacion
       value: carrera
-    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Inteligencia Artificial** debidamente registrado en la SENESCYT. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
-  - text: "🎓 Al graduarte del Instituto Superior Tecnológico Consulting Group Ecuador obtendrás un **título de tercer nivel**, cien por ciento validado y registrado en la **SENESCYT**. ✅ ¿De qué carrera en específico te gustaría saber el grado exacto que recibes?"
+    text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Inteligencia Artificial** debidamente registrado en la SENESCYT/Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
+  - text: "🎓 Al graduarte del Instituto Superior Tecnológico Consulting Group Ecuador obtendrás un **título de tercer nivel**, cien por ciento validado y registrado en la **SENESCYT/Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación**. ✅ ¿De qué carrera en específico te gustaría saber el grado exacto que recibes?"
 
   utter_emprendimiento:
   - condition:
@@ -822,80 +821,93 @@ responses:
     - type: slot
       name: carrera
       value: enfermeria
-    text: "En **Enfermería** aprenderás desde toma de signos vitales, administración de medicación e inyectología, suturas, hasta curaciones avanzadas, asistencia en procedimientos médicos, ingrensando a áreas como quirófanos en hospitales o clínicas reales y muchas cosas más!. ¡Saldrás completamente preparado para cuidar y salvar vidas!\n\n<img src='assets/images/enfermeria1.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
+    text: "¡Excelente pregunta! En **Enfermería** no te damos materias aburridas, sino conocimientos 100% prácticos. Aprenderás cosas increíbles como:\n1. Tomar la presión y poner sueros sin causar dolor.\n2. Curar heridas y asistir a médicos en el quirófano.\n3. Brindar consuelo y atención directa para salvar vidas.\n\n¡Y muchas cosas más! Para conocer el detalle exacto de cada semestre, mi asistente humana Daniela te puede ayudar.\n\n<img src='assets/images/enfermeria1.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
+  
   - condition:
     - type: slot
       name: carrera
       value: emergencias medicas
-    text: "En **Emergencias Médicas** aprenderás a manejar situaciones críticas: reanimación cardiopulmonar (RCP), inmovilización, extracción vehicular, manejo de traumas, atención prehospitalaria avanzada y muchas cosas más. ¡Saldrás completamente preparado para cuidar y salvar vidas!\n\n<img src='assets/images/emergencias1.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
+    text: "¡Excelente pregunta! En **Emergencias Médicas** tu aprendizaje será pura adrenalina. Aprenderás temas vitales como:\n1. Reanimar un corazón en momentos críticos.\n2. Rescatar personas atrapadas en accidentes.\n3. Brindar primeros auxilios avanzados dentro de una ambulancia.\n\n¡Y muchas cosas más! Para conocer el detalle exacto de cada semestre,  mi asistente humana Daniela te puede ayudar.\n\n<img src='assets/images/emergencias1.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
+  
   - condition:
     - type: slot
       name: carrera
       value: educacion basica
-    text: "En **Educación Básica** aprenderás sobre pedagogía, didáctica de las matemáticas y lenguaje, psicología educativa, diseño de material didáctico, cómo crear ambientes de aprendizaje efectivos para niños y adolescentes y muchas cosas más!."
+    text: "¡Excelente pregunta! En **Educación Básica** te prepararás para ser un profesor inolvidable. Aprenderás temas hermosos como:\n1. Enseñar a leer y escribir usando métodos divertidos.\n2. Entender el mundo de los niños y adolescentes con mucha paciencia.\n3. Cambiar vidas y abrir puertas a futuros brillantes.\n\n¡Y muchas cosas más! Para conocer el detalle exacto de cada semestre, mi asistente humana Daniela te puede ayudar."
+  
   - condition:
     - type: slot
       name: carrera
       value: educacion inicial
-    text: "En **Educación Inicial** aprenderás sobre estimulación temprana, desarrollo psicomotor, creación de ambientes de aprendizaje seguros, técnicas para potenciar la creatividad de los niños y muchas cosas más!.\n\n<img src='assets/images/educacioninicial1.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
-  - text: "¡Excelente pregunta! Lo que vas a aprender depende de la opción que elijas:\n\n**Si eliges la Carrera de 2 años:** El pensum es avanzado y súper completo.\n**Si eliges el Curso Corto:** Aprenderás habilidades 100% prácticas desde el primer día.\n\n¿De qué carrera o curso en específico te gustaría saber el contenido?"
-
+    text: "¡Excelente pregunta! En **Educación Inicial** tu labor será fundamental. Aprenderás temas hermosos como:\n1. Estimulación temprana para potenciar la inteligencia de los más pequeños.\n2. Crear ambientes seguros donde los niños puedan explorar y aprender felices.\n3. Guiar sus primeros pasos hacia el conocimiento y la creatividad.\n\n¡Y muchas cosas más! Para conocer el detalle exacto de cada semestre,  mi asistente humana Daniela te puede ayudar.\n\n<img src='assets/images/educacioninicial1.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
+  
   - condition:
     - type: slot
       name: carrera
       value: rehabilitacion fisica
-    text: "En **Rehabilitación Física** aprenderás anatomía, técnicas de masoterapia, kinesioterapia, el uso de equipos especializados para devolverles el movimiento y bienestar a los pacientes y muchas cosas más!."
+    text: "¡Excelente pregunta! En **Rehabilitación Física** tu aprendizaje será 100% práctico. Aprenderás temas increíbles como:\n1. Ayudar a las personas a recuperar el movimiento de su cuerpo.\n2. Usar tus manos y ejercicios sencillos para aliviar dolores.\n3. Lograr que tus pacientes vuelvan a caminar o jugar sin miedo ni dolor.\n\n¡Y muchas cosas más! Para conocer el detalle exacto de cada semestre, mi asistente humana Daniela te puede ayudar."
+  
   - condition:
     - type: slot
       name: carrera
       value: laboratorio clinico
-    text: "En **Laboratorio Clínico** aprenderás sobre toma de muestras, análisis hematológicos, microbiológicos, el uso de equipos de laboratorio para apoyar en diagnósticos médicos precisos y muchas cosas más!."
+    text: "¡Excelente pregunta! En **Laboratorio Clínico** serás clave para la salud. Aprenderás temas fascinantes como:\n1. Tomar muestras de sangre o tejidos con total delicadeza.\n2. Usar equipos de última tecnología para analizar resultados.\n3. Ayudar a los médicos a dar diagnósticos precisos que salven vidas.\n\n¡Y muchas cosas más! Para conocer el detalle exacto de cada semestre, mi asistente humana Daniela te puede ayudar."
+  
   - condition:
     - type: slot
       name: carrera
       value: administracion de farmacias
-    text: "En **Administración de Farmacias** aprenderás sobre farmacología, dispensación de medicamentos, atención al paciente, gestión de inventarios para farmacias y clínicas y muchas cosas más!."
+    text: "¡Excelente pregunta! En **Administración de Farmacias** serás el puente hacia la salud. Aprenderás temas muy importantes como:\n1. Conocer para qué sirve cada medicina y cómo actúa en el cuerpo.\n2. Leer y entender esas recetas médicas difíciles.\n3. Guiar a las personas para que sigan sus tratamientos correctamente.\n\n¡Y muchas cosas más! Para conocer el detalle exacto de cada semestre, mi asistente humana Daniela te puede ayudar."
   - condition:
     - type: slot
       name: carrera
       value: administracion de sistemas de la salud
-    text: "En **Administración de Sistemas de la Salud** aprenderás sobre gestión hospitalaria, auditoría médica, calidad en la atención, normativas para liderar instituciones de salud y muchas cosas más!."
+    text: "¡Excelente pregunta! En **Administración de Sistemas de la Salud** serás el arquitecto de la atención médica. Aprenderás temas como:\n1. Dirigir un hospital o clínica para que todo funcione a la perfección.\n2. Asegurarte de que los médicos tengan siempre lo necesario.\n3. Garantizar que la atención al paciente sea humana y de primera calidad.\n\n¡Y muchas cosas más! Para conocer el detalle exacto de cada semestre,  mi asistente humana Daniela te puede ayudar."
+  
   - condition:
     - type: slot
       name: carrera
       value: administracion
-    text: "En **Administración** aprenderás sobre gestión de empresas, contabilidad, talento humano, finanzas, planificación estratégica para liderar o crear tu propio negocio y muchas cosas más!."
+    text: "¡Excelente pregunta! En **Administración** te prepararás para liderar. Aprenderás temas clave como:\n1. Tomar las mejores decisiones para que una empresa crezca.\n2. Organizar el dinero y dirigir equipos de trabajo exitosos.\n3. Crear, planificar y lanzar tu propio negocio al estrellato.\n\n¡Y muchas cosas más! Para conocer el detalle exacto de cada semestre, mi asistente humana Daniela te puede ayudar."
+  
   - condition:
     - type: slot
       name: carrera
       value: marketing digital
-    text: "En **Marketing Digital y Comercio Electrónico** aprenderás a crear campañas en redes sociales, posicionamiento SEO/SEM, estrategias de e-commerce, análisis de datos digitales y muchas cosas más!."
+    text: "¡Excelente pregunta! En **Marketing Digital** conectarás productos con personas. Aprenderás temas fascinantes como:\n1. Usar las redes sociales para que un negocio venda muchísimo más.\n2. Crear publicidad llamativa que atrape la atención en internet.\n3. Entender exactamente qué es lo que la gente quiere comprar.\n\n¡Y muchas cosas más! Para conocer el detalle exacto de cada semestre, mi asistente humana Daniela te puede ayudar."
+  
   - condition:
     - type: slot
       name: carrera
       value: desarrollo de contenidos y manejo de redes
-    text: "En la carrera de **Desarrollo de Contenidos y Manejo de Redes** aprenderás a crear contenido digital atractivo para redes sociales y plataformas digitales, utilizando herramientas de diseño, video y comunicación digital. También desarrollarás habilidades para planificar estrategias de contenido, gestionar comunidades online, analizar el rendimiento de publicaciones, manejar herramientas digitales utilizadas por marcas y empresas en el entorno digital y muchas cosas más!."
+    text: "¡Excelente pregunta! En **Manejo de Redes** tu creatividad será el límite. Aprenderás temas geniales como:\n1. Grabar videos increíbles y diseñar imágenes súper atractivas.\n2. Manejar las redes sociales de empresas para conseguir miles de seguidores.\n3. Crear estrategias digitales para convertir seguidores en clientes.\n\n¡Y muchas cosas más! Para conocer el detalle exacto de cada semestre,  mi asistente humana Daniela te puede ayudar."
+  
   - condition:
     - type: slot
       name: carrera
       value: mecanica automotriz
-    text: "En **Mecánica Automotriz** aprenderás sobre motores, sistemas de inyección, electricidad automotriz, diagnóstico computarizado para reparar vehículos modernos y muchas cosas más!."
+    text: "¡Excelente pregunta! En **Mecánica Automotriz** te convertirás en un solucionador de problemas. Aprenderás temas como:\n1. Escuchar un motor para saber exactamente qué le duele al vehículo.\n2. Usar la computadora para hacer diagnósticos eléctricos precisos.\n3. Arreglar fallas para que los autos funcionen perfectos y seguros.\n\n¡Y muchas cosas más! Para conocer el detalle exacto de cada semestre, mi asistente humana Daniela te puede ayudar."
+  
   - condition:
     - type: slot
       name: carrera
       value: gastronomia
-    text: "En **Gastronomía** aprenderás técnicas culinarias nacionales e internacionales, panadería, repostería, y administración de restaurantes, negocios de alimentos y muchas cosas más!."
+    text: "¡Excelente pregunta! En **Gastronomía** despertarás tu talento culinario. Aprenderás temas deliciosos como:\n1. Preparar platos nacionales e internacionales de alto nivel.\n2. Crear postres increíbles de panadería y repostería.\n3. Administrar tu propio restaurante para que la gente siempre quiera volver.\n\n¡Y muchas cosas más! Para conocer el detalle exacto de cada semestre, mi asistente humana Daniela te puede ayudar."
+  
   - condition:
     - type: slot
       name: carrera
       value: naturopatia
-    text: "En **Naturopatía** aprenderás sobre medicina alternativa, fitoterapia, terapias florales, nutrición natural para promover la salud y muchas cosas más!."
+    text: "¡Excelente pregunta! En **Naturopatía** aprenderás a sanar con la naturaleza. Aprenderás temas hermosos como:\n1. Usar el poder de las plantas medicinales para aliviar dolencias.\n2. Promover la buena alimentación para mantener el cuerpo lleno de energía.\n3. Ayudar a las personas a curarse usando terapias 100% naturales.\n\n¡Y muchas cosas más! Para conocer el detalle exacto de cada semestre, mi asistente humana Daniela te puede ayudar."
+  
   - condition:
     - type: slot
       name: carrera
       value: inteligencia artificial
-    text: "En esta carrera aprenderás a crear tecnología inteligente capaz de analizar datos, automatizar procesos y resolver problemas reales. Desarrollarás habilidades en programación, análisis de datos, inteligencia artificial, deep learning y desarrollo de proyectos tecnológicos, utilizando herramientas modernas como Python, plataformas de IA y muchas cosas más!.\n\nDurante tu formación podrás diseñar soluciones innovadoras, crear contenido con inteligencia artificial y desarrollar proyectos tecnológicos aplicados al mundo real, preparándote para una de las áreas más demandadas y con mayor crecimiento en el futuro."
-  - text: "¡Excelente pregunta! Lo que vas a aprender es 100% práctico y adaptado al mercado laboral.\n\nPara darte la malla curricular exacta, ¿me podrías recordar de qué carrera o curso te gustaría saber el contenido?"
+    text: "¡Excelente pregunta! En **Inteligencia Artificial** te prepararás para la carrera del futuro. Aprenderás temas súper innovadores como:\n1. Crear programas inteligentes que puedan pensar y resolver problemas.\n2. Automatizar tareas aburridas para hacer el trabajo más rápido y fácil.\n3. Desarrollar proyectos tecnológicos reales usando herramientas modernas.\n\n¡Y muchas cosas más! Para conocer el detalle exacto de cada semestre, mi asistente humana Daniela te puede ayudar."
+  
+# --- FALLBACK (Cuando no especifican qué carrera/curso quieren saber) ---
+  - text: "¡Excelente pregunta! Nuestra malla curricular es 100% práctica y está diseñada para que aprendas habilidades reales y transformadoras desde el primer día.\n\nPara no darte una lista aburrida de materias, cuéntame: **¿De qué carrera o curso en específico te gustaría saber qué vas a aprender?** ¡Mi asistente Daniela te puede dar información más completa si aún tienes dudas!"
 
   utter_ubicacion:
   - text: "📍 ¡Claro que sí! A nivel nacional, nuestro holding educativo Consulting Group Ecuador (sumando las sedes del Instituto y de la Capacitadora) cuenta con **más de 30 sedes**. 🌍\n\nEsto nos permite llegar a muchas ciudades y brindar educación de calidad en todo el país. Mi asistente humana Daniela te indicará enseguida la dirección exacta de la sede más conveniente para ti. 💬"
@@ -913,7 +925,7 @@ responses:
   - text: "¡Sí usamos uniformes! Pero nosotros no lo vendemos. Les recordamos que CGE es un organismo de interés nacional con personería jurídica dada por el Ministerio de Salud Pública y reconocida como voluntaria cooperante de la Secretaría Nacional de Gestión de Riesgos. Por seguridad de nuestros pacientes y hospitales, los uniformes se hacen solo en lugares autorizados."
 
   utter_que_aprenderas_capacitadora:
-  - text: "En la Capacitadora CGE nuestros cursos están diseñados para que puedas aprender habilidades prácticas reales dentro de cada área.\n\nTe comparto lo que aprenderás en cada uno de nuestros cursos:\n\n**Enfermería**\nAprenderás sobre el cuidado de pacientes dentro de clínicas, hospitales, casas de salud, centros geriátricos y más!. Actividades:\n- Medición de signos vitales\n- Inyectología y sueroterapia\n- Curaciones de heridas y suturas\n- Participación en áreas como quirófano, UCI, salas hospitalarias y más!.\n\n**Emergencias Médicas**\nGracias a nuestras 16 ambulancias propias, atenderás emergencias 100% reales. Aprenderás:\n- Reanimación avanzada y medición de signos vitales avanzados\n- Suturas avanzadas, inyectología y sueroterapia\n- Atención de traumas, quemaduras y más!.\n\n**Rehabilitación Física**\nSe enfoca en ayudar a los pacientes a recuperar su movilidad, fuerza, vitalidad después de lesiones o accidentes mediante diferentes terapias y más!.\n\n**Laboratorio Clínico**\nAprenderás sobre:\n- Extracción, recepción y entrega de resultados de muestras\n- Indicaciones al paciente\n- Limpieza y manejo del laboratorio y más!.\n\n**Naturopatía**\nSe enfoca en el bienestar físico y emocional a través de terapias naturales. Incluye:\n- Registro de historial natural de salud\n- Asistencia en consultas y preparación de productos naturales\n- Apoyo en masajes naturales y más!.\n\n**Odontología**\nAprenderás a:\n- Asistir en intervenciones odontológicas y apoyo administrativo\n- Preparar instrumental, resinas, cementos o alginatos para impresiones\n- Realizar control de inventario y más!.\n\n**Farmacia**\nManejo de medicamentos para su venta y administración adecuada:\n- Nombres genéricos y comerciales\n- Dosificación, vía de administración, efectos secundarios y más!.\n\n**Veterinaria**\nCuidado de especies mayores y menores. Aprenderás:\n- Medición de signos vitales, suturas, inyectología y sueroterapia\n- Preparación de instrumentos y asistencia en cirugías\n- Administración de medicamentos bajo supervisión y más!.\n\n**Educación Inicial**\nCuidado y desarrollo de niños desde los 0 años:\n- Recreación, estimulación temprana y pintado de caritas\n- Colaboración con docentes, fomento de hábitos de convivencia y más!.\n\n**Taller de Inyectología**\nTaller 100% práctico donde aprenderás a:\n- Colocar sueros, aplicar inyecciones de forma profesional y más!.\n\n**Mecánica básica de motos para mujeres**\nAprenderás sobre:\n- Sistema de transmisión, frenos, suspensión, sistema eléctrico, encendido, mantenimiento preventivo y más!.\n\n**Mecánica básica de vehículos dirigida al personal de salud**\nAprenderás a actuar ante:\n- Pérdida de frenos o potencia, vehículo varado, sobrecalentamiento, fallas eléctricas y más!.\n\n**Flores de Bach**\nBienestar emocional a través de esencias florales naturales. Aprenderás a:\n- Identificar emociones (estrés, ansiedad, depresión)\n- Dosificar esencias, aplicar terapias naturales para el equilibrio integral y más!.\n\nSi deseas, puedo ayudarte también a conocer la duración o el costo del curso que te interesa."
+  - text: "En la Capacitadora CGE nuestros cursos están diseñados para que puedas aprender habilidades prácticas reales que transformarán tu vida y la de los demás.\n\nTe comparto lo hermoso que aprenderás en cada una de nuestras áreas:\n\n**Enfermería:** Aprenderás a cuidar a los pacientes de manera directa, desde tomarles la presión y ponerles un suero sin que sientan dolor, hasta curar heridas y asistir en quirófanos para salvar vidas. Serás el apoyo de quienes más lo necesitan.\n\n**Emergencias Médicas:** Te prepararás para ser el héroe en momentos críticos, aprendiendo a reanimar un corazón, rescatar personas en accidentes y brindar primeros auxilios en ambulancias. Tú serás la diferencia entre la vida y la muerte.\n\n**Rehabilitación Física:** Aprenderás a ayudar a las personas a recuperar el movimiento de su cuerpo. Usarás tus manos y ejercicios para aliviar dolores y que puedan volver a caminar, jugar o bañarse solos, sin miedo ni dolor.\n\n**Laboratorio Clínico:** Te enseñaremos a tomar muestras de sangre o tejidos y analizar esos datos para detectar enfermedades. Serás clave para ayudar a los médicos a dar diagnósticos precisos que salven vidas.\n\n**Naturopatía:** Aprenderás a sanar el cuerpo usando el poder de la naturaleza, las plantas medicinales y la buena alimentación, ayudando a las personas a curarse y sentirse llenas de energía.\n\n**Odontología:** Aprenderás a cuidar sonrisas. Manejarás el instrumental dental y asistirás al odontólogo haciendo que los pacientes pierdan el miedo al sillón dental.\n\n**Farmacia:** Te familiarizarás con las medicinas, aprenderás a leer recetas difíciles y a guiar a las personas para que sigan sus tratamientos correctamente. Serás el puente entre la cura y el paciente.\n\n**Veterinaria:** Tu pasión por los animales te llevará a curar a los que no pueden hablar. Aprenderás primeros auxilios, medicación y a asistir en cirugías para salvar a las mascotas.\n\n**Educación Inicial:** Serás vital para los más pequeños. Aprenderás sobre estimulación temprana, creando ambientes mágicos donde los niños puedan explorar y ser felices. Serás su guía en sus primeros pasos.\n\n**Inyectología (Taller):** Perderás el miedo a las agujas y aprenderás la técnica exacta para canalizar vías, poner inyecciones y sueros de manera profesional y sin dejar dolor.\n\n**Mecánica (Motos y Vehículos):** Te convertirás en un solucionador de problemas. Aprenderás a escuchar los motores y arreglar fallas para que los vehículos funcionen perfectos y seguros en la carretera.\n\n**Flores de Bach:** Descubrirás cómo usar las esencias de las flores naturales para ayudar a las personas a calmar la ansiedad, quitar el estrés y sanar sus emociones con tranquilidad.\n\n¡En todos nuestros cursos aprenderás esto y muchísimas cosas más de forma 100% práctica! ¿De cuál de estos hermosos cursos te gustaría conocer los costos, la duración o los requisitos?"
 
   utter_practicas_capacitadora:
   - condition:
@@ -932,7 +944,7 @@ responses:
     - type: slot
       name: carrera
       value: rehabilitacion fisica
-    text: "¡Claro que sí! En **Rehabilitación Física**, las prácticas se realizan en clínicas, hospitales y centros de rehabilitación. Además, ¡CGE cuenta con **su propio centro de rehabilitación** para tu formación práctica!\n\n¿Te gustaría conocer los costos o requisitos con mi asistente humana Daniela?"
+    text: "¡Claro que sí! En **Rehabilitación Física**, las prácticas se realizan en clínicas, hospitales y centros de rehabilitación. Además, ¡CGE cuenta con **su propio centro de rehabilitación** para tu formación práctica!"
 
   - condition:
     - type: slot
@@ -944,26 +956,25 @@ responses:
     - type: slot
       name: carrera
       value: naturopatia
-    text: "¡Por supuesto! En **Naturopatía**, realizarás prácticas 100% reales en centros de medicina natural con los que CGE tiene convenios, además que CGE cuenta con su propio centro KIRI, donde tambine puedes practicar.\n\n¿Deseas que Daniela te ayude con los costos o requisitos?"
+    text: "¡Por supuesto! En **Naturopatía**, realizarás prácticas 100% reales en centros de medicina natural con los que CGE tiene convenios, además que CGE cuenta con su propio centro KIRI, donde tambine puedes practicar."
 
   - condition:
     - type: slot
       name: carrera
       value: odontologia
-    text: "¡Claro que sí! En **Odontología**, nuestros estudiantes realizan prácticas directamente en clínicas y hospitales del sector público y privado con los que mantenemos convenios.\n\n¿Te gustaría conocer los costos o requisitos con Daniela?"
+    text: "¡Claro que sí! En **Odontología**, nuestros estudiantes realizan prácticas directamente en clínicas y hospitales del sector público y privado con los que mantenemos convenios."
 
   - condition:
     - type: slot
       name: carrera
       value: administracion de farmacias
-    text: "¡Por supuesto! Para **Farmacia**, las prácticas se realizan en clínicas y hospitales, así como en grandes redes reales como **Farmacias Económicas, Cruz Azul y Santa Marta**.\n\n¿Deseas que mi asistente humana Daniela te indique los costos o requisitos?"
+    text: "¡Por supuesto! Para **Farmacia**, las prácticas se realizan en clínicas y hospitales, así como en grandes redes reales como **Farmacias Económicas, Cruz Azul y Santa Marta**."
 
   - condition:
     - type: slot
       name: carrera
       value: veterinaria
-    text: "¡Claro! En **Veterinaria**, las prácticas se realizan con casos reales directamente en clínicas veterinarias aliadas, para que ganes experiencia en el trato y cuidado animal.\n\n¿Te gustaría que Daniela te ayude con los costos o requisitos?"
-
+    text: "¡Claro! En **Veterinaria**, las prácticas se realizan con casos reales directamente en clínicas veterinarias aliadas, para que ganes experiencia en el trato y cuidado animal."
   - condition:
     - type: slot
       name: carrera
@@ -974,7 +985,7 @@ responses:
     - type: slot
       name: carrera
       value: flores de bach
-    text: "¡Claro que sí! En **Flores de Bach**, las prácticas se realizan de manera interna durante todo el curso. Se trabaja con ejercicios prácticos para aprender a aplicar terapias de esencias florales para el bienestar emocional, energético y más!.\n\n¿Te gustaría que Daniela te indique los costos o requisitos?"
+    text: "¡Claro que sí! En **Flores de Bach**, las prácticas se realizan de manera interna durante todo el curso. Se trabaja con ejercicios prácticos para aprender a aplicar terapias de esencias florales para el bienestar emocional, energético y más!."
 
   - text: "¡En CGE creemos que la mejor forma de aprender es practicando en entornos reales!\n\nPor eso, nuestros cursos cuentan con prácticas en hospitales, ambulancias del ECU 911, redes de farmacias, guarderías y clínicas veterinarias, dependiendo de tu área de estudio para que adquieras experiencia laboral desde el primer día.\n\nAdemás, **no cobramos las prácticas** como en la mayoría de lugares hacen."
 
@@ -982,7 +993,7 @@ responses:
   - text: "¡Claro! Al finalizar nuestros cursos en la Capacitadora CGE, los estudiantes reciben entre **8 y 10 certificados**.\n\nEntre ellos se encuentran certificados avalados por la **Universidad Técnica Estatal de Quevedo**, por el **Instituto Superior Tecnológico Consulting Group Ecuador**, y por la **Asociación Ecuatoriana de Operadoras y Capacitadoras de la Salud**.\n\nEsto te da una gran ventaja en el ámbito laboral. ¿Te gustaría que Daniela te ayude a revisar tus requisitos aquí mismo?"
 
   utter_senescyt_capacitadora:
-  - text: "Es una excelente pregunta. La SENESCYT es el ente encargado de registrar los títulos de educación superior.\n\nEn el caso de nuestros cursos de la Capacitadora CGE, recibes certificados de capacitación que respaldan tu formación y te ayudan a desempeñarte **en el ámbito laboral** tanto en el sector público como privado, dependiendo del área.\n\nAhora bien, si luego decides continuar tus estudios en nuestra carrera del instituto, allí sí obtendrás un título de tercer nivel registrado en la SENESCYT."
+  - text: "Es una excelente pregunta. La SENESCYT/Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación es el ente encargado de registrar los títulos de educación superior.\n\nEn el caso de nuestros cursos de la Capacitadora CGE, recibes certificados de capacitación que respaldan tu formación y te ayudan a desempeñarte **en el ámbito laboral** tanto en el sector público como privado, dependiendo del área.\n\nAhora bien, si luego decides continuar tus estudios en nuestra carrera del instituto, allí sí obtendrás un título de tercer nivel registrado en la SENESCYT/Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación."
 
   utter_materiales_capacitadora:
   - text: "Es una muy buena pregunta. En los cursos de la Capacitadora CGE, los materiales que se utilizarán se van coordinando **progresivamente** conforme avanza la formación.\n\nEsto significa que, a medida que vayas avanzando en tu preparación, el docente te irá indicando poco a poco cuáles son los materiales específicos que se utilizarán en cada etapa del curso.\n\nDe esta manera, puedes organizarte mejor y adquirir **solo lo necesario en el momento adecuado**, según las actividades prácticas que se vayan realizando durante la capacitación.\n\nSi ya tienes claro qué curso te gustaría seguir, avísame y te ayudo con los requisitos de inscripción."
@@ -994,7 +1005,7 @@ responses:
   #- text: "Para nuestros cursos de capacitación contamos con jornadas **matutinas, vespertinas y fines de semana**.\n\nTe recordamos que los cupos son sumamente limitados, ya que por procesos de calidad internacionales, **solo recibimos hasta 25 personas por curso**.\n\nPara revisar la disponibilidad exacta de los horarios, mi asistente humana **Daniela** te ayudará enseguida."
 
   utter_trabajo_capacitadora:
-  - text: "¡Esa es una excelente pregunta! En CGE te brindamos **todas las herramientas, el conocimiento 100% práctico y los mejores convenios** para que desarrolles tus habilidades al máximo.\n\nMuchísimos de nuestros estudiantes logran quedarse trabajando en los mismos lugares donde realizan sus prácticas gracias a su excelente desempeño. Sin embargo, es importante ser muy transparentes contigo: CGE no te 'regala' ni te asegura el puesto de trabajo; tu contratación dependerá siempre de tu propio desenvolvimiento, esfuerzo y vocación de servicio.\n\nNosotros te damos la mejor preparación para que brilles en las entrevistas. ¿Te gustaría conocer cómo inscribirte y empezar a prepararte?"
+  - text: "¡Esa es una excelente pregunta! En CGE te brindamos **todas las herramientas, el conocimiento 100% práctico y los mejores convenios** para que desarrolles tus habilidades al máximo.\n\nMuchísimos de nuestros estudiantes logran quedarse trabajando en los mismos lugares donde realizan sus prácticas gracias a su excelente desempeño. Sin embargo, es importante ser muy transparentes contigo: CGE no te 'regala' ni te asegura el puesto de trabajo; tu contratación dependerá siempre de tu propio desenvolvimiento, esfuerzo y vocación de servicio.\n\nNosotros te damos la mejor preparación para que brilles en las entrevistas."
 
   utter_becas_capacitadora:
   - text: "🎓 El curso normalmente está en $72,50, pero podrías aplicar a una promoción si te inscribes hoy, aplicando a una beca con el **50% de descuento**. 🎉\n\n🌟 ¡Mira este caso de éxito de uno de nuestros estudiantes becados!<video controls class='w-64 md:w-80 h-auto rounded-xl mt-3 mb-3 shadow-sm border border-gray-100'><source src='assets/video/videobecado2.mp4' type='video/mp4'></video>\n\nY recuerda que todos los valores que tú dejes en CGE nos ayuda a salvar vidas. ❤️"
@@ -1141,7 +1152,7 @@ responses:
     - type: slot
       name: tipo_formacion
       value: carrera
-    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Enfermería (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\nAprenderás desde toma de signos vitales e inyectología, hasta curaciones avanzadas, asistencia médica y muchas cosas más!. ¡Saldrás completamente preparado para cuidar y salvar vidas!\n\n💡 **Un consejo de experta:** Si decides iniciar primero con nuestro curso corto de 8 meses, podrás homologar y terminar esta misma carrera en tan solo 1 año. ¡Es una gran ventaja para entrar rápido al mundo laboral!\n\n¿Qué te gustaría saber ahora de la carrera? ¿Los **costos**, la **duración**, los **horarios** o el **campo laboral**?"
+    text: "¡Excelente elección!\n\n💡 **Sin embargo, te recomiendo algo:** Si aún no has hecho nuestro curso práctico de 8 meses, ¡empieza por ahí! Después podrás homologar y terminar la carrera de 2 años en solo 1 año, ahorrando tiempo e incluso dinero. Además, te ayudará a definir tu vocación a tiempo, adquirir práctica real antes de ingresar a la carrera y obtener múltiples beneficios.\n\n¿Deseas continuar con información sobre el **curso**, o continuamos directamente con más información de la **carrera** (como lo que aprenderás, los costos, la duración, los horarios o el campo laboral)?"
 
   - condition:
     - type: slot
@@ -1150,7 +1161,7 @@ responses:
     - type: slot
       name: tipo_formacion
       value: carrera
-    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Emergencias Médicas (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\nAprenderás a manejar situaciones críticas: reanimación cardiopulmonar (RCP), inmovilización, extracción vehicular, manejo de traumas, atención prehospitalaria avanzada y muchas cosas más!.\n\n💡 **Dato clave:** Recuerda que si tomas primero el curso de 8 meses, podrás homologar y obtener tu título de carrera en menos tiempo. \n\n¿Qué te gustaría saber ahora de la carrera? ¿Los **costos**, la **duración**, los **horarios** o el **campo laboral**?"
+    text: "¡Excelente elección!\n\n💡 **Sin embargo, te recomiendo algo:** Si aún no has hecho nuestro curso práctico de 8 meses, ¡empieza por ahí! Después podrás homologar y terminar la carrera de 2 años en solo 1 año, ahorrando tiempo e incluso dinero. Además, te ayudará a definir tu vocación a tiempo, adquirir práctica real antes de ingresar a la carrera y obtener múltiples beneficios.\n\n¿Deseas continuar con información sobre el **curso**, o continuamos directamente con más información de la **carrera** (como lo que aprenderás, los costos, la duración, los horarios o el campo laboral)?"
 
   - condition:
     - type: slot
@@ -1159,7 +1170,7 @@ responses:
     - type: slot
       name: tipo_formacion
       value: carrera
-    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Administración de Farmacias (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\nAprenderás sobre farmacología, dispensación de medicamentos, atención al paciente, gestión de inventarios para farmacias y clínicas, y muchas cosas más!.\n\n💡 **Tip Consultino:** Muchos de nuestros estudiantes inician con el curso de 5 meses para trabajar de inmediato y luego homologan la carrera para terminarla en solo 1 año adicional.\n\n¿Qué te gustaría saber ahora de la carrera? ¿Los **costos**, la **duración**, los **horarios** o el **campo laboral**?"
+    text: "¡Excelente elección! \n\n💡 **Sin embargo, te recomiendo algo:** Si aún no has hecho nuestro curso práctico de 5 meses, ¡empieza por ahí! Después podrás homologar y terminar la carrera de 2 años en mucho menos tiempo, ahorrando dinero. Además, te ayudará a definir tu vocación a tiempo, adquirir práctica real antes de ingresar a la carrera y obtener múltiples beneficios.\n\n¿Deseas continuar con información sobre el **curso**, o continuamos directamente con más información de la **carrera** (como lo que aprenderás, los costos, la duración, los horarios o el campo laboral)?"
 
   - condition:
     - type: slot
@@ -1168,7 +1179,7 @@ responses:
     - type: slot
       name: tipo_formacion
       value: carrera
-    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Rehabilitación Física (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\nAprenderás anatomía, técnicas de masoterapia, kinesioterapia, el uso de equipos especializados para devolverles el movimiento y bienestar a los pacientes y muchas cosas más!.\n\n💡 **Beneficio extra:** Puedes homologar con nuestro curso de 6 meses para adelantar tus estudios de carrera.\n\n¿Qué te gustaría saber ahora de la carrera? ¿Los **costos**, la **duración**, los **horarios** o el **campo laboral**?"
+    text: "¡Excelente elección!\n\n💡 **Sin embargo, te recomiendo algo:** Si aún no has hecho nuestro curso práctico de 6 meses, ¡empieza por ahí! Después podrás homologar y terminar la carrera de 2 años en solo 1 año, ahorrando tiempo e incluso dinero. Además, te ayudará a definir tu vocación a tiempo, adquirir práctica real antes de ingresar a la carrera y obtener múltiples beneficios.\n\n¿Deseas continuar con información sobre el **curso**, o continuamos directamente con más información de la **carrera** (como lo que aprenderás, los costos, la duración, los horarios o el campo laboral)?"
 
   - condition:
     - type: slot
@@ -1177,128 +1188,13 @@ responses:
     - type: slot
       name: tipo_formacion
       value: carrera
-    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Laboratorio Clínico (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\nAprenderás sobre toma de muestras, análisis hematológicos, microbiológicos, el uso de equipos de laboratorio para apoyar en diagnósticos médicos precisos y muchas cosas más!.\n\n💡 **Ventaja rápida:** Si haces primero el curso de 5 meses, obtienes certificados de inmediato para trabajar y luego homologas la carrera.\n\n¿Qué te gustaría saber ahora de la carrera? ¿Los **costos**, la **duración**, los **horarios** o el **campo laboral**?"
+    text: "¡Excelente elección! \n\n💡 **Sin embargo, te recomiendo algo:** Si aún no has hecho nuestro curso práctico de 5 meses, ¡empieza por ahí! Después podrás homologar y terminar la carrera de 2 años en mucho menos tiempo, ahorrando dinero. Además, te ayudará a definir tu vocación a tiempo, adquirir práctica real antes de ingresar a la carrera y obtener múltiples beneficios.\n\n¿Deseas continuar con información sobre el **curso**, o continuamos directamente con más información de la **carrera** (como lo que aprenderás, los costos, la duración, los horarios o el campo laboral)?"
 
   - condition:
     - type: slot
       name: carrera
       value: educacion inicial
-    - type: slot
-      name: tipo_formacion
-      value: carrera
-    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Educación Inicial (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado directamente en la SENESCYT.\n\nAprenderás sobre estimulación temprana, desarrollo psicomotor, cómo crear ambientes de aprendizaje seguros y muchas cosas más!.\n\n💡 **Sabías que:** Si haces primero el curso de 8 meses, adelantas un año completo de tu carrera gracias a la homologación.\n\n¿Qué te gustaría saber ahora de la carrera? ¿Los **costos**, la **duración**, los **horarios** o el **campo laboral**?"
-
-  # --- SI NO HA ELEGIDO O VIENE DE FLUJO GENERAL (PREGUNTAR ELECCIÓN) ---
-  - condition:
-    - type: slot
-      name: carrera
-      value: enfermeria
-    - type: slot
-      name: tipo_formacion
-      value: carrera
-    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Enfermería (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\nAprenderás desde toma de signos vitales e inyectología, hasta curaciones avanzadas, asistencia médica mucho más. ¡Saldrás completamente preparado para cuidar y salvar vidas!\n\n💡 **Tip Consultino:** Recuerda que si primero realizas nuestro curso de 8 meses, puedes homologar y obtener tu título en menos tiempo.\n\n¿Qué te gustaría saber ahora de la carrera? ¿Los **costos**, la **duración**, los **horarios** o el **campo laboral**?"
-
-  - condition:
-    - type: slot
-      name: carrera
-      value: educacion basica
-    - type: slot
-      name: tipo_formacion
-      value: carrera
-    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Educación Básica (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\nAprenderás sobre didáctica, pedagogía, diseño de ambientes de aprendizaje para potenciar el desarrollo académico de los estudiantes y muchas cosas más!.\n\n¿Qué te gustaría saber ahora de la carrera? ¿Los **costos**, la **duración**, los **horarios** o el **campo laboral**?"
-
-  - condition:
-    - type: slot
-      name: carrera
-      value: emergencias medicas
-    - type: slot
-      name: tipo_formacion
-      value: carrera
-    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Emergencias Médicas (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\nAprenderás a manejar situaciones críticas: reanimación cardiopulmonar (RCP), inmovilización, extracción vehicular, manejo de traumas, atención prehospitalaria avanzada y más!.\n\n💡 **Tip Consultino:** Recuerda que si primero realizas nuestro curso de 8 meses, puedes homologar y obtener tu título en menos tiempo.\n\n¿Qué te gustaría saber ahora de la carrera? ¿Los **costos**, la **duración**, los **horarios** o el **campo laboral**?"
-
-  - condition:
-    - type: slot
-      name: carrera
-      value: rehabilitacion fisica
-    - type: slot
-      name: tipo_formacion
-      value: carrera
-    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Rehabilitación Física (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\nAprenderás anatomía, técnicas de masoterapia, kinesioterapia, el uso de equipos especializados para devolverles el movimiento y bienestar a los pacientes y muchas cosas más!.\n\n💡 **Tip Consultino:** Recuerda que si primero realizas nuestro curso de 6 meses, puedes homologar y obtener tu título en menos tiempo.\n\n¿Qué te gustaría saber ahora de la carrera? ¿Los **costos**, la **duración**, los **horarios** o el **campo laboral**?"
-
-  - condition:
-    - type: slot
-      name: carrera
-      value: laboratorio clinico
-    - type: slot
-      name: tipo_formacion
-      value: carrera
-    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Laboratorio Clínico (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\nAprenderás sobre toma de muestras, análisis hematológicos, microbiológicos, el uso de equipos de laboratorio para apoyar en diagnósticos médicos precisos y muchas cosas más!.\n\n💡 **Tip Consultino:** Recuerda que si primero realizas nuestro curso de 5 meses, puedes homologar y obtener tu título en menos tiempo.\n\n¿Qué te gustaría saber ahora de la carrera? ¿Los **costos**, la **duración**, los **horarios** o el **campo laboral**?"
-
-  - condition:
-    - type: slot
-      name: carrera
-      value: administracion de farmacias
-    - type: slot
-      name: tipo_formacion
-      value: carrera
-    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Administración de Farmacias (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\nAprenderás sobre farmacología, dispensación de medicamentos, atención al paciente, gestión de inventarios para farmacias y clínicas, y muchas cosas más!.\n\n💡 **Tip Consultino:** Recuerda que si primero realizas nuestro curso de 5 meses, puedes homologar y obtener tu título en menos tiempo.\n\n¿Qué te gustaría saber ahora de la carrera? ¿Los **costos**, la **duración**, los **horarios** o el **campo laboral**?"
-
-  - condition:
-    - type: slot
-      name: carrera
-      value: administracion de sistemas de la salud
-    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Administración de Sistemas de la Salud (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\nAprenderás sobre gestión hospitalaria, auditoría médica, calidad en la atención, normativas para liderar instituciones de salud y muchas cosas más!\n\n¿Qué te gustaría saber ahora de la carrera? ¿Los **costos**, la **duración**, los **horarios** o el **campo laboral**?"
-
-  - condition:
-    - type: slot
-      name: carrera
-      value: educacion inicial
-    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Educación Inicial (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado directamente en la SENESCYT.\n\nAprenderás sobre estimulación temprana, desarrollo psicomotor, cómo crear ambientes de aprendizaje seguros y muchas cosas más! Podrás trabajar en escuelas, guarderías o abrir tu propio centro educativo.\n\nPero antes de continuar, te comparto un gran beneficio: **¿Sabías que puedes terminar tu carrera en menos tiempo?** ⏳\n\nSi primero realizas nuestro curso de **Auxiliar en Educación Inicial (8 meses)**, luego podrás homologar. Esto significa que saldrías rápido con un certificado (avalado para iniciar tu vida laboral) y estarías adelantando tus estudios superiores simultáneamente. 🚀\n\n¿Qué te gustaría elegir el día de hoy? ¿Te animas a iniciar primero con el **curso** para aprovechar esta ventaja, o prefieres continuar directamente con la información de la **carrera** (costos, duración, etc.)?"
-
-  - condition:
-    - type: slot
-      name: carrera
-      value: administracion
-    - type: slot
-      name: tipo_formacion
-      value: carrera
-    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Administración (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\nAprenderás sobre gestión de empresas, contabilidad, talento humano, finanzas, planificación estratégica para liderar o crear tu propio negocio y muchas cosas más!\n\n¿Qué te gustaría saber ahora de la carrera? ¿Los **costos**, la **duración**, los **horarios** o el **campo laboral**?"
-
-  - condition:
-    - type: slot
-      name: carrera
-      value: marketing digital
-    - type: slot
-      name: tipo_formacion
-      value: carrera
-    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Marketing Digital y Comercio Electrónico (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\nAprenderás a crear campañas en redes sociales, posicionamiento SEO/SEM, estrategias de e-commerce, análisis de datos digitales y muchas cosas más!\n\n¿Qué te gustaría saber ahora de la carrera? ¿Los **costos**, la **duración**, los **horarios** o el **campo laboral**?"
-
-  - condition:
-    - type: slot
-      name: carrera
-      value: desarrollo de contenidos y manejo de redes
-    - type: slot
-      name: tipo_formacion
-      value: carrera
-    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Desarrollo de Contenidos y Manejo de Redes (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\nAprenderás a crear contenido digital atractivo, planificar estrategias de contenido, gestionar comunidades online, manejar herramientas de diseño y video para plataformas digitales y muchas cosas más!\n\n¿Qué te gustaría saber ahora de la carrera? ¿Los **costos**, la **duración**, los **horarios** o el **campo laboral**?"
-
-  - condition:
-    - type: slot
-      name: carrera
-      value: mecanica automotriz
-    - type: slot
-      name: tipo_formacion
-      value: carrera
-    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Mecánica Automotriz (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\nAprenderás sobre motores, sistemas de inyección, electricidad automotriz, diagnóstico computarizado para reparar vehículos modernos y muchas cosas más!\n\n💡 **Tip Consultino:** Recuerda que también tenemos cursos cortos de mecánica si deseas empezar con algo más rápido antes de la carrera.\n\n¿Qué te gustaría saber ahora de la carrera? ¿Los **costos**, la **duración**, los **horarios** o el **campo laboral**?"
-
-  - condition:
-    - type: slot
-      name: carrera
-      value: gastronomia
-    - type: slot
-      name: tipo_formacion
-      value: carrera
-    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Gastronomía (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\nAprenderás técnicas culinarias nacionales e internacionales, panadería, repostería, y administración de restaurantes y negocios de alimentos.\n\n¿Qué te gustaría saber ahora de la carrera? ¿Los **costos**, la **duración**, los **horarios** o el **campo laboral**?"
+    text: "¡Excelente elección! \n\n💡 **Sin embargo, te recomiendo algo:** Si aún no has hecho nuestro curso práctico de 8 meses, ¡empieza por ahí! Después podrás homologar y terminar la carrera de 2 años en solo 1 año, ahorrando tiempo e incluso dinero. Además, te ayudará a definir tu vocación a tiempo, adquirir práctica real antes de ingresar a la carrera y obtener múltiples beneficios.\n\n¿Deseas continuar con información sobre el **curso**, o continuamos directamente con más información de la **carrera** (como lo que aprenderás, los costos, la duración, los horarios o el campo laboral)?"
 
   - condition:
     - type: slot
@@ -1307,72 +1203,135 @@ responses:
     - type: slot
       name: tipo_formacion
       value: carrera
-    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Naturopatía (2 años)**, te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\nAprenderás sobre medicina alternativa, fitoterapia, terapias florales, nutrición natural para promover la salud y muchas cosas más!.\n\n💡 **Beneficio rápido:** Si haces el curso de 8 meses primero, puedes homologar y terminar la carrera en menos tiempo.\n\n¿Qué te gustaría saber ahora de la carrera? ¿Los **costos**, la **duración**, los **horarios** o el **campo laboral**?"
+    text: "¡Excelente elección! \n\n💡 **Sin embargo, te recomiendo algo:** Si aún no has hecho nuestro curso práctico de 8 meses, ¡empieza por ahí! Después podrás homologar y terminar la carrera de 2 años en solo 1 año, ahorrando tiempo e incluso dinero. Además, te ayudará a definir tu vocación a tiempo, adquirir práctica real antes de ingresar a la carrera y obtener múltiples beneficios.\n\n¿Deseas continuar con información sobre el **curso**, o continuamos directamente con más información de la **carrera** (como lo que aprenderás, los costos, la duración, los horarios o el campo laboral)?"
+
+  - condition:
+    - type: slot
+      name: carrera
+      value: mecanica automotriz
+    - type: slot
+      name: tipo_formacion
+      value: carrera
+    text: "¡Excelente elección! \n\n💡 **Sin embargo, te recomiendo algo:** Si deseas ganar experiencia rápida, ¡empieza por nuestros cursos prácticos cortos! Después podrás saltar a la carrera con más seguridad. Te ayudará a definir tu vocación a tiempo, adquirir práctica real antes de ingresar a la carrera y obtener múltiples beneficios.\n\n¿Deseas continuar con información sobre los **cursos**, o continuamos directamente con más información de la **carrera** (como lo que aprenderás, los costos, la duración, los horarios o el campo laboral)?"
+
+  # --- CARRERAS QUE NO TIENEN CURSO CORTO ASOCIADO (VAN DIRECTO AL CIERRE) ---
+  - condition:
+    - type: slot
+      name: carrera
+      value: educacion basica
+    - type: slot
+      name: tipo_formacion
+      value: carrera
+    text: "¡Excelente elección! Te prepararás para ser ese profesor inolvidable que enseña a leer, escribir y entender el mundo a los niños y adolescentes, utilizando métodos divertidos y mucha paciencia. Tu influencia puede cambiar vidas y abrir puertas a futuros brillantes. ¡Y muchas cosas más!\n\n¿Qué te gustaría saber ahora de la carrera? ¿Los **costos**, la **duración**, los **horarios** o el **campo laboral**?"
+
+  - condition:
+    - type: slot
+      name: carrera
+      value: administracion de sistemas de la salud
+    text: "¡Excelente elección! Aprenderás a dirigir un hospital o clínica para que todo funcione a la perfección, desde que el paciente entra hasta que se va, asegurándote de que los médicos tengan lo necesario y que la atención sea de primera. Serás el arquitecto de un sistema de salud eficiente y humano. ¡Y muchas cosas más!\n\n¿Qué te gustaría saber ahora de la carrera? ¿Los **costos**, la **duración**, los **horarios** o el **campo laboral**?"
+
+  - condition:
+    - type: slot
+      name: carrera
+      value: administracion
+    - type: slot
+      name: tipo_formacion
+      value: carrera
+    text: "¡Excelente elección! Te convertirás en un líder en el mundo empresarial. Aprenderás a gestionar empresas, manejar contabilidad y desarrollar habilidades en talento humano. Te capacitarás en planificación estratégica, lo que te permitirá guiar a equipos hacia el éxito y hacer una diferencia en el mundo de los negocios. ¡Y muchas cosas más!\n\n¿Qué te gustaría saber ahora de la carrera? ¿Los **costos**, la **duración**, los **horarios** o el **campo laboral**?"
+
+  - condition:
+    - type: slot
+      name: carrera
+      value: marketing digital y comercio electronico
+    - type: slot
+      name: tipo_formacion
+      value: carrera
+    text: "¡Excelente elección! Descubrirás cómo usar las redes sociales y el internet para que un negocio venda muchísimo más, aprendiendo a hacer publicidad llamativa y a entender qué es lo que la gente quiere comprar. Te convertirás en un experto en conectar productos con personas, impulsando el crecimiento de marcas. ¡Y muchas cosas más!\n\n¿Qué te gustaría saber ahora de la carrera? ¿Los **costos**, la **duración**, los **horarios** o el **campo laboral**?"
+
+  - condition:
+    - type: slot
+      name: carrera
+      value: desarrollo de contenidos y manejo de redes
+    - type: slot
+      name: tipo_formacion
+      value: carrera
+    text: "¡Excelente elección! \n\nAprenderás a grabar videos geniales, diseñar imágenes atractivas y manejar las redes sociales de empresas o emprendimientos para que consigan miles de seguidores y clientes. Tu creatividad y habilidades digitales serán clave para el éxito en el mundo actual. ¡Y muchas cosas más!\n\n¿Qué te gustaría saber ahora de la carrera? ¿Los **costos**, la **duración**, los **horarios** o el **campo laboral**?"
+
+  - condition:
+    - type: slot
+      name: carrera
+      value: gastronomia
+    - type: slot
+      name: tipo_formacion
+      value: carrera
+    text: "¡Excelente elección! Aprenderás a preparar deliciosos platos nacionales e internacionales, hacer postres increíbles y también cómo administrar tu propio restaurante para que la gente siempre quiera volver. Tu creatividad en la cocina será el sabor que atraiga a todos. ¡Y muchas cosas más!\n\n¿Qué te gustaría saber ahora de la carrera? ¿Los **costos**, la **duración**, los **horarios** o el **campo laboral**?"
 
   - condition:
     - type: slot
       name: carrera
       value: inteligencia artificial
-    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Inteligencia Artificial (1 año y medio)**, te preparamos a fondo y sales con tu título de tercer nivel registrado en la SENESCYT.\n\nAprenderás a crear tecnología inteligente, realizar análisis de datos, automatizar procesos, desarrollar proyectos reales con programación avanzada y muchas cosas más!\n\n¿Qué te gustaría saber ahora de la carrera? ¿Los **costos**, la **duración**, los **horarios** o el **campo laboral**?"
+    text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Inteligencia Artificial (1 año y medio)**, \n\nAprenderás a crear programas inteligentes y tecnología que pueda pensar, resolver problemas difíciles y automatizar tareas, preparándote para la carrera del futuro. Tu trabajo será innovador y transformador, contribuyendo a un mundo donde la tecnología y la humanidad se complementen. ¡Y muchas cosas más!\n\n¿Qué te gustaría saber ahora de la carrera? ¿Los **costos**, la **duración**, los **horarios** o el **campo laboral**?"
+
+  # --- SI NO HA ELEGIDO O VIENE DE FLUJO GENERAL ---
+  - text: "¡Excelente elección! Nuestra oferta de Carreras de Tecnología Superior te prepara a fondo y te otorga un título de tercer nivel registrado en la SENESCYT/Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación.\n\nPara poder darte la información exacta, cuéntame: **¿Qué carrera en específico te gustaría estudiar?**"
 
   # --- FALLBACK (Cuando piden una carrera que NO existe) ---
   - text: "¡Me encanta tu entusiasmo! Sin embargo, para darte la información correcta, debo aclararte que por el momento **no contamos con esa especialidad exacta** en nuestro catálogo.\n\nNosotros nos enfocamos en formar a los mejores en áreas de Salud, Educación, Administración, Tecnología y Mecánica.\n\n¿Te interesaría que te comparta nuestro catálogo completo de carreras (2 años) y cursos cortos para que veas todas las opciones que sí tenemos disponibles?"
-
-
 
   utter_info_curso_elegido:
   - condition:
     - type: slot
       name: carrera
       value: enfermeria
-    text: "¡Excelente elección! Te comento que nuestro curso de **Auxiliar de Enfermería** es 100% práctico. Aprenderás medición de signos vitales, inyectología, sueroterapia, curación de heridas, suturas, ingresarás a áreas como quirófano en hospitales o clínicas reales, y muchas cosas más!.\n\nPero más allá de lo que vas a aprender, quiero mostrarte con hechos reales de lo que es capaz un Consultino. **¿Recuerdas la pandemia anterior?** CGE fue el primer organismo en atender un puesto de atención transitoria. Cuando inició la pandemia y todos tenían miedo, los Consultinos fueron los primeros en dar de alta a los primeros pacientes recuperados del COVID.\n\nSaldrás completamente preparado para trabajar y enfretar cualquier situación que se presente.\n\n<img src='assets/images/collagepandemia.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
+    text: "¡Excelente elección! Te comento que nuestro curso de **Auxiliar de Enfermería** es 100% práctico. Aprenderás a cuidar a los pacientes de manera directa, lo que incluye desde tomarles la presión y ponerles un suero sin que sientan dolor, hasta curar sus heridas y asistir a los médicos en el quirófano para salvar vidas. Te convertirás en el apoyo fundamental de aquellos que más lo necesitan. ¡Y muchas cosas más!\n\nPero más allá de lo que vas a aprender, quiero mostrarte con hechos reales de lo que es capaz un Consultino. **¿Recuerdas la pandemia anterior?** CGE fue el primer organismo en atender un puesto de atención transitoria. Cuando inició la pandemia y todos tenían miedo, los Consultinos fueron los primeros en dar de alta a los primeros pacientes recuperados del COVID.\n\nSaldrás completamente preparado para trabajar y enfrentar cualquier situación que se presente.\n\n<img src='assets/images/collagepandemia.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
     
   - condition:
     - type: slot
       name: carrera
       value: emergencias medicas
-    text: "¡Una profesión llena de adrenalina! En el curso de **Emergencias Médicas** aprenderás de forma 100% práctica a salvar vidas. Te capacitaremos en Reanimación Cardiopulmonar (RCP), manejo de traumas, extracción vehicular, inmovilización, atención prehospitalaria avanzada y muchas cosas más.\n\n¡Estarás listo para la acción! \n\nTe muestro algunas fotos de nuestros consultinos en entornos reales:\n\n<img src='assets/images/emergencias1.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
+    text: "¡Una profesión llena de adrenalina! En el curso de **Emergencias Médicas** te prepararás para ser el héroe en momentos críticos, aprendiendo a reanimar un corazón, rescatar personas atrapadas en accidentes y brindar primeros auxilios dentro de una ambulancia. Cada segundo cuenta y tú serás la diferencia entre la vida y la muerte. ¡Y muchas cosas más!\n\n¡Estarás listo para la acción! \n\nTe muestro algunas fotos de nuestros consultinos en entornos reales:\n\n<img src='assets/images/emergencias1.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
 
   - condition:
     - type: slot
       name: carrera
       value: administracion de farmacias
-    text: "¡Excelente elección! El curso de **Auxiliar de Farmacia** es muy solicitado. Aprenderás de forma 100% práctica sobre farmacología, correcta dispensación de medicamentos, lectura de recetas, inyectología básica, gestión de inventarios y muchas cosas más. ¡Ideal para trabajar rápidamente en cualquier cadena de farmacias!\n\n¿Qué te gustaría conocer ahora? ¿Los costos del curso, los requisitos, o su duración?"
+    text: "¡Excelente elección! El curso de **Auxiliar de Farmacia** es muy solicitado. Te familiarizarás con cada medicina, cómo leer esas recetas médicas complicadas y cómo guiar a las personas para que sigan sus tratamientos correctamente y mejoren su salud. Serás un puente entre el medicamento y el paciente, asegurándote de que reciban el cuidado que necesitan. ¡Y muchas cosas más!\n\n¿Qué te gustaría conocer ahora? ¿Los costos del curso, los requisitos, o su duración?"
 
   - condition:
     - type: slot
       name: carrera
       value: veterinaria
-    text: "¡Qué hermosa vocación! El curso de **Auxiliar de Veterinaria** es 100% práctico. Aprenderás primeros auxilios veterinarios, anatomía, manejo de medicación, asistencia en cirugías, cuidado integral de animales y muchas cosas más.\n\n¿Qué te gustaría conocer ahora? ¿Los costos del curso, los requisitos, o su duración?"
+    text: "¡Qué hermosa vocación! El curso de **Auxiliar de Veterinaria** es 100% práctico. Aquí, tu pasión por los animales te llevará a ayudar a aquellos que no pueden hablar. Aprenderás a proporcionar primeros auxilios y conocerás la anatomía de diferentes especies. Te capacitarás en la medicación y en cómo asistir en cirugías, siendo un defensor de la salud y el bienestar de las mascotas. ¡Y muchas cosas más!\n\n¿Qué te gustaría conocer ahora? ¿Los costos del curso, los requisitos, o su duración?"
 
   - condition:
     - type: slot
       name: carrera
       value: educacion inicial
-    text: "¡Una carrera de pura vocación! En el curso de **Educación Inicial** aprenderás 100% en la práctica sobre estimulación temprana, desarrollo psicomotor, nutrición infantil, cómo crear ambientes de aprendizaje mágicos para los niños y muchas cosas más.\n\nTe muestro algunas fotos de nuestros consultinos realizando sus prácticas en entornos reales:\n\n<img src='assets/images/educacioninicial1.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
+    text: "¡Una carrera de pura vocación! En el curso de **Educación Inicial** tu labor será fundamental en la vida de los más pequeños. Aprenderás sobre estimulación temprana y desarrollo psicomotor, creando un ambiente seguro donde los niños puedan explorar y aprender. Serás un guía en sus primeros pasos hacia el conocimiento. ¡Y muchas cosas más!\n\nTe muestro algunas fotos de nuestros consultinos realizando sus prácticas en entornos reales:\n\n<img src='assets/images/educacioninicial1.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>"
 
   - condition:
     - type: slot
       name: carrera
       value: laboratorio clinico
-    text: "¡Excelente elección! En el curso de **Laboratorio Clínico** aprenderás de forma 100% práctica la toma de muestras, análisis hematológicos, microbiológicos, el manejo de equipos para apoyar en diagnósticos médicos precisos y muchas cosas más.\n\n¿Qué te gustaría conocer ahora? ¿Los costos del curso, los requisitos, o su duración?"
+    text: "¡Excelente elección! En el curso de **Laboratorio Clínico** te enseñaremos cómo tomar muestras de sangre, saliva o tejidos, y cómo analizar esos datos para detectar enfermedades. Aprenderás a usar diferentes equipos y a entender los resultados, para ayudar a los médicos a hacer diagnósticos precisos y a cuidar mejor a los pacientes. ¡Y muchas cosas más!\n\n¿Qué te gustaría conocer ahora? ¿Los costos del curso, los requisitos, o su duración?"
 
   - condition:
     - type: slot
       name: carrera
       value: odontologia
-    text: "¡Una gran decisión! En el curso de **Auxiliar de Odontología** aprenderás de forma 100% práctica el manejo de instrumental, preparación de materiales dentales, esterilización, asistencia directa al odontólogo en el sillón dental y muchas cosas más.\n\n¿Qué te gustaría conocer ahora? ¿Los costos del curso, los requisitos, o su duración?"
+    text: "¡Una gran decisión! En el curso de **Auxiliar de Odontología** aprenderás a cuidar sonrisas. Te enseñaremos a manejar el instrumental dental y los materiales necesarios para tratamientos, además de cómo esterilizar todo para garantizar la seguridad de los pacientes. Asistirás al odontólogo y serás parte del equipo que ayuda a las personas a mantener su salud bucal. ¡Y muchas cosas más!\n\n¿Qué te gustaría conocer ahora? ¿Los costos del curso, los requisitos, o su duración?"
 
   - condition:
     - type: slot
       name: carrera
       value: flores de bach
-    text: "¡Qué interesante! En el curso de **Flores de Bach** aprenderás de forma 100% práctica cómo utilizar las esencias florales para equilibrar emociones, manejar el estrés, promover el bienestar emocional en personas y animales y muchas cosas más.\n\n¿Qué te gustaría conocer ahora? ¿Los costos del curso, los requisitos, o su duración?"
+    text: "¡Qué interesante! En el curso de **Flores de Bach** descubrirás cómo usar las esencias de las flores naturales para ayudar a las personas a calmar la ansiedad, quitar el estrés y curar sus emociones de una forma muy tranquila. Tu conocimiento será una herramienta poderosa para el equilibrio emocional. ¡Y muchas cosas más!\n\n¿Qué te gustaría conocer ahora? ¿Los costos del curso, los requisitos, o su duración?"
+    
   - condition:
     - type: slot
       name: carrera
       value: mecanica automotriz
-    text: "¡Excelente elección! Tenemos cursos como **Mecánica básica de motos para mujeres** y **Mecánica de vehículos para personal de salud**. Aprenderás de forma 100% práctica a actuar ante: pérdida de frenos, vehículo varado, fallas eléctricas, trabajando directamente en talleres y muchas cosas más.\n\n¿Qué te gustaría conocer ahora? ¿Los costos del curso, los requisitos, o su duración?"
+    text: "¡Excelente elección! Tenemos cursos como **Mecánica básica de motos para mujeres** y **Mecánica de vehículos para personal de salud**. Aquí, te convertirás en un solucionador de problemas. Aprenderás sobre motores, sistemas de inyección y electricidad en vehículos. Te enseñaremos a realizar diagnósticos precisos, ayudando a que los vehículos funcionen sin problemas y contribuyendo a la seguridad de todos en la carretera. ¡Y muchas cosas más!\n\n¿Qué te gustaría conocer ahora? ¿Los costos del curso, los requisitos, o su duración?"
 
   - text: "¡Excelente decisión! Nuestros Cursos de Capacitación son rápidos, 100% prácticos y te dan múltiples certificaciones para empezar a trabajar y destacar en el área que elegiste.\n\n¿Qué te gustaría saber ahora? ¿Los costos del curso, los requisitos, o su duración?"
 
@@ -1429,7 +1388,7 @@ responses:
 
 
   utter_info_carrera_enfermeria_confirmacion:
-  - text: "¡Perfecto! Has elegido continuar directamente con la **Carrera de Tecnología Superior en Enfermería (2 años)**. 🩺\n\nExcelente decisión para obtener tu título de tercer nivel registrado en la SENESCYT. Recuerda que siempre tienes la opción de homologar con el curso corto si cambias de opinión para salir más rápido al mundo laboral, pero si prefieres ir directo, ¡aquí tienes los detalles! 🚀\n\n¿Qué te gustaría saber primero: **costos**, **duración**, **horarios** o **campo laboral**?"
+  - text: "¡Perfecto! Has elegido continuar directamente con la **Carrera de Tecnología Superior en Enfermería (2 años)**. 🩺\n\nExcelente decisión para obtener tu título de tercer nivel registrado en la SENESCYT/Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación. Recuerda que siempre tienes la opción de homologar con el curso corto si cambias de opinión para salir más rápido al mundo laboral, pero si prefieres ir directo, ¡aquí tienes los detalles! 🚀\n\n¿Qué te gustaría saber primero: **costos**, **duración**, **horarios** o **campo laboral**?"
 
   utter_info_curso_enfermeria_confirmacion:
   - text: "¡Excelente decisión! El **Curso de Auxiliar de Enfermería (8 meses)** es 100% práctico y te permitirá trabajar rápidamente mientras adelantas tu carrera profesional. 🚀\n\n¿Qué te gustaría conocer ahora del curso: **costos**, **requisitos** o **duración**?"

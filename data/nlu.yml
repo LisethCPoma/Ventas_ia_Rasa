@@ -235,6 +235,9 @@ nlu:
     - ¿Cuántos años dura estudiar [rehabilitacion fisica](carrera)?
     - ¿Cuántos semestres son en [marketing digital](carrera)?
     - ¿La carrera de [inteligencia artificial](carrera) también dura dos años?
+    - y cuántos semestres son
+    - cuántos semestres son para la carrera de [emergencias medicas](carrera)
+    - cuántos semestres dura
 
 
 - intent: preguntar_costos
@@ -335,6 +338,7 @@ nlu:
     - ¿Qué título obtengo al graduarme?
     - ¿El título es reconocido?
     - ¿El título está registrado en la SENESCYT?
+    - ¿El título está registrado en el Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación?
     - ¿Es un título de tercer nivel?
     - ¿El título tiene validez en Ecuador?
     - dime sobre el titulo
@@ -507,6 +511,7 @@ nlu:
     - info de la carrera de [educación inicial]{"entity": "carrera", "value": "educacion inicial"}
     - la carrera de [educación básica]{"entity": "carrera", "value": "educacion basica"}
     - la carrera de [educación básica]{"entity": "carrera", "value": "educacion basica"}
+    - Quiero la carrera de [rehabilitación física]{"entity": "carrera", "value": "rehabilitacion fisica"}
 
 - intent: elegir_curso
   examples: |
@@ -1192,6 +1197,9 @@ nlu:
     - dónde quedan
     - cómo llego al instituto
     - están en guayaquil
+    - la carrera de [naturopatia](carrera) dónde está disponible
+    - dónde está disponible
+    - en qué ciudades dan la carrera de [gastronomia](carrera)
 
 - synonym: desarrollo de contenidos y manejo de redes
   examples: |
