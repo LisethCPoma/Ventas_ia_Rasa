@@ -80,23 +80,51 @@ nlu:
     - quiero [desarrollo de contenidos](carrera)
     - tecnico superior en farmacia
     - informame sobre [farmacias](carrera)
-    - administrando una [empresa]{"entity": "carrera", "value": "administracion"}
+    - quiero estudiar [educacion basica](carrera)
+    - me interesa [educacion basica](carrera)
+    
+    # --- RESPUESTAS DIRECTAS A LA PREGUNTA VOCACIONAL ---
+    - [salvando vidas en un hospital]{"entity": "carrera", "value": "enfermeria"}
+    - [en un hospital]{"entity": "carrera", "value": "enfermeria"}
+    - me gustaría estar en un [hospital salvando vidas]{"entity": "carrera", "value": "enfermeria"}
+    
+    - [en una ambulancia]{"entity": "carrera", "value": "emergencias medicas"}
+    - mmm [en una ambulancia]{"entity": "carrera", "value": "emergencias medicas"}
+    - me veo [en una ambulancia]{"entity": "carrera", "value": "emergencias medicas"}
+    - [en una ambulancia atendiendo emergencias]{"entity": "carrera", "value": "emergencias medicas"}
+    
+    - [en el laboratorio]{"entity": "carrera", "value": "laboratorio clinico"}
+    - [en un laboratorio]{"entity": "carrera", "value": "laboratorio clinico"}
+    - mmm [en un laboratorio]{"entity": "carrera", "value": "laboratorio clinico"}
+    - creo que [en un laboratorio]{"entity": "carrera", "value": "laboratorio clinico"}
+    - me veo [en un laboratorio]{"entity": "carrera", "value": "laboratorio clinico"}
+    - me gustaría [en un laboratorio]{"entity": "carrera", "value": "laboratorio clinico"}
+    
+    - [en la farmacia]{"entity": "carrera", "value": "administracion de farmacias"}
+    - [en una farmacia]{"entity": "carrera", "value": "administracion de farmacias"}
+    - mmm [en una farmacia]{"entity": "carrera", "value": "administracion de farmacias"}
+    
+    - [cuidando animalitos]{"entity": "carrera", "value": "veterinaria"}
+    - me gustaría estar [cuidando animalitos]{"entity": "carrera", "value": "veterinaria"}
+    - [cuidando animales]{"entity": "carrera", "value": "veterinaria"}
+    - [con los animalitos]{"entity": "carrera", "value": "veterinaria"}
+    
+    - [en un consultorio odontológico]{"entity": "carrera", "value": "odontologia"}
+    - [en un consultorio odontologico]{"entity": "carrera", "value": "odontologia"}
+    - mmm [en un consultorio odontológico]{"entity": "carrera", "value": "odontologia"}
+    - [ayudando al dentista]{"entity": "carrera", "value": "odontologia"}
+    
+    - [enseñando a niños]{"entity": "carrera", "value": "educacion inicial"}
+    - [enseñar a niños]{"entity": "carrera", "value": "educacion inicial"}
+    
+    - [arreglando motores]{"entity": "carrera", "value": "mecanica automotriz"}
+    - [arreglar motores]{"entity": "carrera", "value": "mecanica automotriz"}
+    - [arreglando una moto]{"entity": "carrera", "value": "mecanica automotriz"}
+    
     - [administrando empresas]{"entity": "carrera", "value": "administracion"}
     - [administrando una empresa]{"entity": "carrera", "value": "administracion"}
+    - administrando una [empresa]{"entity": "carrera", "value": "administracion"}
     - me gustaría estar [administrando empresas]{"entity": "carrera", "value": "administracion"}
-    - me gustaría estar en un [hospital salvando vidas]{"entity": "carrera", "value": "enfermeria"}
-    - [salvando vidas en un hospital]{"entity": "carrera", "value": "enfermeria"}
-    - me gustaría estar en una [ambulancia]{"entity": "carrera", "value": "emergencias medicas"}
-    - [en una ambulancia atendiendo emergencias]{"entity": "carrera", "value": "emergencias medicas"}
-    - [en el laboratorio]{"entity": "carrera", "value": "laboratorio clinico"}
-    - [en la farmacia]{"entity": "carrera", "value": "administracion de farmacias"}
-    - [enseñando a niños]{"entity": "carrera", "value": "educacion inicial"}
-    - [arreglando motores]{"entity": "carrera", "value": "mecanica automotriz"}
-    - [arreglando una moto]{"entity": "carrera", "value": "mecanica automotriz"}
-    - quiero estudiar [educacion basica](carrera)
-    - me interesa [educacion basica](carrera)
-    - quiero estudiar [educacion basica](carrera)
-    - me interesa [educacion basica](carrera)
 
 - intent: informar_area_interes
   examples: |
@@ -512,6 +540,15 @@ nlu:
     - la carrera de [educación básica]{"entity": "carrera", "value": "educacion basica"}
     - la carrera de [educación básica]{"entity": "carrera", "value": "educacion basica"}
     - Quiero la carrera de [rehabilitación física]{"entity": "carrera", "value": "rehabilitacion fisica"}
+    # --- NUEVAS AGREGADAS ---
+    - quiero una carrera
+    - hola quiero una carrera
+    - busco una carrera
+    - me interesa una carrera
+    - quisiera una carrera
+    - quiero estudiar una carrera
+    # ------------------------
+    - me interesa la tecnología
 
 - intent: elegir_curso
   examples: |
@@ -532,6 +569,15 @@ nlu:
     - y el de [farmacia]{"entity": "carrera", "value": "administracion de farmacias"}
     - qué me dices de [farmacia]{"entity": "carrera", "value": "administracion de farmacias"}
     - y de [laboratorio]{"entity": "carrera", "value": "laboratorio clinico"}
+    # --- NUEVAS AGREGADAS ---
+    - quiero un curso
+    - hola quiero un curso
+    - busco un curso
+    - me interesa un curso
+    - quisiera un curso
+    - quiero información de un curso
+    # ------------------------
+    - me puedes ayudar con los cursos de [enfermería]{"entity": "carrera", "value": "enfermeria"}
 
 - intent: pedir_recomendacion
   examples: |
