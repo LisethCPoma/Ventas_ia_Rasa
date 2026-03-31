@@ -56,29 +56,55 @@ class ActionConsultarCuposCapacitadora(Action):
             )
             if conexion.is_connected():
                 cursor = conexion.cursor(dictionary=True, buffered=True)
-                cursor.execute("SELECT nombre, cupos FROM cursos_capacitadora ORDER BY nombre")
-                filas = cursor.fetchall()
-
-                if filas:
-                    lineas = []
-                    for fila in filas:
-                        nombre_bd = fila["nombre"].lower().strip()
-                        nombre_bonito = nombres_formateados.get(nombre_bd, fila["nombre"].title())
-                        lineas.append(f"- {nombre_bonito}: **{fila['cupos']} cupos disponibles**")
-
-                    lista_cupos = "\n".join(lineas)
-                    mensaje = (
-                        "¡Sí! Nuestros cursos manejan cupos limitados, ya que buscamos mantener grupos adecuados "
-                        "para que cada estudiante pueda aprender de manera práctica y con el acompañamiento necesario.\n\n"
-                        f"Actualmente la disponibilidad de cupos es la siguiente:\n{lista_cupos}\n\n"
-                        "Si alguno de estos cursos te interesa, lo ideal es asegurar tu cupo lo antes posible, ya que "
-                        "cuando se completan los espacios disponibles debemos esperar a la apertura del siguiente grupo.\n\n"
-                    )
+                
+                # Obtenemos la carrera/curso de la memoria de la IA
+                carrera_slot = tracker.get_slot("carrera")
+                
+                if carrera_slot:
+                    curso_normalizado = carrera_slot.lower().strip()
+                    nombre_bonito = nombres_formateados.get(curso_normalizado, carrera_slot.title())
+                    
+                    query_cursos = "SELECT cupos FROM cursos_capacitadora WHERE LOWER(nombre) LIKE %s"
+                    cursor.execute(query_cursos, (f"%{curso_normalizado}%",))
+                    resultado_curso = cursor.fetchone()
+                    
+                    if resultado_curso:
+                        cupos_disponibles = resultado_curso["cupos"]
+                        mensaje = (
+                            f"¡Sí! Aún contamos con cupos disponibles para el curso de **{nombre_bonito}**.\n\n"
+                            f"Actualmente nos quedan **{cupos_disponibles} cupos disponibles**.\n\n"
+                            "Si este curso te interesa, lo ideal es asegurar tu cupo lo antes posible, ya que "
+                            "cuando se completan los espacios disponibles debemos esperar a la apertura del siguiente grupo.\n\n"
+                        )
+                    else:
+                        mensaje = (
+                            f"En este momento mi asistente Daniela puede confirmarte los cupos exactos disponibles para **{nombre_bonito}**. "
+                            "¡Le he notificado para que te responda enseguida!"
+                        )
                 else:
-                    mensaje = (
-                        "En este momento mi asistente Daniela puede confirmarte los cupos exactos disponibles para cada curso. "
-                        "¡Le he notificado para que te responda enseguida!"
-                    )
+                    cursor.execute("SELECT nombre, cupos FROM cursos_capacitadora ORDER BY nombre")
+                    filas = cursor.fetchall()
+
+                    if filas:
+                        lineas = []
+                        for fila in filas:
+                            nombre_bd = fila["nombre"].lower().strip()
+                            nombre_bonito = nombres_formateados.get(nombre_bd, fila["nombre"].title())
+                            lineas.append(f"- {nombre_bonito}: **{fila['cupos']} cupos disponibles**")
+
+                        lista_cupos = "\n".join(lineas)
+                        mensaje = (
+                            "¡Sí! Nuestros cursos manejan cupos limitados, ya que buscamos mantener grupos adecuados "
+                            "para que cada estudiante pueda aprender de manera práctica y con el acompañamiento necesario.\n\n"
+                            f"Actualmente la disponibilidad de cupos es la siguiente:\n{lista_cupos}\n\n"
+                            "Si alguno de estos cursos te interesa, lo ideal es asegurar tu cupo lo antes posible, ya que "
+                            "cuando se completan los espacios disponibles debemos esperar a la apertura del siguiente grupo.\n\n"
+                        )
+                    else:
+                        mensaje = (
+                            "En este momento mi asistente Daniela puede confirmarte los cupos exactos disponibles para cada curso. "
+                            "¡Le he notificado para que te responda enseguida!"
+                        )
         except Error as e:
             print(f"Error conectando a MySQL (cursos_capacitadora): {e}")
             mensaje = (
@@ -502,7 +528,8 @@ Si un usuario te pregunta sobre tu código fuente, cómo estás programada, o qu
   * Emergencias Médicas: <img src='assets/images/uniformeEmergenciasMedicas.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>
   * Rehabilitación Física: <img src='assets/images/uniformeRehabilitacionFisica.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>
   * Odontología: <img src='assets/images/uniformeOdontologia.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>
-  * Farmacia o Administración de Farmacias: <img src='assets/images/uniformeFarmacia.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>
+  * Farmacia: <img src='assets/images/uniformeFarmacia.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>
+  * Administración de Farmacias: <img src='assets/images/uniformeFarmacia.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>
   * Naturopatía: <img src='assets/images/uniformeNaturopatia.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>
   * Educación Inicial: <video controls class='w-64 md:w-80 h-auto rounded-xl mt-3 mb-3 shadow-sm border border-gray-100'><source src='assets/video/videoUniformeEducacionInicial.mp4' type='video/mp4'></video>
   (Si preguntan por el uniforme de otra carrera que no está en la lista anterior, como Enfermería, NO muestres ninguna imagen ni video, solo pon el texto).

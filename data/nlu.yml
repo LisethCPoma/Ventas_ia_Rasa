@@ -1178,6 +1178,10 @@ nlu:
     - profesor de niños
     - niños
     - enseñando a niños
+    - cuidando niños
+    - cuidando ninos
+    - cuidar niños
+    - cuidar ninos
 
 - synonym: desarrollo de contenidos y manejo de redes
   examples: |
@@ -1215,6 +1219,22 @@ nlu:
     - educación básica
     - profesor de escuela
     - docencia basica
+
+- synonym: veterinaria
+  examples: |
+    - veterinaria
+    - cuidando animalitos
+    - cuidando animalito
+    - cuidando animales
+    - cuidar animalitos
+    - cuidar animalitas
+    - cuidar animalito
+    - cuidar animales
+    - cuidando animalitas
+    - cuidar anu,alitas
+    - con los animalitos
+    - animales
+    - animalitos
     
 - intent: preguntar_malla_curricular
   examples: |
