@@ -96,23 +96,34 @@ function extraerMedia(htmlStr) {
     const tempDiv = document.createElement('div');
     tempDiv.innerHTML = htmlStr;
 
-    // Buscar el primer video o imagen embebida (excluyendo collages tipo <div class='flex ...'>)
-    const video = tempDiv.querySelector('video');
-    const img = tempDiv.querySelector('img:not([class*="w-1/2"])'); // excluir imágenes de collage
+    // Buscar todos los videos e imágenes (excluyendo collages tipo <div class='flex ...'>)
+    const videos = Array.from(tempDiv.querySelectorAll('video'));
+    const imgs = Array.from(tempDiv.querySelectorAll('img:not([class*="w-1/2"])'));
 
-    let mediaEl = null;
-    if (video) {
-        // Clonar el video y aplicarle clases de layout
-        mediaEl = video.cloneNode(true);
-        mediaEl.className = 'rounded-2xl shadow-sm w-full h-auto max-h-[260px] border border-gray-100';
+    let mediaEls = [];
+
+    videos.forEach(video => {
+        let mediaEl = video.cloneNode(true);
+        mediaEl.className = 'rounded-2xl shadow-sm w-full h-auto max-h-[260px] border border-gray-100 object-cover';
+        mediaEls.push(mediaEl);
         video.remove();
-    } else if (img) {
-        mediaEl = img.cloneNode(true);
-        mediaEl.className = 'rounded-2xl shadow-sm w-full h-auto border border-gray-100';
-        img.remove();
-    }
+    });
 
-    return { textoLimpio: tempDiv.innerHTML, mediaEl };
+    imgs.forEach(img => {
+        let mediaEl = img.cloneNode(true);
+        mediaEl.className = 'rounded-2xl shadow-sm w-full h-auto max-h-[260px] border border-gray-100 object-cover';
+        mediaEls.push(mediaEl);
+        img.remove();
+    });
+
+    // Limpiamos divs vacíos que hayan quedado (como los de class 'float-right')
+    tempDiv.querySelectorAll('div').forEach(div => {
+        if(div.innerHTML.trim() === '') {
+            div.remove();
+        }
+    });
+
+    return { textoLimpio: tempDiv.innerHTML, mediaEls };
 }
 
 // 3. Función para renderizar los mensajes
@@ -131,8 +142,8 @@ function agregarMensaje(nombre, texto, esUsuario, media = null) {
         divMensaje.innerHTML = htmlContent;
     } else {
         // Intentar extraer media embebida del texto
-        const { textoLimpio, mediaEl } = extraerMedia(texto);
-        const tieneMedia = !!mediaEl || !!media;
+        const { textoLimpio, mediaEls } = extraerMedia(texto);
+        const tieneMedia = mediaEls.length > 0 || !!media;
 
         const wrapper = document.createElement('div');
         wrapper.className = 'flex gap-4 w-full md:max-w-[95%]';
@@ -149,22 +160,22 @@ function agregarMensaje(nombre, texto, esUsuario, media = null) {
         if (tieneMedia) {
             // Layout doble columna: texto izquierda, media derecha
             const row = document.createElement('div');
-            row.className = 'flex flex-col md:flex-row gap-5 items-start';
+            row.className = 'flex flex-col md:flex-row gap-5 items-stretch';
 
             const colTexto = document.createElement('div');
-            colTexto.className = 'flex-1 min-w-0';
+            colTexto.className = 'flex-1 min-w-0 flex flex-col justify-center';
             colTexto.innerHTML = textoLimpio;
 
             const colMedia = document.createElement('div');
-            colMedia.className = 'w-full md:w-[42%] flex-shrink-0';
+            colMedia.className = 'w-full md:w-[42%] flex-shrink-0 flex flex-col gap-4 justify-center';
 
-            if (mediaEl) {
-                colMedia.appendChild(mediaEl);
+            if (mediaEls.length > 0) {
+                mediaEls.forEach(el => colMedia.appendChild(el));
             } else if (media) {
                 // Caso legado: objeto media pasado como parámetro
                 const el = document.createElement(media.type === 'image' ? 'img' : 'video');
                 el.src = media.url;
-                el.className = 'rounded-2xl shadow-sm w-full h-auto max-h-[260px] border border-gray-100';
+                el.className = 'rounded-2xl shadow-sm w-full h-auto max-h-[260px] object-cover border border-gray-100';
                 if (media.type === 'video') el.controls = true;
                 colMedia.appendChild(el);
             }
