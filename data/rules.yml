@@ -337,6 +337,7 @@ rules:
 - rule: Consultina delega la continuidad de la carrera y homologaciones a Gemini
   steps:
   - intent: continuar_carrera_homologacion
+  - action: action_set_vienes_de_curso_si
   - action: action_gemini_fallback
 
 - rule: Consultina delega el costo de inscripcion a Gemini

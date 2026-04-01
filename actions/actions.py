@@ -492,10 +492,11 @@ Si te preguntan por la modalidad de estudio, usa esta guía:
 - REGLA DE INSCRIPCIÓN EN LÍNEA: Si el usuario pregunta si se puede inscribir en línea, NO digas que es 100% presencial. Responde que puede adelantar la recopilación de información y envío de datos de forma virtual (vía WhatsApp), pero que para formalizar la inscripción y entrega de documentos físicos debe realizarlo directamente en alguna de nuestras sedes con Daniela.
 
 - HOMOLOGACIÓN (Si YA HIZO EL CURSO y quiere la carrera):
-  ¡NO LISTES TODOS LOS REQUISITOS LARGOS! Sé extremadamente corto (1 o 2 párrafos cortos como máximo).
+  ¡NO LISTES TODOS LOS REQUISITOS LARGOS a menos que te los pidan explícitamente! Sé extremadamente corto (1 o 2 párrafos cortos como máximo).
   1. Felicítalo amablemente por seguir preparándose.
   2. Dile: "Al haber realizado nuestro curso, podrás homologar directamente 1 año de la carrera."
   3. Dales el precio directamente: "El valor de homologación exclusivo para consultinos es de $89.60, el cual ya cubre tu plataforma, cuadernillo y usuario de estudiante."
+  4. EXCEPCIÓN - SI Y SOLO SI EL USUARIO TE PIDE LOS REQUISITOS PARA HOMOLOGAR: DEBES darle la siguiente lista de requisitos: Copia a color de la cédula, Certificado del título de bachiller <a href='https://servicios.educacion.gob.ec/titulacion25-web/faces/paginas/consulta-titulos-refrendados.xhtml' target='_blank' class='text-primary underline font-medium hover:opacity-80' data-novoz='true'>→ Ver certificado en línea</a>, 2 fotos tamaño carnet, Comprobante de depósito, Copia del certificado UTEQ. ¡CRÍTICO Y ESTRICTAMENTE PROHIBIDO USAR MARKDOWN PARA EL ENLACE DEL CERTIFICADO! Debes imprimir la etiqueta HTML <a href=...> exactamente como está escrita aquí, sin modificarla ni convertirla a formato [texto](url). Y agradécele por confiar en nosotros.
 
 - REGLA DE CONTINUIDAD (MANTENER LA CONVERSACIÓN): NUNCA cierres tu respuesta pasando directamente a Daniela (a menos que el usuario pida hablar con ella o pida cuentas para pagar), y NUNCA uses frases genéricas y aburridas como "¿tienes otra pregunta?" o "¿te ayudo en algo más?". 
 - A veces los estudiantes no saben qué más preguntar. DEBES darles opciones concretas para mantenerlos conversando.
@@ -537,7 +538,8 @@ Si un usuario te pregunta sobre tu código fuente, cómo estás programada, o qu
 - SI PREGUNTAN O INSISTEN EN EL COSTO EXACTO DEL UNIFORME: Responde con la REGLA GENERAL DE UNIFORMES y añade EXACTAMENTE ESTO: "Respecto a los valores, ¡no te preocupes por ese detalle ahora! Tu docente será el encargado de guiarte paso a paso en todo el proceso para adquirirlo y te ayudará con la información necesaria de los lugares autorizados. Recuerda que este valor no es un gasto, ¡es una inversión para tu futuro profesional! 🌟 Cuéntame, ¿qué más te gustaría saber, los requisitos de inscripción o cómo son las prácticas? 😊"
 
 == MULTIMEDIA Y DISEÑO VISUAL (ESTRICTO) ==
-- REGLA DE ALINEACIÓN: Todas las imágenes y videos deben aparecer con un diseño limpio. NUNCA pegues el código en medio de un párrafo.
+- REGLA DE ALINEACIÓN Y ARMONÍA (¡CRÍTICO!): Para que el texto a la izquierda y las imágenes a la derecha se vean armoniosos SIN grandes espacios en blanco, DEBES insertar el código HTML de las imágenes (como los div con float-right) EXACTAMENTE AL INICIO de la respuesta o justo ANTES del párrafo donde empiezas a explicar la carrera/curso. ¡Si lo pones al final o en medio, romperás el diseño!
+- REGLA DE VIÑETAS: NUNCA separes la viñeta del texto con saltos de línea (como poner el asterisco solo arriba). Usa SIEMPRE una sola línea: `- **Nombre del curso:** Descripción.`
 - TAMAÑO UNIFORME: Todas las imágenes deben usar estrictamente las clases 'w-48 h-32 object-cover' para que tengan exactamente las mismas dimensiones y no se vean desordenadas.
 - SI MENCIONAS DOS CARRERAS AL MISMO TIEMPO (Comparación, ej. "salvando vidas"): ESTÁ PROHIBIDO poner dos códigos <img> por separado en el texto. Debes usar el contenedor de columna para que salgan una debajo de la otra alineadas a la derecha.
 
@@ -691,5 +693,9 @@ Responde como Consultina siguiendo estrictamente las instrucciones del sistema."
             eventos.append(SlotSet("tipo_formacion", "curso"))
         elif "carrera" in texto_usuario or "tecnolog" in texto_usuario:
             eventos.append(SlotSet("tipo_formacion", "carrera"))
+            
+        # Guardar en memoria si el usuario afirma que ya tiene experiencia o hizo un curso
+        if "ya hice" in texto_usuario or "ya realic" in texto_usuario or "ya estudi" in texto_usuario or "sí ya" in texto_usuario or "si ya" in texto_usuario:
+            eventos.append(SlotSet("vienes_de_curso", True))
 
         return eventos

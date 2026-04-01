@@ -840,7 +840,7 @@ responses:
         - type: slot
           name: tipo_formacion
           value: carrera
-      text: "Al finalizar la **Carrera**, obtendrás el título de tercer nivel como **Técnico Superior en Enfermería** debidamente registrado en la Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT). 🎓✨ ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
+      text: "Al finalizar la **Carrera**, obtendrás el título de tercer nivel como **Técnico Superior en Enfermería** debidamente registrado en el Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT). 🎓✨ ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
     - condition:
         - type: slot
           name: carrera
@@ -848,7 +848,7 @@ responses:
         - type: slot
           name: tipo_formacion
           value: carrera
-      text: "Al finalizar la **Carrera**, obtendrás el título de tercer nivel como **Tecnólogo Superior en Emergencias Médicas** debidamente registrado en la Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT). 🎓✨ ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
+      text: "Al finalizar la **Carrera**, obtendrás el título de tercer nivel como **Tecnólogo Superior en Emergencias Médicas** debidamente registrado en el Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT). 🎓✨ ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
     - text: "Dependiendo de tu elección, puedes obtener certificados de capacitación (para trabajar rápido) o un título de tercer nivel (Carreras de 2 años). 🎓 ¿Te gustaría que te aclare la diferencia para el área que te interesa? 😊"
     - condition:
         - type: slot
@@ -857,7 +857,7 @@ responses:
         - type: slot
           name: tipo_formacion
           value: carrera
-      text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Rehabilitación Física** debidamente registrado en la Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT). ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
+      text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Rehabilitación Física** debidamente registrado en el Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT). ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
     - condition:
         - type: slot
           name: carrera
@@ -865,7 +865,7 @@ responses:
         - type: slot
           name: tipo_formacion
           value: carrera
-      text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Laboratorio Clínico** debidamente registrado en la Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT). ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
+      text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Laboratorio Clínico** debidamente registrado en el Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT). ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
     - condition:
         - type: slot
           name: carrera
@@ -873,7 +873,7 @@ responses:
         - type: slot
           name: tipo_formacion
           value: carrera
-      text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Administración de Farmacias** debidamente registrado en la Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT). ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
+      text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Administración de Farmacias** debidamente registrado en el Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT). ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
     - condition:
         - type: slot
           name: carrera
@@ -881,7 +881,7 @@ responses:
         - type: slot
           name: tipo_formacion
           value: carrera
-      text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Administración de Sistemas de Salud** debidamente registrado en la Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT). ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
+      text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Administración de Sistemas de Salud** debidamente registrado en el Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT). ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
     - condition:
         - type: slot
           name: carrera
@@ -889,7 +889,7 @@ responses:
         - type: slot
           name: tipo_formacion
           value: carrera
-      text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Educación Inicial** debidamente registrado en la Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT). ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
+      text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Educación Inicial** debidamente registrado en el Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT). ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
     - condition:
         - type: slot
           name: carrera
@@ -897,7 +897,7 @@ responses:
         - type: slot
           name: tipo_formacion
           value: carrera
-      text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Administración** debidamente registrado en la Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT). ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
+      text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Administración** debidamente registrado en el Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT). ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
     - condition:
         - type: slot
           name: carrera
@@ -905,7 +905,7 @@ responses:
         - type: slot
           name: tipo_formacion
           value: carrera
-      text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Educación Básica** debidamente registrado en la Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT). ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
+      text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Educación Básica** debidamente registrado en el Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT). ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
     - condition:
         - type: slot
           name: carrera
@@ -913,7 +913,7 @@ responses:
         - type: slot
           name: tipo_formacion
           value: carrera
-      text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Marketing Digital y Comercio Electrónico** debidamente registrado en la Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT). ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
+      text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Marketing Digital y Comercio Electrónico** debidamente registrado en el Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT). ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
     - condition:
         - type: slot
           name: carrera
@@ -921,7 +921,7 @@ responses:
         - type: slot
           name: tipo_formacion
           value: carrera
-      text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Desarrollo de Contenidos y Manejo de Redes** debidamente registrado en la Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT). ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
+      text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Desarrollo de Contenidos y Manejo de Redes** debidamente registrado en el Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT). ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
     - condition:
         - type: slot
           name: carrera
@@ -929,7 +929,7 @@ responses:
         - type: slot
           name: tipo_formacion
           value: carrera
-      text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Mecánica Automotriz** debidamente registrado en la Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT). ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
+      text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Mecánica Automotriz** debidamente registrado en el Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT). ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
     - condition:
         - type: slot
           name: carrera
@@ -937,7 +937,7 @@ responses:
         - type: slot
           name: tipo_formacion
           value: carrera
-      text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Gastronomía** debidamente registrado en la Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT). ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
+      text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Gastronomía** debidamente registrado en el Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT). ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
     - condition:
         - type: slot
           name: carrera
@@ -945,7 +945,7 @@ responses:
         - type: slot
           name: tipo_formacion
           value: carrera
-      text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Naturopatía** debidamente registrado en la Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT).. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
+      text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Naturopatía** debidamente registrado en el Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT).. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
     - condition:
         - type: slot
           name: carrera
@@ -953,7 +953,7 @@ responses:
         - type: slot
           name: tipo_formacion
           value: carrera
-      text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Inteligencia Artificial** debidamente registrado en la Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT). ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
+      text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Inteligencia Artificial** debidamente registrado en el Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT). ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
     - text: "🎓 Al graduarte del Instituto Superior Tecnológico Consulting Group Ecuador obtendrás un **título de tercer nivel**, cien por ciento validado y registrado en el **Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT)**. ✅ ¿De qué carrera en específico te gustaría saber el grado exacto que recibes?"
 
   utter_emprendimiento:
@@ -973,7 +973,7 @@ responses:
     - text: "🤔 ¡Claro! Antes de explicarte el proceso de homologación, me gustaría saber algo importante:\n\n¿Ya realizas algún curso de capacitación con nosotros relacionados con la carrera que deseas estudiar?"
 
   utter_homologacion_si:
-    - text: "¡Excelente! Si ya realizaste un curso relacionado con la carrera, puedes acceder al proceso de homologación de los dos primeros semestres de esa carrera.\n\nPor ejemplo, si realizas un curso relacionado con **Educación Inicial**, puedes homologar los dos primeros semestres de la carrera de Educación Inicial. De la misma manera funciona con otros cursos.\n\nPara realizar la homologación debes presentar los siguientes requisitos:\nCopia a color de la cédula\n Certificado del título de bachiller <a href='https://servicios.educacion.gob.ec/titulacion25-web/faces/paginas/consulta-titulos-refrendados.xhtml' target='_blank' class='text-primary underline font-medium hover:opacity-80' data-novoz='true'>→ Ver certificado en línea</a>\n 2 fotos tamaño carnet\n Comprobante de depósito\n Copia del certificado UTEQ\n\n **Valor de homologación para consultinos: $89.60**\n\nEste valor cubre:\n- El cuadernillo de preguntas y respuestas de 1er y 2do semestre (base para los exámenes).\n- La apertura de la plataforma académica.\n- La creación del usuario y contraseña para acceder al sistema."
+    - text: "¡Excelente! Si ya realizaste un curso relacionado con la carrera, puedes acceder al proceso de homologación de los dos primeros semestres de esa carrera.\n\nPara realizar la homologación debes presentar los siguientes requisitos:\nCopia a color de la cédula\n Certificado del título de bachiller <a href='https://servicios.educacion.gob.ec/titulacion25-web/faces/paginas/consulta-titulos-refrendados.xhtml' target='_blank' class='text-primary underline font-medium hover:opacity-80' data-novoz='true'>→ Ver certificado en línea</a>\n 2 fotos tamaño carnet\n Comprobante de depósito\n Copia del certificado UTEQ\n\n **Valor de homologación para consultinos: $89.60**\n\nEste valor cubre:\n- El cuadernillo de preguntas y respuestas de 1er y 2do semestre (base para los exámenes).\n- La apertura de la plataforma académica.\n- La creación del usuario y contraseña para acceder al sistema."
 
   utter_homologacion_no:
     - text: "En ese caso, primero deberías realizar uno de nuestros cursos de capacitación, ya que estos permiten posteriormente acceder al proceso de homologación cuando decidas continuar con la carrera. 🚀\n\nMuchos estudiantes comienzan por los cursos porque tienen varios beneficios:\n- Obtienen **certificados de capacitación**. 🏆\n- Permite avanzar más rápido en la carrera posteriormente mediante la homologación. ⏩\n- Ayuda a descubrir y confirmar la vocación profesional. 🤔\n- Es una forma más económica de iniciar en el área de interés. 💸\n- Desde el curso ya se realizan prácticas 100% reales, lo que permite adquirir experiencia desde el inicio. 🧑‍💻"
@@ -1547,7 +1547,7 @@ responses:
       text: "¡Excelente elección! Al elegir la **Carrera de Tecnología Superior en Inteligencia Artificial (1 año y medio)**, \n\nAprenderás a crear programas inteligentes y tecnología que pueda pensar, resolver problemas difíciles y automatizar tareas, preparándote para la carrera del futuro. Tu trabajo será innovador y transformador, contribuyendo a un mundo donde la tecnología y la humanidad se complementen. ¡Y muchas cosas más!\n\n¿Qué te gustaría saber ahora de la carrera? ¿Los **costos**, la **duración**, los **horarios** o el **campo laboral**?"
 
     # --- SI NO HA ELEGIDO O VIENE DE FLUJO GENERAL ---
-    - text: "¡Excelente elección! Nuestra oferta de Carreras de Tecnología Superior te prepara a fondo y te otorga un título de tercer nivel registrado en la Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT).\n\nPara poder darte la información exacta, cuéntame: **¿Qué carrera en específico te gustaría estudiar?**"
+    - text: "¡Excelente elección! Nuestra oferta de Carreras de Tecnología Superior te prepara a fondo y te otorga un título de tercer nivel registrado en el Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT).\n\nPara poder darte la información exacta, cuéntame: **¿Qué carrera en específico te gustaría estudiar?**"
 
     # --- FALLBACK (Cuando piden una carrera que NO existe) ---
     - text: "¡Me encanta tu entusiasmo! Sin embargo, para darte la información correcta, debo aclararte que por el momento **no contamos con esa especialidad exacta** en nuestro catálogo.\n\nNosotros nos enfocamos en formar a los mejores en áreas de Salud, Educación, Administración, Tecnología y Mecánica.\n\n¿Te interesaría que te comparta nuestro catálogo completo de carreras (2 años) y cursos cortos para que veas todas las opciones que sí tenemos disponibles?"
@@ -1662,7 +1662,7 @@ responses:
     - text: "Nuestros cursos de capacitación están organizados por **meses**. La duración va desde 1 mes (como inyectología) hasta 8 meses (como enfermería). ¿De qué curso te gustaría saber la duración exacta?"
 
   utter_info_carrera_enfermeria_confirmacion:
-    - text: "¡Perfecto! Has elegido continuar directamente con la **Carrera de Tecnología Superior en Enfermería (2 años)**. 🩺\n\nExcelente decisión para obtener tu título de tercer nivel registrado en la Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT). Recuerda que siempre tienes la opción de homologar con el curso corto si cambias de opinión para salir más rápido al mundo laboral, pero si prefieres ir directo, ¡aquí tienes los detalles! 🚀\n\n¿Qué te gustaría saber primero: **costos**, **duración**, **horarios** o **campo laboral**?"
+    - text: "¡Perfecto! Has elegido continuar directamente con la **Carrera de Tecnología Superior en Enfermería (2 años)**. 🩺\n\nExcelente decisión para obtener tu título de tercer nivel registrado en el Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT). Recuerda que siempre tienes la opción de homologar con el curso corto si cambias de opinión para salir más rápido al mundo laboral, pero si prefieres ir directo, ¡aquí tienes los detalles! 🚀\n\n¿Qué te gustaría saber primero: **costos**, **duración**, **horarios** o **campo laboral**?"
 
   utter_info_curso_enfermeria_confirmacion:
     - text: "¡Excelente decisión! El **Curso de Auxiliar de Enfermería (8 meses)** es 100% práctico y te permitirá trabajar rápidamente mientras adelantas tu carrera profesional. 🚀\n\n¿Qué te gustaría conocer ahora del curso: **costos**, **requisitos** o **duración**?"
