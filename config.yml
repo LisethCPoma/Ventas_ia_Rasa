@@ -10,6 +10,7 @@ assistant_id: asistente_ventas_mvp
 language: es
 
 pipeline:
+  - name: addons.spelling_corrector.SpellingCorrector
   - name: WhitespaceTokenizer
   - name: RegexFeaturizer
   - name: LexicalSyntacticFeaturizer
