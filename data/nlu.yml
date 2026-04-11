@@ -289,7 +289,17 @@ nlu:
     - y el precio de [emergencias medicas]{"entity": "carrera", "value": "emergencias medicas"}
     - cual es el precio de la carrera
     - dame los precios por favor
-
+    - ¿cuál es el costo de marketing digital?
+    - dame el precio de la carrera de [marketing digital]{"entity": "carrera", "value": "marketing digital"}
+    - dame el precio de [marketing digital]{"entity": "carrera", "value": "marketing digital"}
+    - Cuánto cuesta la carrera de [enfermeria]{"entity": "carrera", "value": "enfermeria"}
+    - Cuánto cuesta Cuál es el precio el valor de la carrera de [enfermeria]{"entity": "carrera", "value": "enfermeria"}
+    - cuánto vale cursar [laboratorio clinico]{"entity": "carrera", "value": "laboratorio clinico"}
+    - me puedes decir los valores para estudiar [emergencias medicas]{"entity": "carrera", "value": "emergencias medicas"}
+    - Cuánto cuesta la carrera de [educacion inicial]{"entity": "carrera", "value": "educacion inicial"}
+    - dime por favor el valor de la carrera de [administracion]{"entity": "carrera", "value": "administracion"}
+    - precios exactos de la carrera de [naturopatia]{"entity": "carrera", "value": "naturopatia"}
+    - qué precio tiene la de [rehabilitacion fisica]{"entity": "carrera", "value": "rehabilitacion fisica"}
 - intent: preguntar_costo_inscripcion
   examples: |
     - ¿Cuánto cuesta la inscripción?
@@ -328,6 +338,13 @@ nlu:
     - Entiendo lo de los convenios generales, pero hablemos solo de la carrera de [Emergencias Médicas](carrera).
     - ¿Es verdad que tienen ambulancias propias para las prácticas de [emergencias medicas](carrera)?
     - me daría miedo graduarme de [enfermeria](carrera) sin haber visto un paciente real, ¿dónde son las prácticas?
+    - dónde voy a realizar mis prácticas de [emergencias medicas]{"entity": "carrera", "value": "emergencias medicas"}
+    - se realizan las prácticas de [emergencias medicas]{"entity": "carrera", "value": "emergencias medicas"}
+    - en donde son las practicas profesionales de la carrera de [marketing digital]{"entity": "carrera", "value": "marketing digital"}
+    - quiero saber lugares de prácticas para [naturopatia]{"entity": "carrera", "value": "naturopatia"}
+    - explícame las prácticas de [educacion inicial]{"entity": "carrera", "value": "educacion inicial"}
+    - en qué hospital harán prácticas los de [enfermeria]{"entity": "carrera", "value": "enfermeria"}
+    - con quién tienen convenios para prácticas de [administracion de farmacias]{"entity": "carrera", "value": "administracion de farmacias"}
 
 - intent: preguntar_campo_laboral
   examples: |
@@ -683,6 +700,14 @@ nlu:
     - cuánto vale el curso de
     - cual es el valor del curso de
     - ¿Cuánto cuesta el curso de
+    - cuánto cuesta el curso de [laboratorio clinico]{"entity": "carrera", "value": "laboratorio clinico"}
+    - y cuál es el precio del curso de [enfermeria]{"entity": "carrera", "value": "enfermeria"}
+    - quiero saber el precio del curso de capacitación de [farmacia]{"entity": "carrera", "value": "administracion de farmacias"}
+    - cuánto vale la capacitación en [emergencias medicas]{"entity": "carrera", "value": "emergencias medicas"}
+    - el valor del curso de [educacion inicial]{"entity": "carrera", "value": "educacion inicial"}
+    - costo del curso [odontologia]{"entity": "carrera", "value": "odontologia"}
+    - cuánto cuesta realizar ese curso
+    - deme los precios de los cursos
     
 
 - intent: preguntar_uniformes_capacitadora
@@ -741,6 +766,11 @@ nlu:
     - ¿Dónde se realizan las prácticas?
     - ¿Tienen convenios con hospitales o instituciones?
     - ¿Voy a practicar con pacientes reales?
+    - dónde son las prácticas del curso de [enfermeria]{"entity": "carrera", "value": "enfermeria"}
+    - hay prácticas en el curso de [farmacia]{"entity": "carrera", "value": "administracion de farmacias"}
+    - para [laboratorio clinico]{"entity": "carrera", "value": "laboratorio clinico"} dónde hacen el curso sus prácticas
+    - me indican lugar de prácticas para [odontologia]{"entity": "carrera", "value": "odontologia"}
+    - en qué clínicas hacemos prácticas del curso de [rehabilitacion fisica]{"entity": "carrera", "value": "rehabilitacion fisica"}
 
 - intent: preguntar_certificados_capacitadora
   examples: |
