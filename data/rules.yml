@@ -222,7 +222,7 @@ rules:
 - rule: Consultina responde sobre las oportunidades laborales post curso
   steps:
   - intent: preguntar_trabajo_capacitadora
-  - action: utter_trabajo_capacitadora
+  - action: utter_campo_laboral
 
 - rule: Consultina responde sobre becas y descuentos de la capacitadora
   steps:

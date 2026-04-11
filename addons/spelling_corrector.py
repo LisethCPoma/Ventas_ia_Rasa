@@ -41,7 +41,8 @@ class SpellingCorrector(GraphComponent):
                 'naturopatía', 'naturopatia', 'inyectología', 'inyectologia', 
                 'bach', 'odontología', 'odontologia', 'rehabilitación', 'rehabilitacion',
                 'párvulos', 'emergencias', 'farmacia', 'paramédico', 
-                'marketing', 'ecu', 'iess'
+                'marketing', 'ecu', 'iess', 'médicas', 'medicas', 'física', 'fisica',
+                'clínico', 'clinico', 'básica', 'basica', 'automotriz'
             ]
             self.spell.word_frequency.load_words(palabras_propias)
 

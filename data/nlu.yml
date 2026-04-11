@@ -339,7 +339,10 @@ nlu:
     - ¿Es verdad que tienen ambulancias propias para las prácticas de [emergencias medicas](carrera)?
     - me daría miedo graduarme de [enfermeria](carrera) sin haber visto un paciente real, ¿dónde son las prácticas?
     - dónde voy a realizar mis prácticas de [emergencias medicas]{"entity": "carrera", "value": "emergencias medicas"}
+    - dónde voy a realizar mis prácticas de [emergencias médicas]{"entity": "carrera", "value": "emergencias medicas"}
+    - dónde voy a hacer las prácticas de [Emergencias Médicas]{"entity": "carrera", "value": "emergencias medicas"}
     - se realizan las prácticas de [emergencias medicas]{"entity": "carrera", "value": "emergencias medicas"}
+    - prácticas de [emergencias médicas]{"entity": "carrera", "value": "emergencias medicas"}
     - en donde son las practicas profesionales de la carrera de [marketing digital]{"entity": "carrera", "value": "marketing digital"}
     - quiero saber lugares de prácticas para [naturopatia]{"entity": "carrera", "value": "naturopatia"}
     - explícame las prácticas de [educacion inicial]{"entity": "carrera", "value": "educacion inicial"}
@@ -353,6 +356,11 @@ nlu:
     - ¿Dónde podría trabajar cuando me gradúe?
     - ¿Qué salidas laborales tiene la carrera?
     - ¿En qué lugares trabajan los graduados de [enfermeria](carrera)?
+    - se realiza el curso de [enfermeria]{"entity": "carrera", "value": "enfermeria"} dónde voy a trabajar cuando finalice
+    - dónde voy a trabajar cuando finalice [enfermeria]{"entity": "carrera", "value": "enfermeria"}
+    - dónde voy a trabajar cuando finalice el curso de [enfermeria]{"entity": "carrera", "value": "enfermeria"}
+    - dónde podría trabajar cuando me gradué del curso de [enfermeria]{"entity": "carrera", "value": "enfermeria"}
+    - Cuál es el campo laboral para la carrera de [enfermeria]{"entity": "carrera", "value": "enfermeria"}
     - ¿En qué empresas puedo trabajar si estudio [marketing digital](carrera)?
     - ¿Qué oportunidades laborales tiene [emergencias medicas](carrera)?
     - ¿Qué puedo hacer profesionalmente siendo tecnólogo en [mecanica automotriz](carrera)?
@@ -1127,6 +1135,7 @@ nlu:
 - synonym: emergencias medicas
   examples: |
     - Emergencias Médicas
+    - emergencias médicas
     - emergencias
     - emergencia médicas
     - emergencia medicas

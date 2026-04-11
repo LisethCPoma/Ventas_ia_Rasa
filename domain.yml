@@ -669,7 +669,7 @@ responses:
         - type: slot
           name: carrera
           value: emergencias medicas
-      text: "Para **Emergencias Médicas**, las prácticas se desarrollan en clínicas u hospitales.\n\nSomos el único organismo que cuenta con **16 ambulancias propias a nivel nacional** vinculadas al ECU 911, por lo que participarás en escenarios reales de rescate y atención de emergencias.\n\n Te mostramos fotos reales de nuestros consultinos desempeñando sus funciones en entornos de practica 100% reales<img src='assets/images/emergencias1.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>\n\n¿Y cuéntame, tú tienes alguna actividad que te perjudique realizar las prácticas en nuestros horarios rotativos o no tienes inconvenientes? 😊"
+      text: "Para **Emergencias Médicas**, las prácticas se desarrollan en clínicas u hospitales del sector público y privado. Somos el único organismo que cuenta con **16 ambulancias propias a nivel nacional** vinculadas al ECU 911, por lo que participarás en escenarios reales de rescate y atención de emergencias.\n\n Te mostramos fotos reales de nuestros consultinos desempeñando sus funciones en entornos de practica 100% reales<img src='assets/images/emergencias1.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>\n\n¿Y cuéntame, tú tienes alguna actividad que te perjudique realizar las prácticas en nuestros horarios rotativos o no tienes inconvenientes? 😊"
     - condition:
         - type: slot
           name: carrera
@@ -731,7 +731,7 @@ responses:
           value: inteligencia artificial
       text: "En la carrera de **Inteligencia Artificial**, las prácticas se enfocan en el desarrollo de proyectos tecnológicos reales, donde los estudiantes aplican lo aprendido creando soluciones basadas en IA.\n\n¿Y cuéntame, tú tienes alguna actividad que te perjudique realizar las prácticas en nuestros horarios rotativos o no tienes inconvenientes? 😊"
     # --- FALLBACK ---
-    - text: "Las prácticas se realizan en entornos reales dependiendo de la carrera elegida (hospitales, ambulancias, ECU 911, empresas, guarderías, etc.).\n\n¿Y cuéntame, tú tienes alguna actividad que te perjudique realizar las prácticas en nuestros horarios rotativos o no tienes inconvenientes? 😊"
+    - text: "Las prácticas se realizan en entornos reales dependiendo de la carrera o curso elegido (hospitales, ambulancias, ECU 911, empresas, guarderías, etc.).\n\n¿De qué curso o carrera específicamente quisieras saber sobre las prácticas? 😊"
 
   utter_campo_laboral:
     - condition:
@@ -762,13 +762,13 @@ responses:
         - type: slot
           name: carrera
           value: laboratorio clinico
-      text: "Con el título de **Laboratorio Clínico** podrás desempeñarte en:\n- Consultorios, clínicas y hospitales públicos y privados.\n- Puedes establecer tu propio emprendimiento.\n\n¿Quisieras saber dónde harás tus prácticas o prefieres conocer las opciones de financiamiento? 😊"
+      text: "Con el título de **Laboratorio Clínico** podrás desempeñarte en:\n- Consultorios, clínicas y hospitales públicos y privados.\n- Puedes establecer tu propio emprendimiento.\n\n¿Quisieras saber dónde harás tus prácticas o los requisitos de inscripción? 😊"
 
     - condition:
         - type: slot
           name: carrera
           value: administracion de farmacias
-      text: "En **Administración de Farmacias** podrás trabajar en:\n- Área administrativa de farmacias públicas o privadas.\n- Empresas distribuidoras de medicamentos e insumos médicos.\n- Puedes establecer tu propia empresa del rubro.\n\n¿Te gustaría saber en qué redes de farmacias harás tus prácticas o ver los costos? 😊"
+      text: "En **Administración de Farmacias** podrás trabajar en:\n- Área administrativa de farmacias públicas o privadas.\n- Empresas distribuidoras de medicamentos e insumos médicos.\n- Puedes establecer tu propia empresa del rubro.\n\n¿Te gustaría saber en donde realizaras tus prácticas o saber los costos? 😊"
 
     - condition:
         - type: slot
@@ -786,13 +786,13 @@ responses:
         - type: slot
           name: carrera
           value: educacion inicial
-      text: "Para **Educación Inicial**, las salidas laborales incluyen:\n- Docencia en unidades educativas, colegios y escuelas.\n- Gestión y dirección de centros de desarrollo infantil y guarderías.\n- Emprender tu propio centro educativo o de nivelación.\n\n<img src='assets/images/educacioninicial1.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>\n\n¿Te gustaría saber en dónde realizarás tus prácticas con los niños, o prefieres conocer los costos? 😊"
+      text: "Para **Educación Inicial**, las salidas laborales incluyen:\n- Docencia en unidades educativas, colegios y escuelas.\n- Gestión y dirección de centros de desarrollo infantil y guarderías.\n- Emprender tu propio centro educativo o de nivelación.\n\n<img src='assets/images/educacioninicial1.jpeg' class='w-64 md:w-72 h-auto rounded-xl mt-3 shadow-sm border border-gray-100'>\n\n¿Te gustaría saber en dónde realizarás tus prácticas o prefieres conocer los costos? 😊"
 
     - condition:
         - type: slot
           name: carrera
           value: educacion basica
-      text: "Para **Educación Básica**, las salidas laborales incluyen:\n- Docencia en unidades educativas, colegios y escuelas de educación básica.\n- Diseño de material didáctico y proyectos educativos.\n- Emprender tu propio centro de nivelación académica.\n\n¿Quisieras conocer en dónde harás tus prácticas o ver las cuotas disponibles? 😊"
+      text: "Para **Educación Básica**, las salidas laborales incluyen:\n- Docencia en unidades educativas, colegios y escuelas de educación básica.\n- Diseño de material didáctico y proyectos educativos.\n- Emprender tu propio centro de nivelación académica.\n\n¿Quisieras conocer en dónde harás tus prácticas o saber cuáles son los requisitos de inscripción? 😊"
 
     - condition:
         - type: slot
