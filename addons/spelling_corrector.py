@@ -42,7 +42,7 @@ class SpellingCorrector(GraphComponent):
                 'bach', 'odontología', 'odontologia', 'rehabilitación', 'rehabilitacion',
                 'párvulos', 'emergencias', 'farmacia', 'paramédico', 
                 'marketing', 'ecu', 'iess', 'médicas', 'medicas', 'física', 'fisica',
-                'clínico', 'clinico', 'básica', 'basica', 'automotriz'
+                'clínico', 'clinico', 'básica', 'basica', 'automotriz', 'ia'
             ]
             self.spell.word_frequency.load_words(palabras_propias)
 

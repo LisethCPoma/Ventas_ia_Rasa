@@ -194,6 +194,12 @@ rules:
   steps:
   - intent: preguntar_certificados_capacitadora
   - action: utter_certificados_capacitadora
+
+- rule: Consultina aclara que en la carrera no dan certificados sino titulos
+  steps:
+  - intent: preguntar_certificados_carrera
+  - action: utter_certificados_carrera
+
 - rule: Consultina consulta cupos disponibles en la capacitadora desde la base de datos
   steps:
   - intent: preguntar_cupos_capacitadora

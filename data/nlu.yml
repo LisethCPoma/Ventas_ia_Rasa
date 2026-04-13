@@ -76,6 +76,9 @@ nlu:
     - Busco [laboratorio clinico](carrera)
     - [administracion](carrera)
     - [inteligencia artificial](carrera)
+    - me interesa la carrera de [IA]{"entity": "carrera", "value": "inteligencia artificial"}
+    - info sobre [ia]{"entity": "carrera", "value": "inteligencia artificial"}
+    - hablar sobre [inteligencia]{"entity": "carrera", "value": "inteligencia artificial"}
     - me interesa la de [redes](carrera)
     - quiero [desarrollo de contenidos](carrera)
     - tecnico superior en farmacia
@@ -362,6 +365,9 @@ nlu:
     - dónde podría trabajar cuando me gradué del curso de [enfermeria]{"entity": "carrera", "value": "enfermeria"}
     - Cuál es el campo laboral para la carrera de [enfermeria]{"entity": "carrera", "value": "enfermeria"}
     - ¿En qué empresas puedo trabajar si estudio [marketing digital](carrera)?
+    - Donde voy a trabajar si sigo la carrera de [IA]{"entity": "carrera", "value": "inteligencia artificial"}
+    - qué salidas tiene [ia]{"entity": "carrera", "value": "inteligencia artificial"}
+    - donde trabajo con [inteligencia]{"entity": "carrera", "value": "inteligencia artificial"}
     - ¿Qué oportunidades laborales tiene [emergencias medicas](carrera)?
     - ¿Qué puedo hacer profesionalmente siendo tecnólogo en [mecanica automotriz](carrera)?
     - ¿Dónde trabaja un graduado de [laboratorio clinico](carrera)?
@@ -399,6 +405,17 @@ nlu:
     - ¿cuál es el nombre del título que recibo si me gradúo de la carrera de [emergencias medicas](carrera)?
     - ¿Y qué título me dan al graduarme de [emergencias medicas](carrera)? ¿Está registrado en la SENESCYT?
     - Mi carrera de interés es [emergencias medicas](carrera). ¿Cuál es el nombre del título registrado en la SENESCYT para esa carrera de [emergencias medicas](carrera)?
+
+- intent: preguntar_certificados_carrera
+  examples: |
+    - ¿La carrera da certificados?
+    - al finalizar cualquier carrera voy a recibir certificados
+    - ¿Me dan certificado si estudio la carrera?
+    - ¿Qué certificación me dan en la carrera?
+    - ¿La carrera tiene certificados cortos?
+    - dan certificados por la carrera
+    - ¿en la carrera entregan certificados?
+    - al terminar la carrera que certificados dan
 
 - intent: preguntar_emprendimiento
   examples: |
@@ -964,6 +981,9 @@ nlu:
     - quien te creo
     - quien te invento
     - Quien te creeo Consultina_
+    - quien te programación
+    - quien te programo
+    - quien te programo Consultina
 
 - intent: preguntar_competencia
   examples: |

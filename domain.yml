@@ -38,6 +38,7 @@ intents:
   - preguntar_que_aprenderas
   - preguntar_practicas_capacitadora
   - preguntar_certificados_capacitadora
+  - preguntar_certificados_carrera
   - preguntar_cupos_capacitadora
   - preguntar_senescyt_capacitadora
   - preguntar_materiales_capacitadora
@@ -150,7 +151,7 @@ responses:
     - text: "👋 ¡Hola! Soy **Consultina**, la asistente virtual inteligente oficial de Consulting Group Ecuador. 🤖\n\nEstoy aquí para guiarte, resolver todas tus dudas sobre nuestras carreras y cursos, y ayudarte a dar el primer paso hacia tu futuro profesional. 🎯 ¿En qué te puedo ayudar hoy?"
 
   utter_veracidad:
-    - text: "✅ ¡Para nada! Como asistente de ventas oficial con el respaldo de Gemini, Claude, ChatGPT y otros modelos de lenguaje, garantizo que toda la información que se te proporciona es completamente verídica y verificada. 🔒"
+    - text: "✅ Como asistente de ventas oficial con el respaldo de potentes integraciones como Gemini y Claude, te garantizo que absolutamente toda la información que te proporciono es verídica y verificada. ¡Nunca te daría información falsa! 🔒"
 
   utter_instituto_premiado:
     - text: "🏅 A nivel nacional, sacando el grupo de las universidades, el **Instituto Superior Tecnológico Consulting Group Ecuador (ISTCGE)** es la institución de educación superior técnica y tecnológica más reconocida y premiada del país.\n\nCuenta con aval oficial de las autoridades, el respaldo del holding educativo Consulting Group Ecuador con más de dos décadas de trayectoria y 32 sedes a nivel nacional 📍, y es referente de excelencia institucional con los más altos estándares desde su fundación. 🌟"
@@ -403,7 +404,7 @@ responses:
       text: "¡Excelente elección! La **Educación Básica** se imparte como Carrera (2 años). Te prepararás para ser ese gran profesor que enseña a leer, escribir y entender el mundo a los niños y adolescentes, utilizando métodos innovadores y mucha paciencia. Tu influencia puede cambiar vidas y abrir puertas a futuros brillantes. ¡Y muchas cosas más!\n¿Qué te gustaría conocer ahora? ¿Los costos, la duración o el campo laboral?"
 
     # --- FALLBACK ---
-    - text: "¡Me encanta tu interés por prepararte! Sin embargo, debo confirmarte que por el momento **no ofertamos esa especialidad** en nuestra institución.\n\n¡Pero no te desanimes! Somos líderes y tenemos excelentes opciones en las áreas de Salud, Educación, Administración, Tecnología y Mecánica.\n\n¿Te gustaría que te muestre nuestra lista completa de carreras y cursos para que descubras alguna otra opción que te apasione?"
+    - text: "¡Me encanta tu interés por prepararte! Sin embargo, debo confirmarte que por el momento **no ofertamos esa especialidad** en nuestra institución.\n\n¡Pero no te desanimes! Somos líderes y tenemos excelentes opciones en las áreas de Salud, Educación, Administración, Tecnología y Mecánica.\n\n¿Te gustaría que te muestre nuestra lista completa de carreras o prefieres la lista completa de los cursos para que descubras alguna otra opción que te apasione?"
 
   utter_voluntariado:
     - text: "¡Qué excelente pregunta! En CGE, el aprendizaje práctico y el servicio a la comunidad van de la mano.\n\nSer parte de los **Consultinos** o realizar un **voluntariado** con nosotros significa tener la vocación de ayudar y servir a la sociedad sin esperar remuneración, movidos puramente por el deseo de salvar vidas y hacer el bien.\n\nA través de nuestras **prácticas 100% reales**, nuestros estudiantes logran exactamente eso: aplican todo lo aprendido en escenarios reales (hospitales, ambulancias, comunidades), ganando experiencia vital para su carrera mientras ayudan a quienes más lo necesitan.\n\n¡Mira a nuestras brigadas en primera línea durante el Terremoto del 16 de abril y la pandemia de COVID-19!\n\n<div class='flex gap-2 mt-3 mb-2'><img src='assets/images/collageterremoto.jpeg' class='w-1/2 rounded-xl object-cover shadow-sm border border-gray-200'><img src='assets/images/collagepandemia.jpeg' class='w-1/2 rounded-xl object-cover shadow-sm border border-gray-200'></div>\n\n¡Somos verdaderos héroes de vocación! ¿Te gustaría unirte a esta gran familia?"
@@ -849,7 +850,7 @@ responses:
           name: tipo_formacion
           value: carrera
       text: "Al finalizar la **Carrera**, obtendrás el título de tercer nivel como **Tecnólogo Superior en Emergencias Médicas** debidamente registrado en el Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT). 🎓✨ ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
-    - text: "Dependiendo de tu elección, puedes obtener certificados de capacitación (para trabajar rápido) o un título de tercer nivel (Carreras de 2 años). 🎓 ¿Te gustaría que te aclare la diferencia para el área que te interesa? 😊"
+    - text: "Dependiendo de tu elección, puedes obtener certificados de capacitación (para trabajar rápido) o un título de tercer nivel (Carreras de 2 años). 🎓 ¿Que te interesa mas, la carrera o el curso? 😊"
     - condition:
         - type: slot
           name: carrera
@@ -945,7 +946,7 @@ responses:
         - type: slot
           name: tipo_formacion
           value: carrera
-      text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Naturopatía** debidamente registrado en el Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT).. ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
+      text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Naturopatía** debidamente registrado en el Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT).. ¿Que más te gustaría saber los costos, la duración o los requisito de inscipción?"
     - condition:
         - type: slot
           name: carrera
@@ -953,8 +954,8 @@ responses:
         - type: slot
           name: tipo_formacion
           value: carrera
-      text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Inteligencia Artificial** debidamente registrado en el Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT). ¿Te interesaría saber cómo iniciar tu proceso de matrícula hoy mismo?"
-    - text: "🎓 Al graduarte del Instituto Superior Tecnológico Consulting Group Ecuador obtendrás un **título de tercer nivel**, cien por ciento validado y registrado en el **Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT)**. ✅ ¿De qué carrera en específico te gustaría saber el grado exacto que recibes?"
+      text: "Al finalizar obtendrás el título de tercer nivel como **Tecnólogo Superior en Inteligencia Artificial** debidamente registrado en el Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT). ¿Que más te gustaría saber los costos, la duración o los requisito de inscipción?"
+    - text: "🎓 Al graduarte del Instituto Superior Tecnológico Consulting Group Ecuador obtendrás un **título de tercer nivel**, cien por ciento validado y registrado en el **Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT)**. ✅ ¿Que más te gustaría saber los costos, la duración o los requisito de inscipción?"
 
   utter_emprendimiento:
     - condition:
@@ -1267,22 +1268,25 @@ responses:
     - text: "¡En CGE creemos que la mejor forma de aprender es practicando en entornos reales!\n\nPor eso, nuestros cursos cuentan con prácticas en hospitales, ambulancias del ECU 911, redes de farmacias, guarderías y clínicas veterinarias, dependiendo de tu área de estudio.\n\n¿Y cuéntame, tú tienes alguna actividad que te perjudique realizar las prácticas en nuestros horarios rotativos o no tienes inconvenientes? 😊"
 
   utter_certificados_capacitadora:
-    - text: "¡Claro! Al finalizar nuestros cursos en la Capacitadora CGE, los estudiantes reciben entre **8 y 10 certificados**.\n\nEntre ellos se encuentran certificados avalados por la **Universidad Técnica Estatal de Quevedo**, por el **Instituto Superior Tecnológico Consulting Group Ecuador**, y por la **Asociación Ecuatoriana de Operadoras y Capacitadoras de la Salud**.\n\nEsto te da una gran ventaja en el ámbito laboral. ¿Qué más te gustaría saber?"
+    - text: "¡Claro! Al finalizar nuestros cursos en la Capacitadora CGE, los estudiantes reciben entre **8 y 10 certificados**.\n\nEntre ellos se encuentran certificados avalados por instituciones de alta categoría como la **Universidad Técnica Estatal de Quevedo** y el **Instituto Superior Tecnológico Consulting Group Ecuador**.\n\nEsto te da una gran ventaja en el ámbito laboral. ¿Qué más te gustaría saber?"
+
+  utter_certificados_carrera:
+    - text: "En las **Carreras de Tecnología Superior** no recibirás certificados, ¡sino algo mucho mejor! Obtendrás un **título de tercer nivel** validado por el Viceministerio de Educación Superior (antes SENESCYT). 🎓\n\nLos certificados se entregan de manera exclusiva en nuestros **cursos de capacitación**, y te sirven precisamente para homologarlos y sacar tu título en la carrera en menos tiempo. 🚀 ¿Te gustaría saber los requisitos de inscripción o prefieres empezar por un curso?"
 
   utter_senescyt_capacitadora:
-    - text: "Actualmente, lo que antes se conocía como la SENESCYT, hoy forma parte del Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación, que es el ente encargado de regular y registrar los títulos de educación superior en el país.\n\nEn el caso de nuestros cursos de la Capacitadora CGE, recibirás certificados de capacitación que respaldan tu formación y te permiten desempeñarte en el ámbito laboral, tanto en el sector público como privado, dependiendo del área.\n\nAhora bien 👇\n\nSi decides continuar con la carrera en nuestro instituto, ahí sí obtendrás un título de tercer nivel, el cual estará debidamente registrado en el Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT). \n\n¿Te gustaría saber cuáles son los certificados que vas a recibir?"
+    - text: "En el caso de nuestros cursos de la Capacitadora CGE, recibirás certificados de capacitación que respaldan tu formación y te permiten desempeñarte en el ámbito laboral, tanto en el sector público como privado, dependiendo del área.\n\nAhora bien 👇\n\nSi decides continuar con la carrera en nuestro instituto, ahí sí obtendrás un título de tercer nivel, el cual estará debidamente registrado en el Viceministerio de Educación Superior, Ciencia, Tecnología e Innovación (antes SENESCYT). \n\n¿Te gustaría saber cuantos certificados vas a recibir o quisieras conocer los requisitos de inscripción?"
 
   utter_materiales_capacitadora:
-    - text: "Es una muy buena pregunta. En los cursos de la Capacitadora CGE, los materiales que se utilizarán se van coordinando **progresivamente** conforme avanza la formación.\n\nEsto significa que, a medida que vayas avanzando en tu preparación, el docente te irá indicando poco a poco cuáles son los materiales específicos que se utilizarán en cada etapa del curso.\n\nDe esta manera, puedes organizarte mejor y adquirir **solo lo necesario en el momento adecuado**, según las actividades prácticas que se vayan realizando durante la capacitación.\n\nSi ya tienes claro qué curso te gustaría seguir, avísame y te ayudo con los requisitos de inscripción."
+    - text: "Es una muy buena pregunta. En los cursos de la Capacitadora CGE, los materiales que se utilizarán se van coordinando **progresivamente** conforme avanza la formación.De esta manera, puedes organizarte mejor y adquirir **solo lo necesario en el momento adecuado**, según las actividades prácticas que se vayan realizando durante la capacitación.\n\n¿Te gustaría saber sobre las prácticas o quisieras conocer los requisitos de inscripción?"
 
   utter_horarios_practicas_capacitadora:
-    - text: "¡No te preocupes por tus prácticas! Nosotros **respetamos tu tiempo**.\n\nSi estás estudiando o trabajando, en tu tiempo libre te podemos ubicar tus prácticas. CGE, al ser el organismo de formación más grande y premiado del país, tiene convenios con las instituciones más importantes del Ecuador, por ende, hay muchos lugares con horarios flexibles donde tú podrás realizarlas."
+    - text: "¡No te preocupes por tus prácticas! Nosotros **respetamos tu tiempo**.\n\nSi estás estudiando o trabajando, en tu tiempo libre te podemos ubicar tus prácticas. CGE, al ser el organismo de formación más grande y premiado del país, tiene convenios con las instituciones más importantes del Ecuador, por ende, hay muchos lugares con horarios flexibles donde tú podrás realizarlas. \n\n¿Te gustaría saber sobre los costos o quisieras conocer los requisitos de inscripción?"
 
   #utter_horarios_cursos_capacitadora: []
   #- text: "Para nuestros cursos de capacitación contamos con jornadas **matutinas, vespertinas y fines de semana**.\n\nTe recordamos que los cupos son sumamente limitados, ya que por procesos de calidad internacionales, **solo recibimos hasta 25 personas por curso**.\n\nPara revisar la disponibilidad exacta de los horarios, mi asistente humana **Daniela** te ayudará enseguida."
 
   utter_trabajo_capacitadora:
-    - text: "En Consulting Group Ecuador nos enfocamos en algo muy importante: prepararte para que puedas acceder al campo laboral lo más rápido posible 🚀\n\nNuestros cursos y carreras están diseñados para que desarrolles habilidades prácticas reales, junto con certificaciones que respaldan tu formación y te permiten destacarte en procesos de selección, tanto en el sector público como privado 🩺\n\nAdemás, muchas de nuestras áreas tienen alta demanda laboral, lo que aumenta tus oportunidades de conseguir empleo una vez finalices tu formación.\n\n💡 Muchos de nuestros estudiantes comienzan a trabajar incluso antes de terminar, gracias a la práctica que adquirieron durante su formación.\n\nCuéntame, ¿qué más te gustaría saber, los requisitos de inscripción o prefieres conocer cual es el campo laboral de algún área en específico? 😊"
+    - text: "En Consulting Group Ecuador nos enfocamos en algo muy importante: prepararte para que puedas acceder al campo laboral lo más rápido posible 🚀\n\nNuestros cursos y carreras están diseñados para que desarrolles habilidades prácticas reales, junto con certificaciones que respaldan tu formación y te permiten destacarte en procesos de selección, tanto en el sector público como privado 🩺\n\n💡 Muchos de nuestros estudiantes comienzan a trabajar incluso antes de terminar, gracias a las prácticas que realizan durante su formación.\n\nCuéntame, ¿qué más te gustaría saber, los requisitos de inscripción o prefieres conocer cual es el campo laboral de algún área en específico? 😊"
 
   utter_becas_capacitadora:
     - text: "🎓 El curso normalmente está en $72,50, pero podrías aplicar a una promoción si te inscribes hoy, aplicando a una beca con el **50% de descuento**. 🎉\n\n🌟 ¡Mira este caso de éxito de uno de nuestros estudiantes becados!<video controls class='w-64 md:w-80 h-auto rounded-xl mt-3 mb-3 shadow-sm border border-gray-100'><source src='assets/video/videobecado2.mp4' type='video/mp4'></video>\n\nY recuerda que todos los valores que tú dejes en CGE nos ayuda a salvar vidas. ❤️"
