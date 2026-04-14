@@ -719,7 +719,6 @@ nlu:
     - ¿Cuánto cuesta el módulo?
     - ¿Qué precio tienen las capacitaciones?
     - ¿Cuánto debo pagar por mes?
-    - ¿Hay promociones en los cursos?
     - ¿Cuánto cuesta estudiar enfermería en la capacitadora?
     - el costo del curso de
     - cuánto vale el curso de
@@ -915,19 +914,16 @@ nlu:
     - ¿Hay becas disponibles?
     - ¿Puedo obtener una beca?
     - ¿Ofrecen algún tipo de ayuda económica?
-    - ¿Hay descuentos para estudiar?
     - ¿Tienen becas parciales?
     - ¿Cómo puedo aplicar a una beca?
-    - ¿Dan algún tipo de beneficio para estudiantes?
-    - ¿Hay promociones para los cursos?
+    - ¿Hay becas de descuento?
     - ¿El instituto ofrece becas?
-    - hay descuentos para los cursos de capacitadora
-    - qué descuentos hay en los cursos
-    - tienen promociones para los cursos cortos
-    - hay alguna promo para la capacitadora
-    - quiero saber de descuentos en cursos
+    - Puedo aplicar a una beca en la capacitadora
     - me dan beca para un curso de capacitacion
-    - promociones vigentes para cursos
+    - quiero saber de las becas para cursos
+    - hay becas del 50% para el curso
+    - información sobre becas de capacitación
+    - ¿Qué becas hay para los cursos cortos?
 
 - intent: preguntar_costo_certificacion_capacitadora
   examples: |
@@ -1020,10 +1016,13 @@ nlu:
     - ¿Tienen becas para las carreras?
     - ¿Ofrecen becas en el instituto?
     - quiero aplicar a una beca
+    - ¿hay becas en el instituto?
     - cómo consigo una beca para la tecnología
-    - ¿hay becas del 100% o 50%?
-    - descuentos para las carreras
-    - ¿dan ayudas económicas para la carrera?
+    - ¿hay becas del 100% o 50% para la carrera?
+    - descuentos en la carrera por beca
+    - ¿dan ayudas económicas (becas) para la carrera?
+    - quiero saber de las becas institucionales
+    - aplicar a beca de instituto
 
 - intent: preguntar_descuento_hermanos
   examples: |
@@ -1053,10 +1052,10 @@ nlu:
 - intent: preguntar_practicas_cerca
   examples: |
     - ¿Puedo hacer las prácticas cerca de mi casa?
-    - ¿Tienen hospitales por mi barrio para practicar?
+    - ¿Tienen hospitales por mi barrio para las prácticas?
     - ¿Dónde me tocaría hacer las prácticas?
     - ¿Me ubican en un lugar cerca de mi vivienda?
-    - ¿Yo elijo dónde hacer las prácticas?
+    - yo vivo lejos de la ciudad podría realizar mis prácticas cerca del lugar de donde vivo?
 
 
 - intent: preguntar_menciones_capacitadora
@@ -1119,14 +1118,13 @@ nlu:
     - ¿Hay becas disponibles?
     - ¿Puedo obtener una beca?
     - quiero aplicar a una beca
-    - ¿Ofrecen algún tipo de ayuda económica?
-    - ¿Hay descuentos para estudiar?
+    - ¿Ofrecen algún tipo de beca o ayuda económica?
     - ¿Cómo puedo aplicar a una beca?
-    - ¿Dan algún tipo de beneficio para estudiantes?
     - ¿El instituto ofrece becas?
     - hablame de las becas
     - puedo acceder a una beca
-    - hay programas de becas
+    - hay programas de becas locales
+    - becas disponibles para estudiar
 
 
 # --- SINÓNIMOS Y MANEJO DE ERRORES ORTOGRÁFICOS ---

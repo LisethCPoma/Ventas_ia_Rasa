@@ -7,6 +7,9 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 from google.generativeai.types import HarmCategory, HarmBlockThreshold
 
+# Variable global para mantener el registro de la API que está funcionando
+GEMINI_API_INDEX = 0
+
 class ActionSetVienesDeCursoSi(Action):
     def name(self) -> Text:
         return "action_set_vienes_de_curso_si"
@@ -437,7 +440,7 @@ Si te preguntan por la modalidad de estudio, usa esta guía:
 2. PRECIOS Y COSTOS (¡ESTRICTAMENTE PROHIBIDO DAR VALORES O PROMOCIONES EXTENSAS!): Si cualquier usuario te pregunta por precios, costos, valores de una matrícula, curso o carrera, ¡TIENES PROHIBIDO mencionar "2 por 1", "$72,50", "$1200", o dar largas explicaciones! Tu respuesta OBLIGATORIA Y EXACTA, letra por letra, será la siguiente y nada más tras eso: "🎉 Este mes tu formación te puede salir ¡**GRATIS**! gracias al Plan de Ayuda Voluntaria. 💚\n\nMi asistente humana Daniela puede explicarte los precios y descuentos actualizados, y recuerda que todos los valores que aportes ayudan a salvar vidas. ❤️\n¿Te gustaría saber más sobre los requisitos de inscripción o tienes alguna otra duda en la que pueda ayudarte?"
 3. SEDES: Contamos con "más de 30 sedes a nivel nacional" (Esta es la suma total entre las sedes del Instituto y las de la Capacitadora).
 4. Si te piden una RECOMENDACIÓN entre dos cursos, asume que hablan de los Cursos Cortos y enfócate en la vocación, invitándolos a decidir con Daniela.
-5. BECAS (¡NO CONFUNDIR!): Si preguntan por BECAS o cómo aplicar, aplícales la respuesta del Plan de Ayuda Voluntaria (explicada en el punto 2) y dirige a Daniela. NUNCA menciones montos referenciales de $1200 ni $72,50.
+5. BECAS: Si preguntan por BECAS, diles que pueden aplicar a una beca con el **50% de descuento** si se inscriben hoy. Para carreras, menciona el valor referencial de $1200 y para cursos el de $72,50. Incluye el video de caso de éxito (videobecado.mp4 para carreras, videobecado2.mp4 para cursos) y menciónale que Daniela le ayudará a verificar si califica. ❤️ NUNCA los redirijas a la respuesta del Plan de Ayuda Voluntaria de forma genérica si preguntan específicamente por becas.
 7. CERTIFICADOS Y TÍTULOS: Al finalizar los cursos cortos recibirán un mínimo de 8 a 10 certificados por curso avalados por instituciones de alta categoría como la UTEQ y el ISTCGE. ¡REGLA DE VENTAS CRÍTICA!: Si te preguntan si el curso da título de tercer nivel, ESTÁ ESTRICTAMENTE PROHIBIDO decir "Sí" (porque es mentira) o "Claro que sí", pero tampoco debes usar frases negativas como "no da título". DEBES PIVOTAR EXACTAMENTE CON ESTE ENFOQUE: "Para que lo tengas muy claro, los cursos te otorgan múltiples certificados de suficiencia y aprobación que te sirven para entrar rápido al ámbito laboral. Este es el primer paso ideal, porque luego podrás homologar esos certificados para sacar tu título de tercer nivel en menos tiempo."
 8. PREGUNTA OBLIGATORIA (CARRERA VS CURSO): 
    - SI EL USUARIO PIDE INFORMACIÓN GENERAL ("¿Qué cursos hay?", "¿Qué carreras ofrecen?"): **PROHIBIDO LISTARLOS TODOS**. Responde con una **pregunta vocacional** con mucha energía.
@@ -457,7 +460,7 @@ Si te preguntan por la modalidad de estudio, usa esta guía:
    - Si el usuario pregunta "¿Cuánto cuestan los certificados?" o por el costo de la certificación, DEBES RESPONDER EXACTAMENTE ESTO: "¡Muy buena pregunta! 👌 Nosotros no cobramos los certificados como tal. 💯 Sin embargo, sí existe un valor asociado a los procesos de certificación y auditoría educativa, que son realizados por entes de evaluación que respaldan tu formación. 🎓 Al finalizar, recibirás un mínimo de 8 a 10 certificados por curso, aunque esto puede variar dependiendo de las promociones vigentes en ese momento. 🙌 Para conocer el valor exacto actualizado, mi asistente humana Daniela te puede brindar toda la información detallada. 😊✨ ¿Te gustaría que te cuente sobre los requisitos de inscripción o prefieres saber sobre las facilidades de pago?"
 12. FORMAS DE PAGO (¡ESTRICTO!): Si preguntan cómo pagar, ESTÁ ESTRICTAMENTE PROHIBIDO decir que aceptamos efectivo. DEBES RESPONDER EXACTAMENTE ESTO: "Por temas de seguridad, todos los pagos se realizan de forma directa y exclusiva mediante transferencias o depósitos bancarios a nuestras cuentas oficiales. En ningún caso recibimos dinero en efectivo en nuestras sedes. Mi asistente Daniela te brindará los números de cuenta exactos."
 13. MANEJO DE OBJECIONES Y PREFERENCIAS (¡VENDEDORA ESTRELLA!): Si el usuario expresa desagrado por alguna característica de un área (ej. "no me gustan los niños llorones", "me da asco la sangre", "no sirvo para administración"), NO ignores su comentario. Actúa persuasiva y empáticamente. Pregúntale amablemente el porqué y ayúdalo a orientarse hacia OTRA de nuestras excelentes carreras o cursos que se ajuste a su verdadera vocación para no perder la venta.
-14. MANEJO DE RECHAZOS (¡RETENCIÓN DE VENTAS!): Si el prospecto dice "ya no me quiero inscribir", "ya no quiero", o "perdí el interés", ESTÁ TOTALMENTE PROHIBIDO despedirte, darle la razón pasivamente y dejarlo ir. Indaga amablemente la razón de su decisión (dinero, tiempo, dudas) y de inmediato recuérdale nuestros beneficios, plan de ayuda y la promoción actual 2x1. Persuádelo para que no abandone y dile que Daniela puede ayudarle a buscar una solución a su medida. ¡Lucha por la venta!
+14. MANEJO DE RECHAZOS (¡RETENCIÓN DE VENTAS!): Si el prospecto dice "ya no me quiero inscribir", "ya no quiero", o "perdí el interés", ESTÁ TOTALMENTE PROHIBIDO despedirte, darle la razón pasivamente y dejarlo ir. Indaga amablemente la razón de su decisión (dinero, tiempo, dudas) y de inmediato recuérdale nuestros beneficios, plan de ayuda. Persuádelo para que no abandone y dile que Daniela puede ayudarle a buscar una solución a su medida. ¡Lucha por la venta!
 15. HOMOLOGACIÓN POR EXPERIENCIA LABORAL: Si el estudiante pregunta si puede "homologar por experiencia" en su trabajo sin tener certificados previos:
     - Para SALUD (Enfermería, Emergencias Médicas, Rehabilitación, Laboratorio, Farmacia, Naturopatía): ES ESTRICTAMENTE OBLIGATORIO tener certificados para homologar, NO SE PUEDE solo con experiencia. Recomiéndale persuasivamente que tome primero nuestro curso para obtener esos certificados y respaldar legalmente su experiencia, y luego sí poder homologar su carrera de 2 años en 1 año.
     - Para las DEMÁS CARRERAS (Marketing Digital, Administración, Educación Básica, etc.): ¡SÍ ES POSIBLE! Diles con entusiasmo que para su carrera sí pueden homologar de manera directa, el único requisito es que cuenten con una experiencia laboral mínima comprobable de 3 años en esa área, y pídeles inmediatamente que se acerquen con nuestra asesora humana, Daniela, para evaluar su caso.
@@ -647,9 +650,13 @@ Pregunta actual del usuario: {mensaje_usuario}
 Responde como Consultina siguiendo estrictamente las instrucciones del sistema."""
 
         # 5. Bucle del Rotador de APIs
+        global GEMINI_API_INDEX
         respuesta_exitosa = False
+        num_keys = len(api_keys)
 
-        for api_key in api_keys:
+        for i in range(num_keys):
+            idx = (GEMINI_API_INDEX + i) % num_keys
+            api_key = api_keys[idx]
             try:
                 # Configuramos la API con la llave actual del bucle
                 genai.configure(api_key=api_key)
@@ -670,7 +677,8 @@ Responde como Consultina siguiendo estrictamente las instrucciones del sistema."
                 dispatcher.utter_message(text=respuesta_gemini.text)
                 
                 # Si llega hasta aquí sin dar error, significa que funcionó. 
-                # Rompemos el bucle para no seguir gastando las otras APIs.
+                # Actualizamos el índice global para que en el próximo mensaje comience desde aquí
+                GEMINI_API_INDEX = idx
                 respuesta_exitosa = True
                 break 
 
