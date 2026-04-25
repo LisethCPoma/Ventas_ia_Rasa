@@ -1354,5 +1354,18 @@ nlu:
     - cómo te encuentras el día de hoy
     - cómo estás Consultina
 
-  
-  
+- intent: preguntar_detalles_ia
+  examples: |
+    - Dame detalles sobre la carrera de Inteligencia artificial
+    - Dame detalles sobre la carrera de Inteligencia artificial.
+    - detalles sobre la carrera de Inteligencia artificial
+    - puedes darme detalles de la carrera de IA
+    - dame mas detalles de inteligencia artificial
+
+- intent: preguntar_que_aprender_ia_especifico
+  examples: |
+    - Qué voy a aprender en la carrera
+    - Qué voy a aprender en la carrera de inteligencia artificial
+    - que aprendere en ia
+    - que me enseñaran en la carrera de inteligencia artificial
+    - de que trata inteligencia artificial

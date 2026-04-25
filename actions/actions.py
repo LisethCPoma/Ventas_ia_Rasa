@@ -238,6 +238,45 @@ class ActionGeminiFallback(Action):
 # 3. Lista de tus API Keys (Rotador)
         # Reemplaza estos textos con tus 10 API keys reales
         api_keys = [
+            "AIzaSyCeSfa3pgt6Xx3L1KGfVNc1e9_EuIKYBfQ",
+            "AIzaSyCsy0mD-JvcanwsLBhDvw79_q2HxhNJVq8",
+            "AIzaSyC47IuKhSHSVf-JC9YdHAD_tl_SsV-WOTo",
+            "AIzaSyDl1FtAjrB8wgRg5Wm3GV-Tbu2bNdDB24A",
+            "AIzaSyDN5lFAvQdYxJplfaxjnl9YsmU0ZHnkXzg",
+            "AIzaSyDW3mn_Uo-sEPd3hH3DDpzpe4fn7PbOTAI",
+            "AIzaSyD0gh67bsu7JQt-5UgcK5r936FbS5ZZudw",
+            "AIzaSyDYl2rkCTinyCHw190UMSJDEm09YJAP1sM",
+            "AIzaSyD5VoibynHtOBc07AKavS94bYsSUPAtk3I",
+            "AIzaSyARx647foxRJL879CTw3PdCkkAt0Dpcnm8",
+            "AIzaSyAg7TfvJZisTvHWfDZ_vg1U_3ZBkSwPMXQ",
+            "AIzaSyC-XXhWqNkQBPtDoSh9VB06WEYO_hlA7Q8",
+            "AIzaSyA1dT-lq1ni2jmUw67feddGyT04u8QzNGo",
+            "AIzaSyBqCo42A9KFMsr7RDKi3SYQKLWTvKxOcps",
+            "AIzaSyAOPEdepmaPN_Abm_tDbURxqJW_3PEUfP8",
+            "AIzaSyBkK3NV1FgsgHRsmhU5e9FNj9nhg6qtSgs",
+            "AIzaSyAz1RlSmRtyR6uamEfz2l2yU1219Z33r8w",
+            "AIzaSyAeXxdTOrjc9S8UrDEqKh4yelPFGm4g15k",
+            "AIzaSyD18GmiqV9ZtEnch-lQ7Q8KTSRkxcK2RAI",
+            "AIzaSyBUnzqLb8pNcJLYECOMIvhntOqZ5150Hi4",
+            "AIzaSyCDQa_dikxjRUQpNp7nEzL5oKJxrYHN_lU",
+            "AIzaSyAu-g8VO2aA-BLQLaplkhsVqmP2xOaQGWo",
+            "AIzaSyDhsCQTthR6kZRQEWoInHiiurrQkX2j76U",
+            "AIzaSyDpVua0ySMq-Fon8OTR-FIq4u8OMzkJpYc",
+            "AIzaSyDQjtInKH9iboBXOnX6JQf-Xb61VuKJFLc",
+            "AIzaSyDtlgJjiLgmf5j-F3brM-I8oEx2znSNfrY",
+            "AIzaSyDBRbky3TKeTJZr_bj9PPtUBlhvbEqadPc",
+            "AIzaSyAQNBiHhT6S3PxUpd0RUV6niA4p4xjrJEM",
+            "AIzaSyDhjUYqxgVtTQcED4CAZu2nJEz575SUOSs",
+            "AIzaSyDP67dOmzqc9mMuh8Yzl84QxXQXfUuVMrs",
+            "AIzaSyC1LPIuvSwr0wGdBIFtuZh8jY9u5hKrWz8",
+            "AIzaSyB8hiDJR3YLmpAwjxuHtWV5yVQeuPU1dAo",
+            "AIzaSyCGmMtf3FNjPXtXCqNxX4bBcaIwCigNSpI",
+            "AIzaSyDYh3Bept_I70bGq35LL13GtCuA8ZMbsQs",
+            "AIzaSyAdp0CbcccwrNAhlyxjOONk25_RaIJ0Euw",
+            "AIzaSyDR3PEDoz7GihpVImthjxtfmwdgj6rcQv4",
+            "AIzaSyDJPca3V0oYnNGG9nld_VKqxRvAI-Mskb8",
+            "AIzaSyBDsDQK2fRXpJTF7RRaVi_Ie73MumOKHLo",
+            "AIzaSyDHRQD18HGgWv5nF8VshzQ9OuzetwSeycI",
             "AIzaSyD3o3yp3gGeSb7WX4kXwgxDMJznGcwoTLw", 
             "AIzaSyAgNW19aIMGfGGvHAHl-nNBkrokd0CKft4",
             "AIzaSyBecjaFKCcCFXmM6_dCI2BcHeaWKsMYQKE",
@@ -618,6 +657,16 @@ Usa estos códigos exactos (no modifiques las clases):
 
 REGLA DE ORO DE TEMARIOS: ¡PROHIBIDO INVENTAR! Si no ves el área aquí, sé general y di que aprenderán habilidades prácticas avanzadas "y muchas cosas más!".
 
+== PREGUNTAS FRECUENTES SOBRE CARRERAS ==
+- POR QUÉ ESTUDIAR INTELIGENCIA ARTIFICIAL: Si preguntan por qué deberían estudiar Inteligencia Artificial o de qué sirve, DEBES RESPONDER EXACTAMENTE EL SIGUIENTE TEXTO (sin agregar saludos, despedidas ni emojis, SOLO ESTE TEXTO LETRA POR LETRA):
+"
+  1. La demanda de profesionales en IA está en su punto más alto histórico.
+  2. Todas las empresas buscan automatizar procesos.
+  3. Es una de las carreras mejor pagadas y con mayor proyección.
+  4. Escasez de talento calificado en Ecuador y el mundo."
+- DETALLES DE INTELIGENCIA ARTIFICIAL: Si el usuario dice "Dame detalles sobre la carrera de Inteligencia artificial." o pide detalles sobre Inteligencia Artificial, DEBES RESPONDER EXACTAMENTE EL SIGUIENTE TEXTO (sin agregar saludos, despedidas ni emojis): "Te comento que la carrera de Inteligencia Artificial tiene una duración de 1 año y medio (lo que equivale a 3 semestres) y es 100% en línea, para que puedas estudiarla desde donde estés y obtendrás un Título de Tecnólogo Superior en inteligencia Artificial".
+- QUÉ APRENDERÉ EN INTELIGENCIA ARTIFICIAL: Si el usuario pregunta "¿Qué voy a aprender en la carrera?" tras haber preguntado por Inteligencia Artificial, DEBES RESPONDER EXACTAMENTE EL SIGUIENTE TEXTO (sin agregar saludos, despedidas ni emojis): "Esta carrera no es solo programación. Es la creación de sistemas que piensan y aprenden. Tiene un enfoque práctico con proyectos reales. Desarrollarás soluciones de IA, procesamiento de datos y automatización. Usarás herramientas generativas para contenido y análisis. Podrás brindar soluciones en campos de la salud, agricultura, comercio y sectores de alta demanda."
+
 == MALLA CURRICULAR (¡NO DES LISTAS LARGAS!) ==
 Si el usuario te pide la malla curricular, ESTÁ ESTRICTAMENTE PROHIBIDO darle una lista aburrida o muy técnica. En su lugar, menciónale 3 temas atractivos y fáciles de entender con palabras sencillas, y dile que Daniela (tu asistente humana)le podrá ayudar con información mas a fondo de los temas.
 
@@ -636,7 +685,7 @@ Si el usuario te pide la malla curricular, ESTÁ ESTRICTAMENTE PROHIBIDO darle u
 - MEMORIA Y CONTEXTO ACTIVO: Si el usuario responde con frases cortas como "la carrera", "la primera", "el curso", "sí", o cualquier palabra suelta, DEBES inferir que está respondiendo a la especialidad médica, técnica o administrativa de la que tú misma le hablaste o le preguntaste justo en tu turno anterior. ¡NUNCA creas que "la carrera" o "el curso" es el nombre de una especialidad nueva e inexistente! ¡Recupera siempre la información del 'Historial reciente de conversación' para darle continuidad!
 - REGLA DE ORO: Da respuestas DIRECTAS, CORTAS y ESPECÍFICAS. NO seas redundante ni des rodeos innecesarios.
 - Responde estrictamente lo que el usuario pregunta. Si te hacen una pregunta puntual (ej. "¿cuánto cuesta?"), responde el valor inmediatamente sin hacer introducciones largas.
-- Límite estricto: Tus respuestas NO deben superar 1 o 2 párrafos cortos (máximo 2 a 3 líneas por párrafo).
+- Límite estricto y absoluto: Tus respuestas deben ser MUY CORTAS y NO DEBEN SUPERAR LAS 3 LÍNEAS en total bajo ninguna circunstancia.
 - Recuerda que la persona te está escuchando en voz alta frente a una tablet mientras espera su turno; los textos largos, repetitivos o con exceso de "adornos" arruinan la experiencia de usuario. ¡Ve al grano!
 - NUNCA DES RESPUESTAS FRÍAS: Si el usuario te dice "continuemos con la carrera" o pide información general, NO le digas solo cuánto dura o la modalidad. DEBES incluir obligatoriamente un resumen emocionante de lo que va a aprender (usando la sección TEMARIOS) y luego preguntarle qué más desea saber (costos, campo laboral, etc.).
 - EVITA REPETIRTE COMO ROBOT: Si el usuario insiste o vuelve a decir "quiero la carrera", NUNCA le vuelvas a soltar el mismo discurso de ventas largo. Cambia tus palabras, sé más concisa y pregúntale directamente qué duda puntual tiene (costos, duración, etc.) para avanzar.

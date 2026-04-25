@@ -350,3 +350,13 @@ rules:
   steps:
   - intent: preguntar_costo_inscripcion
   - action: action_gemini_fallback
+
+- rule: Consultina responde detalles de inteligencia artificial
+  steps:
+  - intent: preguntar_detalles_ia
+  - action: utter_detalles_ia
+
+- rule: Consultina responde que aprendera en inteligencia artificial
+  steps:
+  - intent: preguntar_que_aprender_ia_especifico
+  - action: utter_que_aprender_ia

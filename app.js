@@ -36,7 +36,7 @@ function reproducirVozFemenina(texto) {
     mensajeVoz.lang = 'es-MX'; // México / Latino neutral
     
     // Ajustes de fluidez (Más naturales, menos robóticos)
-    mensajeVoz.rate = 1.0;     // Velocidad normal para que articule bien las palabras
+    mensajeVoz.rate = 1.2;     // Velocidad rápida a petición
     mensajeVoz.pitch = 1.05;   // Tono muy ligeramente agudo (femenino) sin distorsionar
 
     // Buscar la lista de voces instaladas en la computadora/navegador

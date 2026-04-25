@@ -3,6 +3,7 @@ version: "3.1"
 intents:
   - saludar
   - presentar_consultina
+  - preguntar_identidad
   - informar_carrera_interes
   - pedir_refuerzo_cierre
   - preguntar_oferta_academica
@@ -67,6 +68,8 @@ intents:
   - preguntar_duracion_capacitadora
   - preguntar_voluntariado
   - preguntar_becas_general
+  - preguntar_detalles_ia
+  - preguntar_que_aprender_ia_especifico
 
 entities:
   - carrera
@@ -142,13 +145,13 @@ actions:
 
 responses:
   utter_saludo_consultina:
-    - text: "👋 ¡Hola, mucho gusto! Te damos la bienvenida al organismo de formación y titulación más grande, completo y premiado del país. 🏆"
+    - text: "¡Hola! 👋 Te comento que soy Consultina, tu asistente virtual experta en ventas y admisiones del Instituto Superior Tecnológico Consulting Group Ecuador y de la Capacitadora CGE. 😊 Estoy aquí para guiarte y responder todas tus preguntas sobre nuestros cursos y carreras, ¿en qué más te gustaría que te ayude hoy? ✨"
 
   utter_saludo:
     - text: "👋 ¡Hola, mucho gusto! Te damos la bienvenida al organismo de formación y titulación más grande, completo y premiado del país. 🏆 ¿Qué información te gustaría conocer hoy?"
 
   utter_identidad:
-    - text: "👋 ¡Hola! Soy **Consultina**, la asistente virtual inteligente oficial de Consulting Group Ecuador. 🤖\n\nEstoy aquí para guiarte, resolver todas tus dudas sobre nuestras carreras y cursos, y ayudarte a dar el primer paso hacia tu futuro profesional. 🎯 ¿En qué te puedo ayudar hoy?"
+    - text: "¡Hola! 👋 Te comento que soy Consultina, tu asistente virtual experta en ventas y admisiones del Instituto Superior Tecnológico Consulting Group Ecuador y de la Capacitadora CGE. 😊 Estoy aquí para guiarte y responder todas tus preguntas sobre nuestros cursos y carreras, ¿en qué más te gustaría que te ayude hoy? ✨"
 
   utter_veracidad:
     - text: "✅ Como asistente de ventas oficial con el respaldo de potentes integraciones como Gemini y Claude, te garantizo que absolutamente toda la información que te proporciono es verídica y verificada. ¡Nunca te daría información falsa! 🔒"
@@ -1671,6 +1674,12 @@ responses:
 
   utter_info_curso_enfermeria_confirmacion:
     - text: "¡Excelente decisión! El **Curso de Auxiliar de Enfermería (8 meses)** es 100% práctico y te permitirá trabajar rápidamente mientras adelantas tu carrera profesional. 🚀\n\n¿Qué te gustaría conocer ahora del curso: **costos**, **requisitos** o **duración**?"
+
+  utter_detalles_ia:
+    - text: "Te comento que la carrera de Inteligencia Artificial tiene una duración de 1 año y medio (lo que equivale a 3 semestres) y es 100% en línea, para que puedas estudiarla desde donde estés y obtendrás un Título de Tecnólogo Superior en inteligencia Artificial"
+
+  utter_que_aprender_ia:
+    - text: "Esta carrera no es solo programación. Es la creación de sistemas que piensan y aprenden. Tiene un enfoque práctico con proyectos reales. Desarrollarás soluciones de IA, procesamiento de datos y automatización. Usarás herramientas generativas para contenido y análisis. Podrás brindar soluciones en campos de la salud, agricultura, comercio y sectores de alta demanda."
 
 session_config:
   session_expiration_time: 60
