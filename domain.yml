@@ -70,6 +70,9 @@ intents:
   - preguntar_becas_general
   - preguntar_detalles_ia
   - preguntar_que_aprender_ia_especifico
+  - preguntar_por_que_estudiar_ia
+  - preguntar_conocimientos_previos_ia
+  - preguntar_areas_trabajo_ia
 
 entities:
   - carrera
@@ -145,13 +148,13 @@ actions:
 
 responses:
   utter_saludo_consultina:
-    - text: "¡Hola! 👋 Te comento que soy Consultina, tu asistente virtual experta en ventas y admisiones del Instituto Superior Tecnológico Consulting Group Ecuador y de la Capacitadora CGE. 😊 Estoy aquí para guiarte y responder todas tus preguntas sobre nuestros cursos y carreras, ¿en qué más te gustaría que te ayude hoy? ✨"
+    - text: "¡Claro que sí! Te comento que soy Consultina, tu asesora virtual del Instituto Superior Tecnológico Consulting Group Ecuador y la Capacitadora CGE. Estoy aquí para guiarte en tu camino hacia una formación de excelencia."
 
   utter_saludo:
-    - text: "👋 ¡Hola, mucho gusto! Te damos la bienvenida al organismo de formación y titulación más grande, completo y premiado del país. 🏆 ¿Qué información te gustaría conocer hoy?"
+    - text: "¡Hola, mucho gusto! Te damos la bienvenida al organismo de formación y titulación más grande, completo y premiado del país."
 
   utter_identidad:
-    - text: "¡Hola! 👋 Te comento que soy Consultina, tu asistente virtual experta en ventas y admisiones del Instituto Superior Tecnológico Consulting Group Ecuador y de la Capacitadora CGE. 😊 Estoy aquí para guiarte y responder todas tus preguntas sobre nuestros cursos y carreras, ¿en qué más te gustaría que te ayude hoy? ✨"
+    - text: "¡Claro que sí! Te comento que soy Consultina, tu asesora virtual del Instituto Superior Tecnológico Consulting Group Ecuador y la Capacitadora CGE. Estoy aquí para guiarte en tu camino hacia una formación de excelencia."
 
   utter_veracidad:
     - text: "✅ Como asistente de ventas oficial con el respaldo de potentes integraciones como Gemini y Claude, te garantizo que absolutamente toda la información que te proporciono es verídica y verificada. ¡Nunca te daría información falsa! 🔒"
@@ -1675,11 +1678,20 @@ responses:
   utter_info_curso_enfermeria_confirmacion:
     - text: "¡Excelente decisión! El **Curso de Auxiliar de Enfermería (8 meses)** es 100% práctico y te permitirá trabajar rápidamente mientras adelantas tu carrera profesional. 🚀\n\n¿Qué te gustaría conocer ahora del curso: **costos**, **requisitos** o **duración**?"
 
+  utter_por_que_ia:
+    - text: "● La demanda de profesionales en IA está en su punto más alto histórico\n● Todas las empresas buscan automatizar procesos.\n● Es una de las carreras mejor pagadas y con mayor proyección.\n● Escasez de talento calificado en Ecuador y el mundo"
+
   utter_detalles_ia:
-    - text: "Te comento que la carrera de Inteligencia Artificial tiene una duración de 1 año y medio (lo que equivale a 3 semestres) y es 100% en línea, para que puedas estudiarla desde donde estés y obtendrás un Título de Tecnólogo Superior en inteligencia Artificial"
+    - text: "Te comento que la carrera de Inteligencia Artificial tiene una duración de 3 semestres (lo que equivale a menos de 1 año y medio) y es 100% en línea, para que puedas estudiarla desde donde estés y obtendrás un Título de Tecnólogo Superior en inteligencia Artificial"
 
   utter_que_aprender_ia:
     - text: "Esta carrera no es solo programación. Es la creación de sistemas que piensan y aprenden. Tiene un enfoque práctico con proyectos reales. Desarrollarás soluciones de IA, procesamiento de datos y automatización. Usarás herramientas generativas para contenido y análisis. Podrás brindar soluciones en campos de la salud, agricultura, comercio y sectores de alta demanda."
+
+  utter_conocimientos_previos_ia:
+    - text: "No es un requisito indispensable. El plan de estudio está diseñado para llevar al estudiante desde los fundamentos lógicos y algorítmicos hasta el dominio de herramientas tecnológicas complejas. Iniciaremos con las bases necesarias para que cualquier persona con disciplina pueda desarrollar competencias sólidas en programación y análisis de datos."
+
+  utter_areas_trabajo_ia:
+    - text: "El graduado podrá desempeñarse como desarrollador de soluciones de Inteligencia Artificial, analista de datos, arquitecto de automatización de procesos y consultor tecnológico. El perfil de egreso permite aplicar estas tecnologías en la optimización operativa, análisis de comportamiento del cliente, y la implementación de sistemas inteligentes en sectores financieros, de salud, comerciales y de marketing."
 
 session_config:
   session_expiration_time: 60

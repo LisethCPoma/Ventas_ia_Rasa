@@ -11,6 +11,8 @@ nlu:
     - hola consulta buenas tardes
     - Hola con dulcina
     - hola consultina
+    - hola consultino
+    - Hola consultino
     - Hola, ¿cómo me puedes ayudar?
     - holaa
     - Holaa
@@ -64,6 +66,8 @@ nlu:
     - Consultina, ¿puedes saludar?
     - Te presento a nuestra IA Consultina
     - Consultina preséntate por favor
+    - Consultino Presentate
+    - consultino presentate
 
 - intent: informar_carrera_interes
   examples: |
@@ -1365,7 +1369,35 @@ nlu:
 - intent: preguntar_que_aprender_ia_especifico
   examples: |
     - Qué voy a aprender en la carrera
+    - ¿Qué voy a aprender en la carrera?
     - Qué voy a aprender en la carrera de inteligencia artificial
     - que aprendere en ia
     - que me enseñaran en la carrera de inteligencia artificial
     - de que trata inteligencia artificial
+
+- intent: preguntar_por_que_estudiar_ia
+  examples: |
+    - ¿Por qué debería estudiar Inteligencia Artificial?
+    - Por qué debería estudiar Inteligencia Artificial
+    - por que estudiar inteligencia artificial
+    - para que me sirve estudiar inteligencia artificial
+    - de que me sirve estudiar ia
+
+- intent: preguntar_conocimientos_previos_ia
+  examples: |
+    - ¿Necesito conocimientos previos en programación para ingresar a la carrera?
+    - Necesito conocimientos previos en programación para ingresar a la carrera
+    - necesito conocimientos previos en programacion
+    - se necesita saber programacion
+    - hay que saber programar para estudiar inteligencia artificial
+    - necesito saber algo de programacion antes de entrar
+    - requiero conocimientos previos de programacion
+
+- intent: preguntar_areas_trabajo_ia
+  examples: |
+    - ¿En qué áreas o cargos podré trabajar una vez que obtenga el título?
+    - En qué áreas o cargos podré trabajar una vez que obtenga el título
+    - en que areas podre trabajar
+    - que cargos podre ocupar
+    - en donde voy a poder trabajar cuando me gradue de inteligencia artificial
+    - cuales son los cargos para inteligencia artificial

@@ -360,3 +360,18 @@ rules:
   steps:
   - intent: preguntar_que_aprender_ia_especifico
   - action: utter_que_aprender_ia
+
+- rule: Consultina responde por que estudiar inteligencia artificial
+  steps:
+  - intent: preguntar_por_que_estudiar_ia
+  - action: utter_por_que_ia
+
+- rule: Consultina responde conocimientos previos de inteligencia artificial
+  steps:
+  - intent: preguntar_conocimientos_previos_ia
+  - action: utter_conocimientos_previos_ia
+
+- rule: Consultina responde areas de trabajo de inteligencia artificial
+  steps:
+  - intent: preguntar_areas_trabajo_ia
+  - action: utter_areas_trabajo_ia
