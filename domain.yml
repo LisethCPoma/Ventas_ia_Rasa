@@ -1679,7 +1679,7 @@ responses:
     - text: "¡Excelente decisión! El **Curso de Auxiliar de Enfermería (8 meses)** es 100% práctico y te permitirá trabajar rápidamente mientras adelantas tu carrera profesional. 🚀\n\n¿Qué te gustaría conocer ahora del curso: **costos**, **requisitos** o **duración**?"
 
   utter_por_que_ia:
-    - text: "● La demanda de profesionales en IA está en su punto más alto histórico\n● Todas las empresas buscan automatizar procesos.\n● Es una de las carreras mejor pagadas y con mayor proyección.\n● Escasez de talento calificado en Ecuador y el mundo"
+    - text: "1. La demanda de profesionales en IA está en su punto más alto histórico\n2. Todas las empresas buscan automatizar procesos.\n3. Es una de las carreras mejor pagadas y con mayor proyección.\n4. Escasez de talento calificado en Ecuador y el mundo"
 
   utter_detalles_ia:
     - text: "Te comento que la carrera de Inteligencia Artificial tiene una duración de 3 semestres (lo que equivale a menos de 1 año y medio) y es 100% en línea, para que puedas estudiarla desde donde estés y obtendrás un Título de Tecnólogo Superior en inteligencia Artificial"

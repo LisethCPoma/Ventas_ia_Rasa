@@ -1,4 +1,6 @@
 import mysql.connector
+import os
+from dotenv import load_dotenv
 import google.generativeai as genai
 from mysql.connector import Error
 from typing import Any, Text, Dict, List
@@ -236,210 +238,13 @@ class ActionGeminiFallback(Action):
         contexto_historial = "\n".join(historial[-12:])  # últimos ~6 intercambios
 
 # 3. Lista de tus API Keys (Rotador)
-        # Reemplaza estos textos con tus 10 API keys reales
-        api_keys = [
-            "AIzaSyCeSfa3pgt6Xx3L1KGfVNc1e9_EuIKYBfQ",
-            "AIzaSyCsy0mD-JvcanwsLBhDvw79_q2HxhNJVq8",
-            "AIzaSyC47IuKhSHSVf-JC9YdHAD_tl_SsV-WOTo",
-            "AIzaSyDl1FtAjrB8wgRg5Wm3GV-Tbu2bNdDB24A",
-            "AIzaSyDN5lFAvQdYxJplfaxjnl9YsmU0ZHnkXzg",
-            "AIzaSyDW3mn_Uo-sEPd3hH3DDpzpe4fn7PbOTAI",
-            "AIzaSyD0gh67bsu7JQt-5UgcK5r936FbS5ZZudw",
-            "AIzaSyDYl2rkCTinyCHw190UMSJDEm09YJAP1sM",
-            "AIzaSyD5VoibynHtOBc07AKavS94bYsSUPAtk3I",
-            "AIzaSyARx647foxRJL879CTw3PdCkkAt0Dpcnm8",
-            "AIzaSyAg7TfvJZisTvHWfDZ_vg1U_3ZBkSwPMXQ",
-            "AIzaSyC-XXhWqNkQBPtDoSh9VB06WEYO_hlA7Q8",
-            "AIzaSyA1dT-lq1ni2jmUw67feddGyT04u8QzNGo",
-            "AIzaSyBqCo42A9KFMsr7RDKi3SYQKLWTvKxOcps",
-            "AIzaSyAOPEdepmaPN_Abm_tDbURxqJW_3PEUfP8",
-            "AIzaSyBkK3NV1FgsgHRsmhU5e9FNj9nhg6qtSgs",
-            "AIzaSyAz1RlSmRtyR6uamEfz2l2yU1219Z33r8w",
-            "AIzaSyAeXxdTOrjc9S8UrDEqKh4yelPFGm4g15k",
-            "AIzaSyD18GmiqV9ZtEnch-lQ7Q8KTSRkxcK2RAI",
-            "AIzaSyBUnzqLb8pNcJLYECOMIvhntOqZ5150Hi4",
-            "AIzaSyCDQa_dikxjRUQpNp7nEzL5oKJxrYHN_lU",
-            "AIzaSyAu-g8VO2aA-BLQLaplkhsVqmP2xOaQGWo",
-            "AIzaSyDhsCQTthR6kZRQEWoInHiiurrQkX2j76U",
-            "AIzaSyDpVua0ySMq-Fon8OTR-FIq4u8OMzkJpYc",
-            "AIzaSyDQjtInKH9iboBXOnX6JQf-Xb61VuKJFLc",
-            "AIzaSyDtlgJjiLgmf5j-F3brM-I8oEx2znSNfrY",
-            "AIzaSyDBRbky3TKeTJZr_bj9PPtUBlhvbEqadPc",
-            "AIzaSyAQNBiHhT6S3PxUpd0RUV6niA4p4xjrJEM",
-            "AIzaSyDhjUYqxgVtTQcED4CAZu2nJEz575SUOSs",
-            "AIzaSyDP67dOmzqc9mMuh8Yzl84QxXQXfUuVMrs",
-            "AIzaSyC1LPIuvSwr0wGdBIFtuZh8jY9u5hKrWz8",
-            "AIzaSyB8hiDJR3YLmpAwjxuHtWV5yVQeuPU1dAo",
-            "AIzaSyCGmMtf3FNjPXtXCqNxX4bBcaIwCigNSpI",
-            "AIzaSyDYh3Bept_I70bGq35LL13GtCuA8ZMbsQs",
-            "AIzaSyAdp0CbcccwrNAhlyxjOONk25_RaIJ0Euw",
-            "AIzaSyDR3PEDoz7GihpVImthjxtfmwdgj6rcQv4",
-            "AIzaSyDJPca3V0oYnNGG9nld_VKqxRvAI-Mskb8",
-            "AIzaSyBDsDQK2fRXpJTF7RRaVi_Ie73MumOKHLo",
-            "AIzaSyDHRQD18HGgWv5nF8VshzQ9OuzetwSeycI",
-            "AIzaSyD3o3yp3gGeSb7WX4kXwgxDMJznGcwoTLw", 
-            "AIzaSyAgNW19aIMGfGGvHAHl-nNBkrokd0CKft4",
-            "AIzaSyBecjaFKCcCFXmM6_dCI2BcHeaWKsMYQKE",
-            "AIzaSyBZFJxLp3HalsLg8I7Ft9U9rv62MIe827Q",
-            "AIzaSyD12dqpT6876mk93iHUHmweTz9usMR7dNE",
-            "AIzaSyD9C6LoTAZ8LGtlIYe_U3t6Qmgnj33EtgE",
-            "AIzaSyBoYvQnAfZ5nyoF44_lbxmFJ8v5O2XgT1c",
-            "AIzaSyCL60avJYx2N5QakLFDXE19v7dfwUt5t9Y",
-            "AIzaSyBqS_cHSSgZd03WhhUnsySCX1o9mG1FYq8",
-            "AIzaSyD9C6LoTAZ8LGtlIYe_U3t6Qmgnj33EtgE",
-            "AIzaSyBoYvQnAfZ5nyoF44_lbxmFJ8v5O2XgT1c",
-            "AIzaSyCL60avJYx2N5QakLFDXE19v7dfwUt5t9Y",
-            "AIzaSyBqS_cHSSgZd03WhhUnsySCX1o9mG1FYq8",
-            "AIzaSyDhNSqZxzci-KY7QKo2JQs4orUGrrkoiZU",
-            "AIzaSyB5jflp7MZxOByMkMkW8WYaBTyX09nWI7I",
-            "AIzaSyARyXgXBShoja de vidaVipLQi2OhKsOfMiOaH0M50Y",
-            "AIzaSyDuj8DDoT5pQFz_XZe7qjFwmx8Hr4o8a8k",
-            "AIzaSyCu2AOvQKzxJXcbY0kFjJqIczXdf-n7MwU",
-            "AIzaSyBIR9cCOYEg8VFlNgLvR94_1BGOPkXTi_c",
-            "AIzaSyCalOgcaPA15bYXza_VJl-5Li4tIz-6U-0",
-            "AIzaSyCtrClxyOU0t4B0QHIcEE-74871GycrtOA",
-            "AIzaSyBclIP81appgVKWnO9tWn6OFWfdrJ2A7ag",
-            "AIzaSyDweQIZYHrN0ZF2GD6xoDjSZeXbmLP3UVk",
-            "AIzaSyARAJLbN4_vQplJfFqpxha6IzvDkRTsFe4",
-            "AIzaSyC7S70LC5L3ithFV8kX5gcUYHrXv8IMF1U",
-            "AIzaSyBgYcEo7pJyfFBdLfEJE9Hiz4m7C1NFUPo",
-            "AIzaSyBeAztzQ9bhFDsB9tvks037Me1x_xWrD6A",
-            "AIzaSyCpTXgsrmVhbpGGGX3BYB3tMvLNbHlUm3k",
-            "AIzaSyDEv5pjOoCo4_A3dOs9g0MV0QuNXP4r-ao",
-            "AIzaSyDbEUTHRhlNtf3HF3CkhStFiZno1lj5p0M",
-            "AIzaSyCIXfoFbHFR6MgvM9U4qZd3aTdm6WRGkeU",
-            "AIzaSyCyFVK1e5g5nj5Zuzl1W8zw9Ep0Z1iuV4s",
-            "AIzaSyDedS6xOo7HyHUoMaZBAlTuoJ_lsj-iPZI",
-            "AIzaSyDJn_I5PGbs1_vHohpnPEsFLfFcoTVkWco",
-            "AIzaSyAhjtZ6ZyNlt8A989WgP4xhTSx5-8RYdkQ",
-            "AIzaSyBt_n2n99QIdxmGK5ThqvTItliTdyhkvzA",
-            "AIzaSyDWBBpcLAptPyG3olhEGR9sgkTV51DMMvE",
-            "AIzaSyB0LqEm3iGO49CZucQEunAepSsO0S6Ah4Y",
-            "AIzaSyC_Asvv9slgM4WjvHNFUgnBgm0XmJAThFc",
-            "AIzaSyDwE3C-3NxazjShoja de vidaUBN9-UG3MBhe-DyWj0",
-            "AIzaSyBtjbC8CrajDNsOSBw0zFMnBIYyYs5NC0I",
-            "AIzaSyAiA4yBWYEhvN3nXxThoKPa1iPkuFF8-UM",
-            "AIzaSyBYh7DWmTjFBu_z5OsaPh8A-q1LJ6C1ZhQ",
-            "AIzaSyCz6EgEg8HwGeJJOVTeoazDb7dc7lB0nls",
-            "AIzaSyBHHl0outkrOFJq_OYsxLhoja de vidaFnNM8q30DyI",
-            "AIzaSyBmdIWb8Bs238O-OXtf2L5UKydW82mKgWA",
-            "AIzaSyD54NX250xRbQlGXJYfhPJrnAEZUq_8AJc",
-            "AIzaSyBbDcywtnG7l9Yu_N8snHjpYTVDrMuueKM",
-            "AIzaSyCG4dqr2WONXw5cKT-HF71GpjyFoDcGNkI",
-            "AIzaSyBVz27bpk0kACgBH5AattldIuDmmzTJHno",
-            "AIzaSyD0BlJ6g_UgMwHxbiaSyTSN6fy9YnUumH0",
-            "AIzaSyCHumRMKRfTL_b44_aEPYJht44PfyH_ZfA",
-            "AIzaSyCFrAE36-6Q1xTCpala1QCUaQWo3leLTC4",
-            "AIzaSyBzPMKTYYl2xRfVGWPrM8aoELy3WhL3qB0",
-            "AIzaSyDN3341-VFEe2L3EhOV8FzbCDMoqiHMkug",
-            "AIzaSyADqQO2hRnZufzhnubK_O9SUsdzzuWXhSI",
-            "AIzaSyA4i2bdp6gjBFGAVqV7ahAvyBqbHDD8viA",
-            "AIzaSyArDCSiYDdvuvsYv9nk52w4ffHuGE88yQU",
-            "AIzaSyDgGCqUP-Pz2nfIrPkdB3nrQk3BHFoU3gw",
-            "AIzaSyDPQmMepy90NAXm-jQQtWjrvZ5n0BaVwq4",
-            "AIzaSyCU-vqzJDa8FBYDlN7E19j6r1Mp8H9SFAg",
-            "AIzaSyCpWndLpMTRsaTOOo4aSjsJIO3VYR5kn3A",
-            "AIzaSyB1G4zLyP0FeGnCP2LryIB4KeAl3cYEfVk",
-            "AIzaSyBO5CYJLFMgyjijkZRTrYPiP4jr8aSw7f4",
-            "AIzaSyCQ0Lpyfalw6OfJN7OBJhoafa83QMj4isA",
-            "AIzaSyBYOfhogvL6iRAR1m5RuaD6jV5SmvZeuQk",
-            "AIzaSyBZWC0N3nA-8Ajmo6Tih07Emm9DZpEXC0M",
-            "AIzaSyA0QGVwPN_TUTlKg49E2kNHH7MIKyYgUD8",
-            "AIzaSyBnUOF_Kwisj5L5SOPnyj09VIC5uKi9tsg",
-            "AIzaSyBs-ri6QqoVdx71VQPe8EhwPyoGdpvFZB4",
-            "AIzaSyBn9Hh54_M8pKAe_haw2wl2fSgrSy062Xo",
-            "AIzaSyBZYWb3gfDY_p68Be5qLFFTkvublmDc7aw",
-            "AIzaSyA508PSquwZTDShoja de vidarNfdAh4R-xnOy-Eyrw",
-            "AIzaSyAX00ArKjmn3G8znU1-FbAEZw6a3oR9tps",
-            "AIzaSyAh8z75kRMQQufOmygtaRyQMGXlmZaR7Ew",
-            "AIzaSyBuz8ObZqOHkD7TgBdJvheoT7npH77f1CQ",
-            "AIzaSyBXqBobp9ii9wotDEZVYH0uaqtIvdRvdV8",
-            "AIzaSyAc-iwC300ptintdPfOQacqoAAPU_sGhjU",
-            "AIzaSyCralLhoja de vidad1ZvEdj6lWgS--Cre5vZGWuvKE",
-            "AIzaSyDWNNGLhycr7yf_Z-N__fdu7fxSOtG7dKg",
-            "AIzaSyC_FxzxD1CRupn3xRovw-Y9MYgxzFKDjoU",
-            "AIzaSyDfe6u-JOt0E2qy8l_WLIlfCFdZcNwidUc",
-            "AIzaSyA8dmOafFHfJqlSKDvxXhx2NmpehcZfO28",
-            "AIzaSyBd0KjJY-J_xiQZpwJvJg03VdEJ4td0oes",
-            "AIzaSyDaNk7T9MCi1ow--dRHmt5TcNb0rUyAMs0",
-            "AIzaSyBF1glOMABrlmkwpVBbmeNgJboPXMi7II4",
-            "AIzaSyBVSbkN6p7IdJv_V_bAE8gENY5eldLHKmU",
-            "AIzaSyBN2lMKbYhvxdcsaliRYJzkka-SLXJW9IY",
-            "AIzaSyBhvJfoJyorImJGMEJd3mJLjU63XGJT88c", 
-            "AIzaSyB5Inp30aaLeW68kfG4jDXsBFs-NFZ5yUo",
-            "AIzaSyDGYE8o5sA3FAuCn7BsY8jjmuJ7xE9bdOc",
-            "AIzaSyD7NKoNljVljTgflcSkEub5BMjh6h-n7ck",
-            "AIzaSyBlvtECYLaf4pgvuPWiplDuxgiKvDHhQW8",
-            "AIzaSyCjnjjtvzaZTnqvl_CABuQst0LzqHl1RMU",
-            "AIzaSyCrC4eBC7D03lp0j_fjVzAP0vdwkgODvlM",
-            "AIzaSyCNGBxKsUGPJYmvRGH2d8mh3_gSXHalNlQ",
-            "AIzaSyA833FZgbQ-KSKBm3_I2g92lC0c47xJJjs",
-            "AIzaSyD2odgoKgHc1NTRpkMFOZAFSDPL1tItWyg",
-            "AIzaSyD2gxHy2-B3_vsfXHq6Nvi3ZkWhoja de vidaLS-H0I",
-            "AIzaSyCyoSj0AYwgkCs01c6HvvqAKAaRh_tK5bM",
-            "AIzaSyBiFVLKsJW-gWQSr1EO7L52CKUcEJj8Fj4",
-            "AIzaSyBC30WnHnP7RGplOo03lWgUj7QXaQ-CeTM",
-            "AIzaSyB58AbhQ4q7J1v1a-nEgr_VWvewAcO3PyU",
-            "AIzaSyBitl8X9soB0AahtkWEBSwvV2opm_Bxec4",
-            "AIzaSyCjpa4Z_VDSKu4LI_P4CLYqrhar4_A-LTA",
-            "AIzaSyAyyx37ukQMNg64Ng1FKKT36TGwQ6f00pE",
-            "AIzaSyAAFcqdK7K7_XebkWtDUzND7GvgjmxWV6c",
-            "AIzaSyCtpGWc1P_2Jf5O6oQQ_OaBhk0h_zv-Flw",
-            "AIzaSyDTJmHKw_1aAt5WGEmxgGzgBa8rLMBBtMI",
-            "AIzaSyBQ2Xq344BbDYUSp3Ul0i52gl9SvBWEp5k",
-            "AIzaSyAijSlvD9Rj6DkahfBigcIwcPTZ2fhNcCg",
-            "AIzaSyAijSlvD9Rj6DkahfBigcIwcPTZ2fhNcCg",
-            "AIzaSyAZypYVyMmeaY4laQh3MkukSVgu-i1ZYJ8",
-            "AIzaSyBva3dFWZKO8eGsHvcXtiZpa9zqHX5uAss",
-            "AIzaSyDttALq3S5_5mUukLo4tduEuw9WTtqHdp8",
-            "AIzaSyAvC7rB3JfTMDvLwKa03EaM__M0X_V6Dco",
-            "AIzaSyBhMxAlemx5e_xnT7WP0rxXfIt0IT6dy6Y",
-            "AIzaSyDke-Evbzh6qmTU1aYgBm04jXFYt9VrAfk",
-            "AIzaSyBLp4MHpUBMWGLfqXAb39naU84SDwNBV1U",
-            "AIzaSyAhh6V71mDHFtFh9H_Pmtzy-w0VJi46hao",
-            "AIzaSyCHm158BYjxRDPAhoja de vidacSgiikKuU2eTzH4ok",
-            "AIzaSyBeQwTvAmb6IkIXj89u8-d-qCnvpSvIZUQ",
-            "AIzaSyAVYT_fp20vzg1mVI8JD0p3BxURt1FjrYU",
-            "AIzaSyCW2p8bPYkTLztdavJHFkW7RzVJvdItiFs",
-            "AIzaSyASHs5Jw1_bBBWagJCzPLcoC19l9_UTMg4",
-            "AIzaSyBWn0AX0l32SoYjNd2wwbvsCe3wVkLLH7o",
-            "AIzaSyC0lsCNqgG2PfCTmhcNc00kmSGw4wpMlmw",
-            "AIzaSyCxTgWCNdEzd_MSjKAlaqlrwuoBHD8Ufo0",
-            "AIzaSyBc2OH0dG-Xe0yUAh2d_jjETrSv5wS8x4k",
-            "AIzaSyC956Fo8R98XYqUuhRagBOnOItpYorStCU",
-            "AIzaSyBm8oZBC7ocO9YlYXh-O8HYNu465wVhnhA",
-            "AIzaSyAZc6HFhqCsnqOViYfZ_Fnv9OmAyMEsUTo",
-            "AIzaSyBxfIA7m-GdSyB9Ul4lk_wDqV1YMCCXDWE",
-            "AIzaSyBDidzMXTWtS6S3oWbEO3xbXAkojt6_GOI",
-            "AIzaSyhoja de vidaySRTNWqstl0vSAJ5DKA8J7bZzdDKdjA",
-            "AIzaSyAMA59GQnw8FreucdyN-00cATt7znR5cKE",
-            "AIzaSyBYOmnn33zoPYLJZC0eSDj9AzS33BChoja de vidaLA",
-            "AIzaSyA4VxGyxMTl3nJWfk8Biu3n5_EUm1NfsCs",
-            "AIzaSyCHm3NursTXmfV95NG3PwyDa06wsTPUtaU",
-            "AIzaSyAHjOuJnPk8JhiWcbl0hmYn33YNniGW4pw",
-            "AIzaSyBBBsPFA7yUpQY5mZ54uhQI1fcCForItws",
-            "AIzaSyC-p-iGisO24uFPgDEVx0q78gNUltpU6c4",
-            "AIzaSyBos3FNfo1P4S7toT5pnpgsZiWC-LFh6ms",
-            "AIzaSyAFXXfYQggEHeg8zv1KPlt--pt5cjBqpM8",
-            "AIzaSyCTt7UdbARjvZkftsP2Ipkg--t4miYjabs",
-            "AIzaSyBPtX7JP2BttAUeBvjO3tdoBpG6Qoj08LM",
-            "AIzaSyDT2APe6ilYJwktFgOhC9QvHjey7cKFhek",
-            "AIzaSyCOAM4NtjipqEit33ByS6Vh2mel-PvXW9o",
-            "AIzaSyAjujTniP1btKRDhoja de vida5jhoja de vidam8T3K-97Nr7FA",
-            "AIzaSyChHenpt1HihwIvarcpCoN2hoja de vida2xroz7-1g",
-            "AIzaSyBbWZVHVcqbSvQwjx9zK8e7ZGkWqm4mqQk",
-            "AIzaSyARWqZon6y4oAMWrmj6SordbfCX7zNuLrE",
-            "AIzaSyANVg-yV3wj1aFeeXsr5rhoja de vidawy3yxDRgG84",
-            "AIzaSyAufV5jxZYUvGBLSMRBsWhdbRpPNtkvZvs",
-            "AIzaSyCjnjjtvzaZTnqvl_CABuQst0LzqHl1RMU",
-            "AIzaSyCrC4eBC7D03lp0j_fjVzAP0vdwkgODvlM",
-            "AIzaSyCNGBxKsUGPJYmvRGH2d8mh3_gSXHalNlQ",
-            "AIzaSyA833FZgbQ-KSKBm3_I2g92lC0c47xJJjs",
-            "AIzaSyD2odgoKgHc1NTRpkMFOZAFSDPL1tItWyg",
-            "AIzaSyD2gxHy2-B3_vsfXHq6Nvi3ZkWhoja de vidaLS-H0I" #RASA5 R6
-
-
-        ]
+        # Cargamos las API keys desde las variables de entorno (.env)
+        load_dotenv()
+        api_keys_str = os.getenv("GEMINI_API_KEYS", "")
+        api_keys = [k.strip() for k in api_keys_str.split(",") if k.strip()]
+        
+        if not api_keys:
+            print("ADVERTENCIA: No se encontraron API keys en el archivo .env. Asegúrate de configurar GEMINI_API_KEYS.")
 # 4. System prompt detallado con toda la información real de CGE
         instrucciones_sistema = """
 Eres Consultina, la asistente virtual experta en ventas y admisiones del Instituto Superior Tecnológico Consulting Group Ecuador y la Capacitadora CGE.
@@ -661,10 +466,10 @@ REGLA DE ORO DE TEMARIOS: ¡PROHIBIDO INVENTAR! Si no ves el área aquí, sé ge
 - SALUDO DE EXPOSICIÓN: Si el usuario dice "Hola consultino", "Hola consultina" o similar para iniciar, DEBES RESPONDER EXACTAMENTE EL SIGUIENTE TEXTO (sin agregar saludos, despedidas ni emojis): "¡Hola, mucho gusto! Te damos la bienvenida al organismo de formación y titulación más grande, completo y premiado del país."
 - PRESENTACIÓN DE EXPOSICIÓN: Si el usuario dice "Consultino presentate" o "Consultina presentate", DEBES RESPONDER EXACTAMENTE EL SIGUIENTE TEXTO (sin agregar saludos, despedidas ni emojis): "¡Claro que sí! Te comento que soy Consultina, tu asesora virtual del Instituto Superior Tecnológico Consulting Group Ecuador y la Capacitadora CGE. Estoy aquí para guiarte en tu camino hacia una formación de excelencia."
 - POR QUÉ ESTUDIAR INTELIGENCIA ARTIFICIAL: Si preguntan por qué deberían estudiar Inteligencia Artificial o de qué sirve, DEBES RESPONDER EXACTAMENTE EL SIGUIENTE TEXTO (sin agregar saludos, despedidas ni emojis, SOLO ESTE TEXTO LETRA POR LETRA):
-"● La demanda de profesionales en IA está en su punto más alto histórico
-● Todas las empresas buscan automatizar procesos.
-● Es una de las carreras mejor pagadas y con mayor proyección.
-● Escasez de talento calificado en Ecuador y el mundo"
+"1. La demanda de profesionales en IA está en su punto más alto histórico
+2. Todas las empresas buscan automatizar procesos.
+3. Es una de las carreras mejor pagadas y con mayor proyección.
+4. Escasez de talento calificado en Ecuador y el mundo"
 - DETALLES DE INTELIGENCIA ARTIFICIAL: Si el usuario dice "Dame detalles sobre la carrera de Inteligencia artificial." o pide detalles sobre Inteligencia Artificial, DEBES RESPONDER EXACTAMENTE EL SIGUIENTE TEXTO (sin agregar saludos, despedidas ni emojis): "Te comento que la carrera de Inteligencia Artificial tiene una duración de 3 semestres (lo que equivale a menos de 1 año y medio) y es 100% en línea, para que puedas estudiarla desde donde estés y obtendrás un Título de Tecnólogo Superior en inteligencia Artificial".
 - QUÉ APRENDERÉ EN INTELIGENCIA ARTIFICIAL: Si el usuario pregunta "¿Qué voy a aprender en la carrera?" tras haber preguntado por Inteligencia Artificial, DEBES RESPONDER EXACTAMENTE EL SIGUIENTE TEXTO (sin agregar saludos, despedidas ni emojis): "Esta carrera no es solo programación. Es la creación de sistemas que piensan y aprenden. Tiene un enfoque práctico con proyectos reales. Desarrollarás soluciones de IA, procesamiento de datos y automatización. Usarás herramientas generativas para contenido y análisis. Podrás brindar soluciones en campos de la salud, agricultura, comercio y sectores de alta demanda."
 - CONOCIMIENTOS PREVIOS EN PROGRAMACIÓN: Si el usuario pregunta "¿Necesito conocimientos previos en programación para ingresar a la carrera?" o algo similar sobre conocimientos previos de programación, DEBES RESPONDER EXACTAMENTE EL SIGUIENTE TEXTO (sin agregar saludos, despedidas ni emojis): "No es un requisito indispensable. El plan de estudio está diseñado para llevar al estudiante desde los fundamentos lógicos y algorítmicos hasta el dominio de herramientas tecnológicas complejas. Iniciaremos con las bases necesarias para que cualquier persona con disciplina pueda desarrollar competencias sólidas en programación y análisis de datos."
@@ -687,8 +492,9 @@ Si el usuario te pide la malla curricular, ESTÁ ESTRICTAMENTE PROHIBIDO darle u
 - REGLA DEL "SÍ" AMBIGUO: Si le diste a elegir opciones al usuario (ej. "¿quieres saber costos o el campo laboral?") y el usuario responde simplemente "sí", "claro", o "ok", ESTÁ PROHIBIDO volverle a preguntar qué quiere saber. Toma la iniciativa, asume proactivamente que quiere saber los COSTOS (o la primera opción que le diste) y dale esa información directamente.
 - MEMORIA Y CONTEXTO ACTIVO: Si el usuario responde con frases cortas como "la carrera", "la primera", "el curso", "sí", o cualquier palabra suelta, DEBES inferir que está respondiendo a la especialidad médica, técnica o administrativa de la que tú misma le hablaste o le preguntaste justo en tu turno anterior. ¡NUNCA creas que "la carrera" o "el curso" es el nombre de una especialidad nueva e inexistente! ¡Recupera siempre la información del 'Historial reciente de conversación' para darle continuidad!
 - REGLA DE ORO: Da respuestas DIRECTAS, CORTAS y ESPECÍFICAS. NO seas redundante ni des rodeos innecesarios.
-- Responde estrictamente lo que el usuario pregunta. Si te hacen una pregunta puntual (ej. "¿cuánto cuesta?"), responde el valor inmediatamente sin hacer introducciones largas.
-- Límite estricto y absoluto: Tus respuestas deben ser MUY CORTAS y NO DEBEN SUPERAR LAS 3 LÍNEAS en total bajo ninguna circunstancia.
+- LIMITACIÓN ESTRICTA A LO PREESCRITO: Límítate ÚNICAMENTE a decir lo que ya está preescrito en cada párrafo de estas instrucciones de acuerdo al tema preguntado. NO inventes, NO alucines, y NO agregues información adicional que no haya sido solicitada explícitamente.
+- Responde estrictamente lo que el usuario pregunta. Si te hacen una pregunta puntual, enfócate solo en responder eso inmediatamente.
+- Límite estricto y absoluto: Tus respuestas deben ser MUY CORTAS, resumidas, y NO DEBEN SUPERAR 1 PÁRRAFO en total bajo ninguna circunstancia.
 - Recuerda que la persona te está escuchando en voz alta frente a una tablet mientras espera su turno; los textos largos, repetitivos o con exceso de "adornos" arruinan la experiencia de usuario. ¡Ve al grano!
 - NUNCA DES RESPUESTAS FRÍAS: Si el usuario te dice "continuemos con la carrera" o pide información general, NO le digas solo cuánto dura o la modalidad. DEBES incluir obligatoriamente un resumen emocionante de lo que va a aprender (usando la sección TEMARIOS) y luego preguntarle qué más desea saber (costos, campo laboral, etc.).
 - EVITA REPETIRTE COMO ROBOT: Si el usuario insiste o vuelve a decir "quiero la carrera", NUNCA le vuelvas a soltar el mismo discurso de ventas largo. Cambia tus palabras, sé más concisa y pregúntale directamente qué duda puntual tiene (costos, duración, etc.) para avanzar.
@@ -699,7 +505,7 @@ Si el usuario te pide la malla curricular, ESTÁ ESTRICTAMENTE PROHIBIDO darle u
 
 Pregunta actual del usuario: {mensaje_usuario}
 
-Responde como Consultina siguiendo estrictamente las instrucciones del sistema."""
+Responde como Consultina siguiendo estrictamente las instrucciones del sistema. Recuerda tu límite estricto: Tus respuestas deben ser MUY CORTAS (máximo 1 párrafo) y limitarse exclusivamente a la información preescrita."""
 
         # 5. Bucle del Rotador de APIs
         global GEMINI_API_INDEX
@@ -716,6 +522,7 @@ Responde como Consultina siguiendo estrictamente las instrucciones del sistema."
                 model = genai.GenerativeModel(
                     'gemini-2.5-flash',
                     system_instruction=instrucciones_sistema,
+                    generation_config={"temperature": 0.1},
                     safety_settings={
                         HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_NONE,
                         HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_NONE,
